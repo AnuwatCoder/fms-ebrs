@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/svg+xml" href="img/logo.svg"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Products | Liner Admin</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/css/theme.css" rel="stylesheet">
+  <script src="assets/js/app.js"></script>
+</head>
+<body>
+
+<aside class="app-sidebar" data-sidebar>
+        <a href="dashboard.html" class="sidebar-brand text-decoration-none">
+          <img src="img/logo.svg" alt="Liner" class="brand-logo-lg-img">
+          <div class="brand-text">
+            <div class="brand-name">Liner</div>
+            <div class="brand-sub">Admin</div>
+          </div>
+        </a>
+        <nav class="sidebar-nav custom-scrollbar"><div class="sidebar-group-title">Dashboards</div><a href="dashboard.html" class="sidebar-nav-link" data-path="dashboard.html">
+            <i data-lucide="layout-dashboard" class="lucide-md"></i><span class="link-label">Modern</span>
+          </a><a href="analytics.html" class="sidebar-nav-link" data-path="analytics.html">
+            <i data-lucide="activity" class="lucide-md"></i><span class="link-label">Analytics</span>
+          </a><a href="ecommerce.html" class="sidebar-nav-link" data-path="ecommerce.html">
+            <i data-lucide="shopping-cart" class="lucide-md"></i><span class="link-label">eCommerce</span>
+          </a><a href="music.html" class="sidebar-nav-link" data-path="music.html">
+            <i data-lucide="music" class="lucide-md"></i><span class="link-label">Music</span>
+          </a><a href="general.html" class="sidebar-nav-link" data-path="general.html">
+            <i data-lucide="globe-2" class="lucide-md"></i><span class="link-label">General</span>
+          </a><div class="sidebar-group-title">Apps</div><a href="calendar.html" class="sidebar-nav-link" data-path="calendar.html">
+            <i data-lucide="calendar" class="lucide-md"></i><span class="link-label">Calendar</span>
+          </a><a href="kanban.html" class="sidebar-nav-link" data-path="kanban.html">
+            <i data-lucide="kanban-square" class="lucide-md"></i><span class="link-label">Kanban</span>
+          </a><a href="chat.html" class="sidebar-nav-link" data-path="chat.html">
+            <i data-lucide="message-square" class="lucide-md"></i><span class="link-label">Chat</span>
+          </a><a href="email.html" class="sidebar-nav-link" data-path="email.html">
+            <i data-lucide="mail" class="lucide-md"></i><span class="link-label">Email</span>
+          </a><a href="notes.html" class="sidebar-nav-link" data-path="notes.html">
+            <i data-lucide="sticky-note" class="lucide-md"></i><span class="link-label">Notes</span>
+          </a><a href="contacts.html" class="sidebar-nav-link" data-path="contacts.html">
+            <i data-lucide="users" class="lucide-md"></i><span class="link-label">Contacts</span>
+          </a><a href="tickets.html" class="sidebar-nav-link" data-path="tickets.html">
+            <i data-lucide="ticket" class="lucide-md"></i><span class="link-label">Tickets</span>
+          </a><a href="invoice-list.html" class="sidebar-nav-link" data-path="invoice-list.html">
+            <i data-lucide="file-text" class="lucide-md"></i><span class="link-label">Invoice</span>
+          </a><a href="user-profile.html" class="sidebar-nav-link" data-path="user-profile.html">
+            <i data-lucide="user-circle" class="lucide-md"></i><span class="link-label">User Profile</span>
+          </a>
+            <a href="#" class="sidebar-nav-link sidebar-parent" data-toggle-submenu data-paths="blog-posts.html,blog-post.html,blog-detail.html">
+              <i data-lucide="book-open" class="lucide-md"></i>
+              <span class="link-label">Blog</span>
+              <i data-lucide="chevron-down" class="lucide-sm toggle-icon"></i>
+            </a>
+            <div class="sidebar-submenu"><a href="blog-posts.html" class="sidebar-nav-link" data-path="blog-posts.html">
+              <i data-lucide="book-open" class="lucide-sm"></i><span class="link-label">Blog Posts</span>
+            </a><a href="blog-post.html" class="sidebar-nav-link" data-path="blog-post.html">
+              <i data-lucide="file-text" class="lucide-sm"></i><span class="link-label">Blog Post</span>
+            </a><a href="blog-detail.html" class="sidebar-nav-link" data-path="blog-detail.html">
+              <i data-lucide="eye" class="lucide-sm"></i><span class="link-label">Blog Detail</span>
+            </a></div>
+            <a href="#" class="sidebar-nav-link sidebar-parent" data-toggle-submenu data-paths="ecommerce-shop.html,ecommerce-detail.html,ecommerce-list.html,ecommerce-checkout.html">
+              <i data-lucide="shopping-bag" class="lucide-md"></i>
+              <span class="link-label">eCommerce</span>
+              <i data-lucide="chevron-down" class="lucide-sm toggle-icon"></i>
+            </a>
+            <div class="sidebar-submenu"><a href="ecommerce-shop.html" class="sidebar-nav-link" data-path="ecommerce-shop.html">
+              <i data-lucide="store" class="lucide-sm"></i><span class="link-label">Shop</span>
+            </a><a href="ecommerce-detail.html" class="sidebar-nav-link" data-path="ecommerce-detail.html">
+              <i data-lucide="package" class="lucide-sm"></i><span class="link-label">Detail</span>
+            </a><a href="ecommerce-list.html" class="sidebar-nav-link" data-path="ecommerce-list.html">
+              <i data-lucide="list" class="lucide-sm"></i><span class="link-label">List</span>
+            </a><a href="ecommerce-checkout.html" class="sidebar-nav-link" data-path="ecommerce-checkout.html">
+              <i data-lucide="credit-card" class="lucide-sm"></i><span class="link-label">Checkout</span>
+            </a></div><div class="sidebar-group-title">UI Elements</div><a href="alert.html" class="sidebar-nav-link" data-path="alert.html">
+            <i data-lucide="alert-circle" class="lucide-md"></i><span class="link-label">Alert</span>
+          </a><a href="accordion.html" class="sidebar-nav-link" data-path="accordion.html">
+            <i data-lucide="layers" class="lucide-md"></i><span class="link-label">Accordion</span>
+          </a><a href="avatar.html" class="sidebar-nav-link" data-path="avatar.html">
+            <i data-lucide="user-circle" class="lucide-md"></i><span class="link-label">Avatar</span>
+          </a><a href="chip.html" class="sidebar-nav-link" data-path="chip.html">
+            <i data-lucide="tag" class="lucide-md"></i><span class="link-label">Chip</span>
+          </a><a href="dialog.html" class="sidebar-nav-link" data-path="dialog.html">
+            <i data-lucide="message-square" class="lucide-md"></i><span class="link-label">Dialog</span>
+          </a><a href="list.html" class="sidebar-nav-link" data-path="list.html">
+            <i data-lucide="align-left" class="lucide-md"></i><span class="link-label">List</span>
+          </a><a href="popover.html" class="sidebar-nav-link" data-path="popover.html">
+            <i data-lucide="message-circle" class="lucide-md"></i><span class="link-label">Popover</span>
+          </a><a href="rating.html" class="sidebar-nav-link" data-path="rating.html">
+            <i data-lucide="star" class="lucide-md"></i><span class="link-label">Rating</span>
+          </a><a href="tabs.html" class="sidebar-nav-link" data-path="tabs.html">
+            <i data-lucide="layout-grid" class="lucide-md"></i><span class="link-label">Tabs</span>
+          </a><a href="tooltip.html" class="sidebar-nav-link" data-path="tooltip.html">
+            <i data-lucide="info" class="lucide-md"></i><span class="link-label">Tooltip</span>
+          </a><a href="typography.html" class="sidebar-nav-link" data-path="typography.html">
+            <i data-lucide="type" class="lucide-md"></i><span class="link-label">Typography</span>
+          </a><a href="buttons.html" class="sidebar-nav-link" data-path="buttons.html">
+            <i data-lucide="zap" class="lucide-md"></i><span class="link-label">Buttons</span>
+          </a><a href="cards.html" class="sidebar-nav-link" data-path="cards.html">
+            <i data-lucide="square-stack" class="lucide-md"></i><span class="link-label">Cards</span>
+          </a><div class="sidebar-group-title">Forms</div><a href="form-elements.html" class="sidebar-nav-link" data-path="form-elements.html">
+            <i data-lucide="square-pen" class="lucide-md"></i><span class="link-label">Form Elements</span>
+          </a><a href="form-layouts.html" class="sidebar-nav-link" data-path="form-layouts.html">
+            <i data-lucide="layout-template" class="lucide-md"></i><span class="link-label">Form Layouts</span>
+          </a><a href="form-horizontal.html" class="sidebar-nav-link" data-path="form-horizontal.html">
+            <i data-lucide="rows" class="lucide-md"></i><span class="link-label">Form Horizontal</span>
+          </a><a href="form-validation.html" class="sidebar-nav-link" data-path="form-validation.html">
+            <i data-lucide="check-circle" class="lucide-md"></i><span class="link-label">Form Validation</span>
+          </a><div class="sidebar-group-title">Tables</div><a href="basic-table.html" class="sidebar-nav-link" data-path="basic-table.html">
+            <i data-lucide="table-2" class="lucide-md"></i><span class="link-label">Basic Table</span>
+          </a><a href="enhanced-table.html" class="sidebar-nav-link" data-path="enhanced-table.html">
+            <i data-lucide="table-properties" class="lucide-md"></i><span class="link-label">Enhanced Table</span>
+          </a><div class="sidebar-group-title">Charts</div><a href="line-chart.html" class="sidebar-nav-link" data-path="line-chart.html">
+            <i data-lucide="line-chart" class="lucide-md"></i><span class="link-label">Line Chart</span>
+          </a><a href="area-chart.html" class="sidebar-nav-link" data-path="area-chart.html">
+            <i data-lucide="area-chart" class="lucide-md"></i><span class="link-label">Area Chart</span>
+          </a><a href="bar-chart.html" class="sidebar-nav-link" data-path="bar-chart.html">
+            <i data-lucide="bar-chart-3" class="lucide-md"></i><span class="link-label">Bar Chart</span>
+          </a><a href="column-chart.html" class="sidebar-nav-link" data-path="column-chart.html">
+            <i data-lucide="bar-chart-2" class="lucide-md"></i><span class="link-label">Column Chart</span>
+          </a><a href="donut-chart.html" class="sidebar-nav-link" data-path="donut-chart.html">
+            <i data-lucide="pie-chart" class="lucide-md"></i><span class="link-label">Donut Chart</span>
+          </a><a href="radialbar-chart.html" class="sidebar-nav-link" data-path="radialbar-chart.html">
+            <i data-lucide="activity" class="lucide-md"></i><span class="link-label">Radialbar Chart</span>
+          </a><div class="sidebar-group-title">Pages</div><a href="account.html" class="sidebar-nav-link" data-path="account.html">
+            <i data-lucide="settings" class="lucide-md"></i><span class="link-label">Account Settings</span>
+          </a><a href="pricing.html" class="sidebar-nav-link" data-path="pricing.html">
+            <i data-lucide="credit-card" class="lucide-md"></i><span class="link-label">Pricing</span>
+          </a><a href="faq.html" class="sidebar-nav-link" data-path="faq.html">
+            <i data-lucide="help-circle" class="lucide-md"></i><span class="link-label">FAQ</span>
+          </a><a href="widgets.html" class="sidebar-nav-link" data-path="widgets.html">
+            <i data-lucide="layout-grid" class="lucide-md"></i><span class="link-label">Widgets</span>
+          </a><a href="apikeys.html" class="sidebar-nav-link" data-path="apikeys.html">
+            <i data-lucide="key" class="lucide-md"></i><span class="link-label">API Keys</span>
+          </a><div class="sidebar-group-title">Icons</div><a href="lucide-icons.html" class="sidebar-nav-link" data-path="lucide-icons.html">
+            <i data-lucide="smile" class="lucide-md"></i><span class="link-label">Lucide Icons</span>
+          </a><a href="custom-icons.html" class="sidebar-nav-link" data-path="custom-icons.html">
+            <i data-lucide="star" class="lucide-md"></i><span class="link-label">Custom Icons</span>
+          </a><div class="sidebar-group-title">Auth</div><a href="login.html" class="sidebar-nav-link" data-path="login.html">
+            <i data-lucide="log-in" class="lucide-md"></i><span class="link-label">Login</span>
+          </a><a href="register.html" class="sidebar-nav-link" data-path="register.html">
+            <i data-lucide="user-plus" class="lucide-md"></i><span class="link-label">Register</span>
+          </a><a href="forgot-password.html" class="sidebar-nav-link" data-path="forgot-password.html">
+            <i data-lucide="key-round" class="lucide-md"></i><span class="link-label">Forgot Password</span>
+          </a><a href="two-steps.html" class="sidebar-nav-link" data-path="two-steps.html">
+            <i data-lucide="shield" class="lucide-md"></i><span class="link-label">Two Step</span>
+          </a><a href="error.html" class="sidebar-nav-link" data-path="error.html">
+            <i data-lucide="alert-circle" class="lucide-md"></i><span class="link-label">Error</span>
+          </a><a href="maintenance.html" class="sidebar-nav-link" data-path="maintenance.html">
+            <i data-lucide="wrench" class="lucide-md"></i><span class="link-label">Maintenance</span>
+          </a></nav>
+        <div class="sidebar-footer">
+          <div class="user-mini">
+            <div class="user-avatar-mini">JD</div>
+            <div class="sidebar-footer-info flex-grow-1 overflow-hidden">
+              <div class="user-mini-name">John Doe</div>
+              <div class="user-mini-email">john@liner.com</div>
+            </div>
+            <i data-lucide="chevron-right" class="lucide-sm sidebar-footer-info"></i>
+          </div>
+        </div>
+      </aside>
+      <div class="sidebar-backdrop"></div>
+<header class="app-header">
+        <button class="header-icon-btn d-lg-none" data-toggle-mobile-sidebar aria-label="Menu"><i data-lucide="menu" class="lucide-md"></i></button>
+        <button class="header-icon-btn d-none d-lg-flex" data-toggle-sidebar aria-label="Toggle"><i data-lucide="menu" class="lucide-md"></i></button>
+        <div class="header-breadcrumb d-none d-md-flex" data-breadcrumb><span class="text-muted">Home</span></div>
+        <div class="flex-grow-1"></div>
+        <div class="search-wrap d-none d-sm-block">
+          <input type="text" class="form-control form-control-sm search-input w-200" placeholder="Search...">
+          <i data-lucide="search" class="lucide-sm search-icon"></i>
+        </div>
+        <button class="header-icon-btn" data-toggle-dark aria-label="Dark"><i data-lucide="moon" class="lucide-md"></i></button>
+        <div class="dropdown">
+          <button class="header-icon-btn" data-bs-toggle="dropdown" aria-label="Notifications">
+            <i data-lucide="bell" class="lucide-md"></i>
+            <span class="notif-dot">3</span>
+          </button>
+          <div class="dropdown-menu dropdown-menu-end notif-menu">
+            <div class="notif-header">
+              <strong>Notifications</strong>
+              <span class="badge badge-soft-primary">3 new</span>
+            </div>
+            <div class="notif-list custom-scrollbar">
+              <div class="notif-item unread">
+                <div class="icon-circle icon-circle-sm icon-circle-bg-success-soft"><i data-lucide="check-circle-2" class="lucide-sm"></i></div>
+                <div class="flex-grow-1">
+                  <div class="notif-title">Order Completed</div>
+                  <div class="notif-msg">Order #1234 has been fulfilled</div>
+                  <div class="notif-time">2 min ago</div>
+                </div>
+              </div>
+              <div class="notif-item unread">
+                <div class="icon-circle icon-circle-sm icon-circle-bg-info-soft"><i data-lucide="info" class="lucide-sm"></i></div>
+                <div class="flex-grow-1">
+                  <div class="notif-title">New User Registered</div>
+                  <div class="notif-msg">Sarah Johnson joined the platform</div>
+                  <div class="notif-time">15 min ago</div>
+                </div>
+              </div>
+              <div class="notif-item">
+                <div class="icon-circle icon-circle-sm icon-circle-bg-warning-soft"><i data-lucide="alert-circle" class="lucide-sm"></i></div>
+                <div class="flex-grow-1">
+                  <div class="notif-title">Low Stock Alert</div>
+                  <div class="notif-msg">Wireless Mouse is running low</div>
+                  <div class="notif-time">1 hr ago</div>
+                </div>
+              </div>
+            </div>
+            <div class="notif-footer">
+              <a href="#" class="text-primary fw-medium notif-footer-link">View all notifications</a>
+            </div>
+          </div>
+        </div>
+        <button class="header-icon-btn" data-toggle-settings aria-label="Settings"><i data-lucide="settings" class="lucide-md"></i></button>
+        <div class="dropdown">
+          <button class="user-button" data-bs-toggle="dropdown">
+            <div class="avatar avatar-sm">JD</div>
+            <div class="d-none d-sm-block text-start">
+              <div class="user-name">John Doe</div>
+              <div class="user-role">Admin</div>
+            </div>
+            <i data-lucide="chevron-down" class="lucide-sm d-none d-sm-inline"></i>
+          </button>
+          <div class="dropdown-menu dropdown-menu-end user-menu">
+            <div class="user-menu-header">
+              <div class="fw-semibold">John Doe</div>
+              <div class="text-muted small">john@liner.com</div>
+            </div>
+            <a class="dropdown-item user-menu-item" href="account.html"><i data-lucide="user" class="lucide-sm"></i> My Profile</a>
+            <a class="dropdown-item user-menu-item" href="pricing.html"><i data-lucide="credit-card" class="lucide-sm"></i> Billing</a>
+            <a class="dropdown-item user-menu-item" href="account.html"><i data-lucide="shield" class="lucide-sm"></i> Security</a>
+            <a class="dropdown-item user-menu-item" href="faq.html"><i data-lucide="help-circle" class="lucide-sm"></i> Help Center</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item user-menu-item text-danger" href="login.html"><i data-lucide="log-out" class="lucide-sm"></i> Sign Out</a>
+          </div>
+        </div>
+      </header>
+<div class="settings-overlay" data-close-settings></div>
+      <div class="settings-panel">
+        <div class="settings-section d-flex align-items-center justify-content-between">
+          <div>
+            <h5 class="mb-0 fw-bold">Theme Settings</h5>
+            <div class="text-muted small mt-1">Customize your dashboard appearance</div>
+          </div>
+          <button class="btn btn-icon btn-icon-sm" data-close-settings aria-label="Close"><i data-lucide="x" class="lucide-md"></i></button>
+        </div>
+        <div class="flex-grow-1 overflow-auto custom-scrollbar">
+          <div class="settings-section">
+            <h6>Color Mode</h6>
+            <div class="d-flex gap-2">
+              <button class="mode-card light active" data-mode="light">
+                <div class="mini-preview">
+                  <div class="mini-header"><div class="mini-bar w-18"></div></div>
+                  <div class="flex-grow-1 mini-bg-light"></div>
+                </div>
+                <div class="d-flex align-items-center justify-content-between"><strong class="text-xs">Light</strong></div>
+              </button>
+              <button class="mode-card dark" data-mode="dark">
+                <div class="mini-preview">
+                  <div class="mini-header"><div class="mini-bar w-18"></div></div>
+                  <div class="flex-grow-1 mini-bg-dark"></div>
+                </div>
+                <div class="d-flex align-items-center justify-content-between"><strong class="text-xs">Dark</strong></div>
+              </button>
+            </div>
+          </div>
+          <div class="settings-section">
+            <h6>Color Preset</h6>
+            <div class="swatch-grid"><button class="color-swatch-btn" data-color="navy">
+        <div class="swatch bg-swatch-navy"></div>
+        <div class="swatch-label">Navy</div>
+      </button><button class="color-swatch-btn" data-color="blue">
+        <div class="swatch bg-swatch-blue"></div>
+        <div class="swatch-label">Blue</div>
+      </button><button class="color-swatch-btn" data-color="green">
+        <div class="swatch bg-swatch-green"></div>
+        <div class="swatch-label">Emerald</div>
+      </button><button class="color-swatch-btn" data-color="orange">
+        <div class="swatch bg-swatch-orange"></div>
+        <div class="swatch-label">Orange</div>
+      </button><button class="color-swatch-btn" data-color="red">
+        <div class="swatch bg-swatch-red"></div>
+        <div class="swatch-label">Rose</div>
+      </button></div>
+          </div>
+          <div class="settings-section">
+            <h6>Layout</h6>
+            <label class="setting-toggle">
+              <span class="toggle-label">Collapsed Sidebar</span>
+              <span class="switch" data-setting="collapsed"></span>
+            </label>
+            <label class="setting-toggle">
+              <span class="toggle-label">Horizontal Menu</span>
+              <span class="switch" data-setting="horizontal"></span>
+            </label>
+          </div>
+          <div class="settings-section">
+            <h6>Regional</h6>
+            <label class="setting-toggle">
+              <span class="toggle-label">RTL Direction</span>
+              <span class="switch" data-setting="rtl"></span>
+            </label>
+          </div>
+        </div>
+        <div class="settings-footer">
+          <button class="btn btn-primary w-100" data-close-settings>Apply &amp; Close</button>
+        </div>
+      </div>
+<main class="app-main">
+
+  <div class="flex items-start justify-between mb-6">
+    <div>
+      <h1 class="text-2xl font-bold text-slate-900 m-0">Products</h1>
+      <p class="text-sm text-slate-500 mt-1 mb-0">Manage your product inventory</p>
+    </div>
+    <button class="btn-primary"><i data-lucide="plus" class="lucide-sm"></i>Add Product</button>
+  </div>
+
+  <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+    <div class="card p-5 flex items-center gap-4">
+      <div class="w-12 h-12 rounded-xl flex items-center justify-center bg-primary-50 text-primary-600"><i data-lucide="package" class="lucide-md"></i></div>
+      <div><p class="text-xl font-bold text-slate-800 m-0">12</p><p class="text-xs text-slate-500 m-0">Total Products</p></div>
+    </div>
+    <div class="card p-5 flex items-center gap-4">
+      <div class="w-12 h-12 rounded-xl flex items-center justify-center bg-emerald-50 text-emerald-600"><i data-lucide="dollar-sign" class="lucide-md"></i></div>
+      <div><p class="text-xl font-bold text-slate-800 m-0">$2,134k</p><p class="text-xs text-slate-500 m-0">Total Revenue</p></div>
+    </div>
+    <div class="card p-5 flex items-center gap-4">
+      <div class="w-12 h-12 rounded-xl flex items-center justify-center bg-cyan-50 text-cyan-600"><i data-lucide="shopping-cart" class="lucide-md"></i></div>
+      <div><p class="text-xl font-bold text-slate-800 m-0">8,719</p><p class="text-xs text-slate-500 m-0">Total Sales</p></div>
+    </div>
+    <div class="card p-5 flex items-center gap-4">
+      <div class="w-12 h-12 rounded-xl flex items-center justify-center bg-amber-50 text-amber-600"><i data-lucide="trending-up" class="lucide-md"></i></div>
+      <div><p class="text-xl font-bold text-slate-800 m-0">6</p><p class="text-xs text-slate-500 m-0">Low/Out of Stock</p></div>
+    </div>
+  </div>
+
+  <div class="card p-6">
+    <div class="flex flex-col flex-row-sm gap-3 mb-5">
+      <div class="relative flex-1 tk-search-wrap">
+        <i data-lucide="search" class="lucide-xs tk-search-icon"></i>
+        <input type="text" placeholder="Search products..." class="input tk-search-input">
+      </div>
+      <div class="flex gap-2">
+        <button class="inv-filter inv-filter-active" data-el-filter="all">All</button>
+        <button class="inv-filter" data-el-filter="in">In Stock</button>
+        <button class="inv-filter" data-el-filter="low">Low Stock</button>
+        <button class="inv-filter" data-el-filter="out">Out of Stock</button>
+      </div>
+    </div>
+
+    <div class="table-wrapper">
+      <table class="table table-react">
+        <thead><tr>
+          <th>Product</th>
+          <th>Category</th>
+          <th>Stock</th>
+          <th>Price</th>
+          <th>Sales</th>
+          <th>Status</th>
+          <th>Actions</th>
+        </tr></thead>
+        <tbody>
+          <tr>
+            <td><div class="flex items-center gap-3"><img src="img/unsplash/wireless-headphones.jpg" alt="Premium Wireless Headphones" class="w-10 h-10 rounded-lg ec-list-thumb"><span class="font-medium text-slate-800 text-sm">Premium Wireless Headphones</span></div></td>
+            <td><span class="inline-flex items-center px-2 py-0-5 rounded-full text-xs font-semibold bg-slate-100 text-slate-700">Electronics</span></td>
+            <td class="font-medium">245</td>
+            <td class="font-semibold">$249.99</td>
+            <td class="text-slate-500">1,240</td>
+            <td><span class="inline-flex items-center px-2 py-0-5 rounded-full text-xs font-semibold bg-emerald-100 text-emerald-700">In Stock</span></td>
+            <td><div class="flex items-center gap-1"><button class="w-7 h-7 rounded-lg bg-transparent border-0 text-slate-400"><i data-lucide="eye" class="lucide-xs"></i></button><button class="w-7 h-7 rounded-lg bg-transparent border-0 text-slate-400"><i data-lucide="edit" class="lucide-xs"></i></button><button class="w-7 h-7 rounded-lg bg-transparent border-0 text-slate-400"><i data-lucide="trash-2" class="lucide-xs"></i></button></div></td>
+          </tr>
+          <tr>
+            <td><div class="flex items-center gap-3"><img src="img/unsplash/office-chair.jpg" alt="Ergonomic Office Chair" class="w-10 h-10 rounded-lg ec-list-thumb"><span class="font-medium text-slate-800 text-sm">Ergonomic Office Chair</span></div></td>
+            <td><span class="inline-flex items-center px-2 py-0-5 rounded-full text-xs font-semibold bg-slate-100 text-slate-700">Furniture</span></td>
+            <td class="font-medium">32</td>
+            <td class="font-semibold">$599.00</td>
+            <td class="text-slate-500">389</td>
+            <td><span class="inline-flex items-center px-2 py-0-5 rounded-full text-xs font-semibold bg-amber-100 text-amber-700">Low Stock</span></td>
+            <td><div class="flex items-center gap-1"><button class="w-7 h-7 rounded-lg bg-transparent border-0 text-slate-400"><i data-lucide="eye" class="lucide-xs"></i></button><button class="w-7 h-7 rounded-lg bg-transparent border-0 text-slate-400"><i data-lucide="edit" class="lucide-xs"></i></button><button class="w-7 h-7 rounded-lg bg-transparent border-0 text-slate-400"><i data-lucide="trash-2" class="lucide-xs"></i></button></div></td>
+          </tr>
+          <tr>
+            <td><div class="flex items-center gap-3"><img src="img/unsplash/mechanical-keyboard.jpg" alt="Mechanical Keyboard Pro" class="w-10 h-10 rounded-lg ec-list-thumb"><span class="font-medium text-slate-800 text-sm">Mechanical Keyboard Pro</span></div></td>
+            <td><span class="inline-flex items-center px-2 py-0-5 rounded-full text-xs font-semibold bg-slate-100 text-slate-700">Electronics</span></td>
+            <td class="font-medium">0</td>
+            <td class="font-semibold">$149.99</td>
+            <td class="text-slate-500">892</td>
+            <td><span class="inline-flex items-center px-2 py-0-5 rounded-full text-xs font-semibold bg-red-100 text-red-700">Out of Stock</span></td>
+            <td><div class="flex items-center gap-1"><button class="w-7 h-7 rounded-lg bg-transparent border-0 text-slate-400"><i data-lucide="eye" class="lucide-xs"></i></button><button class="w-7 h-7 rounded-lg bg-transparent border-0 text-slate-400"><i data-lucide="edit" class="lucide-xs"></i></button><button class="w-7 h-7 rounded-lg bg-transparent border-0 text-slate-400"><i data-lucide="trash-2" class="lucide-xs"></i></button></div></td>
+          </tr>
+          <tr>
+            <td><div class="flex items-center gap-3"><img src="img/unsplash/minimalist-watch.jpg" alt="Minimalist Watch Series 5" class="w-10 h-10 rounded-lg ec-list-thumb"><span class="font-medium text-slate-800 text-sm">Minimalist Watch Series 5</span></div></td>
+            <td><span class="inline-flex items-center px-2 py-0-5 rounded-full text-xs font-semibold bg-slate-100 text-slate-700">Accessories</span></td>
+            <td class="font-medium">78</td>
+            <td class="font-semibold">$319.00</td>
+            <td class="text-slate-500">456</td>
+            <td><span class="inline-flex items-center px-2 py-0-5 rounded-full text-xs font-semibold bg-emerald-100 text-emerald-700">In Stock</span></td>
+            <td><div class="flex items-center gap-1"><button class="w-7 h-7 rounded-lg bg-transparent border-0 text-slate-400"><i data-lucide="eye" class="lucide-xs"></i></button><button class="w-7 h-7 rounded-lg bg-transparent border-0 text-slate-400"><i data-lucide="edit" class="lucide-xs"></i></button><button class="w-7 h-7 rounded-lg bg-transparent border-0 text-slate-400"><i data-lucide="trash-2" class="lucide-xs"></i></button></div></td>
+          </tr>
+          <tr>
+            <td><div class="flex items-center gap-3"><img src="img/unsplash/curved-monitor.jpg" alt="4K Curved Monitor 32"" class="w-10 h-10 rounded-lg ec-list-thumb"><span class="font-medium text-slate-800 text-sm">4K Curved Monitor 32"</span></div></td>
+            <td><span class="inline-flex items-center px-2 py-0-5 rounded-full text-xs font-semibold bg-slate-100 text-slate-700">Electronics</span></td>
+            <td class="font-medium">15</td>
+            <td class="font-semibold">$799.99</td>
+            <td class="text-slate-500">234</td>
+            <td><span class="inline-flex items-center px-2 py-0-5 rounded-full text-xs font-semibold bg-amber-100 text-amber-700">Low Stock</span></td>
+            <td><div class="flex items-center gap-1"><button class="w-7 h-7 rounded-lg bg-transparent border-0 text-slate-400"><i data-lucide="eye" class="lucide-xs"></i></button><button class="w-7 h-7 rounded-lg bg-transparent border-0 text-slate-400"><i data-lucide="edit" class="lucide-xs"></i></button><button class="w-7 h-7 rounded-lg bg-transparent border-0 text-slate-400"><i data-lucide="trash-2" class="lucide-xs"></i></button></div></td>
+          </tr>
+          <tr>
+            <td><div class="flex items-center gap-3"><img src="img/unsplash/leather-laptop-bag.jpg" alt="Leather Laptop Bag" class="w-10 h-10 rounded-lg ec-list-thumb"><span class="font-medium text-slate-800 text-sm">Leather Laptop Bag</span></div></td>
+            <td><span class="inline-flex items-center px-2 py-0-5 rounded-full text-xs font-semibold bg-slate-100 text-slate-700">Accessories</span></td>
+            <td class="font-medium">120</td>
+            <td class="font-semibold">$89.00</td>
+            <td class="text-slate-500">678</td>
+            <td><span class="inline-flex items-center px-2 py-0-5 rounded-full text-xs font-semibold bg-emerald-100 text-emerald-700">In Stock</span></td>
+            <td><div class="flex items-center gap-1"><button class="w-7 h-7 rounded-lg bg-transparent border-0 text-slate-400"><i data-lucide="eye" class="lucide-xs"></i></button><button class="w-7 h-7 rounded-lg bg-transparent border-0 text-slate-400"><i data-lucide="edit" class="lucide-xs"></i></button><button class="w-7 h-7 rounded-lg bg-transparent border-0 text-slate-400"><i data-lucide="trash-2" class="lucide-xs"></i></button></div></td>
+          </tr>
+          <tr>
+            <td><div class="flex items-center gap-3"><img src="img/unsplash/smart-speaker.jpg" alt="Smart Home Speaker" class="w-10 h-10 rounded-lg ec-list-thumb"><span class="font-medium text-slate-800 text-sm">Smart Home Speaker</span></div></td>
+            <td><span class="inline-flex items-center px-2 py-0-5 rounded-full text-xs font-semibold bg-slate-100 text-slate-700">Electronics</span></td>
+            <td class="font-medium">0</td>
+            <td class="font-semibold">$129.99</td>
+            <td class="text-slate-500">1,120</td>
+            <td><span class="inline-flex items-center px-2 py-0-5 rounded-full text-xs font-semibold bg-red-100 text-red-700">Out of Stock</span></td>
+            <td><div class="flex items-center gap-1"><button class="w-7 h-7 rounded-lg bg-transparent border-0 text-slate-400"><i data-lucide="eye" class="lucide-xs"></i></button><button class="w-7 h-7 rounded-lg bg-transparent border-0 text-slate-400"><i data-lucide="edit" class="lucide-xs"></i></button><button class="w-7 h-7 rounded-lg bg-transparent border-0 text-slate-400"><i data-lucide="trash-2" class="lucide-xs"></i></button></div></td>
+          </tr>
+          <tr>
+            <td><div class="flex items-center gap-3"><img src="img/unsplash/standing-desk.jpg" alt="Standing Desk Electric" class="w-10 h-10 rounded-lg ec-list-thumb"><span class="font-medium text-slate-800 text-sm">Standing Desk Electric</span></div></td>
+            <td><span class="inline-flex items-center px-2 py-0-5 rounded-full text-xs font-semibold bg-slate-100 text-slate-700">Furniture</span></td>
+            <td class="font-medium">8</td>
+            <td class="font-semibold">$899.00</td>
+            <td class="text-slate-500">167</td>
+            <td><span class="inline-flex items-center px-2 py-0-5 rounded-full text-xs font-semibold bg-amber-100 text-amber-700">Low Stock</span></td>
+            <td><div class="flex items-center gap-1"><button class="w-7 h-7 rounded-lg bg-transparent border-0 text-slate-400"><i data-lucide="eye" class="lucide-xs"></i></button><button class="w-7 h-7 rounded-lg bg-transparent border-0 text-slate-400"><i data-lucide="edit" class="lucide-xs"></i></button><button class="w-7 h-7 rounded-lg bg-transparent border-0 text-slate-400"><i data-lucide="trash-2" class="lucide-xs"></i></button></div></td>
+          </tr>
+          <tr>
+            <td><div class="flex items-center gap-3"><img src="img/unsplash/webcam-device.jpg" alt="Webcam 4K Ultra HD" class="w-10 h-10 rounded-lg ec-list-thumb"><span class="font-medium text-slate-800 text-sm">Webcam 4K Ultra HD</span></div></td>
+            <td><span class="inline-flex items-center px-2 py-0-5 rounded-full text-xs font-semibold bg-slate-100 text-slate-700">Electronics</span></td>
+            <td class="font-medium">190</td>
+            <td class="font-semibold">$199.99</td>
+            <td class="text-slate-500">543</td>
+            <td><span class="inline-flex items-center px-2 py-0-5 rounded-full text-xs font-semibold bg-emerald-100 text-emerald-700">In Stock</span></td>
+            <td><div class="flex items-center gap-1"><button class="w-7 h-7 rounded-lg bg-transparent border-0 text-slate-400"><i data-lucide="eye" class="lucide-xs"></i></button><button class="w-7 h-7 rounded-lg bg-transparent border-0 text-slate-400"><i data-lucide="edit" class="lucide-xs"></i></button><button class="w-7 h-7 rounded-lg bg-transparent border-0 text-slate-400"><i data-lucide="trash-2" class="lucide-xs"></i></button></div></td>
+          </tr>
+          <tr>
+            <td><div class="flex items-center gap-3"><img src="img/unsplash/wireless-earbuds.jpg" alt="Noise Cancelling Earbuds" class="w-10 h-10 rounded-lg ec-list-thumb"><span class="font-medium text-slate-800 text-sm">Noise Cancelling Earbuds</span></div></td>
+            <td><span class="inline-flex items-center px-2 py-0-5 rounded-full text-xs font-semibold bg-slate-100 text-slate-700">Electronics</span></td>
+            <td class="font-medium">312</td>
+            <td class="font-semibold">$179.00</td>
+            <td class="text-slate-500">1,876</td>
+            <td><span class="inline-flex items-center px-2 py-0-5 rounded-full text-xs font-semibold bg-emerald-100 text-emerald-700">In Stock</span></td>
+            <td><div class="flex items-center gap-1"><button class="w-7 h-7 rounded-lg bg-transparent border-0 text-slate-400"><i data-lucide="eye" class="lucide-xs"></i></button><button class="w-7 h-7 rounded-lg bg-transparent border-0 text-slate-400"><i data-lucide="edit" class="lucide-xs"></i></button><button class="w-7 h-7 rounded-lg bg-transparent border-0 text-slate-400"><i data-lucide="trash-2" class="lucide-xs"></i></button></div></td>
+          </tr>
+          <tr>
+            <td><div class="flex items-center gap-3"><img src="img/unsplash/usb-hub.jpg" alt="USB-C Hub 12-in-1" class="w-10 h-10 rounded-lg ec-list-thumb"><span class="font-medium text-slate-800 text-sm">USB-C Hub 12-in-1</span></div></td>
+            <td><span class="inline-flex items-center px-2 py-0-5 rounded-full text-xs font-semibold bg-slate-100 text-slate-700">Electronics</span></td>
+            <td class="font-medium">67</td>
+            <td class="font-semibold">$79.99</td>
+            <td class="text-slate-500">890</td>
+            <td><span class="inline-flex items-center px-2 py-0-5 rounded-full text-xs font-semibold bg-emerald-100 text-emerald-700">In Stock</span></td>
+            <td><div class="flex items-center gap-1"><button class="w-7 h-7 rounded-lg bg-transparent border-0 text-slate-400"><i data-lucide="eye" class="lucide-xs"></i></button><button class="w-7 h-7 rounded-lg bg-transparent border-0 text-slate-400"><i data-lucide="edit" class="lucide-xs"></i></button><button class="w-7 h-7 rounded-lg bg-transparent border-0 text-slate-400"><i data-lucide="trash-2" class="lucide-xs"></i></button></div></td>
+          </tr>
+          <tr>
+            <td><div class="flex items-center gap-3"><img src="img/unsplash/desk-lamp.jpg" alt="Desk Lamp LED Pro" class="w-10 h-10 rounded-lg ec-list-thumb"><span class="font-medium text-slate-800 text-sm">Desk Lamp LED Pro</span></div></td>
+            <td><span class="inline-flex items-center px-2 py-0-5 rounded-full text-xs font-semibold bg-slate-100 text-slate-700">Furniture</span></td>
+            <td class="font-medium">4</td>
+            <td class="font-semibold">$59.99</td>
+            <td class="text-slate-500">234</td>
+            <td><span class="inline-flex items-center px-2 py-0-5 rounded-full text-xs font-semibold bg-amber-100 text-amber-700">Low Stock</span></td>
+            <td><div class="flex items-center gap-1"><button class="w-7 h-7 rounded-lg bg-transparent border-0 text-slate-400"><i data-lucide="eye" class="lucide-xs"></i></button><button class="w-7 h-7 rounded-lg bg-transparent border-0 text-slate-400"><i data-lucide="edit" class="lucide-xs"></i></button><button class="w-7 h-7 rounded-lg bg-transparent border-0 text-slate-400"><i data-lucide="trash-2" class="lucide-xs"></i></button></div></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</main>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lucide@latest/dist/umd/lucide.min.js"></script>
+</body>
+</html>

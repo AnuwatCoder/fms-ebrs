@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/svg+xml" href="img/logo.svg"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Music Dashboard | Liner Admin</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/css/theme.css" rel="stylesheet">
+  <script src="assets/js/app.js"></script>
+</head>
+<body>
+
+<aside class="app-sidebar" data-sidebar>
+        <a href="dashboard.html" class="sidebar-brand text-decoration-none">
+          <img src="img/logo.svg" alt="Liner" class="brand-logo-lg-img">
+          <div class="brand-text">
+            <div class="brand-name">Liner</div>
+            <div class="brand-sub">Admin</div>
+          </div>
+        </a>
+        <nav class="sidebar-nav custom-scrollbar"><div class="sidebar-group-title">Dashboards</div><a href="dashboard.html" class="sidebar-nav-link" data-path="dashboard.html">
+            <i data-lucide="layout-dashboard" class="lucide-md"></i><span class="link-label">Modern</span>
+          </a><a href="analytics.html" class="sidebar-nav-link" data-path="analytics.html">
+            <i data-lucide="activity" class="lucide-md"></i><span class="link-label">Analytics</span>
+          </a><a href="ecommerce.html" class="sidebar-nav-link" data-path="ecommerce.html">
+            <i data-lucide="shopping-cart" class="lucide-md"></i><span class="link-label">eCommerce</span>
+          </a><a href="music.html" class="sidebar-nav-link" data-path="music.html">
+            <i data-lucide="music" class="lucide-md"></i><span class="link-label">Music</span>
+          </a><a href="general.html" class="sidebar-nav-link" data-path="general.html">
+            <i data-lucide="globe-2" class="lucide-md"></i><span class="link-label">General</span>
+          </a><div class="sidebar-group-title">Apps</div><a href="calendar.html" class="sidebar-nav-link" data-path="calendar.html">
+            <i data-lucide="calendar" class="lucide-md"></i><span class="link-label">Calendar</span>
+          </a><a href="kanban.html" class="sidebar-nav-link" data-path="kanban.html">
+            <i data-lucide="kanban-square" class="lucide-md"></i><span class="link-label">Kanban</span>
+          </a><a href="chat.html" class="sidebar-nav-link" data-path="chat.html">
+            <i data-lucide="message-square" class="lucide-md"></i><span class="link-label">Chat</span>
+          </a><a href="email.html" class="sidebar-nav-link" data-path="email.html">
+            <i data-lucide="mail" class="lucide-md"></i><span class="link-label">Email</span>
+          </a><a href="notes.html" class="sidebar-nav-link" data-path="notes.html">
+            <i data-lucide="sticky-note" class="lucide-md"></i><span class="link-label">Notes</span>
+          </a><a href="contacts.html" class="sidebar-nav-link" data-path="contacts.html">
+            <i data-lucide="users" class="lucide-md"></i><span class="link-label">Contacts</span>
+          </a><a href="tickets.html" class="sidebar-nav-link" data-path="tickets.html">
+            <i data-lucide="ticket" class="lucide-md"></i><span class="link-label">Tickets</span>
+          </a><a href="invoice-list.html" class="sidebar-nav-link" data-path="invoice-list.html">
+            <i data-lucide="file-text" class="lucide-md"></i><span class="link-label">Invoice</span>
+          </a><a href="user-profile.html" class="sidebar-nav-link" data-path="user-profile.html">
+            <i data-lucide="user-circle" class="lucide-md"></i><span class="link-label">User Profile</span>
+          </a>
+            <a href="#" class="sidebar-nav-link sidebar-parent" data-toggle-submenu data-paths="blog-posts.html,blog-post.html,blog-detail.html">
+              <i data-lucide="book-open" class="lucide-md"></i>
+              <span class="link-label">Blog</span>
+              <i data-lucide="chevron-down" class="lucide-sm toggle-icon"></i>
+            </a>
+            <div class="sidebar-submenu"><a href="blog-posts.html" class="sidebar-nav-link" data-path="blog-posts.html">
+              <i data-lucide="book-open" class="lucide-sm"></i><span class="link-label">Blog Posts</span>
+            </a><a href="blog-post.html" class="sidebar-nav-link" data-path="blog-post.html">
+              <i data-lucide="file-text" class="lucide-sm"></i><span class="link-label">Blog Post</span>
+            </a><a href="blog-detail.html" class="sidebar-nav-link" data-path="blog-detail.html">
+              <i data-lucide="eye" class="lucide-sm"></i><span class="link-label">Blog Detail</span>
+            </a></div>
+            <a href="#" class="sidebar-nav-link sidebar-parent" data-toggle-submenu data-paths="ecommerce-shop.html,ecommerce-detail.html,ecommerce-list.html,ecommerce-checkout.html">
+              <i data-lucide="shopping-bag" class="lucide-md"></i>
+              <span class="link-label">eCommerce</span>
+              <i data-lucide="chevron-down" class="lucide-sm toggle-icon"></i>
+            </a>
+            <div class="sidebar-submenu"><a href="ecommerce-shop.html" class="sidebar-nav-link" data-path="ecommerce-shop.html">
+              <i data-lucide="store" class="lucide-sm"></i><span class="link-label">Shop</span>
+            </a><a href="ecommerce-detail.html" class="sidebar-nav-link" data-path="ecommerce-detail.html">
+              <i data-lucide="package" class="lucide-sm"></i><span class="link-label">Detail</span>
+            </a><a href="ecommerce-list.html" class="sidebar-nav-link" data-path="ecommerce-list.html">
+              <i data-lucide="list" class="lucide-sm"></i><span class="link-label">List</span>
+            </a><a href="ecommerce-checkout.html" class="sidebar-nav-link" data-path="ecommerce-checkout.html">
+              <i data-lucide="credit-card" class="lucide-sm"></i><span class="link-label">Checkout</span>
+            </a></div><div class="sidebar-group-title">UI Elements</div><a href="alert.html" class="sidebar-nav-link" data-path="alert.html">
+            <i data-lucide="alert-circle" class="lucide-md"></i><span class="link-label">Alert</span>
+          </a><a href="accordion.html" class="sidebar-nav-link" data-path="accordion.html">
+            <i data-lucide="layers" class="lucide-md"></i><span class="link-label">Accordion</span>
+          </a><a href="avatar.html" class="sidebar-nav-link" data-path="avatar.html">
+            <i data-lucide="user-circle" class="lucide-md"></i><span class="link-label">Avatar</span>
+          </a><a href="chip.html" class="sidebar-nav-link" data-path="chip.html">
+            <i data-lucide="tag" class="lucide-md"></i><span class="link-label">Chip</span>
+          </a><a href="dialog.html" class="sidebar-nav-link" data-path="dialog.html">
+            <i data-lucide="message-square" class="lucide-md"></i><span class="link-label">Dialog</span>
+          </a><a href="list.html" class="sidebar-nav-link" data-path="list.html">
+            <i data-lucide="align-left" class="lucide-md"></i><span class="link-label">List</span>
+          </a><a href="popover.html" class="sidebar-nav-link" data-path="popover.html">
+            <i data-lucide="message-circle" class="lucide-md"></i><span class="link-label">Popover</span>
+          </a><a href="rating.html" class="sidebar-nav-link" data-path="rating.html">
+            <i data-lucide="star" class="lucide-md"></i><span class="link-label">Rating</span>
+          </a><a href="tabs.html" class="sidebar-nav-link" data-path="tabs.html">
+            <i data-lucide="layout-grid" class="lucide-md"></i><span class="link-label">Tabs</span>
+          </a><a href="tooltip.html" class="sidebar-nav-link" data-path="tooltip.html">
+            <i data-lucide="info" class="lucide-md"></i><span class="link-label">Tooltip</span>
+          </a><a href="typography.html" class="sidebar-nav-link" data-path="typography.html">
+            <i data-lucide="type" class="lucide-md"></i><span class="link-label">Typography</span>
+          </a><a href="buttons.html" class="sidebar-nav-link" data-path="buttons.html">
+            <i data-lucide="zap" class="lucide-md"></i><span class="link-label">Buttons</span>
+          </a><a href="cards.html" class="sidebar-nav-link" data-path="cards.html">
+            <i data-lucide="square-stack" class="lucide-md"></i><span class="link-label">Cards</span>
+          </a><div class="sidebar-group-title">Forms</div><a href="form-elements.html" class="sidebar-nav-link" data-path="form-elements.html">
+            <i data-lucide="square-pen" class="lucide-md"></i><span class="link-label">Form Elements</span>
+          </a><a href="form-layouts.html" class="sidebar-nav-link" data-path="form-layouts.html">
+            <i data-lucide="layout-template" class="lucide-md"></i><span class="link-label">Form Layouts</span>
+          </a><a href="form-horizontal.html" class="sidebar-nav-link" data-path="form-horizontal.html">
+            <i data-lucide="rows" class="lucide-md"></i><span class="link-label">Form Horizontal</span>
+          </a><a href="form-validation.html" class="sidebar-nav-link" data-path="form-validation.html">
+            <i data-lucide="check-circle" class="lucide-md"></i><span class="link-label">Form Validation</span>
+          </a><div class="sidebar-group-title">Tables</div><a href="basic-table.html" class="sidebar-nav-link" data-path="basic-table.html">
+            <i data-lucide="table-2" class="lucide-md"></i><span class="link-label">Basic Table</span>
+          </a><a href="enhanced-table.html" class="sidebar-nav-link" data-path="enhanced-table.html">
+            <i data-lucide="table-properties" class="lucide-md"></i><span class="link-label">Enhanced Table</span>
+          </a><div class="sidebar-group-title">Charts</div><a href="line-chart.html" class="sidebar-nav-link" data-path="line-chart.html">
+            <i data-lucide="line-chart" class="lucide-md"></i><span class="link-label">Line Chart</span>
+          </a><a href="area-chart.html" class="sidebar-nav-link" data-path="area-chart.html">
+            <i data-lucide="area-chart" class="lucide-md"></i><span class="link-label">Area Chart</span>
+          </a><a href="bar-chart.html" class="sidebar-nav-link" data-path="bar-chart.html">
+            <i data-lucide="bar-chart-3" class="lucide-md"></i><span class="link-label">Bar Chart</span>
+          </a><a href="column-chart.html" class="sidebar-nav-link" data-path="column-chart.html">
+            <i data-lucide="bar-chart-2" class="lucide-md"></i><span class="link-label">Column Chart</span>
+          </a><a href="donut-chart.html" class="sidebar-nav-link" data-path="donut-chart.html">
+            <i data-lucide="pie-chart" class="lucide-md"></i><span class="link-label">Donut Chart</span>
+          </a><a href="radialbar-chart.html" class="sidebar-nav-link" data-path="radialbar-chart.html">
+            <i data-lucide="activity" class="lucide-md"></i><span class="link-label">Radialbar Chart</span>
+          </a><div class="sidebar-group-title">Pages</div><a href="account.html" class="sidebar-nav-link" data-path="account.html">
+            <i data-lucide="settings" class="lucide-md"></i><span class="link-label">Account Settings</span>
+          </a><a href="pricing.html" class="sidebar-nav-link" data-path="pricing.html">
+            <i data-lucide="credit-card" class="lucide-md"></i><span class="link-label">Pricing</span>
+          </a><a href="faq.html" class="sidebar-nav-link" data-path="faq.html">
+            <i data-lucide="help-circle" class="lucide-md"></i><span class="link-label">FAQ</span>
+          </a><a href="widgets.html" class="sidebar-nav-link" data-path="widgets.html">
+            <i data-lucide="layout-grid" class="lucide-md"></i><span class="link-label">Widgets</span>
+          </a><a href="apikeys.html" class="sidebar-nav-link" data-path="apikeys.html">
+            <i data-lucide="key" class="lucide-md"></i><span class="link-label">API Keys</span>
+          </a><div class="sidebar-group-title">Icons</div><a href="lucide-icons.html" class="sidebar-nav-link" data-path="lucide-icons.html">
+            <i data-lucide="smile" class="lucide-md"></i><span class="link-label">Lucide Icons</span>
+          </a><a href="custom-icons.html" class="sidebar-nav-link" data-path="custom-icons.html">
+            <i data-lucide="star" class="lucide-md"></i><span class="link-label">Custom Icons</span>
+          </a><div class="sidebar-group-title">Auth</div><a href="login.html" class="sidebar-nav-link" data-path="login.html">
+            <i data-lucide="log-in" class="lucide-md"></i><span class="link-label">Login</span>
+          </a><a href="register.html" class="sidebar-nav-link" data-path="register.html">
+            <i data-lucide="user-plus" class="lucide-md"></i><span class="link-label">Register</span>
+          </a><a href="forgot-password.html" class="sidebar-nav-link" data-path="forgot-password.html">
+            <i data-lucide="key-round" class="lucide-md"></i><span class="link-label">Forgot Password</span>
+          </a><a href="two-steps.html" class="sidebar-nav-link" data-path="two-steps.html">
+            <i data-lucide="shield" class="lucide-md"></i><span class="link-label">Two Step</span>
+          </a><a href="error.html" class="sidebar-nav-link" data-path="error.html">
+            <i data-lucide="alert-circle" class="lucide-md"></i><span class="link-label">Error</span>
+          </a><a href="maintenance.html" class="sidebar-nav-link" data-path="maintenance.html">
+            <i data-lucide="wrench" class="lucide-md"></i><span class="link-label">Maintenance</span>
+          </a></nav>
+        <div class="sidebar-footer">
+          <div class="user-mini">
+            <div class="user-avatar-mini">JD</div>
+            <div class="sidebar-footer-info flex-grow-1 overflow-hidden">
+              <div class="user-mini-name">John Doe</div>
+              <div class="user-mini-email">john@liner.com</div>
+            </div>
+            <i data-lucide="chevron-right" class="lucide-sm sidebar-footer-info"></i>
+          </div>
+        </div>
+      </aside>
+      <div class="sidebar-backdrop"></div>
+<header class="app-header">
+        <button class="header-icon-btn d-lg-none" data-toggle-mobile-sidebar aria-label="Menu"><i data-lucide="menu" class="lucide-md"></i></button>
+        <button class="header-icon-btn d-none d-lg-flex" data-toggle-sidebar aria-label="Toggle"><i data-lucide="menu" class="lucide-md"></i></button>
+        <div class="header-breadcrumb d-none d-md-flex" data-breadcrumb><span class="text-muted">Home</span></div>
+        <div class="flex-grow-1"></div>
+        <div class="search-wrap d-none d-sm-block">
+          <input type="text" class="form-control form-control-sm search-input w-200" placeholder="Search...">
+          <i data-lucide="search" class="lucide-sm search-icon"></i>
+        </div>
+        <button class="header-icon-btn" data-toggle-dark aria-label="Dark"><i data-lucide="moon" class="lucide-md"></i></button>
+        <div class="dropdown">
+          <button class="header-icon-btn" data-bs-toggle="dropdown" aria-label="Notifications">
+            <i data-lucide="bell" class="lucide-md"></i>
+            <span class="notif-dot">3</span>
+          </button>
+          <div class="dropdown-menu dropdown-menu-end notif-menu">
+            <div class="notif-header">
+              <strong>Notifications</strong>
+              <span class="badge badge-soft-primary">3 new</span>
+            </div>
+            <div class="notif-list custom-scrollbar">
+              <div class="notif-item unread">
+                <div class="icon-circle icon-circle-sm icon-circle-bg-success-soft"><i data-lucide="check-circle-2" class="lucide-sm"></i></div>
+                <div class="flex-grow-1">
+                  <div class="notif-title">Order Completed</div>
+                  <div class="notif-msg">Order #1234 has been fulfilled</div>
+                  <div class="notif-time">2 min ago</div>
+                </div>
+              </div>
+              <div class="notif-item unread">
+                <div class="icon-circle icon-circle-sm icon-circle-bg-info-soft"><i data-lucide="info" class="lucide-sm"></i></div>
+                <div class="flex-grow-1">
+                  <div class="notif-title">New User Registered</div>
+                  <div class="notif-msg">Sarah Johnson joined the platform</div>
+                  <div class="notif-time">15 min ago</div>
+                </div>
+              </div>
+              <div class="notif-item">
+                <div class="icon-circle icon-circle-sm icon-circle-bg-warning-soft"><i data-lucide="alert-circle" class="lucide-sm"></i></div>
+                <div class="flex-grow-1">
+                  <div class="notif-title">Low Stock Alert</div>
+                  <div class="notif-msg">Wireless Mouse is running low</div>
+                  <div class="notif-time">1 hr ago</div>
+                </div>
+              </div>
+            </div>
+            <div class="notif-footer">
+              <a href="#" class="text-primary fw-medium notif-footer-link">View all notifications</a>
+            </div>
+          </div>
+        </div>
+        <button class="header-icon-btn" data-toggle-settings aria-label="Settings"><i data-lucide="settings" class="lucide-md"></i></button>
+        <div class="dropdown">
+          <button class="user-button" data-bs-toggle="dropdown">
+            <div class="avatar avatar-sm">JD</div>
+            <div class="d-none d-sm-block text-start">
+              <div class="user-name">John Doe</div>
+              <div class="user-role">Admin</div>
+            </div>
+            <i data-lucide="chevron-down" class="lucide-sm d-none d-sm-inline"></i>
+          </button>
+          <div class="dropdown-menu dropdown-menu-end user-menu">
+            <div class="user-menu-header">
+              <div class="fw-semibold">John Doe</div>
+              <div class="text-muted small">john@liner.com</div>
+            </div>
+            <a class="dropdown-item user-menu-item" href="account.html"><i data-lucide="user" class="lucide-sm"></i> My Profile</a>
+            <a class="dropdown-item user-menu-item" href="pricing.html"><i data-lucide="credit-card" class="lucide-sm"></i> Billing</a>
+            <a class="dropdown-item user-menu-item" href="account.html"><i data-lucide="shield" class="lucide-sm"></i> Security</a>
+            <a class="dropdown-item user-menu-item" href="faq.html"><i data-lucide="help-circle" class="lucide-sm"></i> Help Center</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item user-menu-item text-danger" href="login.html"><i data-lucide="log-out" class="lucide-sm"></i> Sign Out</a>
+          </div>
+        </div>
+      </header>
+<div class="settings-overlay" data-close-settings></div>
+      <div class="settings-panel">
+        <div class="settings-section d-flex align-items-center justify-content-between">
+          <div>
+            <h5 class="mb-0 fw-bold">Theme Settings</h5>
+            <div class="text-muted small mt-1">Customize your dashboard appearance</div>
+          </div>
+          <button class="btn btn-icon btn-icon-sm" data-close-settings aria-label="Close"><i data-lucide="x" class="lucide-md"></i></button>
+        </div>
+        <div class="flex-grow-1 overflow-auto custom-scrollbar">
+          <div class="settings-section">
+            <h6>Color Mode</h6>
+            <div class="d-flex gap-2">
+              <button class="mode-card light active" data-mode="light">
+                <div class="mini-preview">
+                  <div class="mini-header"><div class="mini-bar w-18"></div></div>
+                  <div class="flex-grow-1 mini-bg-light"></div>
+                </div>
+                <div class="d-flex align-items-center justify-content-between"><strong class="text-xs">Light</strong></div>
+              </button>
+              <button class="mode-card dark" data-mode="dark">
+                <div class="mini-preview">
+                  <div class="mini-header"><div class="mini-bar w-18"></div></div>
+                  <div class="flex-grow-1 mini-bg-dark"></div>
+                </div>
+                <div class="d-flex align-items-center justify-content-between"><strong class="text-xs">Dark</strong></div>
+              </button>
+            </div>
+          </div>
+          <div class="settings-section">
+            <h6>Color Preset</h6>
+            <div class="swatch-grid"><button class="color-swatch-btn" data-color="navy">
+        <div class="swatch bg-swatch-navy"></div>
+        <div class="swatch-label">Navy</div>
+      </button><button class="color-swatch-btn" data-color="blue">
+        <div class="swatch bg-swatch-blue"></div>
+        <div class="swatch-label">Blue</div>
+      </button><button class="color-swatch-btn" data-color="green">
+        <div class="swatch bg-swatch-green"></div>
+        <div class="swatch-label">Emerald</div>
+      </button><button class="color-swatch-btn" data-color="orange">
+        <div class="swatch bg-swatch-orange"></div>
+        <div class="swatch-label">Orange</div>
+      </button><button class="color-swatch-btn" data-color="red">
+        <div class="swatch bg-swatch-red"></div>
+        <div class="swatch-label">Rose</div>
+      </button></div>
+          </div>
+          <div class="settings-section">
+            <h6>Layout</h6>
+            <label class="setting-toggle">
+              <span class="toggle-label">Collapsed Sidebar</span>
+              <span class="switch" data-setting="collapsed"></span>
+            </label>
+            <label class="setting-toggle">
+              <span class="toggle-label">Horizontal Menu</span>
+              <span class="switch" data-setting="horizontal"></span>
+            </label>
+          </div>
+          <div class="settings-section">
+            <h6>Regional</h6>
+            <label class="setting-toggle">
+              <span class="toggle-label">RTL Direction</span>
+              <span class="switch" data-setting="rtl"></span>
+            </label>
+          </div>
+        </div>
+        <div class="settings-footer">
+          <button class="btn btn-primary w-100" data-close-settings>Apply &amp; Close</button>
+        </div>
+      </div>
+<main class="app-main">
+  <div class="page-header">
+    <div>
+      <h1>Music Dashboard</h1>
+      <p>Your listening stats, favorites and activity</p>
+    </div>
+    <div class="d-flex gap-2">
+      <button class="btn btn-outline-secondary btn-sm d-flex align-items-center gap-1"><i data-lucide="headphones" class="lucide-sm"></i>Open Player</button>
+    </div>
+  </div>
+
+  <!-- Welcome + Total Streams -->
+  <div class="row g-3 mb-3">
+    <div class="col-12 col-lg-6">
+      <div class="mu-welcome rounded-2xl p-6 relative overflow-hidden h-100">
+        <div class="relative mu-welcome-content">
+          <h3 class="text-lg font-bold text-slate-800 m-0">Welcome back, DJ! 🎶</h3>
+          <p class="text-sm text-slate-500 mt-1 mb-0">You've streamed <span class="font-semibold text-primary-600">38% more</span> music this week</p>
+          <div class="space-y-3 mt-5">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-xl bg-primary-100 flex items-center justify-center shrink-0"><i data-lucide="music-2" class="lucide-md text-primary-600"></i></div>
+              <div><p class="text-sm font-semibold text-slate-800 m-0">64 new tracks</p><p class="text-xs text-slate-400 m-0">Added to library</p></div>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-xl bg-amber-100 flex items-center justify-center shrink-0"><i data-lucide="headphones" class="lucide-md text-amber-600"></i></div>
+              <div><p class="text-sm font-semibold text-slate-800 m-0">4 playlists</p><p class="text-xs text-slate-400 m-0">Shared this week</p></div>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-xl bg-emerald-100 flex items-center justify-center shrink-0"><i data-lucide="podcast" class="lucide-md text-emerald-600"></i></div>
+              <div><p class="text-sm font-semibold text-slate-800 m-0">12 episodes</p><p class="text-xs text-slate-400 m-0">Fully listened</p></div>
+            </div>
+          </div>
+        </div>
+        <svg class="mu-welcome-svg" viewBox="0 0 200 200" fill="none">
+          <rect x="40" y="140" width="120" height="8" rx="4" fill="#c7d2fe"></rect>
+          <rect x="60" y="148" width="6" height="30" rx="2" fill="#a5b4fc"></rect>
+          <rect x="134" y="148" width="6" height="30" rx="2" fill="#a5b4fc"></rect>
+          <rect x="55" y="115" width="56" height="28" rx="4" fill="#e0e7ff" stroke="#a5b4fc" stroke-width="1.5"></rect>
+          <rect x="60" y="120" width="46" height="18" rx="2" fill="#c7d2fe"></rect>
+          <circle cx="150" cy="80" r="6" fill="#6366f1" opacity="0.6"></circle>
+          <line x1="156" y1="80" x2="156" y2="55" stroke="#6366f1" stroke-width="2" opacity="0.6"></line>
+          <circle cx="160" cy="55" r="4" fill="#6366f1" opacity="0.4"></circle>
+          <circle cx="130" cy="100" r="5" fill="#8b5cf6" opacity="0.5"></circle>
+          <line x1="135" y1="100" x2="135" y2="78" stroke="#8b5cf6" stroke-width="2" opacity="0.5"></line>
+          <circle cx="170" cy="110" r="4" fill="#06b6d4" opacity="0.5"></circle>
+          <path d="M80 90 Q80 65 100 65 Q120 65 120 90" stroke="#6366f1" stroke-width="3" fill="none" opacity="0.5" stroke-linecap="round"></path>
+          <rect x="75" y="88" width="10" height="14" rx="4" fill="#6366f1" opacity="0.5"></rect>
+          <rect x="115" y="88" width="10" height="14" rx="4" fill="#6366f1" opacity="0.5"></rect>
+          <circle cx="45" cy="75" r="2" fill="#f59e0b" opacity="0.6"></circle>
+          <circle cx="165" cy="45" r="2.5" fill="#10b981" opacity="0.5"></circle>
+          <circle cx="55" cy="55" r="1.5" fill="#f43f5e" opacity="0.5"></circle>
+        </svg>
+      </div>
+    </div>
+    <div class="col-12 col-lg-6">
+      <div class="card h-100"><div class="card-body">
+        <div class="d-flex justify-content-between align-items-center mb-2">
+          <div>
+            <h5 class="fw-bold mb-0">Total Streams</h5>
+            <small class="text-muted text-xs">Weekly streaming activity</small>
+          </div>
+          <select class="form-select form-select-sm w-140"><option>This Week</option><option>Last Week</option></select>
+        </div>
+        <div id="chart-streams"></div>
+      </div></div>
+    </div>
+  </div>
+
+  <!-- Quick metric cards (4) -->
+  <div class="row g-3 mb-3">
+    <div class="col-12 col-sm-6 col-lg-3"><div class="card h-100"><div class="card-body">
+      <div class="d-flex justify-content-between align-items-start mb-1">
+        <h6 class="fw-bold mb-0">Latest Hit</h6>
+        <span class="badge badge-soft-success text-xs">86.5%</span>
+      </div>
+      <p class="text-muted text-xs mb-3">Last 7 days</p>
+      <div class="d-flex justify-content-between mb-2"><span class="fw-bold small">98,500</span><span class="fw-bold small">1,22,900</span></div>
+      <div class="progress progress-thin mb-2"><div class="progress-bar bg-primary w-76p"></div></div>
+      <p class="text-muted text-xs mb-3">Tracks played: 18/22</p>
+      <p class="text-muted text-xs mb-2 fw-medium">Recent Listeners</p>
+      <div class="avatar-stack-inline">
+        <span class="avatar-mini bg-purple-400">TW</span>
+        <span class="avatar-mini bg-cyan-400">DL</span>
+        <span class="avatar-mini bg-amber-400">ES</span>
+        <span class="avatar-mini bg-emerald-400">BE</span>
+        <span class="text-primary text-xs fw-semibold ms-2">+8</span>
+      </div>
+    </div></div></div>
+    <div class="col-12 col-sm-6 col-lg-3"><div class="card h-100"><div class="card-body">
+      <div class="d-flex justify-content-between align-items-start mb-1">
+        <h6 class="fw-bold mb-0">Listeners</h6>
+        <span class="fs-5 fw-bold">6,380</span>
+      </div>
+      <div class="d-flex gap-2 mb-4 align-items-center">
+        <span class="text-muted text-xs">Last 7 days</span>
+        <span class="text-emerald-500 text-xs fw-bold">+26.5%</span>
+      </div>
+      <div id="spark-listeners" class="h-60"></div>
+      <div class="mt-3">
+        <div class="d-flex align-items-center gap-1 small text-muted"><span class="dot dot-10 bg-cyan"></span>This week <span class="fw-bold ms-auto">6,380</span></div>
+        <div class="d-flex align-items-center gap-1 small text-muted mt-1"><span class="dot dot-10 bg-cyan-200"></span>Last week <span class="fw-bold ms-auto">4,298</span></div>
+      </div>
+    </div></div></div>
+    <div class="col-12 col-sm-6 col-lg-3"><div class="card h-100"><div class="card-body">
+      <div class="d-flex justify-content-between align-items-start mb-1">
+        <h6 class="fw-bold mb-0">Streams</h6>
+        <span class="fs-5 fw-bold">12,389</span>
+      </div>
+      <div class="d-flex gap-2 mb-4 align-items-center">
+        <span class="text-muted text-xs">Last 7 days</span>
+        <span class="text-danger text-xs fw-bold">-3.8%</span>
+      </div>
+      <div id="spark-streams" class="h-60"></div>
+      <div class="mt-3">
+        <div class="d-flex align-items-center gap-1 small text-muted"><span class="dot dot-10 bg-primary"></span>Spotify <span class="fw-bold ms-auto">52%</span></div>
+        <div class="d-flex align-items-center gap-1 small text-muted mt-1"><span class="dot dot-10 bg-primary-300"></span>Apple Music <span class="fw-bold ms-auto">48%</span></div>
+      </div>
+    </div></div></div>
+    <div class="col-12 col-sm-6 col-lg-3"><div class="card h-100"><div class="card-body">
+      <div class="d-flex justify-content-between align-items-start mb-1">
+        <h6 class="fw-bold mb-0">Albums</h6>
+        <span class="fs-5 fw-bold">432</span>
+      </div>
+      <div class="d-flex gap-2 mb-3 align-items-center">
+        <span class="text-muted text-xs">Last 7 days</span>
+        <span class="text-emerald-500 text-xs fw-bold">+26.5%</span>
+      </div>
+      <div class="d-flex justify-content-center"><div id="spark-albums" class="chart-w-100"></div></div>
+      <p class="text-muted text-xs text-center mt-1 mb-0">Profit more than last month</p>
+    </div></div></div>
+  </div>
+
+  <!-- Top stat cards (6 colored) -->
+  <div class="row g-3 mb-3">
+    <div class="col-6 col-lg-4 col-xl-2"><div class="mstat-tile mstat-primary"><span class="mstat-decor"></span><i data-lucide="play" class="lucide-md mstat-icon"></i><p class="mstat-value">12,847</p><p class="mstat-label">Total Plays</p><p class="mstat-sub">+324 today</p></div></div>
+    <div class="col-6 col-lg-4 col-xl-2"><div class="mstat-tile mstat-cyan"><span class="mstat-decor"></span><i data-lucide="clock" class="lucide-md mstat-icon"></i><p class="mstat-value">428</p><p class="mstat-label">Hours Listened</p><p class="mstat-sub">6.2h today</p></div></div>
+    <div class="col-6 col-lg-4 col-xl-2"><div class="mstat-tile mstat-rose"><span class="mstat-decor"></span><i data-lucide="mic-2" class="lucide-md mstat-icon"></i><p class="mstat-value">142</p><p class="mstat-label">Artists Followed</p><p class="mstat-sub">+3 this week</p></div></div>
+    <div class="col-6 col-lg-4 col-xl-2"><div class="mstat-tile mstat-emerald"><span class="mstat-decor"></span><i data-lucide="list-music" class="lucide-md mstat-icon"></i><p class="mstat-value">32</p><p class="mstat-label">Playlists</p><p class="mstat-sub">8 recently</p></div></div>
+    <div class="col-6 col-lg-4 col-xl-2"><div class="mstat-tile mstat-amber"><span class="mstat-decor"></span><i data-lucide="heart" class="lucide-md mstat-icon"></i><p class="mstat-value">284</p><p class="mstat-label">Liked Songs</p><p class="mstat-sub">+12 today</p></div></div>
+    <div class="col-6 col-lg-4 col-xl-2"><div class="mstat-tile mstat-primary"><span class="mstat-decor"></span><i data-lucide="radio" class="lucide-md mstat-icon"></i><p class="mstat-value">18</p><p class="mstat-label">Podcasts</p><p class="mstat-sub">4 new</p></div></div>
+  </div>
+
+  <!-- Now Playing + Weekly Listening + Genre/Trending -->
+  <div class="row g-3 mb-3">
+    <div class="col-12 col-lg-4">
+      <div class="card h-100"><div class="card-body">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+          <h5 class="fw-bold mb-0 d-flex align-items-center gap-2">
+            <span class="eq-bars"><span></span><span></span><span></span><span></span></span>
+            Now Playing
+          </h5>
+          <button class="btn btn-icon btn-icon-sm"><i data-lucide="more-horizontal" class="lucide-sm"></i></button>
+        </div>
+        <div class="album-art mb-3 position-relative">
+          <i data-lucide="disc-3" class="lucide-5xl text-white-70 disc-spin"></i>
+          <div class="album-overlay"></div>
+          <span class="album-tag">After Hours · 2020</span>
+        </div>
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <div>
+            <h5 class="fw-bold mb-0">Blinding Lights</h5>
+            <small class="text-muted">The Weeknd</small>
+          </div>
+          <button id="like-btn" class="btn-icon-round btn-like"><i data-lucide="heart" class="lucide-sm"></i></button>
+        </div>
+        <div class="d-flex justify-content-between text-xs text-muted mb-1"><span>1:24</span><span>3:20</span></div>
+        <div class="progress progress-thin mb-3"><div class="progress-bar bg-primary w-42p"></div></div>
+        <div class="d-flex align-items-center gap-2 mb-4">
+          <i data-lucide="volume-2" class="lucide-sm text-muted"></i>
+          <div class="progress progress-thinner flex-grow-1"><div class="progress-bar bg-primary w-72p"></div></div>
+          <span class="text-xs text-muted w-7">72%</span>
+        </div>
+        <div class="d-flex justify-content-between align-items-center">
+          <button id="shuffle-btn" class="btn-icon-round btn-shuffle"><i data-lucide="shuffle" class="lucide-sm"></i></button>
+          <button class="btn-icon-round"><i data-lucide="skip-back" class="lucide-md"></i></button>
+          <button id="play-btn" class="play-btn-large"><i data-lucide="pause" class="lucide-md"></i></button>
+          <button class="btn-icon-round"><i data-lucide="skip-forward" class="lucide-md"></i></button>
+          <button class="btn-icon-round"><i data-lucide="repeat-2" class="lucide-sm"></i></button>
+        </div>
+      </div></div>
+    </div>
+    <div class="col-12 col-lg-5">
+      <div class="d-flex flex-column gap-3 h-100">
+        <div class="card"><div class="card-body">
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <div>
+              <h5 class="fw-bold mb-0">Weekly Listening</h5>
+              <small class="text-muted text-xs">Plays and minutes per day</small>
+            </div>
+            <div class="d-flex gap-3 small">
+              <span class="d-inline-flex align-items-center gap-1"><span class="legend-square bg-primary"></span><span class="text-muted">Plays</span></span>
+              <span class="d-inline-flex align-items-center gap-1"><span class="legend-square bg-dot-cyan"></span><span class="text-muted">Minutes</span></span>
+            </div>
+          </div>
+          <div id="chart-weekly"></div>
+        </div></div>
+        <div class="card flex-grow-1"><div class="card-body">
+          <div class="d-flex justify-content-between align-items-center mb-4">
+            <h5 class="fw-bold mb-0">Top Artists</h5>
+            <a href="#" class="text-primary text-xs fw-medium">See All <i data-lucide="chevron-right" class="lucide-xs"></i></a>
+          </div>
+          <div class="d-flex align-items-center gap-3 mb-3">
+            <span class="fw-bold text-xs text-muted">#1</span>
+            <div class="artist-thumb bg-purple-500">T</div>
+            <div class="flex-grow-1 min-w-0">
+              <div class="d-flex justify-content-between mb-1"><span class="fw-semibold small text-truncate">The Weeknd</span><span class="fw-bold text-xs">2,410</span></div>
+              <div class="progress progress-thin"><div class="progress-bar bg-purple-500 w-100p"></div></div>
+              <p class="text-muted text-xs mt-1 mb-0">R&amp;B</p>
+            </div>
+          </div>
+          <div class="d-flex align-items-center gap-3 mb-3">
+            <span class="fw-bold text-xs text-muted">#2</span>
+            <div class="artist-thumb bg-cyan-500">D</div>
+            <div class="flex-grow-1 min-w-0">
+              <div class="d-flex justify-content-between mb-1"><span class="fw-semibold small text-truncate">Dua Lipa</span><span class="fw-bold text-xs">1,920</span></div>
+              <div class="progress progress-thin"><div class="progress-bar bg-cyan-500 w-80p"></div></div>
+              <p class="text-muted text-xs mt-1 mb-0">Pop</p>
+            </div>
+          </div>
+          <div class="d-flex align-items-center gap-3 mb-3">
+            <span class="fw-bold text-xs text-muted">#3</span>
+            <div class="artist-thumb bg-orange-500">E</div>
+            <div class="flex-grow-1 min-w-0">
+              <div class="d-flex justify-content-between mb-1"><span class="fw-semibold small text-truncate">Ed Sheeran</span><span class="fw-bold text-xs">1,740</span></div>
+              <div class="progress progress-thin"><div class="progress-bar bg-orange-500 w-72p"></div></div>
+              <p class="text-muted text-xs mt-1 mb-0">Pop/Folk</p>
+            </div>
+          </div>
+          <div class="d-flex align-items-center gap-3">
+            <span class="fw-bold text-xs text-muted">#4</span>
+            <div class="artist-thumb bg-emerald-500">B</div>
+            <div class="flex-grow-1 min-w-0">
+              <div class="d-flex justify-content-between mb-1"><span class="fw-semibold small text-truncate">Billie Eilish</span><span class="fw-bold text-xs">1,530</span></div>
+              <div class="progress progress-thin"><div class="progress-bar bg-emerald-500 w-63p"></div></div>
+              <p class="text-muted text-xs mt-1 mb-0">Indie Pop</p>
+            </div>
+          </div>
+        </div></div>
+      </div>
+    </div>
+    <div class="col-12 col-lg-3">
+      <div class="d-flex flex-column gap-3 h-100">
+        <div class="card"><div class="card-body">
+          <h5 class="fw-bold mb-3">Genre Mix</h5>
+          <div id="chart-genre"></div>
+          <div class="mt-2">
+            <div class="d-flex justify-content-between align-items-center mb-1"><div class="d-flex align-items-center gap-2"><span class="dot dot-7 bg-primary"></span><span class="text-xs text-muted">Pop</span></div><span class="fw-bold text-xs">35%</span></div>
+            <div class="d-flex justify-content-between align-items-center mb-1"><div class="d-flex align-items-center gap-2"><span class="dot dot-7 bg-violet"></span><span class="text-xs text-muted">Rock</span></div><span class="fw-bold text-xs">65%</span></div>
+            <div class="d-flex justify-content-between align-items-center mb-1"><div class="d-flex align-items-center gap-2"><span class="dot dot-7 bg-cyan"></span><span class="text-xs text-muted">Jazz</span></div><span class="fw-bold text-xs">48%</span></div>
+            <div class="d-flex justify-content-between align-items-center mb-1"><div class="d-flex align-items-center gap-2"><span class="dot dot-7 bg-emerald"></span><span class="text-xs text-muted">Electronic</span></div><span class="fw-bold text-xs">78%</span></div>
+            <div class="d-flex justify-content-between align-items-center"><div class="d-flex align-items-center gap-2"><span class="dot dot-7 bg-amber-500"></span><span class="text-xs text-muted">Classical</span></div><span class="fw-bold text-xs">25%</span></div>
+          </div>
+        </div></div>
+        <div class="card flex-grow-1"><div class="card-body">
+          <h5 class="fw-bold mb-3">Trending Now</h5>
+          <div class="d-flex align-items-center gap-3 mb-3">
+            <div class="trending-rank rank-top">1</div>
+            <div class="flex-grow-1 min-w-0"><p class="fw-semibold text-xs mb-0 text-truncate">Anti-Hero</p><p class="text-muted text-xs mb-0 text-truncate">Taylor Swift</p></div>
+            <span class="fw-bold text-xs text-emerald-500">▲2</span>
+          </div>
+          <div class="d-flex align-items-center gap-3 mb-3">
+            <div class="trending-rank rank-top">2</div>
+            <div class="flex-grow-1 min-w-0"><p class="fw-semibold text-xs mb-0 text-truncate">As It Was</p><p class="text-muted text-xs mb-0 text-truncate">Harry Styles</p></div>
+            <span class="fw-bold text-xs text-emerald-500">▲1</span>
+          </div>
+          <div class="d-flex align-items-center gap-3 mb-3">
+            <div class="trending-rank rank-top">3</div>
+            <div class="flex-grow-1 min-w-0"><p class="fw-semibold text-xs mb-0 text-truncate">About Damn Time</p><p class="text-muted text-xs mb-0 text-truncate">Lizzo</p></div>
+            <span class="fw-bold text-xs text-muted">—</span>
+          </div>
+          <div class="d-flex align-items-center gap-3">
+            <div class="trending-rank rank-other">4</div>
+            <div class="flex-grow-1 min-w-0"><p class="fw-semibold text-xs mb-0 text-truncate">Running Up That Hill</p><p class="text-muted text-xs mb-0 text-truncate">Kate Bush</p></div>
+            <span class="fw-bold text-xs text-emerald-500">▲3</span>
+          </div>
+        </div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Featured Artists -->
+  <div class="row g-3 mb-3">
+    <div class="col-6 col-md-4 col-xl-2"><div class="featured-artist fa-pink"><div class="fa-circle">A</div><p class="fa-name">Ariana Grande</p><p class="text-muted text-xs">Pop</p><div class="d-flex align-items-center justify-content-center gap-1 mt-2"><i data-lucide="headphones" class="lucide-xs text-muted"></i><span class="text-xs fw-semibold text-muted">58.2M</span></div><button class="fa-play-btn"><i data-lucide="play" class="lucide-xs"></i> Play</button></div></div>
+    <div class="col-6 col-md-4 col-xl-2"><div class="featured-artist fa-amber"><div class="fa-circle">T</div><p class="fa-name">Travis Scott</p><p class="text-muted text-xs">Hip-Hop</p><div class="d-flex align-items-center justify-content-center gap-1 mt-2"><i data-lucide="headphones" class="lucide-xs text-muted"></i><span class="text-xs fw-semibold text-muted">42.7M</span></div><button class="fa-play-btn"><i data-lucide="play" class="lucide-xs"></i> Play</button></div></div>
+    <div class="col-6 col-md-4 col-xl-2"><div class="featured-artist fa-sky"><div class="fa-circle">L</div><p class="fa-name">Lana Del Rey</p><p class="text-muted text-xs">Indie</p><div class="d-flex align-items-center justify-content-center gap-1 mt-2"><i data-lucide="headphones" class="lucide-xs text-muted"></i><span class="text-xs fw-semibold text-muted">35.1M</span></div><button class="fa-play-btn"><i data-lucide="play" class="lucide-xs"></i> Play</button></div></div>
+    <div class="col-6 col-md-4 col-xl-2"><div class="featured-artist fa-violet"><div class="fa-circle">B</div><p class="fa-name">Bad Bunny</p><p class="text-muted text-xs">Reggaeton</p><div class="d-flex align-items-center justify-content-center gap-1 mt-2"><i data-lucide="headphones" class="lucide-xs text-muted"></i><span class="text-xs fw-semibold text-muted">61.4M</span></div><button class="fa-play-btn"><i data-lucide="play" class="lucide-xs"></i> Play</button></div></div>
+    <div class="col-6 col-md-4 col-xl-2"><div class="featured-artist fa-emerald"><div class="fa-circle">S</div><p class="fa-name">SZA</p><p class="text-muted text-xs">R&amp;B</p><div class="d-flex align-items-center justify-content-center gap-1 mt-2"><i data-lucide="headphones" class="lucide-xs text-muted"></i><span class="text-xs fw-semibold text-muted">38.9M</span></div><button class="fa-play-btn"><i data-lucide="play" class="lucide-xs"></i> Play</button></div></div>
+    <div class="col-6 col-md-4 col-xl-2"><div class="featured-artist fa-orange"><div class="fa-circle">P</div><p class="fa-name">Post Malone</p><p class="text-muted text-xs">Pop/Rock</p><div class="d-flex align-items-center justify-content-center gap-1 mt-2"><i data-lucide="headphones" class="lucide-xs text-muted"></i><span class="text-xs fw-semibold text-muted">44.3M</span></div><button class="fa-play-btn"><i data-lucide="play" class="lucide-xs"></i> Play</button></div></div>
+  </div>
+
+  <!-- Row 2 — Artist Spotlight + Podcast Picks + Upcoming Events -->
+  <div class="grid grid-cols-1 grid-cols-xl-2 gap-6 mb-6">
+    <!-- Artist Spotlight -->
+    <div class="card p-0 overflow-hidden">
+      <div class="relative">
+        <div class="mu-spot-head">
+          <svg class="mu-spot-bg" viewBox="0 0 400 200" fill="currentColor"><circle cx="50" cy="100" r="80"/><circle cx="200" cy="50" r="60"/><circle cx="350" cy="120" r="70"/></svg>
+          <div class="relative flex items-start justify-between">
+            <div>
+              <span class="inline-flex items-center gap-1 mu-spot-chip mb-3"><i data-lucide="star" class="lucide-xs"></i>Featured Artist</span>
+              <h3 class="text-2xl font-bold text-white m-0">Aurora Waves</h3>
+              <p class="text-sm mu-spot-genre mt-1 mb-0">Electronic / Ambient</p>
+            </div>
+            <div class="mu-spot-mic"><i data-lucide="mic-2" class="lucide-2xl text-white"></i></div>
+          </div>
+        </div>
+        <div class="mu-spot-stats">
+          <div class="grid grid-cols-3 gap-4 text-center mb-4">
+            <div><p class="text-lg font-bold text-slate-800 m-0">2.4M</p><p class="text-xxs text-slate-400 m-0">Monthly Listeners</p></div>
+            <div><p class="text-lg font-bold text-slate-800 m-0">186</p><p class="text-xxs text-slate-400 m-0">Tracks</p></div>
+            <div><p class="text-lg font-bold text-slate-800 m-0">12</p><p class="text-xxs text-slate-400 m-0">Albums</p></div>
+          </div>
+          <div class="flex gap-2">
+            <button class="mu-spot-play"><i data-lucide="play" class="lucide-sm"></i>Play All</button>
+            <button class="mu-spot-follow"><i data-lucide="heart" class="lucide-sm"></i>Follow</button>
+            <button class="mu-spot-share"><i data-lucide="share-2" class="lucide-sm text-slate-500"></i></button>
+          </div>
+        </div>
+        <div class="p-5 pt-4">
+          <h4 class="text-sm font-bold text-slate-700 mb-3 m-0">Popular Tracks</h4>
+          <div class="space-y-2">
+            <div class="mu-spot-track"><span class="mu-spot-rank">1</span><div class="mu-spot-track-thumb"><i data-lucide="play" class="lucide-xs text-white mu-spot-play-icon"></i></div><div class="flex-1 min-w-0"><p class="text-sm font-semibold text-slate-700 truncate m-0">Neon Dreams</p><p class="text-xxs text-slate-400 m-0">48.2M plays</p></div><span class="text-xs text-slate-400">3:42</span></div>
+            <div class="mu-spot-track"><span class="mu-spot-rank">2</span><div class="mu-spot-track-thumb"><i data-lucide="play" class="lucide-xs text-white mu-spot-play-icon"></i></div><div class="flex-1 min-w-0"><p class="text-sm font-semibold text-slate-700 truncate m-0">Midnight Cascade</p><p class="text-xxs text-slate-400 m-0">35.8M plays</p></div><span class="text-xs text-slate-400">4:15</span></div>
+            <div class="mu-spot-track"><span class="mu-spot-rank">3</span><div class="mu-spot-track-thumb"><i data-lucide="play" class="lucide-xs text-white mu-spot-play-icon"></i></div><div class="flex-1 min-w-0"><p class="text-sm font-semibold text-slate-700 truncate m-0">Electric Horizons</p><p class="text-xxs text-slate-400 m-0">28.1M plays</p></div><span class="text-xs text-slate-400">3:58</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Podcast Picks + Upcoming Events -->
+    <div class="space-y-6">
+      <!-- Podcast Picks -->
+      <div class="card p-5">
+        <div class="flex items-center justify-between mb-4">
+          <div class="flex items-center gap-2">
+            <div class="w-9 h-9 rounded-xl bg-emerald-500 flex items-center justify-center"><i data-lucide="podcast" class="lucide-md text-white"></i></div>
+            <div>
+              <h3 class="font-bold text-slate-800 m-0">Podcast Picks</h3>
+              <p class="text-xxs text-slate-400 m-0">Curated for you</p>
+            </div>
+          </div>
+          <button class="text-xs text-primary-600 font-semibold flex items-center gap-0-5 acc-link-btn">See All <i data-lucide="chevron-right" class="lucide-xs"></i></button>
+        </div>
+        <div class="space-y-3">
+          <div class="mu-pod-row">
+            <div class="w-12 h-12 rounded-xl bg-pink-500 flex items-center justify-center shrink-0"><i data-lucide="mic-2" class="lucide-md text-white"></i></div>
+            <div class="flex-1 min-w-0"><p class="text-sm font-semibold text-slate-700 truncate m-0">Sound &amp; Vision</p><p class="text-xs text-slate-400 m-0">Maya Chen · Ep. 142</p></div>
+            <span class="mu-pod-dur">45 min</span>
+          </div>
+          <div class="mu-pod-row">
+            <div class="w-12 h-12 rounded-xl bg-primary-500 flex items-center justify-center shrink-0"><i data-lucide="mic-2" class="lucide-md text-white"></i></div>
+            <div class="flex-1 min-w-0"><p class="text-sm font-semibold text-slate-700 truncate m-0">The Producer's Desk</p><p class="text-xs text-slate-400 m-0">Alex Rivera · Ep. 89</p></div>
+            <span class="mu-pod-dur">38 min</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Upcoming Events -->
+      <div class="card p-5">
+        <div class="flex items-center justify-between mb-4">
+          <div class="flex items-center gap-2">
+            <div class="w-9 h-9 rounded-xl bg-rose-500 flex items-center justify-center"><i data-lucide="calendar" class="lucide-md text-white"></i></div>
+            <div>
+              <h3 class="font-bold text-slate-800 m-0">Upcoming Events</h3>
+              <p class="text-xxs text-slate-400 m-0">Don't miss out</p>
+            </div>
+          </div>
+        </div>
+        <div class="space-y-3">
+          <div class="mu-pod-row">
+            <div class="mu-event-date"><p class="text-xxs text-slate-400 uppercase leading-tight m-0">Mar</p><p class="text-lg font-bold text-slate-700 leading-tight m-0">28</p></div>
+            <div class="flex-1 min-w-0"><p class="text-sm font-semibold text-slate-700 truncate m-0">Neon Fest 2026</p><p class="text-xs text-slate-400 flex items-center gap-1 m-0"><i data-lucide="globe" class="lucide-xs"></i>Los Angeles, CA</p></div>
+            <span class="mu-event-badge bg-violet-100 text-violet-700">Festival</span>
+          </div>
+          <div class="mu-pod-row">
+            <div class="mu-event-date"><p class="text-xxs text-slate-400 uppercase leading-tight m-0">Apr</p><p class="text-lg font-bold text-slate-700 leading-tight m-0">5</p></div>
+            <div class="flex-1 min-w-0"><p class="text-sm font-semibold text-slate-700 truncate m-0">Aurora Waves Live</p><p class="text-xs text-slate-400 flex items-center gap-1 m-0"><i data-lucide="globe" class="lucide-xs"></i>Brooklyn, NY</p></div>
+            <span class="mu-event-badge bg-pink-100 text-pink-700">Concert</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Radio + Mood + Milestones -->
+  <div class="row g-3 mb-3">
+    <div class="col-12 col-xl-4">
+      <div class="card overflow-hidden h-100">
+        <div class="music-card-header bg-rose-500">
+          <i data-lucide="radio" class="lucide-xl text-white-70"></i>
+          <h5 class="fw-bold text-white mt-2 mb-0">Live Radio</h5>
+          <small class="text-white-70">Streaming now</small>
+        </div>
+        <div class="card-body p-3">
+          <div class="d-flex align-items-center gap-2 p-2 mb-1 radio-row"><div class="radio-icon radio-cyan"><span class="radio-pulse"></span></div><div class="flex-grow-1 min-w-0"><p class="fw-semibold small mb-0 text-truncate">Chill Vibes FM</p><p class="text-muted text-xs mb-0">Lo-Fi / Chill</p></div><span class="text-muted text-xs d-flex align-items-center gap-1"><i data-lucide="users" class="lucide-xs"></i>12.4K</span></div>
+          <div class="d-flex align-items-center gap-2 p-2 mb-1 radio-row"><div class="radio-icon radio-orange"><span class="radio-pulse"></span></div><div class="flex-grow-1 min-w-0"><p class="fw-semibold small mb-0 text-truncate">Rock Nation</p><p class="text-muted text-xs mb-0">Rock / Alt</p></div><span class="text-muted text-xs d-flex align-items-center gap-1"><i data-lucide="users" class="lucide-xs"></i>8.7K</span></div>
+          <div class="d-flex align-items-center gap-2 p-2 mb-1 radio-row"><div class="radio-icon radio-amber"><span class="radio-pulse"></span></div><div class="flex-grow-1 min-w-0"><p class="fw-semibold small mb-0 text-truncate">Jazz Lounge</p><p class="text-muted text-xs mb-0">Jazz / Soul</p></div><span class="text-muted text-xs d-flex align-items-center gap-1"><i data-lucide="users" class="lucide-xs"></i>5.2K</span></div>
+          <div class="d-flex align-items-center gap-2 p-2 radio-row"><div class="radio-icon radio-violet"><span class="radio-pulse"></span></div><div class="flex-grow-1 min-w-0"><p class="fw-semibold small mb-0 text-truncate">EDM Central</p><p class="text-muted text-xs mb-0">Electronic</p></div><span class="text-muted text-xs d-flex align-items-center gap-1"><i data-lucide="users" class="lucide-xs"></i>18.1K</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-xl-4">
+      <div class="card overflow-hidden h-100">
+        <div class="music-card-header bg-primary">
+          <i data-lucide="sparkles" class="lucide-xl text-white-70"></i>
+          <h5 class="fw-bold text-white mt-2 mb-0">Mood Board</h5>
+          <small class="text-white-70">Pick your vibe</small>
+        </div>
+        <div class="card-body p-3"><div class="row g-2">
+          <div class="col-6"><div class="mood-tile mood-yellow"><span class="mood-emoji">⚡</span><p class="mood-name">Energetic</p><p class="mood-sub">342 songs</p></div></div>
+          <div class="col-6"><div class="mood-tile mood-cyan"><span class="mood-emoji">🌊</span><p class="mood-name">Relaxed</p><p class="mood-sub">528 songs</p></div></div>
+          <div class="col-6"><div class="mood-tile mood-pink"><span class="mood-emoji">💕</span><p class="mood-name">Romantic</p><p class="mood-sub">215 songs</p></div></div>
+          <div class="col-6"><div class="mood-tile mood-emerald"><span class="mood-emoji">🎯</span><p class="mood-name">Focus</p><p class="mood-sub">189 songs</p></div></div>
+          <div class="col-6"><div class="mood-tile mood-slate"><span class="mood-emoji">🌧️</span><p class="mood-name">Melancholy</p><p class="mood-sub">164 songs</p></div></div>
+          <div class="col-6"><div class="mood-tile mood-violet"><span class="mood-emoji">🎉</span><p class="mood-name">Party</p><p class="mood-sub">478 songs</p></div></div>
+        </div></div>
+      </div>
+    </div>
+    <div class="col-12 col-xl-4">
+      <div class="card overflow-hidden h-100">
+        <div class="music-card-header bg-amber-500">
+          <i data-lucide="award" class="lucide-xl text-white-70"></i>
+          <h5 class="fw-bold text-white mt-2 mb-0">Milestones</h5>
+          <small class="text-white-70">Your achievements</small>
+        </div>
+        <div class="card-body p-3">
+          <div class="d-flex align-items-center gap-3 mb-3"><span class="fs-5">🏅</span><div class="flex-grow-1 min-w-0"><div class="d-flex justify-content-between mb-1"><span class="fw-semibold small text-truncate">First 1,000 Songs</span><span class="text-primary fw-bold text-xs">100%</span></div><p class="text-muted text-xs mb-1">Listened to 1,000 unique tracks</p><div class="progress progress-thin"><div class="progress-bar bg-warning w-100p"></div></div></div></div>
+          <div class="d-flex align-items-center gap-3 mb-3"><span class="fs-5">🧭</span><div class="flex-grow-1 min-w-0"><div class="d-flex justify-content-between mb-1"><span class="fw-semibold small text-truncate">Genre Explorer</span><span class="text-primary fw-bold text-xs">87%</span></div><p class="text-muted text-xs mb-1">Discovered 15+ genres</p><div class="progress progress-thin"><div class="progress-bar bg-warning w-87p"></div></div></div></div>
+          <div class="d-flex align-items-center gap-3 mb-3"><span class="fs-5">🦉</span><div class="flex-grow-1 min-w-0"><div class="d-flex justify-content-between mb-1"><span class="fw-semibold small text-truncate">Night Owl</span><span class="text-primary fw-bold text-xs">64%</span></div><p class="text-muted text-xs mb-1">50 hours of late-night listening</p><div class="progress progress-thin"><div class="progress-bar bg-warning w-64p"></div></div></div></div>
+          <div class="d-flex align-items-center gap-3 mb-3"><span class="fs-5">🦋</span><div class="flex-grow-1 min-w-0"><div class="d-flex justify-content-between mb-1"><span class="fw-semibold small text-truncate">Social Butterfly</span><span class="text-primary fw-bold text-xs">42%</span></div><p class="text-muted text-xs mb-1">Shared 100 songs with friends</p><div class="progress progress-thin"><div class="progress-bar bg-warning w-42p"></div></div></div></div>
+          <div class="d-flex align-items-center gap-3"><span class="fs-5">💿</span><div class="flex-grow-1 min-w-0"><div class="d-flex justify-content-between mb-1"><span class="fw-semibold small text-truncate">Vinyl Collector</span><span class="text-primary fw-bold text-xs">76%</span></div><p class="text-muted text-xs mb-1">Saved 500 songs to library</p><div class="progress progress-thin"><div class="progress-bar bg-warning w-76p"></div></div></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Your Stats + Shared Playlists + Sound Lab -->
+  <div class="row g-3">
+    <div class="col-12 col-xl-4">
+      <div class="card overflow-hidden h-100">
+        <div class="music-card-header bg-cyan-500">
+          <i data-lucide="trending-up" class="lucide-xl text-white-70"></i>
+          <h5 class="fw-bold text-white mt-2 mb-0">Your Stats</h5>
+          <small class="text-white-70">This month's summary</small>
+        </div>
+        <div class="card-body p-3">
+          <div class="d-flex justify-content-between align-items-center p-2 user-stat-row mb-2"><div><p class="text-muted text-xs mb-0">Hours Listened</p><p class="fw-bold fs-6 mb-0 text-cyan-500">127.5</p></div><span class="text-muted text-xs text-end user-stat-sub">+18% from last month</span></div>
+          <div class="d-flex justify-content-between align-items-center p-2 user-stat-row mb-2"><div><p class="text-muted text-xs mb-0">Songs Played</p><p class="fw-bold fs-6 mb-0 text-primary">1,842</p></div><span class="text-muted text-xs text-end user-stat-sub">+245 new discoveries</span></div>
+          <div class="d-flex justify-content-between align-items-center p-2 user-stat-row mb-2"><div><p class="text-muted text-xs mb-0">Top Genre</p><p class="fw-bold fs-6 mb-0 text-violet-500">Electronic</p></div><span class="text-muted text-xs text-end user-stat-sub">38% of total plays</span></div>
+          <div class="d-flex justify-content-between align-items-center p-2 user-stat-row"><div><p class="text-muted text-xs mb-0">Avg. Per Day</p><p class="fw-bold fs-6 mb-0 text-violet-500">4.2 hrs</p></div><span class="text-muted text-xs text-end user-stat-sub">Peak: Saturday 6.8 hrs</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-xl-4">
+      <div class="card overflow-hidden h-100">
+        <div class="music-card-header bg-emerald-500">
+          <i data-lucide="list-music" class="lucide-xl text-white-70"></i>
+          <h5 class="fw-bold text-white mt-2 mb-0">Shared Playlists</h5>
+          <small class="text-white-70">Collaborate with friends</small>
+        </div>
+        <div class="card-body p-3">
+          <div class="d-flex align-items-center gap-3 mb-2 p-2 sp-row"><div class="sp-icon"><i data-lucide="music" class="lucide-sm text-emerald-500"></i></div><div class="flex-grow-1 min-w-0"><p class="fw-semibold small mb-1 text-truncate">Road Trip Anthems</p><p class="text-muted text-xs mb-0">5 members · 87 songs</p></div><span class="text-muted text-xs">2h ago</span></div>
+          <div class="d-flex align-items-center gap-3 mb-2 p-2 sp-row"><div class="sp-icon"><i data-lucide="music" class="lucide-sm text-emerald-500"></i></div><div class="flex-grow-1 min-w-0"><p class="fw-semibold small mb-1 text-truncate">Workout Boost</p><p class="text-muted text-xs mb-0">3 members · 142 songs</p></div><span class="text-muted text-xs">1d ago</span></div>
+          <div class="d-flex align-items-center gap-3 mb-2 p-2 sp-row"><div class="sp-icon"><i data-lucide="music" class="lucide-sm text-emerald-500"></i></div><div class="flex-grow-1 min-w-0"><p class="fw-semibold small mb-1 text-truncate">Late Night Coding</p><p class="text-muted text-xs mb-0">8 members · 234 songs</p></div><span class="text-muted text-xs">3h ago</span></div>
+          <div class="d-flex align-items-center gap-3 p-2 sp-row"><div class="sp-icon"><i data-lucide="music" class="lucide-sm text-emerald-500"></i></div><div class="flex-grow-1 min-w-0"><p class="fw-semibold small mb-1 text-truncate">Sunday Chill</p><p class="text-muted text-xs mb-0">4 members · 65 songs</p></div><span class="text-muted text-xs">5h ago</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-xl-4">
+      <div class="card overflow-hidden h-100">
+        <div class="music-card-header bg-slate-700">
+          <i data-lucide="volume-2" class="lucide-xl text-white-70"></i>
+          <h5 class="fw-bold text-white mt-2 mb-0">Sound Lab</h5>
+          <small class="text-white-70">Fine-tune your audio</small>
+        </div>
+        <div class="card-body p-3">
+          <div class="mb-3"><div class="d-flex justify-content-between mb-1"><span class="text-xs fw-medium">Bass</span><span class="text-xs fw-bold">72%</span></div><div class="progress progress-thick"><div class="progress-bar bg-danger w-72p"></div></div></div>
+          <div class="mb-3"><div class="d-flex justify-content-between mb-1"><span class="text-xs fw-medium">Mid</span><span class="text-xs fw-bold">55%</span></div><div class="progress progress-thick"><div class="progress-bar bg-warning w-55p"></div></div></div>
+          <div class="mb-3"><div class="d-flex justify-content-between mb-1"><span class="text-xs fw-medium">Treble</span><span class="text-xs fw-bold">68%</span></div><div class="progress progress-thick"><div class="progress-bar bg-info w-68p"></div></div></div>
+          <div class="mb-3"><div class="d-flex justify-content-between mb-1"><span class="text-xs fw-medium">Spatial</span><span class="text-xs fw-bold">45%</span></div><div class="progress progress-thick"><div class="progress-bar bg-violet w-45p"></div></div></div>
+          <div class="row g-2 mt-3">
+            <div class="col-6"><button class="ctrl-btn ctrl-active"><i data-lucide="headphones" class="lucide-sm"></i>Surround</button></div>
+            <div class="col-6"><button class="ctrl-btn"><i data-lucide="zap" class="lucide-sm"></i>Bass Boost</button></div>
+            <div class="col-6"><button class="ctrl-btn ctrl-active"><i data-lucide="mic-2" class="lucide-sm"></i>Vocal</button></div>
+            <div class="col-6"><button class="ctrl-btn"><i data-lucide="clock" class="lucide-sm"></i>Night Mode</button></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lucide@latest/dist/umd/lucide.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/apexcharts@3.49.1/dist/apexcharts.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/svg+xml" href="img/logo.svg"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cards | Liner Admin</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/css/theme.css" rel="stylesheet">
+  <script src="assets/js/app.js"></script>
+</head>
+<body>
+
+<aside class="app-sidebar" data-sidebar>
+        <a href="dashboard.html" class="sidebar-brand text-decoration-none">
+          <img src="img/logo.svg" alt="Liner" class="brand-logo-lg-img">
+          <div class="brand-text">
+            <div class="brand-name">Liner</div>
+            <div class="brand-sub">Admin</div>
+          </div>
+        </a>
+        <nav class="sidebar-nav custom-scrollbar"><div class="sidebar-group-title">Dashboards</div><a href="dashboard.html" class="sidebar-nav-link" data-path="dashboard.html">
+            <i data-lucide="layout-dashboard" class="lucide-md"></i><span class="link-label">Modern</span>
+          </a><a href="analytics.html" class="sidebar-nav-link" data-path="analytics.html">
+            <i data-lucide="activity" class="lucide-md"></i><span class="link-label">Analytics</span>
+          </a><a href="ecommerce.html" class="sidebar-nav-link" data-path="ecommerce.html">
+            <i data-lucide="shopping-cart" class="lucide-md"></i><span class="link-label">eCommerce</span>
+          </a><a href="music.html" class="sidebar-nav-link" data-path="music.html">
+            <i data-lucide="music" class="lucide-md"></i><span class="link-label">Music</span>
+          </a><a href="general.html" class="sidebar-nav-link" data-path="general.html">
+            <i data-lucide="globe-2" class="lucide-md"></i><span class="link-label">General</span>
+          </a><div class="sidebar-group-title">Apps</div><a href="calendar.html" class="sidebar-nav-link" data-path="calendar.html">
+            <i data-lucide="calendar" class="lucide-md"></i><span class="link-label">Calendar</span>
+          </a><a href="kanban.html" class="sidebar-nav-link" data-path="kanban.html">
+            <i data-lucide="kanban-square" class="lucide-md"></i><span class="link-label">Kanban</span>
+          </a><a href="chat.html" class="sidebar-nav-link" data-path="chat.html">
+            <i data-lucide="message-square" class="lucide-md"></i><span class="link-label">Chat</span>
+          </a><a href="email.html" class="sidebar-nav-link" data-path="email.html">
+            <i data-lucide="mail" class="lucide-md"></i><span class="link-label">Email</span>
+          </a><a href="notes.html" class="sidebar-nav-link" data-path="notes.html">
+            <i data-lucide="sticky-note" class="lucide-md"></i><span class="link-label">Notes</span>
+          </a><a href="contacts.html" class="sidebar-nav-link" data-path="contacts.html">
+            <i data-lucide="users" class="lucide-md"></i><span class="link-label">Contacts</span>
+          </a><a href="tickets.html" class="sidebar-nav-link" data-path="tickets.html">
+            <i data-lucide="ticket" class="lucide-md"></i><span class="link-label">Tickets</span>
+          </a><a href="invoice-list.html" class="sidebar-nav-link" data-path="invoice-list.html">
+            <i data-lucide="file-text" class="lucide-md"></i><span class="link-label">Invoice</span>
+          </a><a href="user-profile.html" class="sidebar-nav-link" data-path="user-profile.html">
+            <i data-lucide="user-circle" class="lucide-md"></i><span class="link-label">User Profile</span>
+          </a>
+            <a href="#" class="sidebar-nav-link sidebar-parent" data-toggle-submenu data-paths="blog-posts.html,blog-post.html,blog-detail.html">
+              <i data-lucide="book-open" class="lucide-md"></i>
+              <span class="link-label">Blog</span>
+              <i data-lucide="chevron-down" class="lucide-sm toggle-icon"></i>
+            </a>
+            <div class="sidebar-submenu"><a href="blog-posts.html" class="sidebar-nav-link" data-path="blog-posts.html">
+              <i data-lucide="book-open" class="lucide-sm"></i><span class="link-label">Blog Posts</span>
+            </a><a href="blog-post.html" class="sidebar-nav-link" data-path="blog-post.html">
+              <i data-lucide="file-text" class="lucide-sm"></i><span class="link-label">Blog Post</span>
+            </a><a href="blog-detail.html" class="sidebar-nav-link" data-path="blog-detail.html">
+              <i data-lucide="eye" class="lucide-sm"></i><span class="link-label">Blog Detail</span>
+            </a></div>
+            <a href="#" class="sidebar-nav-link sidebar-parent" data-toggle-submenu data-paths="ecommerce-shop.html,ecommerce-detail.html,ecommerce-list.html,ecommerce-checkout.html">
+              <i data-lucide="shopping-bag" class="lucide-md"></i>
+              <span class="link-label">eCommerce</span>
+              <i data-lucide="chevron-down" class="lucide-sm toggle-icon"></i>
+            </a>
+            <div class="sidebar-submenu"><a href="ecommerce-shop.html" class="sidebar-nav-link" data-path="ecommerce-shop.html">
+              <i data-lucide="store" class="lucide-sm"></i><span class="link-label">Shop</span>
+            </a><a href="ecommerce-detail.html" class="sidebar-nav-link" data-path="ecommerce-detail.html">
+              <i data-lucide="package" class="lucide-sm"></i><span class="link-label">Detail</span>
+            </a><a href="ecommerce-list.html" class="sidebar-nav-link" data-path="ecommerce-list.html">
+              <i data-lucide="list" class="lucide-sm"></i><span class="link-label">List</span>
+            </a><a href="ecommerce-checkout.html" class="sidebar-nav-link" data-path="ecommerce-checkout.html">
+              <i data-lucide="credit-card" class="lucide-sm"></i><span class="link-label">Checkout</span>
+            </a></div><div class="sidebar-group-title">UI Elements</div><a href="alert.html" class="sidebar-nav-link" data-path="alert.html">
+            <i data-lucide="alert-circle" class="lucide-md"></i><span class="link-label">Alert</span>
+          </a><a href="accordion.html" class="sidebar-nav-link" data-path="accordion.html">
+            <i data-lucide="layers" class="lucide-md"></i><span class="link-label">Accordion</span>
+          </a><a href="avatar.html" class="sidebar-nav-link" data-path="avatar.html">
+            <i data-lucide="user-circle" class="lucide-md"></i><span class="link-label">Avatar</span>
+          </a><a href="chip.html" class="sidebar-nav-link" data-path="chip.html">
+            <i data-lucide="tag" class="lucide-md"></i><span class="link-label">Chip</span>
+          </a><a href="dialog.html" class="sidebar-nav-link" data-path="dialog.html">
+            <i data-lucide="message-square" class="lucide-md"></i><span class="link-label">Dialog</span>
+          </a><a href="list.html" class="sidebar-nav-link" data-path="list.html">
+            <i data-lucide="align-left" class="lucide-md"></i><span class="link-label">List</span>
+          </a><a href="popover.html" class="sidebar-nav-link" data-path="popover.html">
+            <i data-lucide="message-circle" class="lucide-md"></i><span class="link-label">Popover</span>
+          </a><a href="rating.html" class="sidebar-nav-link" data-path="rating.html">
+            <i data-lucide="star" class="lucide-md"></i><span class="link-label">Rating</span>
+          </a><a href="tabs.html" class="sidebar-nav-link" data-path="tabs.html">
+            <i data-lucide="layout-grid" class="lucide-md"></i><span class="link-label">Tabs</span>
+          </a><a href="tooltip.html" class="sidebar-nav-link" data-path="tooltip.html">
+            <i data-lucide="info" class="lucide-md"></i><span class="link-label">Tooltip</span>
+          </a><a href="typography.html" class="sidebar-nav-link" data-path="typography.html">
+            <i data-lucide="type" class="lucide-md"></i><span class="link-label">Typography</span>
+          </a><a href="buttons.html" class="sidebar-nav-link" data-path="buttons.html">
+            <i data-lucide="zap" class="lucide-md"></i><span class="link-label">Buttons</span>
+          </a><a href="cards.html" class="sidebar-nav-link" data-path="cards.html">
+            <i data-lucide="square-stack" class="lucide-md"></i><span class="link-label">Cards</span>
+          </a><div class="sidebar-group-title">Forms</div><a href="form-elements.html" class="sidebar-nav-link" data-path="form-elements.html">
+            <i data-lucide="square-pen" class="lucide-md"></i><span class="link-label">Form Elements</span>
+          </a><a href="form-layouts.html" class="sidebar-nav-link" data-path="form-layouts.html">
+            <i data-lucide="layout-template" class="lucide-md"></i><span class="link-label">Form Layouts</span>
+          </a><a href="form-horizontal.html" class="sidebar-nav-link" data-path="form-horizontal.html">
+            <i data-lucide="rows" class="lucide-md"></i><span class="link-label">Form Horizontal</span>
+          </a><a href="form-validation.html" class="sidebar-nav-link" data-path="form-validation.html">
+            <i data-lucide="check-circle" class="lucide-md"></i><span class="link-label">Form Validation</span>
+          </a><div class="sidebar-group-title">Tables</div><a href="basic-table.html" class="sidebar-nav-link" data-path="basic-table.html">
+            <i data-lucide="table-2" class="lucide-md"></i><span class="link-label">Basic Table</span>
+          </a><a href="enhanced-table.html" class="sidebar-nav-link" data-path="enhanced-table.html">
+            <i data-lucide="table-properties" class="lucide-md"></i><span class="link-label">Enhanced Table</span>
+          </a><div class="sidebar-group-title">Charts</div><a href="line-chart.html" class="sidebar-nav-link" data-path="line-chart.html">
+            <i data-lucide="line-chart" class="lucide-md"></i><span class="link-label">Line Chart</span>
+          </a><a href="area-chart.html" class="sidebar-nav-link" data-path="area-chart.html">
+            <i data-lucide="area-chart" class="lucide-md"></i><span class="link-label">Area Chart</span>
+          </a><a href="bar-chart.html" class="sidebar-nav-link" data-path="bar-chart.html">
+            <i data-lucide="bar-chart-3" class="lucide-md"></i><span class="link-label">Bar Chart</span>
+          </a><a href="column-chart.html" class="sidebar-nav-link" data-path="column-chart.html">
+            <i data-lucide="bar-chart-2" class="lucide-md"></i><span class="link-label">Column Chart</span>
+          </a><a href="donut-chart.html" class="sidebar-nav-link" data-path="donut-chart.html">
+            <i data-lucide="pie-chart" class="lucide-md"></i><span class="link-label">Donut Chart</span>
+          </a><a href="radialbar-chart.html" class="sidebar-nav-link" data-path="radialbar-chart.html">
+            <i data-lucide="activity" class="lucide-md"></i><span class="link-label">Radialbar Chart</span>
+          </a><div class="sidebar-group-title">Pages</div><a href="account.html" class="sidebar-nav-link" data-path="account.html">
+            <i data-lucide="settings" class="lucide-md"></i><span class="link-label">Account Settings</span>
+          </a><a href="pricing.html" class="sidebar-nav-link" data-path="pricing.html">
+            <i data-lucide="credit-card" class="lucide-md"></i><span class="link-label">Pricing</span>
+          </a><a href="faq.html" class="sidebar-nav-link" data-path="faq.html">
+            <i data-lucide="help-circle" class="lucide-md"></i><span class="link-label">FAQ</span>
+          </a><a href="widgets.html" class="sidebar-nav-link" data-path="widgets.html">
+            <i data-lucide="layout-grid" class="lucide-md"></i><span class="link-label">Widgets</span>
+          </a><a href="apikeys.html" class="sidebar-nav-link" data-path="apikeys.html">
+            <i data-lucide="key" class="lucide-md"></i><span class="link-label">API Keys</span>
+          </a><div class="sidebar-group-title">Icons</div><a href="lucide-icons.html" class="sidebar-nav-link" data-path="lucide-icons.html">
+            <i data-lucide="smile" class="lucide-md"></i><span class="link-label">Lucide Icons</span>
+          </a><a href="custom-icons.html" class="sidebar-nav-link" data-path="custom-icons.html">
+            <i data-lucide="star" class="lucide-md"></i><span class="link-label">Custom Icons</span>
+          </a><div class="sidebar-group-title">Auth</div><a href="login.html" class="sidebar-nav-link" data-path="login.html">
+            <i data-lucide="log-in" class="lucide-md"></i><span class="link-label">Login</span>
+          </a><a href="register.html" class="sidebar-nav-link" data-path="register.html">
+            <i data-lucide="user-plus" class="lucide-md"></i><span class="link-label">Register</span>
+          </a><a href="forgot-password.html" class="sidebar-nav-link" data-path="forgot-password.html">
+            <i data-lucide="key-round" class="lucide-md"></i><span class="link-label">Forgot Password</span>
+          </a><a href="two-steps.html" class="sidebar-nav-link" data-path="two-steps.html">
+            <i data-lucide="shield" class="lucide-md"></i><span class="link-label">Two Step</span>
+          </a><a href="error.html" class="sidebar-nav-link" data-path="error.html">
+            <i data-lucide="alert-circle" class="lucide-md"></i><span class="link-label">Error</span>
+          </a><a href="maintenance.html" class="sidebar-nav-link" data-path="maintenance.html">
+            <i data-lucide="wrench" class="lucide-md"></i><span class="link-label">Maintenance</span>
+          </a></nav>
+        <div class="sidebar-footer">
+          <div class="user-mini">
+            <div class="user-avatar-mini">JD</div>
+            <div class="sidebar-footer-info flex-grow-1 overflow-hidden">
+              <div class="user-mini-name">John Doe</div>
+              <div class="user-mini-email">john@liner.com</div>
+            </div>
+            <i data-lucide="chevron-right" class="lucide-sm sidebar-footer-info"></i>
+          </div>
+        </div>
+      </aside>
+      <div class="sidebar-backdrop"></div>
+<header class="app-header">
+        <button class="header-icon-btn d-lg-none" data-toggle-mobile-sidebar aria-label="Menu"><i data-lucide="menu" class="lucide-md"></i></button>
+        <button class="header-icon-btn d-none d-lg-flex" data-toggle-sidebar aria-label="Toggle"><i data-lucide="menu" class="lucide-md"></i></button>
+        <div class="header-breadcrumb d-none d-md-flex" data-breadcrumb><span class="text-muted">Home</span></div>
+        <div class="flex-grow-1"></div>
+        <div class="search-wrap d-none d-sm-block">
+          <input type="text" class="form-control form-control-sm search-input w-200" placeholder="Search...">
+          <i data-lucide="search" class="lucide-sm search-icon"></i>
+        </div>
+        <button class="header-icon-btn" data-toggle-dark aria-label="Dark"><i data-lucide="moon" class="lucide-md"></i></button>
+        <div class="dropdown">
+          <button class="header-icon-btn" data-bs-toggle="dropdown" aria-label="Notifications">
+            <i data-lucide="bell" class="lucide-md"></i>
+            <span class="notif-dot">3</span>
+          </button>
+          <div class="dropdown-menu dropdown-menu-end notif-menu">
+            <div class="notif-header">
+              <strong>Notifications</strong>
+              <span class="badge badge-soft-primary">3 new</span>
+            </div>
+            <div class="notif-list custom-scrollbar">
+              <div class="notif-item unread">
+                <div class="icon-circle icon-circle-sm icon-circle-bg-success-soft"><i data-lucide="check-circle-2" class="lucide-sm"></i></div>
+                <div class="flex-grow-1">
+                  <div class="notif-title">Order Completed</div>
+                  <div class="notif-msg">Order #1234 has been fulfilled</div>
+                  <div class="notif-time">2 min ago</div>
+                </div>
+              </div>
+              <div class="notif-item unread">
+                <div class="icon-circle icon-circle-sm icon-circle-bg-info-soft"><i data-lucide="info" class="lucide-sm"></i></div>
+                <div class="flex-grow-1">
+                  <div class="notif-title">New User Registered</div>
+                  <div class="notif-msg">Sarah Johnson joined the platform</div>
+                  <div class="notif-time">15 min ago</div>
+                </div>
+              </div>
+              <div class="notif-item">
+                <div class="icon-circle icon-circle-sm icon-circle-bg-warning-soft"><i data-lucide="alert-circle" class="lucide-sm"></i></div>
+                <div class="flex-grow-1">
+                  <div class="notif-title">Low Stock Alert</div>
+                  <div class="notif-msg">Wireless Mouse is running low</div>
+                  <div class="notif-time">1 hr ago</div>
+                </div>
+              </div>
+            </div>
+            <div class="notif-footer">
+              <a href="#" class="text-primary fw-medium notif-footer-link">View all notifications</a>
+            </div>
+          </div>
+        </div>
+        <button class="header-icon-btn" data-toggle-settings aria-label="Settings"><i data-lucide="settings" class="lucide-md"></i></button>
+        <div class="dropdown">
+          <button class="user-button" data-bs-toggle="dropdown">
+            <div class="avatar avatar-sm">JD</div>
+            <div class="d-none d-sm-block text-start">
+              <div class="user-name">John Doe</div>
+              <div class="user-role">Admin</div>
+            </div>
+            <i data-lucide="chevron-down" class="lucide-sm d-none d-sm-inline"></i>
+          </button>
+          <div class="dropdown-menu dropdown-menu-end user-menu">
+            <div class="user-menu-header">
+              <div class="fw-semibold">John Doe</div>
+              <div class="text-muted small">john@liner.com</div>
+            </div>
+            <a class="dropdown-item user-menu-item" href="account.html"><i data-lucide="user" class="lucide-sm"></i> My Profile</a>
+            <a class="dropdown-item user-menu-item" href="pricing.html"><i data-lucide="credit-card" class="lucide-sm"></i> Billing</a>
+            <a class="dropdown-item user-menu-item" href="account.html"><i data-lucide="shield" class="lucide-sm"></i> Security</a>
+            <a class="dropdown-item user-menu-item" href="faq.html"><i data-lucide="help-circle" class="lucide-sm"></i> Help Center</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item user-menu-item text-danger" href="login.html"><i data-lucide="log-out" class="lucide-sm"></i> Sign Out</a>
+          </div>
+        </div>
+      </header>
+<div class="settings-overlay" data-close-settings></div>
+      <div class="settings-panel">
+        <div class="settings-section d-flex align-items-center justify-content-between">
+          <div>
+            <h5 class="mb-0 fw-bold">Theme Settings</h5>
+            <div class="text-muted small mt-1">Customize your dashboard appearance</div>
+          </div>
+          <button class="btn btn-icon btn-icon-sm" data-close-settings aria-label="Close"><i data-lucide="x" class="lucide-md"></i></button>
+        </div>
+        <div class="flex-grow-1 overflow-auto custom-scrollbar">
+          <div class="settings-section">
+            <h6>Color Mode</h6>
+            <div class="d-flex gap-2">
+              <button class="mode-card light active" data-mode="light">
+                <div class="mini-preview">
+                  <div class="mini-header"><div class="mini-bar w-18"></div></div>
+                  <div class="flex-grow-1 mini-bg-light"></div>
+                </div>
+                <div class="d-flex align-items-center justify-content-between"><strong class="text-xs">Light</strong></div>
+              </button>
+              <button class="mode-card dark" data-mode="dark">
+                <div class="mini-preview">
+                  <div class="mini-header"><div class="mini-bar w-18"></div></div>
+                  <div class="flex-grow-1 mini-bg-dark"></div>
+                </div>
+                <div class="d-flex align-items-center justify-content-between"><strong class="text-xs">Dark</strong></div>
+              </button>
+            </div>
+          </div>
+          <div class="settings-section">
+            <h6>Color Preset</h6>
+            <div class="swatch-grid"><button class="color-swatch-btn" data-color="navy">
+        <div class="swatch bg-swatch-navy"></div>
+        <div class="swatch-label">Navy</div>
+      </button><button class="color-swatch-btn" data-color="blue">
+        <div class="swatch bg-swatch-blue"></div>
+        <div class="swatch-label">Blue</div>
+      </button><button class="color-swatch-btn" data-color="green">
+        <div class="swatch bg-swatch-green"></div>
+        <div class="swatch-label">Emerald</div>
+      </button><button class="color-swatch-btn" data-color="orange">
+        <div class="swatch bg-swatch-orange"></div>
+        <div class="swatch-label">Orange</div>
+      </button><button class="color-swatch-btn" data-color="red">
+        <div class="swatch bg-swatch-red"></div>
+        <div class="swatch-label">Rose</div>
+      </button></div>
+          </div>
+          <div class="settings-section">
+            <h6>Layout</h6>
+            <label class="setting-toggle">
+              <span class="toggle-label">Collapsed Sidebar</span>
+              <span class="switch" data-setting="collapsed"></span>
+            </label>
+            <label class="setting-toggle">
+              <span class="toggle-label">Horizontal Menu</span>
+              <span class="switch" data-setting="horizontal"></span>
+            </label>
+          </div>
+          <div class="settings-section">
+            <h6>Regional</h6>
+            <label class="setting-toggle">
+              <span class="toggle-label">RTL Direction</span>
+              <span class="switch" data-setting="rtl"></span>
+            </label>
+          </div>
+        </div>
+        <div class="settings-footer">
+          <button class="btn btn-primary w-100" data-close-settings>Apply &amp; Close</button>
+        </div>
+      </div>
+<main class="app-main">
+
+  <div class="flex items-start justify-between mb-6">
+    <div>
+      <h1 class="text-2xl font-bold text-slate-900 m-0">Cards</h1>
+      <p class="text-sm text-slate-500 mt-1 mb-0">Versatile card components for displaying content, stats, profiles, products and more</p>
+    </div>
+  </div>
+
+  <!-- 1. Basic Cards -->
+  <div class="mb-8">
+    <div class="mb-4"><h3 class="text-uppercase-xs">Basic Cards</h3><p class="text-xs text-slate-400 mt-1 mb-0">Simple, hover-lift and glassmorphism card styles</p></div>
+    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
+      <div class="card p-5">
+        <h4 class="font-semibold text-slate-800 mb-2">Simple Card</h4>
+        <p class="text-sm text-slate-500 leading-relaxed m-0">A clean card with a white background and subtle border. Perfect for structured content layouts.</p>
+        <div class="mt-4 pt-4 border-t border-slate-100 flex items-center justify-between">
+          <span class="text-xs text-slate-400">Updated 2 hours ago</span>
+          <button class="text-primary-600 text-xs font-semibold bg-transparent border-0 flex items-center gap-1">View details <i data-lucide="chevron-right" class="lucide-xs"></i></button>
+        </div>
+      </div>
+
+      <div class="card p-5">
+        <div class="flex items-start justify-between mb-3">
+          <div class="w-10 h-10 bg-primary-100 rounded-xl flex items-center justify-center"><i data-lucide="activity" class="lucide-md text-primary-600"></i></div>
+          <span class="text-xs text-slate-400">Hover me</span>
+        </div>
+        <h4 class="font-semibold text-slate-800 mb-2">Interactive Hover Card</h4>
+        <p class="text-sm text-slate-500 leading-relaxed m-0">This card lifts on hover with a smooth shadow animation — great for clickable list items.</p>
+        <button class="btn btn-outline-secondary btn-sm w-full mt-4">Learn More</button>
+      </div>
+
+      <div class="card p-5">
+        <div class="flex items-center gap-2 mb-3">
+          <div class="w-2 h-2 rounded-full bg-emerald-400"></div>
+          <span class="text-uppercase-xs text-emerald-600">Live</span>
+        </div>
+        <h4 class="font-semibold text-slate-800 mb-2">Glassmorphism Card</h4>
+        <p class="text-sm text-slate-500 leading-relaxed m-0">A frosted-glass effect with backdrop blur. Looks stunning over colorful gradient backgrounds.</p>
+        <div class="mt-4 flex gap-2">
+          <div class="flex-1 bg-slate-50 rounded-lg p-2 text-center"><p class="text-sm font-bold text-slate-800 m-0">1.2k</p><p class="text-[10px] text-slate-500 text-uppercase-xs m-0">Users</p></div>
+          <div class="flex-1 bg-slate-50 rounded-lg p-2 text-center"><p class="text-sm font-bold text-slate-800 m-0">98%</p><p class="text-[10px] text-slate-500 text-uppercase-xs m-0">Uptime</p></div>
+          <div class="flex-1 bg-slate-50 rounded-lg p-2 text-center"><p class="text-sm font-bold text-slate-800 m-0">4.9</p><p class="text-[10px] text-slate-500 text-uppercase-xs m-0">Rating</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. Gradient Stat Cards -->
+  <div class="mb-8">
+    <div class="mb-4"><h3 class="text-uppercase-xs">Gradient Stat Cards</h3><p class="text-xs text-slate-400 mt-1 mb-0">Vibrant gradient stat cards with trend indicators</p></div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4">
+      <div class="relative rounded-2xl p-5 text-white shadow-lg bg-primary-500 overflow-hidden">
+        <div class="absolute top-0 right-0 w-24 h-24 rounded-full bg-white-10"></div>
+        <div class="absolute bottom-0 right-0 w-20 h-20 rounded-full bg-white-10"></div>
+        <div class="relative">
+          <div class="flex items-start justify-between mb-4">
+            <p class="text-uppercase-xs text-white m-0">Total Users</p>
+            <div class="w-9 h-9 bg-white-20 rounded-xl flex items-center justify-center shrink-0"><i data-lucide="users" class="lucide-md"></i></div>
+          </div>
+          <p class="text-3xl font-bold mb-2 m-0">24,521</p>
+          <div class="flex items-center gap-2">
+            <div class="flex items-center gap-1 text-xs font-semibold px-2 py-0-5 rounded-full bg-white-20"><i data-lucide="trending-up" class="lucide-xs"></i>+12.5%</div>
+            <span class="text-xs text-white opacity-60">vs last month</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="relative rounded-2xl p-5 text-white shadow-lg bg-cyan-500 overflow-hidden">
+        <div class="absolute top-0 right-0 w-24 h-24 rounded-full bg-white-10"></div>
+        <div class="absolute bottom-0 right-0 w-20 h-20 rounded-full bg-white-10"></div>
+        <div class="relative">
+          <div class="flex items-start justify-between mb-4">
+            <p class="text-uppercase-xs text-white m-0">Revenue</p>
+            <div class="w-9 h-9 bg-white-20 rounded-xl flex items-center justify-center shrink-0"><i data-lucide="dollar-sign" class="lucide-md"></i></div>
+          </div>
+          <p class="text-3xl font-bold mb-2 m-0">$48,295</p>
+          <div class="flex items-center gap-2">
+            <div class="flex items-center gap-1 text-xs font-semibold px-2 py-0-5 rounded-full bg-white-20"><i data-lucide="trending-up" class="lucide-xs"></i>+18.2%</div>
+            <span class="text-xs text-white opacity-60">vs last month</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="relative rounded-2xl p-5 text-white shadow-lg bg-emerald-500 overflow-hidden">
+        <div class="absolute top-0 right-0 w-24 h-24 rounded-full bg-white-10"></div>
+        <div class="absolute bottom-0 right-0 w-20 h-20 rounded-full bg-white-10"></div>
+        <div class="relative">
+          <div class="flex items-start justify-between mb-4">
+            <p class="text-uppercase-xs text-white m-0">Orders</p>
+            <div class="w-9 h-9 bg-white-20 rounded-xl flex items-center justify-center shrink-0"><i data-lucide="package" class="lucide-md"></i></div>
+          </div>
+          <p class="text-3xl font-bold mb-2 m-0">1,429</p>
+          <div class="flex items-center gap-2">
+            <div class="flex items-center gap-1 text-xs font-semibold px-2 py-0-5 rounded-full bg-white-20"><i data-lucide="trending-up" class="lucide-xs"></i>+8.7%</div>
+            <span class="text-xs text-white opacity-60">vs last month</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="relative rounded-2xl p-5 text-white shadow-lg bg-amber-500 overflow-hidden">
+        <div class="absolute top-0 right-0 w-24 h-24 rounded-full bg-white-10"></div>
+        <div class="absolute bottom-0 right-0 w-20 h-20 rounded-full bg-white-10"></div>
+        <div class="relative">
+          <div class="flex items-start justify-between mb-4">
+            <p class="text-uppercase-xs text-white m-0">Growth Rate</p>
+            <div class="w-9 h-9 bg-white-20 rounded-xl flex items-center justify-center shrink-0"><i data-lucide="bar-chart-3" class="lucide-md"></i></div>
+          </div>
+          <p class="text-3xl font-bold mb-2 m-0">3.24%</p>
+          <div class="flex items-center gap-2">
+            <div class="flex items-center gap-1 text-xs font-semibold px-2 py-0-5 rounded-full bg-white-20"><i data-lucide="trending-down" class="lucide-xs"></i>-0.5%</div>
+            <span class="text-xs text-white opacity-60">vs last month</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. Light Stat Cards -->
+  <div class="mb-8">
+    <div class="mb-4"><h3 class="text-uppercase-xs">Light Stat Cards</h3><p class="text-xs text-slate-400 mt-1 mb-0">Tinted light-background stat cards — elegant and subtle</p></div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4">
+      <div class="card p-5 border border-primary-100">
+        <div class="flex items-start justify-between mb-4">
+          <div class="w-11 h-11 bg-primary-100 rounded-xl flex items-center justify-center"><i data-lucide="activity" class="lucide-md text-primary-600"></i></div>
+          <div class="flex items-center gap-1 text-xs font-semibold px-2 py-0-5 rounded-full bg-emerald-100 text-emerald-700"><i data-lucide="trending-up" class="lucide-xs"></i>+5.4%</div>
+        </div>
+        <p class="text-2xl font-bold text-slate-800 mb-1 m-0">3,842</p>
+        <p class="text-uppercase-xs m-0">Active Sessions</p>
+      </div>
+
+      <div class="card p-5 border border-emerald-100">
+        <div class="flex items-start justify-between mb-4">
+          <div class="w-11 h-11 bg-emerald-100 rounded-xl flex items-center justify-center"><i data-lucide="users" class="lucide-md text-emerald-600"></i></div>
+          <div class="flex items-center gap-1 text-xs font-semibold px-2 py-0-5 rounded-full bg-emerald-100 text-emerald-700"><i data-lucide="trending-up" class="lucide-xs"></i>+22.1%</div>
+        </div>
+        <p class="text-2xl font-bold text-slate-800 mb-1 m-0">248</p>
+        <p class="text-uppercase-xs m-0">New Signups</p>
+      </div>
+
+      <div class="card p-5 border border-amber-100">
+        <div class="flex items-start justify-between mb-4">
+          <div class="w-11 h-11 bg-amber-100 rounded-xl flex items-center justify-center"><i data-lucide="message-square" class="lucide-md text-amber-600"></i></div>
+          <div class="flex items-center gap-1 text-xs font-semibold px-2 py-0-5 rounded-full bg-red-100 text-red-700"><i data-lucide="trending-down" class="lucide-xs"></i>-8.3%</div>
+        </div>
+        <p class="text-2xl font-bold text-slate-800 mb-1 m-0">17</p>
+        <p class="text-uppercase-xs m-0">Open Tickets</p>
+      </div>
+
+      <div class="card p-5 border border-cyan-100">
+        <div class="flex items-start justify-between mb-4">
+          <div class="w-11 h-11 bg-cyan-100 rounded-xl flex items-center justify-center"><i data-lucide="cpu" class="lucide-md text-cyan-600"></i></div>
+          <div class="flex items-center gap-1 text-xs font-semibold px-2 py-0-5 rounded-full bg-red-100 text-red-700"><i data-lucide="trending-down" class="lucide-xs"></i>-2.1%</div>
+        </div>
+        <p class="text-2xl font-bold text-slate-800 mb-1 m-0">42%</p>
+        <p class="text-uppercase-xs m-0">Server Load</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. Profile Cards -->
+  <div class="mb-8">
+    <div class="mb-4"><h3 class="text-uppercase-xs">Profile Cards</h3><p class="text-xs text-slate-400 mt-1 mb-0">User profile cards with social stats and follow action</p></div>
+    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
+      <div class="card overflow-hidden">
+        <div class="h-24 relative overflow-hidden"><img src="img/unsplash/beach-ocean.jpg" alt="" class="card-cover-img"><div class="absolute inset-0"></div><button class="absolute top-3 right-3 w-7 h-7 bg-white-20 rounded-lg flex items-center justify-center text-white border-0 backdrop-blur"><i data-lucide="more-horizontal" class="lucide-xs"></i></button></div>
+        <div class="px-5 pb-5">
+          <div class="flex items-end justify-between profile-card-row mb-3">
+            <div class="relative inline-flex shrink-0"><img src="img/avatars/avatar-woman-alice.jpg" alt="Alice Johnson" class="card-prof-avatar"><span class="absolute bottom-0 right-0 w-3 h-3 rounded-full border-2 border-white bg-emerald-500"></span></div>
+            <div class="flex gap-2 mb-1">
+              <button class="w-8 h-8 rounded-lg border border-slate-200 bg-white flex items-center justify-center text-slate-500"><i data-lucide="twitter" class="lucide-xs"></i></button>
+              <button class="w-8 h-8 rounded-lg border border-slate-200 bg-white flex items-center justify-center text-slate-500"><i data-lucide="linkedin" class="lucide-xs"></i></button>
+            </div>
+          </div>
+          <h4 class="font-bold text-slate-800 leading-tight m-0">Alice Johnson</h4>
+          <p class="text-sm text-slate-500 m-0">Product Manager</p>
+          <p class="text-xs text-primary-600 mt-1 mb-0 font-medium">TechCorp Inc.</p>
+          <p class="text-xs text-slate-500 mt-2 leading-relaxed line-clamp-2 m-0">Passionate about building delightful user experiences that solve real problems.</p>
+          <div class="flex gap-0 mt-4 pt-4 border-t border-slate-100">
+            <div class="text-center flex-1"><p class="font-bold text-slate-800 text-sm m-0">12.4K</p><p class="text-[11px] text-slate-400 m-0">Followers</p></div>
+            <div class="text-center flex-1"><p class="font-bold text-slate-800 text-sm m-0">842</p><p class="text-[11px] text-slate-400 m-0">Following</p></div>
+            <div class="text-center flex-1"><p class="font-bold text-slate-800 text-sm m-0">234</p><p class="text-[11px] text-slate-400 m-0">Posts</p></div>
+          </div>
+          <div class="flex gap-2 mt-4">
+            <button class="flex-1 btn btn-sm btn-primary">Follow</button>
+            <button class="btn btn-sm btn-outline-secondary px-2"><i data-lucide="share-2" class="lucide-xs"></i></button>
+            <button class="btn btn-sm btn-outline-secondary px-2"><i data-lucide="message-square" class="lucide-xs"></i></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="card overflow-hidden">
+        <div class="h-24 relative overflow-hidden"><img src="img/unsplash/mountain-landscape.jpg" alt="" class="card-cover-img"><div class="absolute inset-0"></div><button class="absolute top-3 right-3 w-7 h-7 bg-white-20 rounded-lg flex items-center justify-center text-white border-0 backdrop-blur"><i data-lucide="more-horizontal" class="lucide-xs"></i></button></div>
+        <div class="px-5 pb-5">
+          <div class="flex items-end justify-between profile-card-row mb-3">
+            <div class="relative inline-flex shrink-0"><img src="img/avatars/avatar-man-bob.jpg" alt="Bob Smith" class="card-prof-avatar"><span class="absolute bottom-0 right-0 w-3 h-3 rounded-full border-2 border-white bg-red-500"></span></div>
+            <div class="flex gap-2 mb-1">
+              <button class="w-8 h-8 rounded-lg border border-slate-200 bg-white flex items-center justify-center text-slate-500"><i data-lucide="twitter" class="lucide-xs"></i></button>
+              <button class="w-8 h-8 rounded-lg border border-slate-200 bg-white flex items-center justify-center text-slate-500"><i data-lucide="linkedin" class="lucide-xs"></i></button>
+            </div>
+          </div>
+          <h4 class="font-bold text-slate-800 leading-tight m-0">Bob Smith</h4>
+          <p class="text-sm text-slate-500 m-0">Senior Developer</p>
+          <p class="text-xs text-primary-600 mt-1 mb-0 font-medium">WebSolutions</p>
+          <p class="text-xs text-slate-500 mt-2 leading-relaxed line-clamp-2 m-0">Full-stack engineer focused on performance, DX and scalable architecture.</p>
+          <div class="flex gap-0 mt-4 pt-4 border-t border-slate-100">
+            <div class="text-center flex-1"><p class="font-bold text-slate-800 text-sm m-0">8.2K</p><p class="text-[11px] text-slate-400 m-0">Followers</p></div>
+            <div class="text-center flex-1"><p class="font-bold text-slate-800 text-sm m-0">421</p><p class="text-[11px] text-slate-400 m-0">Following</p></div>
+            <div class="text-center flex-1"><p class="font-bold text-slate-800 text-sm m-0">156</p><p class="text-[11px] text-slate-400 m-0">Posts</p></div>
+          </div>
+          <div class="flex gap-2 mt-4">
+            <button class="flex-1 btn btn-sm btn-primary">Follow</button>
+            <button class="btn btn-sm btn-outline-secondary px-2"><i data-lucide="share-2" class="lucide-xs"></i></button>
+            <button class="btn btn-sm btn-outline-secondary px-2"><i data-lucide="message-square" class="lucide-xs"></i></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="card overflow-hidden">
+        <div class="h-24 relative overflow-hidden"><img src="img/unsplash/forest-path.jpg" alt="" class="card-cover-img"><div class="absolute inset-0"></div><button class="absolute top-3 right-3 w-7 h-7 bg-white-20 rounded-lg flex items-center justify-center text-white border-0 backdrop-blur"><i data-lucide="more-horizontal" class="lucide-xs"></i></button></div>
+        <div class="px-5 pb-5">
+          <div class="flex items-end justify-between profile-card-row mb-3">
+            <div class="relative inline-flex shrink-0"><img src="img/avatars/avatar-woman-carol.jpg" alt="Carol Williams" class="card-prof-avatar"><span class="absolute bottom-0 right-0 w-3 h-3 rounded-full border-2 border-white bg-amber-500"></span></div>
+            <div class="flex gap-2 mb-1">
+              <button class="w-8 h-8 rounded-lg border border-slate-200 bg-white flex items-center justify-center text-slate-500"><i data-lucide="twitter" class="lucide-xs"></i></button>
+              <button class="w-8 h-8 rounded-lg border border-slate-200 bg-white flex items-center justify-center text-slate-500"><i data-lucide="linkedin" class="lucide-xs"></i></button>
+            </div>
+          </div>
+          <h4 class="font-bold text-slate-800 leading-tight m-0">Carol Williams</h4>
+          <p class="text-sm text-slate-500 m-0">UX Designer</p>
+          <p class="text-xs text-primary-600 mt-1 mb-0 font-medium">DesignHub</p>
+          <p class="text-xs text-slate-500 mt-2 leading-relaxed line-clamp-2 m-0">Crafting pixel-perfect interfaces with a focus on accessibility and motion.</p>
+          <div class="flex gap-0 mt-4 pt-4 border-t border-slate-100">
+            <div class="text-center flex-1"><p class="font-bold text-slate-800 text-sm m-0">24.8K</p><p class="text-[11px] text-slate-400 m-0">Followers</p></div>
+            <div class="text-center flex-1"><p class="font-bold text-slate-800 text-sm m-0">1.2K</p><p class="text-[11px] text-slate-400 m-0">Following</p></div>
+            <div class="text-center flex-1"><p class="font-bold text-slate-800 text-sm m-0">389</p><p class="text-[11px] text-slate-400 m-0">Posts</p></div>
+          </div>
+          <div class="flex gap-2 mt-4">
+            <button class="flex-1 btn btn-sm btn-primary">Follow</button>
+            <button class="btn btn-sm btn-outline-secondary px-2"><i data-lucide="share-2" class="lucide-xs"></i></button>
+            <button class="btn btn-sm btn-outline-secondary px-2"><i data-lucide="message-square" class="lucide-xs"></i></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5. Product Cards -->
+  <div class="mb-8">
+    <div class="mb-4"><h3 class="text-uppercase-xs">Product Cards</h3><p class="text-xs text-slate-400 mt-1 mb-0">E-commerce product cards with rating, price and cart action</p></div>
+    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
+      <div class="card overflow-hidden">
+        <div class="relative h-44 overflow-hidden"><img src="img/unsplash/macbook-laptop.jpg" alt="MacBook Pro 14"" class="card-product-img"><span class="absolute top-3 left-3 text-xs font-bold px-2 py-1 rounded-lg bg-primary-500 text-white">New</span>
+          <button class="absolute top-3 right-3 w-8 h-8 rounded-lg bg-white-80 text-slate-400 border-0 flex items-center justify-center"><i data-lucide="heart" class="lucide-sm"></i></button>
+        </div>
+        <div class="p-4">
+          <div class="flex items-center justify-between mb-1">
+            <p class="text-uppercase-xs m-0">Electronics</p>
+            <div class="flex items-center gap-1"><i data-lucide="star" class="lucide-xs star-on"></i><span class="text-xs font-semibold text-slate-600">4.9</span><span class="text-xs text-slate-400">(342)</span></div>
+          </div>
+          <h4 class="font-semibold text-slate-800 mb-3 leading-tight">MacBook Pro 14"</h4>
+          <div class="flex items-center justify-between">
+            <div class="flex items-baseline gap-2"><span class="text-lg font-bold text-slate-800">$2,499</span><span class="text-xs text-slate-400 line-through">$2,799</span></div>
+            <button class="btn btn-primary btn-sm rounded-lg flex items-center gap-2"><i data-lucide="shopping-cart" class="lucide-xs"></i>Add</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="card overflow-hidden">
+        <div class="relative h-44 overflow-hidden"><img src="img/unsplash/wireless-headphones.jpg" alt="Wireless ANC Headphones" class="card-product-img"><span class="absolute top-3 left-3 text-xs font-bold px-2 py-1 rounded-lg bg-amber-500 text-white">Best Seller</span>
+          <button class="absolute top-3 right-3 w-8 h-8 rounded-lg bg-white-80 text-slate-400 border-0 flex items-center justify-center"><i data-lucide="heart" class="lucide-sm"></i></button>
+        </div>
+        <div class="p-4">
+          <div class="flex items-center justify-between mb-1">
+            <p class="text-uppercase-xs m-0">Audio</p>
+            <div class="flex items-center gap-1"><i data-lucide="star" class="lucide-xs star-on"></i><span class="text-xs font-semibold text-slate-600">4.7</span><span class="text-xs text-slate-400">(218)</span></div>
+          </div>
+          <h4 class="font-semibold text-slate-800 mb-3 leading-tight">Wireless ANC Headphones</h4>
+          <div class="flex items-center justify-between">
+            <div class="flex items-baseline gap-2"><span class="text-lg font-bold text-slate-800">$349</span><span class="text-xs text-slate-400 line-through">$429</span></div>
+            <button class="btn btn-primary btn-sm rounded-lg flex items-center gap-2"><i data-lucide="shopping-cart" class="lucide-xs"></i>Add</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="card overflow-hidden">
+        <div class="relative h-44 overflow-hidden"><img src="img/unsplash/mechanical-keyboard.jpg" alt="Mechanical Keyboard" class="card-product-img"><span class="absolute top-3 left-3 text-xs font-bold px-2 py-1 rounded-lg bg-red-500 text-white">Sale</span>
+          <button class="absolute top-3 right-3 w-8 h-8 rounded-lg bg-white-80 text-slate-400 border-0 flex items-center justify-center"><i data-lucide="heart" class="lucide-sm"></i></button>
+        </div>
+        <div class="p-4">
+          <div class="flex items-center justify-between mb-1">
+            <p class="text-uppercase-xs m-0">Accessories</p>
+            <div class="flex items-center gap-1"><i data-lucide="star" class="lucide-xs star-on"></i><span class="text-xs font-semibold text-slate-600">4.6</span><span class="text-xs text-slate-400">(156)</span></div>
+          </div>
+          <h4 class="font-semibold text-slate-800 mb-3 leading-tight">Mechanical Keyboard</h4>
+          <div class="flex items-center justify-between">
+            <div class="flex items-baseline gap-2"><span class="text-lg font-bold text-slate-800">$149</span><span class="text-xs text-slate-400 line-through">$199</span></div>
+            <button class="btn btn-primary btn-sm rounded-lg flex items-center gap-2"><i data-lucide="shopping-cart" class="lucide-xs"></i>Add</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 6. Blog / Article Cards -->
+  <div class="mb-8">
+    <div class="mb-4"><h3 class="text-uppercase-xs">Blog / Article Cards</h3><p class="text-xs text-slate-400 mt-1 mb-0">Article cards with cover images, category, author, reading time and bookmark</p></div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div class="card overflow-hidden">
+        <div class="h-44 overflow-hidden relative"><img src="img/unsplash/coding-laptop.jpg" alt="Tutorial" class="card-blog-img"><div class="absolute top-3 left-3"><span class="inline-flex items-center gap-1 px-2 py-0-5 rounded-full text-xs font-semibold bg-primary-100 text-primary-700">Tutorial</span></div>
+          <button class="absolute top-3 right-3 p-1 rounded-lg bg-white-20 text-white border-0 backdrop-blur"><i data-lucide="bookmark" class="lucide-xs"></i></button>
+        </div>
+        <div class="p-5">
+          <h4 class="font-bold text-slate-800 mb-2 leading-snug">Building Premium Dashboards with React &amp; Tailwind</h4>
+          <p class="text-sm text-slate-500 leading-relaxed mb-4 line-clamp-2">A deep dive into architecting beautiful, maintainable admin interfaces using modern tooling, design tokens, and component-driven workflows.</p>
+          <div class="flex items-center justify-between pt-3 border-t border-slate-100">
+            <div class="flex items-center gap-2"><div class="w-8 h-8 rounded-full bg-cyan-500 flex items-center justify-center text-white text-xs font-bold">JD</div><div><p class="text-xs font-semibold text-slate-700 m-0">John Doe</p><div class="flex items-center gap-1 text-[11px] text-slate-400"><i data-lucide="clock" class="lucide-xs"></i><span>Mar 11, 2026</span><span>·</span><span>8 min read</span></div></div></div>
+            <div class="flex items-center gap-1 text-xs text-slate-400"><i data-lucide="eye" class="lucide-xs"></i><span>2.4k</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card overflow-hidden">
+        <div class="h-44 overflow-hidden relative"><img src="img/unsplash/code-screen-dark.jpg" alt="Development" class="card-blog-img"><div class="absolute top-3 left-3"><span class="inline-flex items-center gap-1 px-2 py-0-5 rounded-full text-xs font-semibold bg-cyan-100 text-cyan-700">Development</span></div>
+          <button class="absolute top-3 right-3 p-1 rounded-lg bg-white-20 text-white border-0 backdrop-blur"><i data-lucide="bookmark" class="lucide-xs"></i></button>
+        </div>
+        <div class="p-5">
+          <h4 class="font-bold text-slate-800 mb-2 leading-snug">Advanced Tailwind CSS Techniques You Should Know</h4>
+          <p class="text-sm text-slate-500 leading-relaxed mb-4 line-clamp-2">Unlock the full potential of Tailwind with configuration tricks, custom plugins, JIT mode, and design system integration patterns.</p>
+          <div class="flex items-center justify-between pt-3 border-t border-slate-100">
+            <div class="flex items-center gap-2"><div class="w-8 h-8 rounded-full bg-pink-500 flex items-center justify-center text-white text-xs font-bold">AJ</div><div><p class="text-xs font-semibold text-slate-700 m-0">Alice Johnson</p><div class="flex items-center gap-1 text-[11px] text-slate-400"><i data-lucide="clock" class="lucide-xs"></i><span>Mar 9, 2026</span><span>·</span><span>6 min read</span></div></div></div>
+            <div class="flex items-center gap-1 text-xs text-slate-400"><i data-lucide="eye" class="lucide-xs"></i><span>1.8k</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card overflow-hidden">
+        <div class="h-44 overflow-hidden relative"><img src="img/unsplash/code-editor.jpg" alt="Design" class="card-blog-img"><div class="absolute top-3 left-3"><span class="inline-flex items-center gap-1 px-2 py-0-5 rounded-full text-xs font-semibold bg-emerald-100 text-emerald-700">Design</span></div>
+          <button class="absolute top-3 right-3 p-1 rounded-lg bg-white-20 text-white border-0 backdrop-blur"><i data-lucide="bookmark" class="lucide-xs"></i></button>
+        </div>
+        <div class="p-5">
+          <h4 class="font-bold text-slate-800 mb-2 leading-snug">Dark Mode Design — Best Practices for 2026</h4>
+          <p class="text-sm text-slate-500 leading-relaxed mb-4 line-clamp-2">Learn how to implement dark mode that feels intentional, improves accessibility, and delights users across all devices and contexts.</p>
+          <div class="flex items-center justify-between pt-3 border-t border-slate-100">
+            <div class="flex items-center gap-2"><div class="w-8 h-8 rounded-full bg-emerald-500 flex items-center justify-center text-white text-xs font-bold">CW</div><div><p class="text-xs font-semibold text-slate-700 m-0">Carol Williams</p><div class="flex items-center gap-1 text-[11px] text-slate-400"><i data-lucide="clock" class="lucide-xs"></i><span>Mar 7, 2026</span><span>·</span><span>5 min read</span></div></div></div>
+            <div class="flex items-center gap-1 text-xs text-slate-400"><i data-lucide="eye" class="lucide-xs"></i><span>3.1k</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card overflow-hidden">
+        <div class="h-44 overflow-hidden relative"><img src="img/unsplash/react-code.jpg" alt="Architecture" class="card-blog-img"><div class="absolute top-3 left-3"><span class="inline-flex items-center gap-1 px-2 py-0-5 rounded-full text-xs font-semibold bg-amber-100 text-amber-700">Architecture</span></div>
+          <button class="absolute top-3 right-3 p-1 rounded-lg bg-white-20 text-white border-0 backdrop-blur"><i data-lucide="bookmark" class="lucide-xs"></i></button>
+        </div>
+        <div class="p-5">
+          <h4 class="font-bold text-slate-800 mb-2 leading-snug">State Management in 2026 — What Actually Works</h4>
+          <p class="text-sm text-slate-500 leading-relaxed mb-4 line-clamp-2">Comparing Zustand, Jotai, Redux Toolkit and React Query — when to use each, and how to avoid over-engineering your frontend.</p>
+          <div class="flex items-center justify-between pt-3 border-t border-slate-100">
+            <div class="flex items-center gap-2"><div class="w-8 h-8 rounded-full bg-cyan-500 flex items-center justify-center text-white text-xs font-bold">BS</div><div><p class="text-xs font-semibold text-slate-700 m-0">Bob Smith</p><div class="flex items-center gap-1 text-[11px] text-slate-400"><i data-lucide="clock" class="lucide-xs"></i><span>Mar 5, 2026</span><span>·</span><span>7 min read</span></div></div></div>
+            <div class="flex items-center gap-1 text-xs text-slate-400"><i data-lucide="eye" class="lucide-xs"></i><span>4.7k</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 7. Feature Cards -->
+  <div class="mb-8">
+    <div class="mb-4"><h3 class="text-uppercase-xs">Feature Cards</h3><p class="text-xs text-slate-400 mt-1 mb-0">Highlight product features or services with icons in colored backgrounds</p></div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4">
+      <div class="card p-5">
+        <div class="relative w-12 h-12 bg-amber-100 rounded-2xl flex items-center justify-center mb-4 overflow-hidden"><i data-lucide="zap" class="lucide-md text-amber-600"></i></div>
+        <h4 class="font-bold text-slate-800 mb-2">Lightning Fast</h4>
+        <p class="text-sm text-slate-500 leading-relaxed m-0">Optimized for speed with sub-100ms response times and intelligent caching strategies.</p>
+        <button class="mt-4 text-xs font-semibold text-primary-600 bg-transparent border-0 flex items-center gap-1">Learn more <i data-lucide="arrow-right" class="lucide-xs"></i></button>
+      </div>
+      <div class="card p-5">
+        <div class="relative w-12 h-12 bg-emerald-100 rounded-2xl flex items-center justify-center mb-4 overflow-hidden"><i data-lucide="shield" class="lucide-md text-emerald-600"></i></div>
+        <h4 class="font-bold text-slate-800 mb-2">Enterprise Security</h4>
+        <p class="text-sm text-slate-500 leading-relaxed m-0">Bank-grade AES-256 encryption, SSO, 2FA, and full SOC 2 Type II compliance.</p>
+        <button class="mt-4 text-xs font-semibold text-primary-600 bg-transparent border-0 flex items-center gap-1">Learn more <i data-lucide="arrow-right" class="lucide-xs"></i></button>
+      </div>
+      <div class="card p-5">
+        <div class="relative w-12 h-12 bg-cyan-100 rounded-2xl flex items-center justify-center mb-4 overflow-hidden"><i data-lucide="globe" class="lucide-md text-cyan-600"></i></div>
+        <h4 class="font-bold text-slate-800 mb-2">Global CDN</h4>
+        <p class="text-sm text-slate-500 leading-relaxed m-0">200+ edge locations worldwide for ultra-low latency content delivery to every user.</p>
+        <button class="mt-4 text-xs font-semibold text-primary-600 bg-transparent border-0 flex items-center gap-1">Learn more <i data-lucide="arrow-right" class="lucide-xs"></i></button>
+      </div>
+      <div class="card p-5">
+        <div class="relative w-12 h-12 bg-violet-100 rounded-2xl flex items-center justify-center mb-4 overflow-hidden"><i data-lucide="cpu" class="lucide-md text-violet-600"></i></div>
+        <h4 class="font-bold text-slate-800 mb-2">Smart Automation</h4>
+        <p class="text-sm text-slate-500 leading-relaxed m-0">AI-powered workflow automation that learns and adapts to your team's patterns.</p>
+        <button class="mt-4 text-xs font-semibold text-primary-600 bg-transparent border-0 flex items-center gap-1">Learn more <i data-lucide="arrow-right" class="lucide-xs"></i></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 8. Horizontal Cards -->
+  <div class="mb-8">
+    <div class="mb-4"><h3 class="text-uppercase-xs">Horizontal Cards</h3><p class="text-xs text-slate-400 mt-1 mb-0">Side-by-side image and content layout — ideal for list views</p></div>
+    <div class="grid grid-cols-1 xl:grid-cols-2 gap-4">
+      <div class="card flex overflow-hidden">
+        <div class="w-36 shrink-0 overflow-hidden"><img src="img/unsplash/analytics-dashboard.jpg" alt="Analytics" class="card-hor-img"></div>
+        <div class="flex-1 p-4 min-w-0">
+          <div class="flex items-start justify-between mb-2">
+            <span class="inline-flex items-center px-2 py-0-5 rounded-full text-[11px] font-semibold bg-primary-100 text-primary-700">New Release</span>
+            <button class="p-1 text-slate-400 bg-transparent border-0"><i data-lucide="external-link" class="lucide-xs"></i></button>
+          </div>
+          <h4 class="font-bold text-slate-800 mb-2 leading-snug">Analytics Dashboard 3.0</h4>
+          <p class="text-xs text-slate-500 leading-relaxed mb-3 line-clamp-2">Completely rebuilt analytics engine with real-time data streaming and customizable widget layouts.</p>
+          <div class="flex items-center justify-between">
+            <div class="flex gap-2 flex-wrap">
+              <span class="text-[10px] font-medium px-2 py-0-5 rounded-md bg-slate-100 text-slate-600">React</span>
+              <span class="text-[10px] font-medium px-2 py-0-5 rounded-md bg-slate-100 text-slate-600">TypeScript</span>
+              <span class="text-[10px] font-medium px-2 py-0-5 rounded-md bg-slate-100 text-slate-600">Charts</span>
+            </div>
+            <button class="text-xs font-semibold text-primary-600 bg-transparent border-0 flex items-center gap-1 ms-2 shrink-0">View Product <i data-lucide="chevron-right" class="lucide-xs"></i></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="card flex overflow-hidden">
+        <div class="w-36 shrink-0 overflow-hidden"><img src="img/unsplash/dashboard-charts.jpg" alt="Dashboard" class="card-hor-img"></div>
+        <div class="flex-1 p-4 min-w-0">
+          <div class="flex items-start justify-between mb-2">
+            <span class="inline-flex items-center px-2 py-0-5 rounded-full text-[11px] font-semibold bg-emerald-100 text-emerald-700">Popular</span>
+            <button class="p-1 text-slate-400 bg-transparent border-0"><i data-lucide="external-link" class="lucide-xs"></i></button>
+          </div>
+          <h4 class="font-bold text-slate-800 mb-2 leading-snug">Automation Studio</h4>
+          <p class="text-xs text-slate-500 leading-relaxed mb-3 line-clamp-2">Build powerful no-code automation workflows with drag-and-drop and 200+ integrations.</p>
+          <div class="flex items-center justify-between">
+            <div class="flex gap-2 flex-wrap">
+              <span class="text-[10px] font-medium px-2 py-0-5 rounded-md bg-slate-100 text-slate-600">No-code</span>
+              <span class="text-[10px] font-medium px-2 py-0-5 rounded-md bg-slate-100 text-slate-600">Integrations</span>
+              <span class="text-[10px] font-medium px-2 py-0-5 rounded-md bg-slate-100 text-slate-600">API</span>
+            </div>
+            <button class="text-xs font-semibold text-primary-600 bg-transparent border-0 flex items-center gap-1 ms-2 shrink-0">Try Free <i data-lucide="chevron-right" class="lucide-xs"></i></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 9. Pricing Mini Cards -->
+  <div class="mb-8">
+    <div class="mb-4"><h3 class="text-uppercase-xs">Pricing Mini Cards</h3><p class="text-xs text-slate-400 mt-1 mb-0">Compact 3-tier pricing cards — the center card uses featured styling</p></div>
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+      <div class="card p-5">
+        <h4 class="font-bold text-sm text-uppercase-xs text-slate-500 mb-1">Starter</h4>
+        <div class="flex items-baseline gap-1 mb-1"><span class="text-3xl font-bold text-slate-800">$0</span><span class="text-sm text-slate-400">/month</span></div>
+        <p class="text-xs leading-relaxed mb-4 text-slate-500">Perfect for side projects and personal use.</p>
+        <ul class="space-y-2 mb-5 m-0 p-0">
+          <li class="flex items-center gap-2 text-xs"><i data-lucide="check" class="lucide-xs text-emerald-500 shrink-0"></i><span class="text-slate-600">5 projects</span></li>
+          <li class="flex items-center gap-2 text-xs"><i data-lucide="check" class="lucide-xs text-emerald-500 shrink-0"></i><span class="text-slate-600">1 GB storage</span></li>
+          <li class="flex items-center gap-2 text-xs"><i data-lucide="check" class="lucide-xs text-emerald-500 shrink-0"></i><span class="text-slate-600">Basic analytics</span></li>
+          <li class="flex items-center gap-2 text-xs"><i data-lucide="check" class="lucide-xs text-emerald-500 shrink-0"></i><span class="text-slate-600">Community support</span></li>
+        </ul>
+        <button class="w-full btn btn-sm btn-primary rounded-xl">Get Started</button>
+      </div>
+
+      <div class="relative rounded-2xl p-5 bg-primary-600 text-white shadow-lg">
+        <div class="absolute top-0 left-1/2 ck-pricing-pop"><span class="text-[11px] font-bold bg-amber-400 text-amber-900 px-3 py-1 rounded-full shadow-sm">Most Popular</span></div>
+        <h4 class="font-bold text-sm text-uppercase-xs mb-1 opacity-80">Pro</h4>
+        <div class="flex items-baseline gap-1 mb-1"><span class="text-3xl font-bold">$29</span><span class="text-sm opacity-60">/month</span></div>
+        <p class="text-xs leading-relaxed mb-4 opacity-70">Everything you need for a growing team.</p>
+        <ul class="space-y-2 mb-5 m-0 p-0">
+          <li class="flex items-center gap-2 text-xs"><i data-lucide="check" class="lucide-xs opacity-70 shrink-0"></i><span class="opacity-80">Unlimited projects</span></li>
+          <li class="flex items-center gap-2 text-xs"><i data-lucide="check" class="lucide-xs opacity-70 shrink-0"></i><span class="opacity-80">50 GB storage</span></li>
+          <li class="flex items-center gap-2 text-xs"><i data-lucide="check" class="lucide-xs opacity-70 shrink-0"></i><span class="opacity-80">Advanced analytics</span></li>
+          <li class="flex items-center gap-2 text-xs"><i data-lucide="check" class="lucide-xs opacity-70 shrink-0"></i><span class="opacity-80">Priority support</span></li>
+          <li class="flex items-center gap-2 text-xs"><i data-lucide="check" class="lucide-xs opacity-70 shrink-0"></i><span class="opacity-80">Custom domain</span></li>
+          <li class="flex items-center gap-2 text-xs"><i data-lucide="check" class="lucide-xs opacity-70 shrink-0"></i><span class="opacity-80">API access</span></li>
+        </ul>
+        <button class="w-full btn btn-sm bg-white text-primary-700 border-0 rounded-xl">Start Free Trial</button>
+      </div>
+
+      <div class="card p-5">
+        <h4 class="font-bold text-sm text-uppercase-xs text-slate-500 mb-1">Enterprise</h4>
+        <div class="flex items-baseline gap-1 mb-1"><span class="text-3xl font-bold text-slate-800">$99</span><span class="text-sm text-slate-400">/month</span></div>
+        <p class="text-xs leading-relaxed mb-4 text-slate-500">For large teams that need full control.</p>
+        <ul class="space-y-2 mb-5 m-0 p-0">
+          <li class="flex items-center gap-2 text-xs"><i data-lucide="check" class="lucide-xs text-emerald-500 shrink-0"></i><span class="text-slate-600">Unlimited everything</span></li>
+          <li class="flex items-center gap-2 text-xs"><i data-lucide="check" class="lucide-xs text-emerald-500 shrink-0"></i><span class="text-slate-600">1 TB storage</span></li>
+          <li class="flex items-center gap-2 text-xs"><i data-lucide="check" class="lucide-xs text-emerald-500 shrink-0"></i><span class="text-slate-600">Custom analytics</span></li>
+          <li class="flex items-center gap-2 text-xs"><i data-lucide="check" class="lucide-xs text-emerald-500 shrink-0"></i><span class="text-slate-600">24/7 dedicated support</span></li>
+          <li class="flex items-center gap-2 text-xs"><i data-lucide="check" class="lucide-xs text-emerald-500 shrink-0"></i><span class="text-slate-600">SSO &amp; SAML</span></li>
+          <li class="flex items-center gap-2 text-xs"><i data-lucide="check" class="lucide-xs text-emerald-500 shrink-0"></i><span class="text-slate-600">SLA guarantee</span></li>
+        </ul>
+        <button class="w-full btn btn-sm btn-primary rounded-xl">Contact Sales</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 10. Action Cards -->
+  <div class="mb-8">
+    <div class="mb-4"><h3 class="text-uppercase-xs">Action Cards</h3><p class="text-xs text-slate-400 mt-1 mb-0">Cards with gradient top borders, icon headers and action buttons</p></div>
+    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4">
+      <div class="card overflow-hidden flex flex-col">
+        <div class="h-1 bg-primary-500"></div>
+        <div class="p-5 flex flex-col flex-1">
+          <div class="w-11 h-11 bg-primary-100 rounded-xl flex items-center justify-center mb-4"><i data-lucide="activity" class="lucide-md text-primary-600"></i></div>
+          <h4 class="font-bold text-slate-800 mb-2 leading-snug">Monitor Performance</h4>
+          <p class="text-sm text-slate-500 leading-relaxed flex-1 m-0">Track page speed, Core Web Vitals and uptime across all your applications in real time.</p>
+          <div class="flex gap-2 mt-5 pt-4 border-t border-slate-100">
+            <button class="flex-1 btn btn-primary btn-sm rounded-lg text-xs">Open Monitor</button>
+            <button class="btn btn-light btn-sm px-2 rounded-lg"><i data-lucide="more-horizontal" class="lucide-sm"></i></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="card overflow-hidden flex flex-col">
+        <div class="h-1 bg-emerald-500"></div>
+        <div class="p-5 flex flex-col flex-1">
+          <div class="w-11 h-11 bg-emerald-100 rounded-xl flex items-center justify-center mb-4"><i data-lucide="shield" class="lucide-md text-emerald-600"></i></div>
+          <h4 class="font-bold text-slate-800 mb-2 leading-snug">Security Audit</h4>
+          <p class="text-sm text-slate-500 leading-relaxed flex-1 m-0">Automated security scans detect vulnerabilities and misconfigurations before they become threats.</p>
+          <div class="flex gap-2 mt-5 pt-4 border-t border-slate-100">
+            <button class="flex-1 btn btn-primary btn-sm rounded-lg text-xs">Run Audit</button>
+            <button class="btn btn-light btn-sm px-2 rounded-lg"><i data-lucide="more-horizontal" class="lucide-sm"></i></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="card overflow-hidden flex flex-col">
+        <div class="h-1 bg-cyan-500"></div>
+        <div class="p-5 flex flex-col flex-1">
+          <div class="w-11 h-11 bg-cyan-100 rounded-xl flex items-center justify-center mb-4"><i data-lucide="globe" class="lucide-md text-cyan-600"></i></div>
+          <h4 class="font-bold text-slate-800 mb-2 leading-snug">CDN Settings</h4>
+          <p class="text-sm text-slate-500 leading-relaxed flex-1 m-0">Configure edge caching rules, custom headers, and geo-based routing for optimal delivery.</p>
+          <div class="flex gap-2 mt-5 pt-4 border-t border-slate-100">
+            <button class="flex-1 btn btn-primary btn-sm rounded-lg text-xs">Configure</button>
+            <button class="btn btn-light btn-sm px-2 rounded-lg"><i data-lucide="more-horizontal" class="lucide-sm"></i></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="card overflow-hidden flex flex-col">
+        <div class="h-1 bg-amber-500"></div>
+        <div class="p-5 flex flex-col flex-1">
+          <div class="w-11 h-11 bg-amber-100 rounded-xl flex items-center justify-center mb-4"><i data-lucide="zap" class="lucide-md text-amber-600"></i></div>
+          <h4 class="font-bold text-slate-800 mb-2 leading-snug">Workflow Triggers</h4>
+          <p class="text-sm text-slate-500 leading-relaxed flex-1 m-0">Set up automated triggers based on events, schedules, or webhooks to streamline operations.</p>
+          <div class="flex gap-2 mt-5 pt-4 border-t border-slate-100">
+            <button class="flex-1 btn btn-primary btn-sm rounded-lg text-xs">Add Trigger</button>
+            <button class="btn btn-light btn-sm px-2 rounded-lg"><i data-lucide="more-horizontal" class="lucide-sm"></i></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</main>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lucide@latest/dist/umd/lucide.min.js"></script>
+</body>
+</html>

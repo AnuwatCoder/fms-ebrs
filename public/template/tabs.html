@@ -1,0 +1,1245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/svg+xml" href="img/logo.svg"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tabs | Liner Admin</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/css/theme.css" rel="stylesheet">
+  <script src="assets/js/app.js"></script>
+</head>
+<body>
+
+<aside class="app-sidebar" data-sidebar>
+        <a href="dashboard.html" class="sidebar-brand text-decoration-none">
+          <img src="img/logo.svg" alt="Liner" class="brand-logo-lg-img">
+          <div class="brand-text">
+            <div class="brand-name">Liner</div>
+            <div class="brand-sub">Admin</div>
+          </div>
+        </a>
+        <nav class="sidebar-nav custom-scrollbar"><div class="sidebar-group-title">Dashboards</div><a href="dashboard.html" class="sidebar-nav-link" data-path="dashboard.html">
+            <i data-lucide="layout-dashboard" class="lucide-md"></i><span class="link-label">Modern</span>
+          </a><a href="analytics.html" class="sidebar-nav-link" data-path="analytics.html">
+            <i data-lucide="activity" class="lucide-md"></i><span class="link-label">Analytics</span>
+          </a><a href="ecommerce.html" class="sidebar-nav-link" data-path="ecommerce.html">
+            <i data-lucide="shopping-cart" class="lucide-md"></i><span class="link-label">eCommerce</span>
+          </a><a href="music.html" class="sidebar-nav-link" data-path="music.html">
+            <i data-lucide="music" class="lucide-md"></i><span class="link-label">Music</span>
+          </a><a href="general.html" class="sidebar-nav-link" data-path="general.html">
+            <i data-lucide="globe-2" class="lucide-md"></i><span class="link-label">General</span>
+          </a><div class="sidebar-group-title">Apps</div><a href="calendar.html" class="sidebar-nav-link" data-path="calendar.html">
+            <i data-lucide="calendar" class="lucide-md"></i><span class="link-label">Calendar</span>
+          </a><a href="kanban.html" class="sidebar-nav-link" data-path="kanban.html">
+            <i data-lucide="kanban-square" class="lucide-md"></i><span class="link-label">Kanban</span>
+          </a><a href="chat.html" class="sidebar-nav-link" data-path="chat.html">
+            <i data-lucide="message-square" class="lucide-md"></i><span class="link-label">Chat</span>
+          </a><a href="email.html" class="sidebar-nav-link" data-path="email.html">
+            <i data-lucide="mail" class="lucide-md"></i><span class="link-label">Email</span>
+          </a><a href="notes.html" class="sidebar-nav-link" data-path="notes.html">
+            <i data-lucide="sticky-note" class="lucide-md"></i><span class="link-label">Notes</span>
+          </a><a href="contacts.html" class="sidebar-nav-link" data-path="contacts.html">
+            <i data-lucide="users" class="lucide-md"></i><span class="link-label">Contacts</span>
+          </a><a href="tickets.html" class="sidebar-nav-link" data-path="tickets.html">
+            <i data-lucide="ticket" class="lucide-md"></i><span class="link-label">Tickets</span>
+          </a><a href="invoice-list.html" class="sidebar-nav-link" data-path="invoice-list.html">
+            <i data-lucide="file-text" class="lucide-md"></i><span class="link-label">Invoice</span>
+          </a><a href="user-profile.html" class="sidebar-nav-link" data-path="user-profile.html">
+            <i data-lucide="user-circle" class="lucide-md"></i><span class="link-label">User Profile</span>
+          </a>
+            <a href="#" class="sidebar-nav-link sidebar-parent" data-toggle-submenu data-paths="blog-posts.html,blog-post.html,blog-detail.html">
+              <i data-lucide="book-open" class="lucide-md"></i>
+              <span class="link-label">Blog</span>
+              <i data-lucide="chevron-down" class="lucide-sm toggle-icon"></i>
+            </a>
+            <div class="sidebar-submenu"><a href="blog-posts.html" class="sidebar-nav-link" data-path="blog-posts.html">
+              <i data-lucide="book-open" class="lucide-sm"></i><span class="link-label">Blog Posts</span>
+            </a><a href="blog-post.html" class="sidebar-nav-link" data-path="blog-post.html">
+              <i data-lucide="file-text" class="lucide-sm"></i><span class="link-label">Blog Post</span>
+            </a><a href="blog-detail.html" class="sidebar-nav-link" data-path="blog-detail.html">
+              <i data-lucide="eye" class="lucide-sm"></i><span class="link-label">Blog Detail</span>
+            </a></div>
+            <a href="#" class="sidebar-nav-link sidebar-parent" data-toggle-submenu data-paths="ecommerce-shop.html,ecommerce-detail.html,ecommerce-list.html,ecommerce-checkout.html">
+              <i data-lucide="shopping-bag" class="lucide-md"></i>
+              <span class="link-label">eCommerce</span>
+              <i data-lucide="chevron-down" class="lucide-sm toggle-icon"></i>
+            </a>
+            <div class="sidebar-submenu"><a href="ecommerce-shop.html" class="sidebar-nav-link" data-path="ecommerce-shop.html">
+              <i data-lucide="store" class="lucide-sm"></i><span class="link-label">Shop</span>
+            </a><a href="ecommerce-detail.html" class="sidebar-nav-link" data-path="ecommerce-detail.html">
+              <i data-lucide="package" class="lucide-sm"></i><span class="link-label">Detail</span>
+            </a><a href="ecommerce-list.html" class="sidebar-nav-link" data-path="ecommerce-list.html">
+              <i data-lucide="list" class="lucide-sm"></i><span class="link-label">List</span>
+            </a><a href="ecommerce-checkout.html" class="sidebar-nav-link" data-path="ecommerce-checkout.html">
+              <i data-lucide="credit-card" class="lucide-sm"></i><span class="link-label">Checkout</span>
+            </a></div><div class="sidebar-group-title">UI Elements</div><a href="alert.html" class="sidebar-nav-link" data-path="alert.html">
+            <i data-lucide="alert-circle" class="lucide-md"></i><span class="link-label">Alert</span>
+          </a><a href="accordion.html" class="sidebar-nav-link" data-path="accordion.html">
+            <i data-lucide="layers" class="lucide-md"></i><span class="link-label">Accordion</span>
+          </a><a href="avatar.html" class="sidebar-nav-link" data-path="avatar.html">
+            <i data-lucide="user-circle" class="lucide-md"></i><span class="link-label">Avatar</span>
+          </a><a href="chip.html" class="sidebar-nav-link" data-path="chip.html">
+            <i data-lucide="tag" class="lucide-md"></i><span class="link-label">Chip</span>
+          </a><a href="dialog.html" class="sidebar-nav-link" data-path="dialog.html">
+            <i data-lucide="message-square" class="lucide-md"></i><span class="link-label">Dialog</span>
+          </a><a href="list.html" class="sidebar-nav-link" data-path="list.html">
+            <i data-lucide="align-left" class="lucide-md"></i><span class="link-label">List</span>
+          </a><a href="popover.html" class="sidebar-nav-link" data-path="popover.html">
+            <i data-lucide="message-circle" class="lucide-md"></i><span class="link-label">Popover</span>
+          </a><a href="rating.html" class="sidebar-nav-link" data-path="rating.html">
+            <i data-lucide="star" class="lucide-md"></i><span class="link-label">Rating</span>
+          </a><a href="tabs.html" class="sidebar-nav-link" data-path="tabs.html">
+            <i data-lucide="layout-grid" class="lucide-md"></i><span class="link-label">Tabs</span>
+          </a><a href="tooltip.html" class="sidebar-nav-link" data-path="tooltip.html">
+            <i data-lucide="info" class="lucide-md"></i><span class="link-label">Tooltip</span>
+          </a><a href="typography.html" class="sidebar-nav-link" data-path="typography.html">
+            <i data-lucide="type" class="lucide-md"></i><span class="link-label">Typography</span>
+          </a><a href="buttons.html" class="sidebar-nav-link" data-path="buttons.html">
+            <i data-lucide="zap" class="lucide-md"></i><span class="link-label">Buttons</span>
+          </a><a href="cards.html" class="sidebar-nav-link" data-path="cards.html">
+            <i data-lucide="square-stack" class="lucide-md"></i><span class="link-label">Cards</span>
+          </a><div class="sidebar-group-title">Forms</div><a href="form-elements.html" class="sidebar-nav-link" data-path="form-elements.html">
+            <i data-lucide="square-pen" class="lucide-md"></i><span class="link-label">Form Elements</span>
+          </a><a href="form-layouts.html" class="sidebar-nav-link" data-path="form-layouts.html">
+            <i data-lucide="layout-template" class="lucide-md"></i><span class="link-label">Form Layouts</span>
+          </a><a href="form-horizontal.html" class="sidebar-nav-link" data-path="form-horizontal.html">
+            <i data-lucide="rows" class="lucide-md"></i><span class="link-label">Form Horizontal</span>
+          </a><a href="form-validation.html" class="sidebar-nav-link" data-path="form-validation.html">
+            <i data-lucide="check-circle" class="lucide-md"></i><span class="link-label">Form Validation</span>
+          </a><div class="sidebar-group-title">Tables</div><a href="basic-table.html" class="sidebar-nav-link" data-path="basic-table.html">
+            <i data-lucide="table-2" class="lucide-md"></i><span class="link-label">Basic Table</span>
+          </a><a href="enhanced-table.html" class="sidebar-nav-link" data-path="enhanced-table.html">
+            <i data-lucide="table-properties" class="lucide-md"></i><span class="link-label">Enhanced Table</span>
+          </a><div class="sidebar-group-title">Charts</div><a href="line-chart.html" class="sidebar-nav-link" data-path="line-chart.html">
+            <i data-lucide="line-chart" class="lucide-md"></i><span class="link-label">Line Chart</span>
+          </a><a href="area-chart.html" class="sidebar-nav-link" data-path="area-chart.html">
+            <i data-lucide="area-chart" class="lucide-md"></i><span class="link-label">Area Chart</span>
+          </a><a href="bar-chart.html" class="sidebar-nav-link" data-path="bar-chart.html">
+            <i data-lucide="bar-chart-3" class="lucide-md"></i><span class="link-label">Bar Chart</span>
+          </a><a href="column-chart.html" class="sidebar-nav-link" data-path="column-chart.html">
+            <i data-lucide="bar-chart-2" class="lucide-md"></i><span class="link-label">Column Chart</span>
+          </a><a href="donut-chart.html" class="sidebar-nav-link" data-path="donut-chart.html">
+            <i data-lucide="pie-chart" class="lucide-md"></i><span class="link-label">Donut Chart</span>
+          </a><a href="radialbar-chart.html" class="sidebar-nav-link" data-path="radialbar-chart.html">
+            <i data-lucide="activity" class="lucide-md"></i><span class="link-label">Radialbar Chart</span>
+          </a><div class="sidebar-group-title">Pages</div><a href="account.html" class="sidebar-nav-link" data-path="account.html">
+            <i data-lucide="settings" class="lucide-md"></i><span class="link-label">Account Settings</span>
+          </a><a href="pricing.html" class="sidebar-nav-link" data-path="pricing.html">
+            <i data-lucide="credit-card" class="lucide-md"></i><span class="link-label">Pricing</span>
+          </a><a href="faq.html" class="sidebar-nav-link" data-path="faq.html">
+            <i data-lucide="help-circle" class="lucide-md"></i><span class="link-label">FAQ</span>
+          </a><a href="widgets.html" class="sidebar-nav-link" data-path="widgets.html">
+            <i data-lucide="layout-grid" class="lucide-md"></i><span class="link-label">Widgets</span>
+          </a><a href="apikeys.html" class="sidebar-nav-link" data-path="apikeys.html">
+            <i data-lucide="key" class="lucide-md"></i><span class="link-label">API Keys</span>
+          </a><div class="sidebar-group-title">Icons</div><a href="lucide-icons.html" class="sidebar-nav-link" data-path="lucide-icons.html">
+            <i data-lucide="smile" class="lucide-md"></i><span class="link-label">Lucide Icons</span>
+          </a><a href="custom-icons.html" class="sidebar-nav-link" data-path="custom-icons.html">
+            <i data-lucide="star" class="lucide-md"></i><span class="link-label">Custom Icons</span>
+          </a><div class="sidebar-group-title">Auth</div><a href="login.html" class="sidebar-nav-link" data-path="login.html">
+            <i data-lucide="log-in" class="lucide-md"></i><span class="link-label">Login</span>
+          </a><a href="register.html" class="sidebar-nav-link" data-path="register.html">
+            <i data-lucide="user-plus" class="lucide-md"></i><span class="link-label">Register</span>
+          </a><a href="forgot-password.html" class="sidebar-nav-link" data-path="forgot-password.html">
+            <i data-lucide="key-round" class="lucide-md"></i><span class="link-label">Forgot Password</span>
+          </a><a href="two-steps.html" class="sidebar-nav-link" data-path="two-steps.html">
+            <i data-lucide="shield" class="lucide-md"></i><span class="link-label">Two Step</span>
+          </a><a href="error.html" class="sidebar-nav-link" data-path="error.html">
+            <i data-lucide="alert-circle" class="lucide-md"></i><span class="link-label">Error</span>
+          </a><a href="maintenance.html" class="sidebar-nav-link" data-path="maintenance.html">
+            <i data-lucide="wrench" class="lucide-md"></i><span class="link-label">Maintenance</span>
+          </a></nav>
+        <div class="sidebar-footer">
+          <div class="user-mini">
+            <div class="user-avatar-mini">JD</div>
+            <div class="sidebar-footer-info flex-grow-1 overflow-hidden">
+              <div class="user-mini-name">John Doe</div>
+              <div class="user-mini-email">john@liner.com</div>
+            </div>
+            <i data-lucide="chevron-right" class="lucide-sm sidebar-footer-info"></i>
+          </div>
+        </div>
+      </aside>
+      <div class="sidebar-backdrop"></div>
+<header class="app-header">
+        <button class="header-icon-btn d-lg-none" data-toggle-mobile-sidebar aria-label="Menu"><i data-lucide="menu" class="lucide-md"></i></button>
+        <button class="header-icon-btn d-none d-lg-flex" data-toggle-sidebar aria-label="Toggle"><i data-lucide="menu" class="lucide-md"></i></button>
+        <div class="header-breadcrumb d-none d-md-flex" data-breadcrumb><span class="text-muted">Home</span></div>
+        <div class="flex-grow-1"></div>
+        <div class="search-wrap d-none d-sm-block">
+          <input type="text" class="form-control form-control-sm search-input w-200" placeholder="Search...">
+          <i data-lucide="search" class="lucide-sm search-icon"></i>
+        </div>
+        <button class="header-icon-btn" data-toggle-dark aria-label="Dark"><i data-lucide="moon" class="lucide-md"></i></button>
+        <div class="dropdown">
+          <button class="header-icon-btn" data-bs-toggle="dropdown" aria-label="Notifications">
+            <i data-lucide="bell" class="lucide-md"></i>
+            <span class="notif-dot">3</span>
+          </button>
+          <div class="dropdown-menu dropdown-menu-end notif-menu">
+            <div class="notif-header">
+              <strong>Notifications</strong>
+              <span class="badge badge-soft-primary">3 new</span>
+            </div>
+            <div class="notif-list custom-scrollbar">
+              <div class="notif-item unread">
+                <div class="icon-circle icon-circle-sm icon-circle-bg-success-soft"><i data-lucide="check-circle-2" class="lucide-sm"></i></div>
+                <div class="flex-grow-1">
+                  <div class="notif-title">Order Completed</div>
+                  <div class="notif-msg">Order #1234 has been fulfilled</div>
+                  <div class="notif-time">2 min ago</div>
+                </div>
+              </div>
+              <div class="notif-item unread">
+                <div class="icon-circle icon-circle-sm icon-circle-bg-info-soft"><i data-lucide="info" class="lucide-sm"></i></div>
+                <div class="flex-grow-1">
+                  <div class="notif-title">New User Registered</div>
+                  <div class="notif-msg">Sarah Johnson joined the platform</div>
+                  <div class="notif-time">15 min ago</div>
+                </div>
+              </div>
+              <div class="notif-item">
+                <div class="icon-circle icon-circle-sm icon-circle-bg-warning-soft"><i data-lucide="alert-circle" class="lucide-sm"></i></div>
+                <div class="flex-grow-1">
+                  <div class="notif-title">Low Stock Alert</div>
+                  <div class="notif-msg">Wireless Mouse is running low</div>
+                  <div class="notif-time">1 hr ago</div>
+                </div>
+              </div>
+            </div>
+            <div class="notif-footer">
+              <a href="#" class="text-primary fw-medium notif-footer-link">View all notifications</a>
+            </div>
+          </div>
+        </div>
+        <button class="header-icon-btn" data-toggle-settings aria-label="Settings"><i data-lucide="settings" class="lucide-md"></i></button>
+        <div class="dropdown">
+          <button class="user-button" data-bs-toggle="dropdown">
+            <div class="avatar avatar-sm">JD</div>
+            <div class="d-none d-sm-block text-start">
+              <div class="user-name">John Doe</div>
+              <div class="user-role">Admin</div>
+            </div>
+            <i data-lucide="chevron-down" class="lucide-sm d-none d-sm-inline"></i>
+          </button>
+          <div class="dropdown-menu dropdown-menu-end user-menu">
+            <div class="user-menu-header">
+              <div class="fw-semibold">John Doe</div>
+              <div class="text-muted small">john@liner.com</div>
+            </div>
+            <a class="dropdown-item user-menu-item" href="account.html"><i data-lucide="user" class="lucide-sm"></i> My Profile</a>
+            <a class="dropdown-item user-menu-item" href="pricing.html"><i data-lucide="credit-card" class="lucide-sm"></i> Billing</a>
+            <a class="dropdown-item user-menu-item" href="account.html"><i data-lucide="shield" class="lucide-sm"></i> Security</a>
+            <a class="dropdown-item user-menu-item" href="faq.html"><i data-lucide="help-circle" class="lucide-sm"></i> Help Center</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item user-menu-item text-danger" href="login.html"><i data-lucide="log-out" class="lucide-sm"></i> Sign Out</a>
+          </div>
+        </div>
+      </header>
+<div class="settings-overlay" data-close-settings></div>
+      <div class="settings-panel">
+        <div class="settings-section d-flex align-items-center justify-content-between">
+          <div>
+            <h5 class="mb-0 fw-bold">Theme Settings</h5>
+            <div class="text-muted small mt-1">Customize your dashboard appearance</div>
+          </div>
+          <button class="btn btn-icon btn-icon-sm" data-close-settings aria-label="Close"><i data-lucide="x" class="lucide-md"></i></button>
+        </div>
+        <div class="flex-grow-1 overflow-auto custom-scrollbar">
+          <div class="settings-section">
+            <h6>Color Mode</h6>
+            <div class="d-flex gap-2">
+              <button class="mode-card light active" data-mode="light">
+                <div class="mini-preview">
+                  <div class="mini-header"><div class="mini-bar w-18"></div></div>
+                  <div class="flex-grow-1 mini-bg-light"></div>
+                </div>
+                <div class="d-flex align-items-center justify-content-between"><strong class="text-xs">Light</strong></div>
+              </button>
+              <button class="mode-card dark" data-mode="dark">
+                <div class="mini-preview">
+                  <div class="mini-header"><div class="mini-bar w-18"></div></div>
+                  <div class="flex-grow-1 mini-bg-dark"></div>
+                </div>
+                <div class="d-flex align-items-center justify-content-between"><strong class="text-xs">Dark</strong></div>
+              </button>
+            </div>
+          </div>
+          <div class="settings-section">
+            <h6>Color Preset</h6>
+            <div class="swatch-grid"><button class="color-swatch-btn" data-color="navy">
+        <div class="swatch bg-swatch-navy"></div>
+        <div class="swatch-label">Navy</div>
+      </button><button class="color-swatch-btn" data-color="blue">
+        <div class="swatch bg-swatch-blue"></div>
+        <div class="swatch-label">Blue</div>
+      </button><button class="color-swatch-btn" data-color="green">
+        <div class="swatch bg-swatch-green"></div>
+        <div class="swatch-label">Emerald</div>
+      </button><button class="color-swatch-btn" data-color="orange">
+        <div class="swatch bg-swatch-orange"></div>
+        <div class="swatch-label">Orange</div>
+      </button><button class="color-swatch-btn" data-color="red">
+        <div class="swatch bg-swatch-red"></div>
+        <div class="swatch-label">Rose</div>
+      </button></div>
+          </div>
+          <div class="settings-section">
+            <h6>Layout</h6>
+            <label class="setting-toggle">
+              <span class="toggle-label">Collapsed Sidebar</span>
+              <span class="switch" data-setting="collapsed"></span>
+            </label>
+            <label class="setting-toggle">
+              <span class="toggle-label">Horizontal Menu</span>
+              <span class="switch" data-setting="horizontal"></span>
+            </label>
+          </div>
+          <div class="settings-section">
+            <h6>Regional</h6>
+            <label class="setting-toggle">
+              <span class="toggle-label">RTL Direction</span>
+              <span class="switch" data-setting="rtl"></span>
+            </label>
+          </div>
+        </div>
+        <div class="settings-footer">
+          <button class="btn btn-primary w-100" data-close-settings>Apply &amp; Close</button>
+        </div>
+      </div>
+<main class="app-main space-y-8">
+  <div class="flex items-start justify-between mb-6">
+    <div>
+      <h1 class="text-2xl font-bold text-slate-900 m-0">Tabs</h1>
+      <p class="text-sm text-slate-500 mt-1 mb-0">Line, pill, button, vertical, scrollable, badge, folder, icon-only, status, and product-page tab variants with rich content</p>
+    </div>
+  </div>
+
+  <div class="grid grid-cols-1 gap-6">
+    <div class="card p-6">
+      <h3 class="font-semibold text-slate-800 mb-1 m-0">Line Tabs</h3>
+      <p class="text-xs text-slate-500 mb-5">Classic underline indicator with icons</p>
+      <div class="tb-group" data-tb="line" data-tb-variant="line">
+    <div class="tb-line-list">
+      <button class="tb-line-tab tb-active" data-tb-idx="0"><i data-lucide="bar-chart-3" class="lucide-xs"></i><span>Overview</span></button><button class="tb-line-tab " data-tb-idx="1"><i data-lucide="bar-chart-3" class="lucide-xs"></i><span>Analytics</span></button><button class="tb-line-tab " data-tb-idx="2"><i data-lucide="settings" class="lucide-xs"></i><span>Settings</span></button><button class="tb-line-tab " data-tb-idx="3"><i data-lucide="lock" class="lucide-xs"></i><span>Security</span></button><button class="tb-line-tab " data-tb-idx="4"><i data-lucide="credit-card" class="lucide-xs"></i><span>Billing</span></button>
+    </div>
+    <div class="tb-line-content">
+      <div class="tb-pane tb-pane-active" data-tb-pane="0">
+  <div class="space-y-3">
+    <p class="font-semibold text-slate-700 mb-3 m-0">Overview Dashboard</p>
+    <div class="grid grid-cols-3 gap-3">
+      <div class="bg-slate-50 rounded-xl p-3">
+        <p class="text-xs text-slate-500 mb-1 m-0">Total Users</p>
+        <p class="text-lg font-bold text-primary-600 m-0">12,480</p>
+        <p class="text-xs text-slate-400 mt-0-5 m-0">+8.2% this month</p>
+      </div><div class="bg-slate-50 rounded-xl p-3">
+        <p class="text-xs text-slate-500 mb-1 m-0">Revenue</p>
+        <p class="text-lg font-bold text-emerald-600 m-0">$48,295</p>
+        <p class="text-xs text-slate-400 mt-0-5 m-0">+12.5% this month</p>
+      </div><div class="bg-slate-50 rounded-xl p-3">
+        <p class="text-xs text-slate-500 mb-1 m-0">Conversion</p>
+        <p class="text-lg font-bold text-amber-600 m-0">3.24%</p>
+        <p class="text-xs text-slate-400 mt-0-5 m-0">-0.8% this month</p>
+      </div>
+    </div>
+    <p class="text-xs text-slate-500 leading-relaxed mt-2 m-0">Overall performance is trending upward. Revenue growth is outpacing user growth, indicating improved monetization. Monitor conversion rate closely.</p>
+  </div></div><div class="tb-pane " data-tb-pane="1">
+  <div class="space-y-3">
+    <p class="font-semibold text-slate-700 m-0">Analytics Report — March 2026</p>
+    <div class="space-y-2">
+      <div>
+        <div class="flex justify-between text-xs mb-1"><span class="text-slate-500">Page Views</span><span class="font-semibold text-slate-700">2,84,921</span></div>
+        <div class="h-2 bg-slate-200 rounded-full overflow-hidden"><div class="h-full bg-primary-500 rounded-full" style="width:94.97366666666667%"></div></div>
+      </div><div>
+        <div class="flex justify-between text-xs mb-1"><span class="text-slate-500">Unique Visitors</span><span class="font-semibold text-slate-700">48,200</span></div>
+        <div class="h-2 bg-slate-200 rounded-full overflow-hidden"><div class="h-full bg-primary-500 rounded-full" style="width:80.33333333333333%"></div></div>
+      </div><div>
+        <div class="flex justify-between text-xs mb-1"><span class="text-slate-500">Bounce Rate</span><span class="font-semibold text-slate-700">34</span></div>
+        <div class="h-2 bg-slate-200 rounded-full overflow-hidden"><div class="h-full bg-primary-500 rounded-full" style="width:34%"></div></div>
+      </div><div>
+        <div class="flex justify-between text-xs mb-1"><span class="text-slate-500">Avg Session (s)</span><span class="font-semibold text-slate-700">245</span></div>
+        <div class="h-2 bg-slate-200 rounded-full overflow-hidden"><div class="h-full bg-primary-500 rounded-full" style="width:61.25000000000001%"></div></div>
+      </div>
+    </div>
+  </div></div><div class="tb-pane " data-tb-pane="2">
+  <div class="space-y-3">
+    <p class="font-semibold text-slate-700 m-0">Account Settings</p>
+    <div class="space-y-3">
+      <div><label class="block text-xs font-medium text-slate-500 mb-1">Display Name</label><input type="text" class="input text-sm py-2" value="Alexandra Thompson"></div>
+      <div><label class="block text-xs font-medium text-slate-500 mb-1">Language</label><select class="input text-sm py-2"><option>English (US)</option><option>French</option><option>German</option></select></div>
+      <button class="btn btn-primary text-xs py-2 px-4">Save Settings</button>
+    </div>
+  </div></div><div class="tb-pane " data-tb-pane="3">
+  <div class="space-y-2">
+    <p class="font-semibold text-slate-700 mb-3 m-0">Security Settings</p>
+    <div class="flex items-center justify-between py-2 tb-security-row">
+      <div><p class="text-sm font-medium text-slate-700 m-0">Two-Factor Authentication</p><p class="text-xs text-slate-400 m-0">Require a code in addition to your password</p></div>
+      <div class="tb-switch tb-switch-on"><div class="tb-switch-dot"></div></div>
+    </div><div class="flex items-center justify-between py-2 tb-security-row">
+      <div><p class="text-sm font-medium text-slate-700 m-0">Login Notifications</p><p class="text-xs text-slate-400 m-0">Email alerts for new sign-ins</p></div>
+      <div class="tb-switch tb-switch-on"><div class="tb-switch-dot"></div></div>
+    </div><div class="flex items-center justify-between py-2 tb-security-row">
+      <div><p class="text-sm font-medium text-slate-700 m-0">API Access</p><p class="text-xs text-slate-400 m-0">Allow external apps to connect via API</p></div>
+      <div class="tb-switch "><div class="tb-switch-dot"></div></div>
+    </div><div class="flex items-center justify-between py-2 tb-security-row">
+      <div><p class="text-sm font-medium text-slate-700 m-0">Biometric Login</p><p class="text-xs text-slate-400 m-0">Use fingerprint or face ID to sign in</p></div>
+      <div class="tb-switch "><div class="tb-switch-dot"></div></div>
+    </div>
+  </div></div><div class="tb-pane " data-tb-pane="4">
+  <div class="space-y-3">
+    <p class="font-semibold text-slate-700 m-0">Billing &amp; Plans</p>
+    <div class="grid grid-cols-1 grid-cols-sm-3 gap-3">
+      <div class="rounded-xl p-3 border ">
+        <div class="flex items-center justify-between mb-2"><p class="text-sm font-semibold text-slate-800 m-0">Starter</p></div>
+        <p class="text-xl font-bold text-primary-600 mb-2 m-0">$9<span class="text-xs font-normal text-slate-400">/mo</span></p>
+        <p class="text-xs text-slate-500 mb-0-5 m-0">• 5 projects</p><p class="text-xs text-slate-500 mb-0-5 m-0">• 10 GB storage</p><p class="text-xs text-slate-500 mb-0-5 m-0">• Email support</p>
+      </div><div class="rounded-xl p-3 border border-primary-400 bg-primary-50">
+        <div class="flex items-center justify-between mb-2"><p class="text-sm font-semibold text-slate-800 m-0">Pro</p><span class="badge badge-primary" style="font-size:9px">CURRENT</span></div>
+        <p class="text-xl font-bold text-primary-600 mb-2 m-0">$29<span class="text-xs font-normal text-slate-400">/mo</span></p>
+        <p class="text-xs text-slate-500 mb-0-5 m-0">• Unlimited projects</p><p class="text-xs text-slate-500 mb-0-5 m-0">• 100 GB storage</p><p class="text-xs text-slate-500 mb-0-5 m-0">• Priority support</p>
+      </div><div class="rounded-xl p-3 border ">
+        <div class="flex items-center justify-between mb-2"><p class="text-sm font-semibold text-slate-800 m-0">Enterprise</p></div>
+        <p class="text-xl font-bold text-primary-600 mb-2 m-0">Custom<span class="text-xs font-normal text-slate-400"></span></p>
+        <p class="text-xs text-slate-500 mb-0-5 m-0">• Unlimited everything</p><p class="text-xs text-slate-500 mb-0-5 m-0">• Dedicated server</p><p class="text-xs text-slate-500 mb-0-5 m-0">• 24/7 SLA</p>
+      </div>
+    </div>
+  </div></div>
+    </div>
+  </div>
+    </div>
+
+    <div class="card p-6">
+      <h3 class="font-semibold text-slate-800 mb-1 m-0">Pill Tabs</h3>
+      <p class="text-xs text-slate-500 mb-5">Pill/segment control style with ghost selected state</p>
+      <div class="tb-group" data-tb="pill" data-tb-variant="pill">
+    <div class="tb-pill-list">
+      <button class="tb-pill-tab tb-active" data-tb-idx="0"><i data-lucide="bar-chart-3" class="lucide-xs"></i><span>Overview</span></button><button class="tb-pill-tab " data-tb-idx="1"><i data-lucide="bar-chart-3" class="lucide-xs"></i><span>Analytics</span></button><button class="tb-pill-tab " data-tb-idx="2"><i data-lucide="settings" class="lucide-xs"></i><span>Settings</span></button><button class="tb-pill-tab " data-tb-idx="3"><i data-lucide="lock" class="lucide-xs"></i><span>Security</span></button><button class="tb-pill-tab " data-tb-idx="4"><i data-lucide="credit-card" class="lucide-xs"></i><span>Billing</span></button>
+    </div>
+    <div class="tb-line-content">
+      <div class="tb-pane tb-pane-active" data-tb-pane="0">
+  <div class="space-y-3">
+    <p class="font-semibold text-slate-700 mb-3 m-0">Overview Dashboard</p>
+    <div class="grid grid-cols-3 gap-3">
+      <div class="bg-slate-50 rounded-xl p-3">
+        <p class="text-xs text-slate-500 mb-1 m-0">Total Users</p>
+        <p class="text-lg font-bold text-primary-600 m-0">12,480</p>
+        <p class="text-xs text-slate-400 mt-0-5 m-0">+8.2% this month</p>
+      </div><div class="bg-slate-50 rounded-xl p-3">
+        <p class="text-xs text-slate-500 mb-1 m-0">Revenue</p>
+        <p class="text-lg font-bold text-emerald-600 m-0">$48,295</p>
+        <p class="text-xs text-slate-400 mt-0-5 m-0">+12.5% this month</p>
+      </div><div class="bg-slate-50 rounded-xl p-3">
+        <p class="text-xs text-slate-500 mb-1 m-0">Conversion</p>
+        <p class="text-lg font-bold text-amber-600 m-0">3.24%</p>
+        <p class="text-xs text-slate-400 mt-0-5 m-0">-0.8% this month</p>
+      </div>
+    </div>
+    <p class="text-xs text-slate-500 leading-relaxed mt-2 m-0">Overall performance is trending upward. Revenue growth is outpacing user growth, indicating improved monetization. Monitor conversion rate closely.</p>
+  </div></div><div class="tb-pane " data-tb-pane="1">
+  <div class="space-y-3">
+    <p class="font-semibold text-slate-700 m-0">Analytics Report — March 2026</p>
+    <div class="space-y-2">
+      <div>
+        <div class="flex justify-between text-xs mb-1"><span class="text-slate-500">Page Views</span><span class="font-semibold text-slate-700">2,84,921</span></div>
+        <div class="h-2 bg-slate-200 rounded-full overflow-hidden"><div class="h-full bg-primary-500 rounded-full" style="width:94.97366666666667%"></div></div>
+      </div><div>
+        <div class="flex justify-between text-xs mb-1"><span class="text-slate-500">Unique Visitors</span><span class="font-semibold text-slate-700">48,200</span></div>
+        <div class="h-2 bg-slate-200 rounded-full overflow-hidden"><div class="h-full bg-primary-500 rounded-full" style="width:80.33333333333333%"></div></div>
+      </div><div>
+        <div class="flex justify-between text-xs mb-1"><span class="text-slate-500">Bounce Rate</span><span class="font-semibold text-slate-700">34</span></div>
+        <div class="h-2 bg-slate-200 rounded-full overflow-hidden"><div class="h-full bg-primary-500 rounded-full" style="width:34%"></div></div>
+      </div><div>
+        <div class="flex justify-between text-xs mb-1"><span class="text-slate-500">Avg Session (s)</span><span class="font-semibold text-slate-700">245</span></div>
+        <div class="h-2 bg-slate-200 rounded-full overflow-hidden"><div class="h-full bg-primary-500 rounded-full" style="width:61.25000000000001%"></div></div>
+      </div>
+    </div>
+  </div></div><div class="tb-pane " data-tb-pane="2">
+  <div class="space-y-3">
+    <p class="font-semibold text-slate-700 m-0">Account Settings</p>
+    <div class="space-y-3">
+      <div><label class="block text-xs font-medium text-slate-500 mb-1">Display Name</label><input type="text" class="input text-sm py-2" value="Alexandra Thompson"></div>
+      <div><label class="block text-xs font-medium text-slate-500 mb-1">Language</label><select class="input text-sm py-2"><option>English (US)</option><option>French</option><option>German</option></select></div>
+      <button class="btn btn-primary text-xs py-2 px-4">Save Settings</button>
+    </div>
+  </div></div><div class="tb-pane " data-tb-pane="3">
+  <div class="space-y-2">
+    <p class="font-semibold text-slate-700 mb-3 m-0">Security Settings</p>
+    <div class="flex items-center justify-between py-2 tb-security-row">
+      <div><p class="text-sm font-medium text-slate-700 m-0">Two-Factor Authentication</p><p class="text-xs text-slate-400 m-0">Require a code in addition to your password</p></div>
+      <div class="tb-switch tb-switch-on"><div class="tb-switch-dot"></div></div>
+    </div><div class="flex items-center justify-between py-2 tb-security-row">
+      <div><p class="text-sm font-medium text-slate-700 m-0">Login Notifications</p><p class="text-xs text-slate-400 m-0">Email alerts for new sign-ins</p></div>
+      <div class="tb-switch tb-switch-on"><div class="tb-switch-dot"></div></div>
+    </div><div class="flex items-center justify-between py-2 tb-security-row">
+      <div><p class="text-sm font-medium text-slate-700 m-0">API Access</p><p class="text-xs text-slate-400 m-0">Allow external apps to connect via API</p></div>
+      <div class="tb-switch "><div class="tb-switch-dot"></div></div>
+    </div><div class="flex items-center justify-between py-2 tb-security-row">
+      <div><p class="text-sm font-medium text-slate-700 m-0">Biometric Login</p><p class="text-xs text-slate-400 m-0">Use fingerprint or face ID to sign in</p></div>
+      <div class="tb-switch "><div class="tb-switch-dot"></div></div>
+    </div>
+  </div></div><div class="tb-pane " data-tb-pane="4">
+  <div class="space-y-3">
+    <p class="font-semibold text-slate-700 m-0">Billing &amp; Plans</p>
+    <div class="grid grid-cols-1 grid-cols-sm-3 gap-3">
+      <div class="rounded-xl p-3 border ">
+        <div class="flex items-center justify-between mb-2"><p class="text-sm font-semibold text-slate-800 m-0">Starter</p></div>
+        <p class="text-xl font-bold text-primary-600 mb-2 m-0">$9<span class="text-xs font-normal text-slate-400">/mo</span></p>
+        <p class="text-xs text-slate-500 mb-0-5 m-0">• 5 projects</p><p class="text-xs text-slate-500 mb-0-5 m-0">• 10 GB storage</p><p class="text-xs text-slate-500 mb-0-5 m-0">• Email support</p>
+      </div><div class="rounded-xl p-3 border border-primary-400 bg-primary-50">
+        <div class="flex items-center justify-between mb-2"><p class="text-sm font-semibold text-slate-800 m-0">Pro</p><span class="badge badge-primary" style="font-size:9px">CURRENT</span></div>
+        <p class="text-xl font-bold text-primary-600 mb-2 m-0">$29<span class="text-xs font-normal text-slate-400">/mo</span></p>
+        <p class="text-xs text-slate-500 mb-0-5 m-0">• Unlimited projects</p><p class="text-xs text-slate-500 mb-0-5 m-0">• 100 GB storage</p><p class="text-xs text-slate-500 mb-0-5 m-0">• Priority support</p>
+      </div><div class="rounded-xl p-3 border ">
+        <div class="flex items-center justify-between mb-2"><p class="text-sm font-semibold text-slate-800 m-0">Enterprise</p></div>
+        <p class="text-xl font-bold text-primary-600 mb-2 m-0">Custom<span class="text-xs font-normal text-slate-400"></span></p>
+        <p class="text-xs text-slate-500 mb-0-5 m-0">• Unlimited everything</p><p class="text-xs text-slate-500 mb-0-5 m-0">• Dedicated server</p><p class="text-xs text-slate-500 mb-0-5 m-0">• 24/7 SLA</p>
+      </div>
+    </div>
+  </div></div>
+    </div>
+  </div>
+    </div>
+
+    <div class="card p-6">
+      <h3 class="font-semibold text-slate-800 mb-1 m-0">Button Tabs</h3>
+      <p class="text-xs text-slate-500 mb-5">Outlined button style — active tab becomes filled primary</p>
+      <div class="tb-group" data-tb="btn" data-tb-variant="button">
+    <div class="tb-btn-list">
+      <button class="tb-btn-tab tb-active" data-tb-idx="0"><i data-lucide="bar-chart-3" class="lucide-xs"></i><span>Overview</span></button><button class="tb-btn-tab " data-tb-idx="1"><i data-lucide="bar-chart-3" class="lucide-xs"></i><span>Analytics</span></button><button class="tb-btn-tab " data-tb-idx="2"><i data-lucide="settings" class="lucide-xs"></i><span>Settings</span></button><button class="tb-btn-tab " data-tb-idx="3"><i data-lucide="lock" class="lucide-xs"></i><span>Security</span></button>
+    </div>
+    <div class="tb-line-content">
+      <div class="tb-pane tb-pane-active" data-tb-pane="0">
+  <div class="space-y-3">
+    <p class="font-semibold text-slate-700 mb-3 m-0">Overview Dashboard</p>
+    <div class="grid grid-cols-3 gap-3">
+      <div class="bg-slate-50 rounded-xl p-3">
+        <p class="text-xs text-slate-500 mb-1 m-0">Total Users</p>
+        <p class="text-lg font-bold text-primary-600 m-0">12,480</p>
+        <p class="text-xs text-slate-400 mt-0-5 m-0">+8.2% this month</p>
+      </div><div class="bg-slate-50 rounded-xl p-3">
+        <p class="text-xs text-slate-500 mb-1 m-0">Revenue</p>
+        <p class="text-lg font-bold text-emerald-600 m-0">$48,295</p>
+        <p class="text-xs text-slate-400 mt-0-5 m-0">+12.5% this month</p>
+      </div><div class="bg-slate-50 rounded-xl p-3">
+        <p class="text-xs text-slate-500 mb-1 m-0">Conversion</p>
+        <p class="text-lg font-bold text-amber-600 m-0">3.24%</p>
+        <p class="text-xs text-slate-400 mt-0-5 m-0">-0.8% this month</p>
+      </div>
+    </div>
+    <p class="text-xs text-slate-500 leading-relaxed mt-2 m-0">Overall performance is trending upward. Revenue growth is outpacing user growth, indicating improved monetization. Monitor conversion rate closely.</p>
+  </div></div><div class="tb-pane " data-tb-pane="1">
+  <div class="space-y-3">
+    <p class="font-semibold text-slate-700 m-0">Analytics Report — March 2026</p>
+    <div class="space-y-2">
+      <div>
+        <div class="flex justify-between text-xs mb-1"><span class="text-slate-500">Page Views</span><span class="font-semibold text-slate-700">2,84,921</span></div>
+        <div class="h-2 bg-slate-200 rounded-full overflow-hidden"><div class="h-full bg-primary-500 rounded-full" style="width:94.97366666666667%"></div></div>
+      </div><div>
+        <div class="flex justify-between text-xs mb-1"><span class="text-slate-500">Unique Visitors</span><span class="font-semibold text-slate-700">48,200</span></div>
+        <div class="h-2 bg-slate-200 rounded-full overflow-hidden"><div class="h-full bg-primary-500 rounded-full" style="width:80.33333333333333%"></div></div>
+      </div><div>
+        <div class="flex justify-between text-xs mb-1"><span class="text-slate-500">Bounce Rate</span><span class="font-semibold text-slate-700">34</span></div>
+        <div class="h-2 bg-slate-200 rounded-full overflow-hidden"><div class="h-full bg-primary-500 rounded-full" style="width:34%"></div></div>
+      </div><div>
+        <div class="flex justify-between text-xs mb-1"><span class="text-slate-500">Avg Session (s)</span><span class="font-semibold text-slate-700">245</span></div>
+        <div class="h-2 bg-slate-200 rounded-full overflow-hidden"><div class="h-full bg-primary-500 rounded-full" style="width:61.25000000000001%"></div></div>
+      </div>
+    </div>
+  </div></div><div class="tb-pane " data-tb-pane="2">
+  <div class="space-y-3">
+    <p class="font-semibold text-slate-700 m-0">Account Settings</p>
+    <div class="space-y-3">
+      <div><label class="block text-xs font-medium text-slate-500 mb-1">Display Name</label><input type="text" class="input text-sm py-2" value="Alexandra Thompson"></div>
+      <div><label class="block text-xs font-medium text-slate-500 mb-1">Language</label><select class="input text-sm py-2"><option>English (US)</option><option>French</option><option>German</option></select></div>
+      <button class="btn btn-primary text-xs py-2 px-4">Save Settings</button>
+    </div>
+  </div></div><div class="tb-pane " data-tb-pane="3">
+  <div class="space-y-2">
+    <p class="font-semibold text-slate-700 mb-3 m-0">Security Settings</p>
+    <div class="flex items-center justify-between py-2 tb-security-row">
+      <div><p class="text-sm font-medium text-slate-700 m-0">Two-Factor Authentication</p><p class="text-xs text-slate-400 m-0">Require a code in addition to your password</p></div>
+      <div class="tb-switch tb-switch-on"><div class="tb-switch-dot"></div></div>
+    </div><div class="flex items-center justify-between py-2 tb-security-row">
+      <div><p class="text-sm font-medium text-slate-700 m-0">Login Notifications</p><p class="text-xs text-slate-400 m-0">Email alerts for new sign-ins</p></div>
+      <div class="tb-switch tb-switch-on"><div class="tb-switch-dot"></div></div>
+    </div><div class="flex items-center justify-between py-2 tb-security-row">
+      <div><p class="text-sm font-medium text-slate-700 m-0">API Access</p><p class="text-xs text-slate-400 m-0">Allow external apps to connect via API</p></div>
+      <div class="tb-switch "><div class="tb-switch-dot"></div></div>
+    </div><div class="flex items-center justify-between py-2 tb-security-row">
+      <div><p class="text-sm font-medium text-slate-700 m-0">Biometric Login</p><p class="text-xs text-slate-400 m-0">Use fingerprint or face ID to sign in</p></div>
+      <div class="tb-switch "><div class="tb-switch-dot"></div></div>
+    </div>
+  </div></div>
+    </div>
+  </div>
+    </div>
+
+    <div class="card p-6">
+      <h3 class="font-semibold text-slate-800 mb-1 m-0">Vertical Tabs</h3>
+      <p class="text-xs text-slate-500 mb-5">Left sidebar navigation with content panel on the right</p>
+      <div class="tb-group flex tb-vert" data-tb="vert" data-tb-variant="vert">
+    <div class="tb-vert-list">
+      <button class="tb-vert-tab tb-active" data-tb-idx="0"><i data-lucide="user" class="lucide-xs"></i><span>Profile</span></button><button class="tb-vert-tab " data-tb-idx="1"><i data-lucide="settings" class="lucide-xs"></i><span>Settings</span></button><button class="tb-vert-tab " data-tb-idx="2"><i data-lucide="bell" class="lucide-xs"></i><span>Notifications</span><span class="tb-line-badge">5</span></button><button class="tb-vert-tab " data-tb-idx="3"><i data-lucide="lock" class="lucide-xs"></i><span>Security</span></button><button class="tb-vert-tab " data-tb-idx="4"><i data-lucide="credit-card" class="lucide-xs"></i><span>Billing</span></button><button class="tb-vert-tab " data-tb-idx="5"><i data-lucide="help-circle" class="lucide-xs"></i><span>Help</span></button>
+    </div>
+    <div class="tb-vert-content">
+      <div class="tb-pane tb-pane-active" data-tb-pane="0"><div class="space-y-2"><p class="font-semibold text-slate-700 m-0">Personal Information</p><p class="text-sm">Manage your profile details, bio, and public information visible to other users.</p><div class="grid grid-cols-2 gap-3 mt-3"><input type="text" class="input text-sm py-2" value="Alexandra"><input type="text" class="input text-sm py-2" value="Thompson"></div></div></div><div class="tb-pane " data-tb-pane="1">
+  <div class="space-y-3">
+    <p class="font-semibold text-slate-700 m-0">Account Settings</p>
+    <div class="space-y-3">
+      <div><label class="block text-xs font-medium text-slate-500 mb-1">Display Name</label><input type="text" class="input text-sm py-2" value="Alexandra Thompson"></div>
+      <div><label class="block text-xs font-medium text-slate-500 mb-1">Language</label><select class="input text-sm py-2"><option>English (US)</option><option>French</option><option>German</option></select></div>
+      <button class="btn btn-primary text-xs py-2 px-4">Save Settings</button>
+    </div>
+  </div></div><div class="tb-pane " data-tb-pane="2"><div class="space-y-2"><p class="font-semibold text-slate-700 m-0">Notification Preferences</p><p class="text-sm">You have 5 unread notifications. Configure how and when you receive alerts.</p><label class="flex items-center gap-2 cursor-pointer"><input type="checkbox" checked class="w-4 h-4 text-primary-600 rounded"><span class="text-sm text-slate-600">Email digests</span></label><label class="flex items-center gap-2 cursor-pointer"><input type="checkbox" checked class="w-4 h-4 text-primary-600 rounded"><span class="text-sm text-slate-600">Push alerts</span></label><label class="flex items-center gap-2 cursor-pointer"><input type="checkbox" checked class="w-4 h-4 text-primary-600 rounded"><span class="text-sm text-slate-600">SMS for critical issues</span></label></div></div><div class="tb-pane " data-tb-pane="3">
+  <div class="space-y-2">
+    <p class="font-semibold text-slate-700 mb-3 m-0">Security Settings</p>
+    <div class="flex items-center justify-between py-2 tb-security-row">
+      <div><p class="text-sm font-medium text-slate-700 m-0">Two-Factor Authentication</p><p class="text-xs text-slate-400 m-0">Require a code in addition to your password</p></div>
+      <div class="tb-switch tb-switch-on"><div class="tb-switch-dot"></div></div>
+    </div><div class="flex items-center justify-between py-2 tb-security-row">
+      <div><p class="text-sm font-medium text-slate-700 m-0">Login Notifications</p><p class="text-xs text-slate-400 m-0">Email alerts for new sign-ins</p></div>
+      <div class="tb-switch tb-switch-on"><div class="tb-switch-dot"></div></div>
+    </div><div class="flex items-center justify-between py-2 tb-security-row">
+      <div><p class="text-sm font-medium text-slate-700 m-0">API Access</p><p class="text-xs text-slate-400 m-0">Allow external apps to connect via API</p></div>
+      <div class="tb-switch "><div class="tb-switch-dot"></div></div>
+    </div><div class="flex items-center justify-between py-2 tb-security-row">
+      <div><p class="text-sm font-medium text-slate-700 m-0">Biometric Login</p><p class="text-xs text-slate-400 m-0">Use fingerprint or face ID to sign in</p></div>
+      <div class="tb-switch "><div class="tb-switch-dot"></div></div>
+    </div>
+  </div></div><div class="tb-pane " data-tb-pane="4">
+  <div class="space-y-3">
+    <p class="font-semibold text-slate-700 m-0">Billing &amp; Plans</p>
+    <div class="grid grid-cols-1 grid-cols-sm-3 gap-3">
+      <div class="rounded-xl p-3 border ">
+        <div class="flex items-center justify-between mb-2"><p class="text-sm font-semibold text-slate-800 m-0">Starter</p></div>
+        <p class="text-xl font-bold text-primary-600 mb-2 m-0">$9<span class="text-xs font-normal text-slate-400">/mo</span></p>
+        <p class="text-xs text-slate-500 mb-0-5 m-0">• 5 projects</p><p class="text-xs text-slate-500 mb-0-5 m-0">• 10 GB storage</p><p class="text-xs text-slate-500 mb-0-5 m-0">• Email support</p>
+      </div><div class="rounded-xl p-3 border border-primary-400 bg-primary-50">
+        <div class="flex items-center justify-between mb-2"><p class="text-sm font-semibold text-slate-800 m-0">Pro</p><span class="badge badge-primary" style="font-size:9px">CURRENT</span></div>
+        <p class="text-xl font-bold text-primary-600 mb-2 m-0">$29<span class="text-xs font-normal text-slate-400">/mo</span></p>
+        <p class="text-xs text-slate-500 mb-0-5 m-0">• Unlimited projects</p><p class="text-xs text-slate-500 mb-0-5 m-0">• 100 GB storage</p><p class="text-xs text-slate-500 mb-0-5 m-0">• Priority support</p>
+      </div><div class="rounded-xl p-3 border ">
+        <div class="flex items-center justify-between mb-2"><p class="text-sm font-semibold text-slate-800 m-0">Enterprise</p></div>
+        <p class="text-xl font-bold text-primary-600 mb-2 m-0">Custom<span class="text-xs font-normal text-slate-400"></span></p>
+        <p class="text-xs text-slate-500 mb-0-5 m-0">• Unlimited everything</p><p class="text-xs text-slate-500 mb-0-5 m-0">• Dedicated server</p><p class="text-xs text-slate-500 mb-0-5 m-0">• 24/7 SLA</p>
+      </div>
+    </div>
+  </div></div><div class="tb-pane " data-tb-pane="5"><div class="space-y-2"><p class="font-semibold text-slate-700 m-0">Help &amp; Support</p><p class="text-sm">Browse our documentation or contact the support team.</p><div class="space-y-2 mt-2"><div class="flex items-center gap-2 text-sm text-primary-600 cursor-pointer">• Documentation</div><div class="flex items-center gap-2 text-sm text-primary-600 cursor-pointer">• Video Tutorials</div><div class="flex items-center gap-2 text-sm text-primary-600 cursor-pointer">• Community Forum</div><div class="flex items-center gap-2 text-sm text-primary-600 cursor-pointer">• Contact Support</div></div></div></div>
+    </div>
+  </div>
+    </div>
+
+    <div class="card p-6">
+  <h3 class="font-semibold text-slate-800 mb-1 m-0">Scrollable Tabs</h3>
+  <p class="text-xs text-slate-500 mb-5">Horizontally scrollable when tabs overflow the container</p>
+  <div class="tb-line-list tb-scroll" data-tb="scroll-months" data-tb-variant="line">
+    <button class="tb-line-tab " data-tb-idx="0">January</button><button class="tb-line-tab " data-tb-idx="1">February</button><button class="tb-line-tab tb-active" data-tb-idx="2">March</button><button class="tb-line-tab " data-tb-idx="3">April</button><button class="tb-line-tab " data-tb-idx="4">May</button><button class="tb-line-tab " data-tb-idx="5">June</button><button class="tb-line-tab " data-tb-idx="6">July</button><button class="tb-line-tab " data-tb-idx="7">August</button><button class="tb-line-tab " data-tb-idx="8">September</button><button class="tb-line-tab " data-tb-idx="9">October</button>
+  </div>
+  <div class="tb-line-content" data-tb-scroll-content>
+    <div class="tb-pane " data-tb-pane="0">
+      <p class="font-semibold text-slate-700 mb-2 m-0">January 2026</p>
+      <p class="text-sm text-slate-600 m-0">Showing analytics data for January. Revenue totaled $23520, with 8954 active users.</p>
+    </div><div class="tb-pane " data-tb-pane="1">
+      <p class="font-semibold text-slate-700 mb-2 m-0">February 2026</p>
+      <p class="text-sm text-slate-600 m-0">Showing analytics data for February. Revenue totaled $68142, with 11911 active users.</p>
+    </div><div class="tb-pane tb-pane-active" data-tb-pane="2">
+      <p class="font-semibold text-slate-700 mb-2 m-0">March 2026</p>
+      <p class="text-sm text-slate-600 m-0">Showing analytics data for March. Revenue totaled $65038, with 11357 active users.</p>
+    </div><div class="tb-pane " data-tb-pane="3">
+      <p class="font-semibold text-slate-700 mb-2 m-0">April 2026</p>
+      <p class="text-sm text-slate-600 m-0">Showing analytics data for April. Revenue totaled $35327, with 8058 active users.</p>
+    </div><div class="tb-pane " data-tb-pane="4">
+      <p class="font-semibold text-slate-700 mb-2 m-0">May 2026</p>
+      <p class="text-sm text-slate-600 m-0">Showing analytics data for May. Revenue totaled $69007, with 9268 active users.</p>
+    </div><div class="tb-pane " data-tb-pane="5">
+      <p class="font-semibold text-slate-700 mb-2 m-0">June 2026</p>
+      <p class="text-sm text-slate-600 m-0">Showing analytics data for June. Revenue totaled $66172, with 8506 active users.</p>
+    </div><div class="tb-pane " data-tb-pane="6">
+      <p class="font-semibold text-slate-700 mb-2 m-0">July 2026</p>
+      <p class="text-sm text-slate-600 m-0">Showing analytics data for July. Revenue totaled $36828, with 12959 active users.</p>
+    </div><div class="tb-pane " data-tb-pane="7">
+      <p class="font-semibold text-slate-700 mb-2 m-0">August 2026</p>
+      <p class="text-sm text-slate-600 m-0">Showing analytics data for August. Revenue totaled $22275, with 10055 active users.</p>
+    </div><div class="tb-pane " data-tb-pane="8">
+      <p class="font-semibold text-slate-700 mb-2 m-0">September 2026</p>
+      <p class="text-sm text-slate-600 m-0">Showing analytics data for September. Revenue totaled $44609, with 11871 active users.</p>
+    </div><div class="tb-pane " data-tb-pane="9">
+      <p class="font-semibold text-slate-700 mb-2 m-0">October 2026</p>
+      <p class="text-sm text-slate-600 m-0">Showing analytics data for October. Revenue totaled $32337, with 8450 active users.</p>
+    </div>
+  </div>
+</div>
+
+    <div class="card p-6">
+      <h3 class="font-semibold text-slate-800 mb-1 m-0">Tabs with Notification Badges</h3>
+      <p class="text-xs text-slate-500 mb-5">Count badges on tabs to indicate unread or pending items</p>
+      <div class="tb-group" data-tb="badge" data-tb-variant="pill">
+    <div class="tb-pill-list">
+      <button class="tb-pill-tab tb-active" data-tb-idx="0"><i data-lucide="help-circle" class="lucide-xs"></i><span>All Items</span><span class="tb-pill-badge">47</span></button><button class="tb-pill-tab " data-tb-idx="1"><i data-lucide="user" class="lucide-xs"></i><span>Active</span><span class="tb-pill-badge">24</span></button><button class="tb-pill-tab " data-tb-idx="2"><i data-lucide="bell" class="lucide-xs"></i><span>Pending</span><span class="tb-pill-badge">8</span></button><button class="tb-pill-tab " data-tb-idx="3"><i data-lucide="settings" class="lucide-xs"></i><span>Drafts</span><span class="tb-pill-badge">15</span></button><button class="tb-pill-tab " data-tb-idx="4"><i data-lucide="lock" class="lucide-xs"></i><span>Archived</span></button>
+    </div>
+    <div class="tb-line-content">
+      <div class="tb-pane tb-pane-active" data-tb-pane="0"><div class="space-y-2"><p class="font-semibold text-slate-700 m-0">All Items (47)</p><p class="text-sm">Showing all 47 items across all categories and statuses.</p></div></div><div class="tb-pane " data-tb-pane="1"><div class="space-y-2"><p class="font-semibold text-slate-700 m-0">Active Items (24)</p><p class="text-sm">24 items are currently active and visible to users.</p></div></div><div class="tb-pane " data-tb-pane="2"><div class="space-y-2"><p class="font-semibold text-slate-700 m-0">Pending Review (8)</p><p class="text-sm">8 items are awaiting approval before going live.</p></div></div><div class="tb-pane " data-tb-pane="3"><div class="space-y-2"><p class="font-semibold text-slate-700 m-0">Drafts (15)</p><p class="text-sm">15 draft items saved but not yet submitted for review.</p></div></div><div class="tb-pane " data-tb-pane="4"><div class="space-y-2"><p class="font-semibold text-slate-700 m-0">Archived</p><p class="text-sm">Archived items are hidden from users but preserved for reference.</p></div></div>
+    </div>
+  </div>
+    </div>
+
+    <div class="card p-6">
+      <h3 class="font-semibold text-slate-800 mb-1 m-0">Card / Folder Tabs</h3>
+      <p class="text-xs text-slate-500 mb-5">Tabs that look like file folder tabs — active tab is part of the content panel</p>
+      <div class="tb-group" data-tb="folder" data-tb-variant="folder">
+    <div class="tb-folder-list">
+      <button class="tb-folder-tab tb-active" data-tb-idx="0"><i data-lucide="bar-chart-3" class="lucide-xs"></i><span>Overview</span></button><button class="tb-folder-tab " data-tb-idx="1"><i data-lucide="bar-chart-3" class="lucide-xs"></i><span>Analytics</span></button><button class="tb-folder-tab " data-tb-idx="2"><i data-lucide="settings" class="lucide-xs"></i><span>Settings</span></button><button class="tb-folder-tab " data-tb-idx="3"><i data-lucide="credit-card" class="lucide-xs"></i><span>Billing</span></button>
+    </div>
+    <div class="tb-folder-content">
+      <div class="tb-pane tb-pane-active" data-tb-pane="0">
+  <div class="space-y-3">
+    <p class="font-semibold text-slate-700 mb-3 m-0">Overview Dashboard</p>
+    <div class="grid grid-cols-3 gap-3">
+      <div class="bg-slate-50 rounded-xl p-3">
+        <p class="text-xs text-slate-500 mb-1 m-0">Total Users</p>
+        <p class="text-lg font-bold text-primary-600 m-0">12,480</p>
+        <p class="text-xs text-slate-400 mt-0-5 m-0">+8.2% this month</p>
+      </div><div class="bg-slate-50 rounded-xl p-3">
+        <p class="text-xs text-slate-500 mb-1 m-0">Revenue</p>
+        <p class="text-lg font-bold text-emerald-600 m-0">$48,295</p>
+        <p class="text-xs text-slate-400 mt-0-5 m-0">+12.5% this month</p>
+      </div><div class="bg-slate-50 rounded-xl p-3">
+        <p class="text-xs text-slate-500 mb-1 m-0">Conversion</p>
+        <p class="text-lg font-bold text-amber-600 m-0">3.24%</p>
+        <p class="text-xs text-slate-400 mt-0-5 m-0">-0.8% this month</p>
+      </div>
+    </div>
+    <p class="text-xs text-slate-500 leading-relaxed mt-2 m-0">Overall performance is trending upward. Revenue growth is outpacing user growth, indicating improved monetization. Monitor conversion rate closely.</p>
+  </div></div><div class="tb-pane " data-tb-pane="1">
+  <div class="space-y-3">
+    <p class="font-semibold text-slate-700 m-0">Analytics Report — March 2026</p>
+    <div class="space-y-2">
+      <div>
+        <div class="flex justify-between text-xs mb-1"><span class="text-slate-500">Page Views</span><span class="font-semibold text-slate-700">2,84,921</span></div>
+        <div class="h-2 bg-slate-200 rounded-full overflow-hidden"><div class="h-full bg-primary-500 rounded-full" style="width:94.97366666666667%"></div></div>
+      </div><div>
+        <div class="flex justify-between text-xs mb-1"><span class="text-slate-500">Unique Visitors</span><span class="font-semibold text-slate-700">48,200</span></div>
+        <div class="h-2 bg-slate-200 rounded-full overflow-hidden"><div class="h-full bg-primary-500 rounded-full" style="width:80.33333333333333%"></div></div>
+      </div><div>
+        <div class="flex justify-between text-xs mb-1"><span class="text-slate-500">Bounce Rate</span><span class="font-semibold text-slate-700">34</span></div>
+        <div class="h-2 bg-slate-200 rounded-full overflow-hidden"><div class="h-full bg-primary-500 rounded-full" style="width:34%"></div></div>
+      </div><div>
+        <div class="flex justify-between text-xs mb-1"><span class="text-slate-500">Avg Session (s)</span><span class="font-semibold text-slate-700">245</span></div>
+        <div class="h-2 bg-slate-200 rounded-full overflow-hidden"><div class="h-full bg-primary-500 rounded-full" style="width:61.25000000000001%"></div></div>
+      </div>
+    </div>
+  </div></div><div class="tb-pane " data-tb-pane="2">
+  <div class="space-y-3">
+    <p class="font-semibold text-slate-700 m-0">Account Settings</p>
+    <div class="space-y-3">
+      <div><label class="block text-xs font-medium text-slate-500 mb-1">Display Name</label><input type="text" class="input text-sm py-2" value="Alexandra Thompson"></div>
+      <div><label class="block text-xs font-medium text-slate-500 mb-1">Language</label><select class="input text-sm py-2"><option>English (US)</option><option>French</option><option>German</option></select></div>
+      <button class="btn btn-primary text-xs py-2 px-4">Save Settings</button>
+    </div>
+  </div></div><div class="tb-pane " data-tb-pane="3">
+  <div class="space-y-3">
+    <p class="font-semibold text-slate-700 m-0">Billing &amp; Plans</p>
+    <div class="grid grid-cols-1 grid-cols-sm-3 gap-3">
+      <div class="rounded-xl p-3 border ">
+        <div class="flex items-center justify-between mb-2"><p class="text-sm font-semibold text-slate-800 m-0">Starter</p></div>
+        <p class="text-xl font-bold text-primary-600 mb-2 m-0">$9<span class="text-xs font-normal text-slate-400">/mo</span></p>
+        <p class="text-xs text-slate-500 mb-0-5 m-0">• 5 projects</p><p class="text-xs text-slate-500 mb-0-5 m-0">• 10 GB storage</p><p class="text-xs text-slate-500 mb-0-5 m-0">• Email support</p>
+      </div><div class="rounded-xl p-3 border border-primary-400 bg-primary-50">
+        <div class="flex items-center justify-between mb-2"><p class="text-sm font-semibold text-slate-800 m-0">Pro</p><span class="badge badge-primary" style="font-size:9px">CURRENT</span></div>
+        <p class="text-xl font-bold text-primary-600 mb-2 m-0">$29<span class="text-xs font-normal text-slate-400">/mo</span></p>
+        <p class="text-xs text-slate-500 mb-0-5 m-0">• Unlimited projects</p><p class="text-xs text-slate-500 mb-0-5 m-0">• 100 GB storage</p><p class="text-xs text-slate-500 mb-0-5 m-0">• Priority support</p>
+      </div><div class="rounded-xl p-3 border ">
+        <div class="flex items-center justify-between mb-2"><p class="text-sm font-semibold text-slate-800 m-0">Enterprise</p></div>
+        <p class="text-xl font-bold text-primary-600 mb-2 m-0">Custom<span class="text-xs font-normal text-slate-400"></span></p>
+        <p class="text-xs text-slate-500 mb-0-5 m-0">• Unlimited everything</p><p class="text-xs text-slate-500 mb-0-5 m-0">• Dedicated server</p><p class="text-xs text-slate-500 mb-0-5 m-0">• 24/7 SLA</p>
+      </div>
+    </div>
+  </div></div>
+    </div>
+  </div>
+    </div>
+  </div>
+
+  <div class="grid grid-cols-1 gap-6">
+<div class="card p-6">
+  <h3 class="font-semibold text-slate-800 mb-1 m-0">Rich Dashboard Tab</h3>
+  <p class="text-xs text-slate-500 mb-5">Profile card with stats, activity feed, projects list, and team roster inside tabs.</p>
+  <div class="tb-group" data-tb="rich-dash" data-tb-variant="line">
+    <div class="tb-line-list">
+      <button class="tb-line-tab tb-active" data-tb-idx="0"><i data-lucide="user" class="lucide-xs"></i><span>Profile</span></button>
+      <button class="tb-line-tab" data-tb-idx="1"><i data-lucide="package" class="lucide-xs"></i><span>Projects</span><span class="tb-line-badge">24</span></button>
+      <button class="tb-line-tab" data-tb-idx="2"><i data-lucide="user" class="lucide-xs"></i><span>Team</span><span class="tb-line-badge">5</span></button>
+    </div>
+    <div class="tb-line-content">
+      <div class="tb-pane tb-pane-active" data-tb-pane="0">
+<div class="space-y-5">
+  <div class="flex items-start gap-4">
+    <div class="w-16 h-16 rounded-2xl bg-primary-500 flex items-center justify-center text-white font-bold text-xl shrink-0" style="box-shadow:0 8px 16px rgba(14,165,233,.3)">AT</div>
+    <div class="flex-1">
+      <div class="flex items-center gap-2 flex-wrap"><h4 class="font-bold text-slate-800 text-base m-0">Alexandra Thompson</h4><span class="px-2 py-0-5 rounded-full bg-primary-100 text-primary-700" style="font-size:10px;font-weight:700">Pro</span></div>
+      <p class="text-sm text-slate-500 mt-0-5 m-0">Senior Product Designer · San Francisco, CA</p>
+      <div class="flex items-center gap-3 mt-2 flex-wrap">
+        <div class="flex items-center gap-1 text-xs text-slate-400"><i data-lucide="mail" class="lucide-xxs"></i><span>alex@example.com</span></div>
+        <div class="flex items-center gap-1 text-xs text-slate-400"><i data-lucide="globe" class="lucide-xxs"></i><span>alexthompson.dev</span></div>
+        <div class="flex items-center gap-1 text-xs text-slate-400"><i data-lucide="map-pin" class="lucide-xxs"></i><span>UTC-8</span></div>
+      </div>
+    </div>
+    <button class="btn btn-outline btn-sm shrink-0">Edit Profile</button>
+  </div>
+  <div class="grid grid-cols-4 gap-3">
+    <div class="bg-slate-50 rounded-xl p-3 text-center">
+      <div class="w-8 h-8 rounded-lg bg-primary-50 flex items-center justify-center mx-auto mb-1-5"><i data-lucide="package" class="lucide-xs text-primary-600"></i></div>
+      <p class="text-base font-bold text-slate-800 m-0">24</p>
+      <p class="text-slate-400 mt-0-5 m-0" style="font-size:10px">Projects</p>
+    </div><div class="bg-slate-50 rounded-xl p-3 text-center">
+      <div class="w-8 h-8 rounded-lg bg-emerald-50 flex items-center justify-center mx-auto mb-1-5"><i data-lucide="zap" class="lucide-xs text-emerald-600"></i></div>
+      <p class="text-base font-bold text-slate-800 m-0">847</p>
+      <p class="text-slate-400 mt-0-5 m-0" style="font-size:10px">Deployments</p>
+    </div><div class="bg-slate-50 rounded-xl p-3 text-center">
+      <div class="w-8 h-8 rounded-lg bg-violet-50 flex items-center justify-center mx-auto mb-1-5"><i data-lucide="user" class="lucide-xs text-violet-600"></i></div>
+      <p class="text-base font-bold text-slate-800 m-0">12</p>
+      <p class="text-slate-400 mt-0-5 m-0" style="font-size:10px">Team Members</p>
+    </div><div class="bg-slate-50 rounded-xl p-3 text-center">
+      <div class="w-8 h-8 rounded-lg bg-amber-50 flex items-center justify-center mx-auto mb-1-5"><i data-lucide="shield" class="lucide-xs text-amber-600"></i></div>
+      <p class="text-base font-bold text-slate-800 m-0">99.9%</p>
+      <p class="text-slate-400 mt-0-5 m-0" style="font-size:10px">Uptime</p>
+    </div>
+  </div>
+  <div>
+    <p class="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2 m-0">Recent Activity</p>
+    <div class="space-y-2">
+      <div class="flex items-center gap-3 py-2 tb-activity-row">
+        <div class="w-7 h-7 rounded-lg bg-emerald-100 text-emerald-600 flex items-center justify-center shrink-0"><i data-lucide="zap" class="lucide-xxs"></i></div>
+        <p class="flex-1 text-sm text-slate-600 m-0">Deployed v2.4.1 to production</p>
+        <span class="text-xs text-slate-400">2 min ago</span>
+      </div><div class="flex items-center gap-3 py-2 tb-activity-row">
+        <div class="w-7 h-7 rounded-lg bg-primary-100 text-primary-600 flex items-center justify-center shrink-0"><i data-lucide="edit" class="lucide-xxs"></i></div>
+        <p class="flex-1 text-sm text-slate-600 m-0">Updated environment variables for staging</p>
+        <span class="text-xs text-slate-400">1 hour ago</span>
+      </div><div class="flex items-center gap-3 py-2 tb-activity-row">
+        <div class="w-7 h-7 rounded-lg bg-violet-100 text-violet-600 flex items-center justify-center shrink-0"><i data-lucide="user" class="lucide-xxs"></i></div>
+        <p class="flex-1 text-sm text-slate-600 m-0">Invited Jordan Lee to the team</p>
+        <span class="text-xs text-slate-400">3 hours ago</span>
+      </div><div class="flex items-center gap-3 py-2 tb-activity-row">
+        <div class="w-7 h-7 rounded-lg bg-amber-100 text-amber-600 flex items-center justify-center shrink-0"><i data-lucide="shield" class="lucide-xxs"></i></div>
+        <p class="flex-1 text-sm text-slate-600 m-0">Rotated API keys for production</p>
+        <span class="text-xs text-slate-400">Yesterday</span>
+      </div><div class="flex items-center gap-3 py-2 tb-activity-row">
+        <div class="w-7 h-7 rounded-lg bg-slate-100 text-slate-500 flex items-center justify-center shrink-0"><i data-lucide="archive" class="lucide-xxs"></i></div>
+        <p class="flex-1 text-sm text-slate-600 m-0">Archived project legacy-v1</p>
+        <span class="text-xs text-slate-400">2 days ago</span>
+      </div>
+    </div>
+  </div>
+</div></div>
+      <div class="tb-pane" data-tb-pane="1">
+<div class="space-y-3">
+  <div class="flex items-center justify-between mb-1"><p class="font-semibold text-slate-700 m-0">Active Projects</p><button class="text-xs text-primary-600">View all</button></div>
+  <div class="flex items-center gap-3 p-3 border rounded-xl">
+    <div class="w-9 h-9 rounded-lg bg-slate-900 flex items-center justify-center shrink-0"><span class="text-slate-300 font-mono" style="font-size:10px;font-weight:700">LI</span></div>
+    <div class="flex-1"><p class="text-sm font-medium text-slate-700 truncate m-0">liner-design-system</p><p class="text-xs text-slate-400 m-0">TypeScript · 124 deploys</p></div>
+    <div class="flex items-center gap-1-5 shrink-0"><div class="w-1-5 h-1-5 rounded-full bg-emerald-500"></div><span class="text-xs text-slate-500">Live</span></div>
+    <span class="text-xs text-slate-400 hidden-sm-block">2 min ago</span>
+  </div><div class="flex items-center gap-3 p-3 border rounded-xl">
+    <div class="w-9 h-9 rounded-lg bg-slate-900 flex items-center justify-center shrink-0"><span class="text-slate-300 font-mono" style="font-size:10px;font-weight:700">MA</span></div>
+    <div class="flex-1"><p class="text-sm font-medium text-slate-700 truncate m-0">marketing-site</p><p class="text-xs text-slate-400 m-0">Next.js · 58 deploys</p></div>
+    <div class="flex items-center gap-1-5 shrink-0"><div class="w-1-5 h-1-5 rounded-full bg-amber-500"></div><span class="text-xs text-slate-500">Building</span></div>
+    <span class="text-xs text-slate-400 hidden-sm-block">5 min ago</span>
+  </div><div class="flex items-center gap-3 p-3 border rounded-xl">
+    <div class="w-9 h-9 rounded-lg bg-slate-900 flex items-center justify-center shrink-0"><span class="text-slate-300 font-mono" style="font-size:10px;font-weight:700">AP</span></div>
+    <div class="flex-1"><p class="text-sm font-medium text-slate-700 truncate m-0">api-gateway</p><p class="text-xs text-slate-400 m-0">Go · 203 deploys</p></div>
+    <div class="flex items-center gap-1-5 shrink-0"><div class="w-1-5 h-1-5 rounded-full bg-emerald-500"></div><span class="text-xs text-slate-500">Live</span></div>
+    <span class="text-xs text-slate-400 hidden-sm-block">1 hour ago</span>
+  </div><div class="flex items-center gap-3 p-3 border rounded-xl">
+    <div class="w-9 h-9 rounded-lg bg-slate-900 flex items-center justify-center shrink-0"><span class="text-slate-300 font-mono" style="font-size:10px;font-weight:700">AD</span></div>
+    <div class="flex-1"><p class="text-sm font-medium text-slate-700 truncate m-0">admin-dashboard</p><p class="text-xs text-slate-400 m-0">React · 91 deploys</p></div>
+    <div class="flex items-center gap-1-5 shrink-0"><div class="w-1-5 h-1-5 rounded-full bg-emerald-500"></div><span class="text-xs text-slate-500">Live</span></div>
+    <span class="text-xs text-slate-400 hidden-sm-block">3 hours ago</span>
+  </div>
+</div></div>
+      <div class="tb-pane" data-tb-pane="2">
+<div class="space-y-3">
+  <p class="font-semibold text-slate-700 mb-1 m-0">Team Members</p>
+  <div class="flex items-center gap-3 p-3 border rounded-xl">
+      <div class="relative shrink-0">
+        <div class="w-9 h-9 rounded-xl bg-emerald-500 flex items-center justify-center text-white text-xs font-bold">JL</div>
+        <div class="w-3 h-3 rounded-full bg-emerald-500 tb-team-dot"></div>
+      </div>
+      <div class="flex-1"><p class="text-sm font-medium text-slate-700 m-0">Jordan Lee</p><p class="text-xs text-slate-400 m-0">Engineering Lead</p></div>
+      <span class="px-2 py-0-5 rounded-full capitalize bg-emerald-100 text-emerald-700" style="font-size:10px;font-weight:600">online</span>
+    </div><div class="flex items-center gap-3 p-3 border rounded-xl">
+      <div class="relative shrink-0">
+        <div class="w-9 h-9 rounded-xl bg-primary-500 flex items-center justify-center text-white text-xs font-bold">MD</div>
+        <div class="w-3 h-3 rounded-full bg-emerald-500 tb-team-dot"></div>
+      </div>
+      <div class="flex-1"><p class="text-sm font-medium text-slate-700 m-0">Morgan Davis</p><p class="text-xs text-slate-400 m-0">Frontend Engineer</p></div>
+      <span class="px-2 py-0-5 rounded-full capitalize bg-emerald-100 text-emerald-700" style="font-size:10px;font-weight:600">online</span>
+    </div><div class="flex items-center gap-3 p-3 border rounded-xl">
+      <div class="relative shrink-0">
+        <div class="w-9 h-9 rounded-xl bg-amber-500 flex items-center justify-center text-white text-xs font-bold">CK</div>
+        <div class="w-3 h-3 rounded-full bg-amber-500 tb-team-dot"></div>
+      </div>
+      <div class="flex-1"><p class="text-sm font-medium text-slate-700 m-0">Casey Kim</p><p class="text-xs text-slate-400 m-0">Backend Engineer</p></div>
+      <span class="px-2 py-0-5 rounded-full capitalize bg-amber-100 text-amber-700" style="font-size:10px;font-weight:600">away</span>
+    </div><div class="flex items-center gap-3 p-3 border rounded-xl">
+      <div class="relative shrink-0">
+        <div class="w-9 h-9 rounded-xl bg-rose-500 flex items-center justify-center text-white text-xs font-bold">RC</div>
+        <div class="w-3 h-3 rounded-full bg-slate-400 tb-team-dot"></div>
+      </div>
+      <div class="flex-1"><p class="text-sm font-medium text-slate-700 m-0">Riley Chen</p><p class="text-xs text-slate-400 m-0">DevOps Engineer</p></div>
+      <span class="px-2 py-0-5 rounded-full capitalize bg-slate-100 text-slate-500" style="font-size:10px;font-weight:600">offline</span>
+    </div><div class="flex items-center gap-3 p-3 border rounded-xl">
+      <div class="relative shrink-0">
+        <div class="w-9 h-9 rounded-xl bg-primary-500 flex items-center justify-center text-white text-xs font-bold">SP</div>
+        <div class="w-3 h-3 rounded-full bg-emerald-500 tb-team-dot"></div>
+      </div>
+      <div class="flex-1"><p class="text-sm font-medium text-slate-700 m-0">Sam Patel</p><p class="text-xs text-slate-400 m-0">Product Manager</p></div>
+      <span class="px-2 py-0-5 rounded-full capitalize bg-emerald-100 text-emerald-700" style="font-size:10px;font-weight:600">online</span>
+    </div>
+</div></div>
+    </div>
+  </div>
+</div></div>
+
+  <div class="grid grid-cols-1 grid-cols-lg-2 gap-6">
+<div class="card p-6">
+  <h3 class="font-semibold text-slate-800 mb-1 m-0">Wide Scrollable Tabs</h3>
+  <p class="text-xs text-slate-500 mb-5">8 tabs with icons and count badges — scrolls horizontally on narrow viewports.</p>
+  <div class="tb-line-list tb-scroll" data-tb="wide" data-tb-variant="line">
+    <button class="tb-line-tab tb-active" data-tb-idx="0"><i data-lucide="bar-chart-2" class="lucide-xs"></i><span>Dashboard</span></button><button class="tb-line-tab " data-tb-idx="1"><i data-lucide="inbox" class="lucide-xs"></i><span>Inbox</span><span class="tb-line-badge">12</span></button><button class="tb-line-tab " data-tb-idx="2"><i data-lucide="package" class="lucide-xs"></i><span>Projects</span><span class="tb-line-badge">8</span></button><button class="tb-line-tab " data-tb-idx="3"><i data-lucide="file-text" class="lucide-xs"></i><span>Documents</span><span class="tb-line-badge">34</span></button><button class="tb-line-tab " data-tb-idx="4"><i data-lucide="trending-up" class="lucide-xs"></i><span>Analytics</span></button><button class="tb-line-tab " data-tb-idx="5"><i data-lucide="message-square" class="lucide-xs"></i><span>Messages</span><span class="tb-line-badge">3</span></button><button class="tb-line-tab " data-tb-idx="6"><i data-lucide="archive" class="lucide-xs"></i><span>Archive</span></button><button class="tb-line-tab " data-tb-idx="7"><i data-lucide="settings" class="lucide-xs"></i><span>Settings</span></button>
+  </div>
+  <div class="tb-line-content">
+    <div class="tb-pane tb-pane-active" data-tb-pane="0">
+      <div class="flex items-center gap-3 mb-3">
+        <div class="w-9 h-9 rounded-xl bg-primary-50 flex items-center justify-center"><i data-lucide="bar-chart-2" class="lucide-sm text-primary-600"></i></div>
+        <div><p class="font-semibold text-slate-800 text-sm m-0">Dashboard</p></div>
+      </div>
+      <p class="text-sm text-slate-600 leading-relaxed m-0">Your personal command center. View key metrics, recent activity, and upcoming tasks at a glance.</p>
+    </div><div class="tb-pane " data-tb-pane="1">
+      <div class="flex items-center gap-3 mb-3">
+        <div class="w-9 h-9 rounded-xl bg-primary-50 flex items-center justify-center"><i data-lucide="inbox" class="lucide-sm text-primary-600"></i></div>
+        <div><p class="font-semibold text-slate-800 text-sm m-0">Inbox</p><p class="text-xs text-slate-400 m-0">12 items</p></div>
+      </div>
+      <p class="text-sm text-slate-600 leading-relaxed m-0">12 unread messages from your team and customers. Filter by project, priority, or sender.</p>
+    </div><div class="tb-pane " data-tb-pane="2">
+      <div class="flex items-center gap-3 mb-3">
+        <div class="w-9 h-9 rounded-xl bg-primary-50 flex items-center justify-center"><i data-lucide="package" class="lucide-sm text-primary-600"></i></div>
+        <div><p class="font-semibold text-slate-800 text-sm m-0">Projects</p><p class="text-xs text-slate-400 m-0">8 items</p></div>
+      </div>
+      <p class="text-sm text-slate-600 leading-relaxed m-0">8 active projects across 3 teams. 2 projects are due this week.</p>
+    </div><div class="tb-pane " data-tb-pane="3">
+      <div class="flex items-center gap-3 mb-3">
+        <div class="w-9 h-9 rounded-xl bg-primary-50 flex items-center justify-center"><i data-lucide="file-text" class="lucide-sm text-primary-600"></i></div>
+        <div><p class="font-semibold text-slate-800 text-sm m-0">Documents</p><p class="text-xs text-slate-400 m-0">34 items</p></div>
+      </div>
+      <p class="text-sm text-slate-600 leading-relaxed m-0">34 documents shared with you. Recently edited: Q1 Report, API Spec v3, Onboarding Guide.</p>
+    </div><div class="tb-pane " data-tb-pane="4">
+      <div class="flex items-center gap-3 mb-3">
+        <div class="w-9 h-9 rounded-xl bg-primary-50 flex items-center justify-center"><i data-lucide="trending-up" class="lucide-sm text-primary-600"></i></div>
+        <div><p class="font-semibold text-slate-800 text-sm m-0">Analytics</p></div>
+      </div>
+      <p class="text-sm text-slate-600 leading-relaxed m-0">March 2026 analytics summary. Page views up 22%, conversions up 8% month-over-month.</p>
+    </div><div class="tb-pane " data-tb-pane="5">
+      <div class="flex items-center gap-3 mb-3">
+        <div class="w-9 h-9 rounded-xl bg-primary-50 flex items-center justify-center"><i data-lucide="message-square" class="lucide-sm text-primary-600"></i></div>
+        <div><p class="font-semibold text-slate-800 text-sm m-0">Messages</p><p class="text-xs text-slate-400 m-0">3 items</p></div>
+      </div>
+      <p class="text-sm text-slate-600 leading-relaxed m-0">3 unread direct messages. Jordan Lee sent you a design review request.</p>
+    </div><div class="tb-pane " data-tb-pane="6">
+      <div class="flex items-center gap-3 mb-3">
+        <div class="w-9 h-9 rounded-xl bg-primary-50 flex items-center justify-center"><i data-lucide="archive" class="lucide-sm text-primary-600"></i></div>
+        <div><p class="font-semibold text-slate-800 text-sm m-0">Archive</p></div>
+      </div>
+      <p class="text-sm text-slate-600 leading-relaxed m-0">Archived items: 24 projects, 156 documents, 8 team channels from previous quarters.</p>
+    </div><div class="tb-pane " data-tb-pane="7">
+      <div class="flex items-center gap-3 mb-3">
+        <div class="w-9 h-9 rounded-xl bg-primary-50 flex items-center justify-center"><i data-lucide="settings" class="lucide-sm text-primary-600"></i></div>
+        <div><p class="font-semibold text-slate-800 text-sm m-0">Settings</p></div>
+      </div>
+      <p class="text-sm text-slate-600 leading-relaxed m-0">Manage your account, notifications, integrations, billing, and team settings.</p>
+    </div>
+  </div>
+</div>
+<div class="card p-6">
+  <h3 class="font-semibold text-slate-800 mb-1 m-0">Icon-Only Tabs</h3>
+  <p class="text-xs text-slate-500 mb-5">Compact icon-only tab bar — ideal for sidebars or space-constrained layouts.</p>
+  <div class="tb-icon-list" data-tb="icon-only" data-tb-variant="icon">
+    <button class="tb-icon-tab tb-active text-primary-600" data-tb-idx="0" title="Analytics"><i data-lucide="bar-chart-2" class="lucide-sm"></i></button><button class="tb-icon-tab " data-tb-idx="1" title="Inbox"><i data-lucide="inbox" class="lucide-sm"></i></button><button class="tb-icon-tab " data-tb-idx="2" title="Profile"><i data-lucide="user" class="lucide-sm"></i></button><button class="tb-icon-tab " data-tb-idx="3" title="Settings"><i data-lucide="settings" class="lucide-sm"></i></button><button class="tb-icon-tab " data-tb-idx="4" title="Alerts"><i data-lucide="bell" class="lucide-sm"></i></button><button class="tb-icon-tab " data-tb-idx="5" title="Docs"><i data-lucide="file-text" class="lucide-sm"></i></button>
+  </div>
+  <div class="tb-line-content">
+    <div class="tb-pane tb-pane-active" data-tb-pane="0">
+      <div class="flex items-start gap-4">
+        <div class="w-12 h-12 rounded-2xl bg-primary-50 flex items-center justify-center shrink-0"><i data-lucide="bar-chart-2" class="lucide-md text-primary-600"></i></div>
+        <div><p class="font-semibold text-slate-800 mb-1 m-0">Analytics</p><p class="text-sm text-slate-600 leading-relaxed m-0">Track your key metrics, conversion rates, and performance trends across all projects in one place.</p></div>
+      </div>
+    </div><div class="tb-pane " data-tb-pane="1">
+      <div class="flex items-start gap-4">
+        <div class="w-12 h-12 rounded-2xl bg-violet-50 flex items-center justify-center shrink-0"><i data-lucide="inbox" class="lucide-md text-violet-600"></i></div>
+        <div><p class="font-semibold text-slate-800 mb-1 m-0">Inbox</p><p class="text-sm text-slate-600 leading-relaxed m-0">All messages, mentions, and notifications consolidated in a single inbox with smart filtering.</p></div>
+      </div>
+    </div><div class="tb-pane " data-tb-pane="2">
+      <div class="flex items-start gap-4">
+        <div class="w-12 h-12 rounded-2xl bg-emerald-50 flex items-center justify-center shrink-0"><i data-lucide="user" class="lucide-md text-emerald-600"></i></div>
+        <div><p class="font-semibold text-slate-800 mb-1 m-0">Profile</p><p class="text-sm text-slate-600 leading-relaxed m-0">Manage your public profile, bio, contact information, and social links.</p></div>
+      </div>
+    </div><div class="tb-pane " data-tb-pane="3">
+      <div class="flex items-start gap-4">
+        <div class="w-12 h-12 rounded-2xl bg-amber-50 flex items-center justify-center shrink-0"><i data-lucide="settings" class="lucide-md text-amber-600"></i></div>
+        <div><p class="font-semibold text-slate-800 mb-1 m-0">Settings</p><p class="text-sm text-slate-600 leading-relaxed m-0">Configure your workspace, integrations, API tokens, and team permissions.</p></div>
+      </div>
+    </div><div class="tb-pane " data-tb-pane="4">
+      <div class="flex items-start gap-4">
+        <div class="w-12 h-12 rounded-2xl bg-rose-50 flex items-center justify-center shrink-0"><i data-lucide="bell" class="lucide-md text-rose-600"></i></div>
+        <div><p class="font-semibold text-slate-800 mb-1 m-0">Alerts</p><p class="text-sm text-slate-600 leading-relaxed m-0">Set up smart alerts for deployments, errors, and performance thresholds.</p></div>
+      </div>
+    </div><div class="tb-pane " data-tb-pane="5">
+      <div class="flex items-start gap-4">
+        <div class="w-12 h-12 rounded-2xl bg-slate-100 flex items-center justify-center shrink-0"><i data-lucide="file-text" class="lucide-md text-slate-600"></i></div>
+        <div><p class="font-semibold text-slate-800 mb-1 m-0">Docs</p><p class="text-sm text-slate-600 leading-relaxed m-0">Browse and search your team's documentation, runbooks, and architecture diagrams.</p></div>
+      </div>
+    </div>
+  </div>
+</div></div>
+
+  <div class="grid grid-cols-1 grid-cols-lg-2 gap-6">
+<div class="card p-6">
+  <h3 class="font-semibold text-slate-800 mb-1 m-0">Tabs with Counts &amp; Status Dots</h3>
+  <p class="text-xs text-slate-500 mb-5">Each tab carries a colored count badge and an animated status dot for live-state feedback.</p>
+  <div class="flex gap-1-5 flex-wrap" data-tb="status" data-tb-variant="status">
+    <button class="tb-status-tab tb-active" data-tb-idx="0" data-tb-bg="bg-slate-200 text-slate-600" data-tb-bg-active="bg-slate-700 text-white"><i data-lucide="package" class="lucide-xxs"></i>All<span class="tb-status-badge bg-slate-700 text-white" data-tb-count>94</span></button><button class="tb-status-tab " data-tb-idx="1" data-tb-bg="bg-emerald-100 text-emerald-700" data-tb-bg-active="bg-emerald-500 text-white"><span class="w-2 h-2 rounded-full bg-emerald-500"></span><i data-lucide="zap" class="lucide-xxs"></i>Active<span class="tb-status-badge bg-emerald-100 text-emerald-700" data-tb-count>42</span></button><button class="tb-status-tab " data-tb-idx="2" data-tb-bg="bg-amber-100 text-amber-700" data-tb-bg-active="bg-amber-500 text-white"><span class="w-2 h-2 rounded-full bg-amber-500"></span><i data-lucide="trending-up" class="lucide-xxs"></i>Building<span class="tb-status-badge bg-amber-100 text-amber-700" data-tb-count>7</span></button><button class="tb-status-tab " data-tb-idx="3" data-tb-bg="bg-rose-100 text-rose-700" data-tb-bg-active="bg-rose-500 text-white"><span class="w-2 h-2 rounded-full bg-rose-500"></span><i data-lucide="shield" class="lucide-xxs"></i>Failed<span class="tb-status-badge bg-rose-100 text-rose-700" data-tb-count>3</span></button><button class="tb-status-tab " data-tb-idx="4" data-tb-bg="bg-slate-100 text-slate-500" data-tb-bg-active="bg-slate-400 text-white"><span class="w-2 h-2 rounded-full bg-slate-400"></span><i data-lucide="archive" class="lucide-xxs"></i>Paused<span class="tb-status-badge bg-slate-100 text-slate-500" data-tb-count>12</span></button><button class="tb-status-tab " data-tb-idx="5" data-tb-bg="bg-slate-100 text-slate-400" data-tb-bg-active="bg-slate-300 text-slate-700"><i data-lucide="trash-2" class="lucide-xxs"></i>Archived<span class="tb-status-badge bg-slate-100 text-slate-400" data-tb-count>30</span></button>
+  </div>
+  <div class="tb-line-content">
+    <div class="tb-pane tb-pane-active" data-tb-pane="0">
+      <div class="p-4 bg-slate-50 rounded-xl border">
+        <div class="flex items-center gap-2 mb-2"><i data-lucide="package" class="lucide-xs text-slate-500"></i><p class="font-semibold text-sm text-slate-700 m-0">All · 94 items</p></div>
+        <p class="text-sm text-slate-600 leading-relaxed m-0">Showing all 94 items across every status category. Use filters to narrow your view.</p>
+      </div>
+    </div><div class="tb-pane " data-tb-pane="1">
+      <div class="p-4 bg-slate-50 rounded-xl border">
+        <div class="flex items-center gap-2 mb-2"><span class="w-2 h-2 rounded-full bg-emerald-500"></span><i data-lucide="zap" class="lucide-xs text-slate-500"></i><p class="font-semibold text-sm text-slate-700 m-0">Active · 42 items</p></div>
+        <p class="text-sm text-slate-600 leading-relaxed m-0">42 items are currently live and receiving traffic. Average response time: 84ms.</p>
+      </div>
+    </div><div class="tb-pane " data-tb-pane="2">
+      <div class="p-4 bg-slate-50 rounded-xl border">
+        <div class="flex items-center gap-2 mb-2"><span class="w-2 h-2 rounded-full bg-amber-500"></span><i data-lucide="trending-up" class="lucide-xs text-slate-500"></i><p class="font-semibold text-sm text-slate-700 m-0">Building · 7 items</p></div>
+        <p class="text-sm text-slate-600 leading-relaxed m-0">7 builds are currently in progress. Estimated completion within the next 2–4 minutes.</p>
+      </div>
+    </div><div class="tb-pane " data-tb-pane="3">
+      <div class="p-4 bg-slate-50 rounded-xl border">
+        <div class="flex items-center gap-2 mb-2"><span class="w-2 h-2 rounded-full bg-rose-500"></span><i data-lucide="shield" class="lucide-xs text-slate-500"></i><p class="font-semibold text-sm text-slate-700 m-0">Failed · 3 items</p></div>
+        <p class="text-sm text-slate-600 leading-relaxed m-0">3 deployments failed in the last 24 hours. Click a deployment to view error logs and retry.</p>
+      </div>
+    </div><div class="tb-pane " data-tb-pane="4">
+      <div class="p-4 bg-slate-50 rounded-xl border">
+        <div class="flex items-center gap-2 mb-2"><span class="w-2 h-2 rounded-full bg-slate-400"></span><i data-lucide="archive" class="lucide-xs text-slate-500"></i><p class="font-semibold text-sm text-slate-700 m-0">Paused · 12 items</p></div>
+        <p class="text-sm text-slate-600 leading-relaxed m-0">12 deployments are paused pending manual approval or scheduled maintenance window.</p>
+      </div>
+    </div><div class="tb-pane " data-tb-pane="5">
+      <div class="p-4 bg-slate-50 rounded-xl border">
+        <div class="flex items-center gap-2 mb-2"><i data-lucide="trash-2" class="lucide-xs text-slate-500"></i><p class="font-semibold text-sm text-slate-700 m-0">Archived · 30 items</p></div>
+        <p class="text-sm text-slate-600 leading-relaxed m-0">30 archived deployments preserved for reference. Archived items do not consume compute resources.</p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="card p-6">
+  <h3 class="font-semibold text-slate-800 mb-1 m-0">Bordered Box Tabs</h3>
+  <p class="text-xs text-slate-500 mb-5">Filled active tab inside a bordered container — clean financial report style.</p>
+  <div class="border rounded-2xl overflow-hidden">
+    <div class="flex border-b bg-slate-50" data-tb="bordered" data-tb-variant="bordered">
+      <button class="tb-bordered-tab tb-active" data-tb-idx="0"><i data-lucide="bar-chart-2" class="lucide-xs"></i>Monthly</button><button class="tb-bordered-tab " data-tb-idx="1"><i data-lucide="trending-up" class="lucide-xs"></i>Quarterly</button><button class="tb-bordered-tab " data-tb-idx="2"><i data-lucide="award" class="lucide-xs"></i>Annually</button>
+    </div>
+    <div class="p-4 bg-white">
+      <div class="tb-pane tb-pane-active" data-tb-pane="0">
+        <table class="w-full text-sm">
+          <thead><tr class="border-b"><th class="pb-2 text-left text-xs font-semibold text-slate-400 uppercase tracking-wide">Period</th><th class="pb-2 text-left text-xs font-semibold text-slate-400 uppercase tracking-wide">Revenue</th><th class="pb-2 text-left text-xs font-semibold text-slate-400 uppercase tracking-wide">Growth</th><th class="pb-2 text-left text-xs font-semibold text-slate-400 uppercase tracking-wide">Users</th></tr></thead>
+          <tbody>
+            <tr class="border-b border-slate-50"><td class="py-2-5 font-medium text-slate-700">January 2026</td><td class="py-2-5 font-bold text-slate-800">$24,820</td><td class="py-2-5"><span class="text-emerald-600 font-semibold">+12.4%</span></td><td class="py-2-5 text-slate-600">1,284</td></tr><tr class="border-b border-slate-50"><td class="py-2-5 font-medium text-slate-700">February 2026</td><td class="py-2-5 font-bold text-slate-800">$27,510</td><td class="py-2-5"><span class="text-emerald-600 font-semibold">+10.8%</span></td><td class="py-2-5 text-slate-600">1,402</td></tr><tr class="border-b border-slate-50"><td class="py-2-5 font-medium text-slate-700">March 2026</td><td class="py-2-5 font-bold text-slate-800">$31,090</td><td class="py-2-5"><span class="text-emerald-600 font-semibold">+13.0%</span></td><td class="py-2-5 text-slate-600">1,621</td></tr>
+          </tbody>
+        </table>
+      </div><div class="tb-pane " data-tb-pane="1">
+        <table class="w-full text-sm">
+          <thead><tr class="border-b"><th class="pb-2 text-left text-xs font-semibold text-slate-400 uppercase tracking-wide">Period</th><th class="pb-2 text-left text-xs font-semibold text-slate-400 uppercase tracking-wide">Revenue</th><th class="pb-2 text-left text-xs font-semibold text-slate-400 uppercase tracking-wide">Growth</th><th class="pb-2 text-left text-xs font-semibold text-slate-400 uppercase tracking-wide">Users</th></tr></thead>
+          <tbody>
+            <tr class="border-b border-slate-50"><td class="py-2-5 font-medium text-slate-700">Q1 2026</td><td class="py-2-5 font-bold text-slate-800">$83,420</td><td class="py-2-5"><span class="text-emerald-600 font-semibold">+12.1%</span></td><td class="py-2-5 text-slate-600">4,307</td></tr><tr class="border-b border-slate-50"><td class="py-2-5 font-medium text-slate-700">Q2 2025</td><td class="py-2-5 font-bold text-slate-800">$74,430</td><td class="py-2-5"><span class="text-emerald-600 font-semibold">+8.4%</span></td><td class="py-2-5 text-slate-600">3,912</td></tr><tr class="border-b border-slate-50"><td class="py-2-5 font-medium text-slate-700">Q3 2025</td><td class="py-2-5 font-bold text-slate-800">$68,650</td><td class="py-2-5"><span class="text-emerald-600 font-semibold">+5.2%</span></td><td class="py-2-5 text-slate-600">3,601</td></tr>
+          </tbody>
+        </table>
+      </div><div class="tb-pane " data-tb-pane="2">
+        <table class="w-full text-sm">
+          <thead><tr class="border-b"><th class="pb-2 text-left text-xs font-semibold text-slate-400 uppercase tracking-wide">Period</th><th class="pb-2 text-left text-xs font-semibold text-slate-400 uppercase tracking-wide">Revenue</th><th class="pb-2 text-left text-xs font-semibold text-slate-400 uppercase tracking-wide">Growth</th><th class="pb-2 text-left text-xs font-semibold text-slate-400 uppercase tracking-wide">Users</th></tr></thead>
+          <tbody>
+            <tr class="border-b border-slate-50"><td class="py-2-5 font-medium text-slate-700">2026 (YTD)</td><td class="py-2-5 font-bold text-slate-800">$83,420</td><td class="py-2-5"><span class="text-emerald-600 font-semibold">+12.1%</span></td><td class="py-2-5 text-slate-600">4,307</td></tr><tr class="border-b border-slate-50"><td class="py-2-5 font-medium text-slate-700">2025</td><td class="py-2-5 font-bold text-slate-800">$289,800</td><td class="py-2-5"><span class="text-emerald-600 font-semibold">+28.4%</span></td><td class="py-2-5 text-slate-600">15,204</td></tr><tr class="border-b border-slate-50"><td class="py-2-5 font-medium text-slate-700">2024</td><td class="py-2-5 font-bold text-slate-800">$225,700</td><td class="py-2-5"><span class="text-emerald-600 font-semibold">+18.2%</span></td><td class="py-2-5 text-slate-600">11,890</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div></div>
+
+
+<div class="card p-6">
+  <div class="mb-5"><h3 class="font-semibold text-slate-800 m-0">Full Product Page Example</h3><p class="text-xs text-slate-500 mt-0-5 m-0">Complete e-commerce product tabs: Overview, Reviews, Specs, and FAQs — all with rich content.</p></div>
+  <div class="tb-group" data-tb="product" data-tb-variant="line">
+    <div class="tb-line-list tb-scroll">
+      <button class="tb-line-tab tb-active" data-tb-idx="0"><i data-lucide="package" class="lucide-xs"></i><span>Overview</span></button><button class="tb-line-tab " data-tb-idx="1"><i data-lucide="star" class="lucide-xs"></i><span>Reviews</span></button><button class="tb-line-tab " data-tb-idx="2"><i data-lucide="file-text" class="lucide-xs"></i><span>Specifications</span></button><button class="tb-line-tab " data-tb-idx="3"><i data-lucide="help-circle" class="lucide-xs"></i><span>FAQs</span></button>
+    </div>
+    <div class="tb-line-content">
+      <div class="tb-pane tb-pane-active" data-tb-pane="0">
+<div class="space-y-5">
+  <div class="flex gap-4">
+    <div class="w-24 h-24 rounded-2xl bg-slate-200 flex items-center justify-center shrink-0"><i data-lucide="package" class="lucide-xl text-slate-400"></i></div>
+    <div>
+      <div class="flex items-start gap-2 flex-wrap mb-2"><h4 class="font-bold text-slate-800 text-lg m-0">Liner Pro Hub X1</h4><span class="px-2 py-0-5 rounded-full bg-emerald-100 text-emerald-700 mt-0-5" style="font-size:10px;font-weight:700">In Stock</span></div>
+      <div class="flex items-center gap-1 mb-2"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" class="tb-star-on"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" class="tb-star-on"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" class="tb-star-on"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" class="tb-star-on"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" class="tb-star-off"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><span class="text-xs text-slate-500 ml-1">4.6 · 218 reviews</span></div>
+      <p class="text-2xl font-black text-slate-800 m-0">$299<span class="text-sm font-normal text-slate-400 ml-1">.00</span></p>
+    </div>
+  </div>
+  <p class="text-sm text-slate-600 leading-relaxed m-0">The Liner Pro Hub X1 is a professional-grade connectivity hub engineered for developers, designers, and power users who demand performance without compromise. With 14 ports, 10Gbps USB-C throughput, and 100W pass-through charging, it keeps your entire workspace connected from a single cable.</p>
+  <div class="grid grid-cols-2 grid-cols-sm-3 gap-2">
+    <div class="flex items-center gap-2-5 p-2-5 bg-slate-50 rounded-xl">
+      <div class="w-7 h-7 rounded-lg bg-primary-100 flex items-center justify-center shrink-0"><i data-lucide="zap" class="lucide-xs text-primary-600"></i></div>
+      <div><p class="text-xs font-semibold text-slate-700 m-0">10Gbps USB-C</p><p class="text-slate-400 mt-0-5 m-0" style="font-size:10px">Thunderbolt 4</p></div>
+    </div><div class="flex items-center gap-2-5 p-2-5 bg-slate-50 rounded-xl">
+      <div class="w-7 h-7 rounded-lg bg-primary-100 flex items-center justify-center shrink-0"><i data-lucide="shield" class="lucide-xs text-primary-600"></i></div>
+      <div><p class="text-xs font-semibold text-slate-700 m-0">100W Charging</p><p class="text-slate-400 mt-0-5 m-0" style="font-size:10px">Pass-through</p></div>
+    </div><div class="flex items-center gap-2-5 p-2-5 bg-slate-50 rounded-xl">
+      <div class="w-7 h-7 rounded-lg bg-primary-100 flex items-center justify-center shrink-0"><i data-lucide="globe" class="lucide-xs text-primary-600"></i></div>
+      <div><p class="text-xs font-semibold text-slate-700 m-0">2.5G Ethernet</p><p class="text-slate-400 mt-0-5 m-0" style="font-size:10px">Multi-gigabit</p></div>
+    </div><div class="flex items-center gap-2-5 p-2-5 bg-slate-50 rounded-xl">
+      <div class="w-7 h-7 rounded-lg bg-primary-100 flex items-center justify-center shrink-0"><i data-lucide="bar-chart-2" class="lucide-xs text-primary-600"></i></div>
+      <div><p class="text-xs font-semibold text-slate-700 m-0">4K@144Hz</p><p class="text-slate-400 mt-0-5 m-0" style="font-size:10px">DisplayPort 2.0</p></div>
+    </div><div class="flex items-center gap-2-5 p-2-5 bg-slate-50 rounded-xl">
+      <div class="w-7 h-7 rounded-lg bg-primary-100 flex items-center justify-center shrink-0"><i data-lucide="bell" class="lucide-xs text-primary-600"></i></div>
+      <div><p class="text-xs font-semibold text-slate-700 m-0">14 Ports</p><p class="text-slate-400 mt-0-5 m-0" style="font-size:10px">USB-A, C, HDMI</p></div>
+    </div><div class="flex items-center gap-2-5 p-2-5 bg-slate-50 rounded-xl">
+      <div class="w-7 h-7 rounded-lg bg-primary-100 flex items-center justify-center shrink-0"><i data-lucide="award" class="lucide-xs text-primary-600"></i></div>
+      <div><p class="text-xs font-semibold text-slate-700 m-0">5-Year Warranty</p><p class="text-slate-400 mt-0-5 m-0" style="font-size:10px">US & EU</p></div>
+    </div>
+  </div>
+  <div class="flex gap-2">
+    <button class="flex-1 py-2-5 bg-primary-500 text-white text-sm font-semibold rounded-xl">Add to Cart</button>
+    <button class="px-4 py-2-5 border text-slate-600 text-sm font-medium rounded-xl">Save</button>
+  </div>
+</div></div>
+      <div class="tb-pane" data-tb-pane="1">
+<div class="space-y-4">
+  <div class="flex items-center gap-4 p-4 bg-slate-50 rounded-2xl border">
+    <div class="text-center shrink-0">
+      <p class="text-4xl font-black text-slate-800 m-0">4.6</p>
+      <div class="flex items-center gap-0-5 justify-center mt-1"><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" class="tb-star-on"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" class="tb-star-on"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" class="tb-star-on"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" class="tb-star-on"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" class="tb-star-off"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+      <p class="text-xs text-slate-400 mt-1 m-0">218 reviews</p>
+    </div>
+    <div class="flex-1 space-y-1-5">
+      <div class="flex items-center gap-2">
+        <span class="text-slate-400 shrink-0" style="font-size:10px;width:12px">5</span>
+        <svg width="9" height="9" viewBox="0 0 24 24" fill="currentColor" class="tb-star-on shrink-0"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <div class="flex-1 h-1-5 bg-slate-200 rounded-full overflow-hidden"><div class="h-full bg-amber-400 rounded-full" style="width:62%"></div></div>
+        <span class="text-slate-400 shrink-0" style="font-size:10px;width:24px;text-align:right">62%</span>
+      </div><div class="flex items-center gap-2">
+        <span class="text-slate-400 shrink-0" style="font-size:10px;width:12px">4</span>
+        <svg width="9" height="9" viewBox="0 0 24 24" fill="currentColor" class="tb-star-on shrink-0"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <div class="flex-1 h-1-5 bg-slate-200 rounded-full overflow-hidden"><div class="h-full bg-amber-400 rounded-full" style="width:24%"></div></div>
+        <span class="text-slate-400 shrink-0" style="font-size:10px;width:24px;text-align:right">24%</span>
+      </div><div class="flex items-center gap-2">
+        <span class="text-slate-400 shrink-0" style="font-size:10px;width:12px">3</span>
+        <svg width="9" height="9" viewBox="0 0 24 24" fill="currentColor" class="tb-star-on shrink-0"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <div class="flex-1 h-1-5 bg-slate-200 rounded-full overflow-hidden"><div class="h-full bg-amber-400 rounded-full" style="width:9%"></div></div>
+        <span class="text-slate-400 shrink-0" style="font-size:10px;width:24px;text-align:right">9%</span>
+      </div><div class="flex items-center gap-2">
+        <span class="text-slate-400 shrink-0" style="font-size:10px;width:12px">2</span>
+        <svg width="9" height="9" viewBox="0 0 24 24" fill="currentColor" class="tb-star-on shrink-0"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <div class="flex-1 h-1-5 bg-slate-200 rounded-full overflow-hidden"><div class="h-full bg-amber-400 rounded-full" style="width:3%"></div></div>
+        <span class="text-slate-400 shrink-0" style="font-size:10px;width:24px;text-align:right">3%</span>
+      </div><div class="flex items-center gap-2">
+        <span class="text-slate-400 shrink-0" style="font-size:10px;width:12px">1</span>
+        <svg width="9" height="9" viewBox="0 0 24 24" fill="currentColor" class="tb-star-on shrink-0"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <div class="flex-1 h-1-5 bg-slate-200 rounded-full overflow-hidden"><div class="h-full bg-amber-400 rounded-full" style="width:2%"></div></div>
+        <span class="text-slate-400 shrink-0" style="font-size:10px;width:24px;text-align:right">2%</span>
+      </div>
+    </div>
+  </div>
+  <div class="border rounded-2xl p-4 space-y-3">
+    <div class="flex items-start justify-between gap-3">
+      <div class="flex items-center gap-3">
+        <div class="w-9 h-9 rounded-xl bg-primary-500 flex items-center justify-center text-white text-xs font-bold shrink-0">MR</div>
+        <div><div class="flex items-center gap-2 flex-wrap"><p class="text-sm font-semibold text-slate-700 m-0">Marcus R.</p><span class="px-1-5 py-0-5 rounded-full bg-emerald-100 text-emerald-700" style="font-size:9px;font-weight:700">Verified Purchase</span></div><p class="text-xs text-slate-400 m-0">March 8, 2026</p></div>
+      </div>
+      <div class="flex items-center gap-0-5 shrink-0"><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" class="tb-star-on"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" class="tb-star-on"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" class="tb-star-on"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" class="tb-star-on"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" class="tb-star-on"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+    </div>
+    <div><p class="font-semibold text-sm text-slate-700 mb-1 m-0">Best hub I've ever used</p><p class="text-sm text-slate-600 leading-relaxed m-0">I've tried at least 6 USB-C hubs over the past 3 years and this one is in a completely different league. Zero dropouts, charges my MacBook Pro and my iPad simultaneously without any throttling. The build quality is exceptional — it's heavy in a good way.</p></div>
+    <div class="flex items-center gap-2 pt-1"><button class="flex items-center gap-1-5 text-xs text-slate-400"><i data-lucide="thumbs-up" class="lucide-xxs"></i> Helpful (42)</button></div>
+  </div><div class="border rounded-2xl p-4 space-y-3">
+    <div class="flex items-start justify-between gap-3">
+      <div class="flex items-center gap-3">
+        <div class="w-9 h-9 rounded-xl bg-primary-500 flex items-center justify-center text-white text-xs font-bold shrink-0">PS</div>
+        <div><div class="flex items-center gap-2 flex-wrap"><p class="text-sm font-semibold text-slate-700 m-0">Priya S.</p><span class="px-1-5 py-0-5 rounded-full bg-emerald-100 text-emerald-700" style="font-size:9px;font-weight:700">Verified Purchase</span></div><p class="text-xs text-slate-400 m-0">February 28, 2026</p></div>
+      </div>
+      <div class="flex items-center gap-0-5 shrink-0"><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" class="tb-star-on"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" class="tb-star-on"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" class="tb-star-on"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" class="tb-star-on"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" class="tb-star-off"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+    </div>
+    <div><p class="font-semibold text-sm text-slate-700 mb-1 m-0">Excellent performance, minor software nit</p><p class="text-sm text-slate-600 leading-relaxed m-0">Performance is flawless. Running dual 4K monitors at 60Hz each with USB-C connected laptop — absolutely no issues. Docking one star only because the companion app for firmware updates is macOS-only for now. Confirmed Windows support is coming Q2 2026.</p></div>
+    <div class="flex items-center gap-2 pt-1"><button class="flex items-center gap-1-5 text-xs text-slate-400"><i data-lucide="thumbs-up" class="lucide-xxs"></i> Helpful (18)</button></div>
+  </div><div class="border rounded-2xl p-4 space-y-3">
+    <div class="flex items-start justify-between gap-3">
+      <div class="flex items-center gap-3">
+        <div class="w-9 h-9 rounded-xl bg-emerald-500 flex items-center justify-center text-white text-xs font-bold shrink-0">AW</div>
+        <div><div class="flex items-center gap-2 flex-wrap"><p class="text-sm font-semibold text-slate-700 m-0">Alex W.</p></div><p class="text-xs text-slate-400 m-0">February 14, 2026</p></div>
+      </div>
+      <div class="flex items-center gap-0-5 shrink-0"><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" class="tb-star-on"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" class="tb-star-on"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" class="tb-star-on"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" class="tb-star-on"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" class="tb-star-on"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+    </div>
+    <div><p class="font-semibold text-sm text-slate-700 mb-1 m-0">Game changer for my home office</p><p class="text-sm text-slate-600 leading-relaxed m-0">Replaced three separate adapters with this one hub. Ethernet, dual HDMI, SD card, and multiple USB-A all working simultaneously without any performance degradation. The 100W charging is legitimately fast.</p></div>
+    <div class="flex items-center gap-2 pt-1"><button class="flex items-center gap-1-5 text-xs text-slate-400"><i data-lucide="thumbs-up" class="lucide-xxs"></i> Helpful (9)</button></div>
+  </div>
+</div></div>
+      <div class="tb-pane" data-tb-pane="2">
+<div class="space-y-4">
+  <div>
+    <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2 m-0">Connectivity</p>
+    <div class="border rounded-xl overflow-hidden">
+      <div class="flex gap-4 px-4 py-2-5 text-sm bg-white"><span class="text-slate-500 w-40 shrink-0">USB-C (Thunderbolt 4)</span><span class="font-medium text-slate-700">2 × 40Gbps, up to 100W PD</span></div><div class="flex gap-4 px-4 py-2-5 text-sm bg-slate-50"><span class="text-slate-500 w-40 shrink-0">USB-C (USB 3.2 Gen 2)</span><span class="font-medium text-slate-700">2 × 10Gbps</span></div><div class="flex gap-4 px-4 py-2-5 text-sm bg-white"><span class="text-slate-500 w-40 shrink-0">USB-A (USB 3.2 Gen 2)</span><span class="font-medium text-slate-700">4 × 10Gbps</span></div><div class="flex gap-4 px-4 py-2-5 text-sm bg-slate-50"><span class="text-slate-500 w-40 shrink-0">USB-A (USB 2.0)</span><span class="font-medium text-slate-700">2 × 480Mbps</span></div><div class="flex gap-4 px-4 py-2-5 text-sm bg-white"><span class="text-slate-500 w-40 shrink-0">HDMI</span><span class="font-medium text-slate-700">2 × HDMI 2.1 (4K@144Hz)</span></div><div class="flex gap-4 px-4 py-2-5 text-sm bg-slate-50"><span class="text-slate-500 w-40 shrink-0">DisplayPort</span><span class="font-medium text-slate-700">1 × DP 2.0 (8K@60Hz)</span></div><div class="flex gap-4 px-4 py-2-5 text-sm bg-white"><span class="text-slate-500 w-40 shrink-0">Ethernet</span><span class="font-medium text-slate-700">1 × 2.5G RJ45</span></div><div class="flex gap-4 px-4 py-2-5 text-sm bg-slate-50"><span class="text-slate-500 w-40 shrink-0">SD / microSD</span><span class="font-medium text-slate-700">SD 4.0 / microSD 4.0 (312MB/s)</span></div><div class="flex gap-4 px-4 py-2-5 text-sm bg-white"><span class="text-slate-500 w-40 shrink-0">3.5mm Audio</span><span class="font-medium text-slate-700">1 × Combo jack</span></div>
+    </div>
+  </div><div>
+    <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2 m-0">Power</p>
+    <div class="border rounded-xl overflow-hidden">
+      <div class="flex gap-4 px-4 py-2-5 text-sm bg-white"><span class="text-slate-500 w-40 shrink-0">Host charging (PD)</span><span class="font-medium text-slate-700">Up to 100W pass-through</span></div><div class="flex gap-4 px-4 py-2-5 text-sm bg-slate-50"><span class="text-slate-500 w-40 shrink-0">Downstream USB-C PD</span><span class="font-medium text-slate-700">2 × 20W</span></div><div class="flex gap-4 px-4 py-2-5 text-sm bg-white"><span class="text-slate-500 w-40 shrink-0">Downstream USB-A</span><span class="font-medium text-slate-700">4 × 12W (Quick Charge 3.0)</span></div><div class="flex gap-4 px-4 py-2-5 text-sm bg-slate-50"><span class="text-slate-500 w-40 shrink-0">Power input</span><span class="font-medium text-slate-700">AC 100–240V, 180W adapter included</span></div>
+    </div>
+  </div><div>
+    <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2 m-0">Physical</p>
+    <div class="border rounded-xl overflow-hidden">
+      <div class="flex gap-4 px-4 py-2-5 text-sm bg-white"><span class="text-slate-500 w-40 shrink-0">Dimensions</span><span class="font-medium text-slate-700">198 × 86 × 28 mm</span></div><div class="flex gap-4 px-4 py-2-5 text-sm bg-slate-50"><span class="text-slate-500 w-40 shrink-0">Weight</span><span class="font-medium text-slate-700">420 g</span></div><div class="flex gap-4 px-4 py-2-5 text-sm bg-white"><span class="text-slate-500 w-40 shrink-0">Material</span><span class="font-medium text-slate-700">Anodized aluminum (6061-T6)</span></div><div class="flex gap-4 px-4 py-2-5 text-sm bg-slate-50"><span class="text-slate-500 w-40 shrink-0">Operating temp.</span><span class="font-medium text-slate-700">0°C to 40°C</span></div><div class="flex gap-4 px-4 py-2-5 text-sm bg-white"><span class="text-slate-500 w-40 shrink-0">Warranty</span><span class="font-medium text-slate-700">2 years limited</span></div>
+    </div>
+  </div>
+</div></div>
+      <div class="tb-pane" data-tb-pane="3">
+<div class="space-y-2">
+  <div class="border rounded-xl overflow-hidden tb-faq" data-tb-faq>
+    <button class="w-full flex items-center gap-3 p-4 text-left tb-faq-btn">
+      <div class="w-6 h-6 rounded-full bg-slate-200 text-slate-500 flex items-center justify-center shrink-0 text-xs font-bold tb-faq-num">1</div>
+      <span class="flex-1 font-medium text-sm text-slate-700 tb-faq-q">What materials is the product made of?</span>
+      <i data-lucide="chevron-down" class="lucide-xs text-slate-400 tb-faq-chev shrink-0"></i>
+    </button>
+    <div class="tb-faq-body"><p class="px-4 pb-4 text-sm text-slate-600 leading-relaxed m-0">The chassis is aerospace-grade anodized aluminum (6061-T6). Internal components use industrial-grade stainless steel fasteners with titanium heat spreaders for optimal thermal management.</p></div>
+  </div><div class="border rounded-xl overflow-hidden tb-faq" data-tb-faq>
+    <button class="w-full flex items-center gap-3 p-4 text-left tb-faq-btn">
+      <div class="w-6 h-6 rounded-full bg-slate-200 text-slate-500 flex items-center justify-center shrink-0 text-xs font-bold tb-faq-num">2</div>
+      <span class="flex-1 font-medium text-sm text-slate-700 tb-faq-q">Is the warranty transferable?</span>
+      <i data-lucide="chevron-down" class="lucide-xs text-slate-400 tb-faq-chev shrink-0"></i>
+    </button>
+    <div class="tb-faq-body"><p class="px-4 pb-4 text-sm text-slate-600 leading-relaxed m-0">Yes, the 2-year limited warranty is fully transferable to subsequent owners within the warranty period. Transfer requires registration at our support portal.</p></div>
+  </div><div class="border rounded-xl overflow-hidden tb-faq" data-tb-faq>
+    <button class="w-full flex items-center gap-3 p-4 text-left tb-faq-btn">
+      <div class="w-6 h-6 rounded-full bg-slate-200 text-slate-500 flex items-center justify-center shrink-0 text-xs font-bold tb-faq-num">3</div>
+      <span class="flex-1 font-medium text-sm text-slate-700 tb-faq-q">Does it support third-party firmware?</span>
+      <i data-lucide="chevron-down" class="lucide-xs text-slate-400 tb-faq-chev shrink-0"></i>
+    </button>
+    <div class="tb-faq-body"><p class="px-4 pb-4 text-sm text-slate-600 leading-relaxed m-0">The product ships with open firmware under the Apache 2.0 license. Community firmware is supported via the official SDK. Custom firmware voids the hardware warranty but not software support.</p></div>
+  </div>
+</div></div>
+    </div>
+  </div>
+</div>
+</main>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lucide@latest/dist/umd/lucide.min.js"></script>
+</body>
+</html>

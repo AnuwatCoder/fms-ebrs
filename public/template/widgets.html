@@ -1,0 +1,1065 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/svg+xml" href="img/logo.svg"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Widgets | Liner Admin</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/css/theme.css" rel="stylesheet">
+  <script src="assets/js/app.js"></script>
+</head>
+<body>
+
+<aside class="app-sidebar" data-sidebar>
+        <a href="dashboard.html" class="sidebar-brand text-decoration-none">
+          <img src="img/logo.svg" alt="Liner" class="brand-logo-lg-img">
+          <div class="brand-text">
+            <div class="brand-name">Liner</div>
+            <div class="brand-sub">Admin</div>
+          </div>
+        </a>
+        <nav class="sidebar-nav custom-scrollbar"><div class="sidebar-group-title">Dashboards</div><a href="dashboard.html" class="sidebar-nav-link" data-path="dashboard.html">
+            <i data-lucide="layout-dashboard" class="lucide-md"></i><span class="link-label">Modern</span>
+          </a><a href="analytics.html" class="sidebar-nav-link" data-path="analytics.html">
+            <i data-lucide="activity" class="lucide-md"></i><span class="link-label">Analytics</span>
+          </a><a href="ecommerce.html" class="sidebar-nav-link" data-path="ecommerce.html">
+            <i data-lucide="shopping-cart" class="lucide-md"></i><span class="link-label">eCommerce</span>
+          </a><a href="music.html" class="sidebar-nav-link" data-path="music.html">
+            <i data-lucide="music" class="lucide-md"></i><span class="link-label">Music</span>
+          </a><a href="general.html" class="sidebar-nav-link" data-path="general.html">
+            <i data-lucide="globe-2" class="lucide-md"></i><span class="link-label">General</span>
+          </a><div class="sidebar-group-title">Apps</div><a href="calendar.html" class="sidebar-nav-link" data-path="calendar.html">
+            <i data-lucide="calendar" class="lucide-md"></i><span class="link-label">Calendar</span>
+          </a><a href="kanban.html" class="sidebar-nav-link" data-path="kanban.html">
+            <i data-lucide="kanban-square" class="lucide-md"></i><span class="link-label">Kanban</span>
+          </a><a href="chat.html" class="sidebar-nav-link" data-path="chat.html">
+            <i data-lucide="message-square" class="lucide-md"></i><span class="link-label">Chat</span>
+          </a><a href="email.html" class="sidebar-nav-link" data-path="email.html">
+            <i data-lucide="mail" class="lucide-md"></i><span class="link-label">Email</span>
+          </a><a href="notes.html" class="sidebar-nav-link" data-path="notes.html">
+            <i data-lucide="sticky-note" class="lucide-md"></i><span class="link-label">Notes</span>
+          </a><a href="contacts.html" class="sidebar-nav-link" data-path="contacts.html">
+            <i data-lucide="users" class="lucide-md"></i><span class="link-label">Contacts</span>
+          </a><a href="tickets.html" class="sidebar-nav-link" data-path="tickets.html">
+            <i data-lucide="ticket" class="lucide-md"></i><span class="link-label">Tickets</span>
+          </a><a href="invoice-list.html" class="sidebar-nav-link" data-path="invoice-list.html">
+            <i data-lucide="file-text" class="lucide-md"></i><span class="link-label">Invoice</span>
+          </a><a href="user-profile.html" class="sidebar-nav-link" data-path="user-profile.html">
+            <i data-lucide="user-circle" class="lucide-md"></i><span class="link-label">User Profile</span>
+          </a>
+            <a href="#" class="sidebar-nav-link sidebar-parent" data-toggle-submenu data-paths="blog-posts.html,blog-post.html,blog-detail.html">
+              <i data-lucide="book-open" class="lucide-md"></i>
+              <span class="link-label">Blog</span>
+              <i data-lucide="chevron-down" class="lucide-sm toggle-icon"></i>
+            </a>
+            <div class="sidebar-submenu"><a href="blog-posts.html" class="sidebar-nav-link" data-path="blog-posts.html">
+              <i data-lucide="book-open" class="lucide-sm"></i><span class="link-label">Blog Posts</span>
+            </a><a href="blog-post.html" class="sidebar-nav-link" data-path="blog-post.html">
+              <i data-lucide="file-text" class="lucide-sm"></i><span class="link-label">Blog Post</span>
+            </a><a href="blog-detail.html" class="sidebar-nav-link" data-path="blog-detail.html">
+              <i data-lucide="eye" class="lucide-sm"></i><span class="link-label">Blog Detail</span>
+            </a></div>
+            <a href="#" class="sidebar-nav-link sidebar-parent" data-toggle-submenu data-paths="ecommerce-shop.html,ecommerce-detail.html,ecommerce-list.html,ecommerce-checkout.html">
+              <i data-lucide="shopping-bag" class="lucide-md"></i>
+              <span class="link-label">eCommerce</span>
+              <i data-lucide="chevron-down" class="lucide-sm toggle-icon"></i>
+            </a>
+            <div class="sidebar-submenu"><a href="ecommerce-shop.html" class="sidebar-nav-link" data-path="ecommerce-shop.html">
+              <i data-lucide="store" class="lucide-sm"></i><span class="link-label">Shop</span>
+            </a><a href="ecommerce-detail.html" class="sidebar-nav-link" data-path="ecommerce-detail.html">
+              <i data-lucide="package" class="lucide-sm"></i><span class="link-label">Detail</span>
+            </a><a href="ecommerce-list.html" class="sidebar-nav-link" data-path="ecommerce-list.html">
+              <i data-lucide="list" class="lucide-sm"></i><span class="link-label">List</span>
+            </a><a href="ecommerce-checkout.html" class="sidebar-nav-link" data-path="ecommerce-checkout.html">
+              <i data-lucide="credit-card" class="lucide-sm"></i><span class="link-label">Checkout</span>
+            </a></div><div class="sidebar-group-title">UI Elements</div><a href="alert.html" class="sidebar-nav-link" data-path="alert.html">
+            <i data-lucide="alert-circle" class="lucide-md"></i><span class="link-label">Alert</span>
+          </a><a href="accordion.html" class="sidebar-nav-link" data-path="accordion.html">
+            <i data-lucide="layers" class="lucide-md"></i><span class="link-label">Accordion</span>
+          </a><a href="avatar.html" class="sidebar-nav-link" data-path="avatar.html">
+            <i data-lucide="user-circle" class="lucide-md"></i><span class="link-label">Avatar</span>
+          </a><a href="chip.html" class="sidebar-nav-link" data-path="chip.html">
+            <i data-lucide="tag" class="lucide-md"></i><span class="link-label">Chip</span>
+          </a><a href="dialog.html" class="sidebar-nav-link" data-path="dialog.html">
+            <i data-lucide="message-square" class="lucide-md"></i><span class="link-label">Dialog</span>
+          </a><a href="list.html" class="sidebar-nav-link" data-path="list.html">
+            <i data-lucide="align-left" class="lucide-md"></i><span class="link-label">List</span>
+          </a><a href="popover.html" class="sidebar-nav-link" data-path="popover.html">
+            <i data-lucide="message-circle" class="lucide-md"></i><span class="link-label">Popover</span>
+          </a><a href="rating.html" class="sidebar-nav-link" data-path="rating.html">
+            <i data-lucide="star" class="lucide-md"></i><span class="link-label">Rating</span>
+          </a><a href="tabs.html" class="sidebar-nav-link" data-path="tabs.html">
+            <i data-lucide="layout-grid" class="lucide-md"></i><span class="link-label">Tabs</span>
+          </a><a href="tooltip.html" class="sidebar-nav-link" data-path="tooltip.html">
+            <i data-lucide="info" class="lucide-md"></i><span class="link-label">Tooltip</span>
+          </a><a href="typography.html" class="sidebar-nav-link" data-path="typography.html">
+            <i data-lucide="type" class="lucide-md"></i><span class="link-label">Typography</span>
+          </a><a href="buttons.html" class="sidebar-nav-link" data-path="buttons.html">
+            <i data-lucide="zap" class="lucide-md"></i><span class="link-label">Buttons</span>
+          </a><a href="cards.html" class="sidebar-nav-link" data-path="cards.html">
+            <i data-lucide="square-stack" class="lucide-md"></i><span class="link-label">Cards</span>
+          </a><div class="sidebar-group-title">Forms</div><a href="form-elements.html" class="sidebar-nav-link" data-path="form-elements.html">
+            <i data-lucide="square-pen" class="lucide-md"></i><span class="link-label">Form Elements</span>
+          </a><a href="form-layouts.html" class="sidebar-nav-link" data-path="form-layouts.html">
+            <i data-lucide="layout-template" class="lucide-md"></i><span class="link-label">Form Layouts</span>
+          </a><a href="form-horizontal.html" class="sidebar-nav-link" data-path="form-horizontal.html">
+            <i data-lucide="rows" class="lucide-md"></i><span class="link-label">Form Horizontal</span>
+          </a><a href="form-validation.html" class="sidebar-nav-link" data-path="form-validation.html">
+            <i data-lucide="check-circle" class="lucide-md"></i><span class="link-label">Form Validation</span>
+          </a><div class="sidebar-group-title">Tables</div><a href="basic-table.html" class="sidebar-nav-link" data-path="basic-table.html">
+            <i data-lucide="table-2" class="lucide-md"></i><span class="link-label">Basic Table</span>
+          </a><a href="enhanced-table.html" class="sidebar-nav-link" data-path="enhanced-table.html">
+            <i data-lucide="table-properties" class="lucide-md"></i><span class="link-label">Enhanced Table</span>
+          </a><div class="sidebar-group-title">Charts</div><a href="line-chart.html" class="sidebar-nav-link" data-path="line-chart.html">
+            <i data-lucide="line-chart" class="lucide-md"></i><span class="link-label">Line Chart</span>
+          </a><a href="area-chart.html" class="sidebar-nav-link" data-path="area-chart.html">
+            <i data-lucide="area-chart" class="lucide-md"></i><span class="link-label">Area Chart</span>
+          </a><a href="bar-chart.html" class="sidebar-nav-link" data-path="bar-chart.html">
+            <i data-lucide="bar-chart-3" class="lucide-md"></i><span class="link-label">Bar Chart</span>
+          </a><a href="column-chart.html" class="sidebar-nav-link" data-path="column-chart.html">
+            <i data-lucide="bar-chart-2" class="lucide-md"></i><span class="link-label">Column Chart</span>
+          </a><a href="donut-chart.html" class="sidebar-nav-link" data-path="donut-chart.html">
+            <i data-lucide="pie-chart" class="lucide-md"></i><span class="link-label">Donut Chart</span>
+          </a><a href="radialbar-chart.html" class="sidebar-nav-link" data-path="radialbar-chart.html">
+            <i data-lucide="activity" class="lucide-md"></i><span class="link-label">Radialbar Chart</span>
+          </a><div class="sidebar-group-title">Pages</div><a href="account.html" class="sidebar-nav-link" data-path="account.html">
+            <i data-lucide="settings" class="lucide-md"></i><span class="link-label">Account Settings</span>
+          </a><a href="pricing.html" class="sidebar-nav-link" data-path="pricing.html">
+            <i data-lucide="credit-card" class="lucide-md"></i><span class="link-label">Pricing</span>
+          </a><a href="faq.html" class="sidebar-nav-link" data-path="faq.html">
+            <i data-lucide="help-circle" class="lucide-md"></i><span class="link-label">FAQ</span>
+          </a><a href="widgets.html" class="sidebar-nav-link" data-path="widgets.html">
+            <i data-lucide="layout-grid" class="lucide-md"></i><span class="link-label">Widgets</span>
+          </a><a href="apikeys.html" class="sidebar-nav-link" data-path="apikeys.html">
+            <i data-lucide="key" class="lucide-md"></i><span class="link-label">API Keys</span>
+          </a><div class="sidebar-group-title">Icons</div><a href="lucide-icons.html" class="sidebar-nav-link" data-path="lucide-icons.html">
+            <i data-lucide="smile" class="lucide-md"></i><span class="link-label">Lucide Icons</span>
+          </a><a href="custom-icons.html" class="sidebar-nav-link" data-path="custom-icons.html">
+            <i data-lucide="star" class="lucide-md"></i><span class="link-label">Custom Icons</span>
+          </a><div class="sidebar-group-title">Auth</div><a href="login.html" class="sidebar-nav-link" data-path="login.html">
+            <i data-lucide="log-in" class="lucide-md"></i><span class="link-label">Login</span>
+          </a><a href="register.html" class="sidebar-nav-link" data-path="register.html">
+            <i data-lucide="user-plus" class="lucide-md"></i><span class="link-label">Register</span>
+          </a><a href="forgot-password.html" class="sidebar-nav-link" data-path="forgot-password.html">
+            <i data-lucide="key-round" class="lucide-md"></i><span class="link-label">Forgot Password</span>
+          </a><a href="two-steps.html" class="sidebar-nav-link" data-path="two-steps.html">
+            <i data-lucide="shield" class="lucide-md"></i><span class="link-label">Two Step</span>
+          </a><a href="error.html" class="sidebar-nav-link" data-path="error.html">
+            <i data-lucide="alert-circle" class="lucide-md"></i><span class="link-label">Error</span>
+          </a><a href="maintenance.html" class="sidebar-nav-link" data-path="maintenance.html">
+            <i data-lucide="wrench" class="lucide-md"></i><span class="link-label">Maintenance</span>
+          </a></nav>
+        <div class="sidebar-footer">
+          <div class="user-mini">
+            <div class="user-avatar-mini">JD</div>
+            <div class="sidebar-footer-info flex-grow-1 overflow-hidden">
+              <div class="user-mini-name">John Doe</div>
+              <div class="user-mini-email">john@liner.com</div>
+            </div>
+            <i data-lucide="chevron-right" class="lucide-sm sidebar-footer-info"></i>
+          </div>
+        </div>
+      </aside>
+      <div class="sidebar-backdrop"></div>
+<header class="app-header">
+        <button class="header-icon-btn d-lg-none" data-toggle-mobile-sidebar aria-label="Menu"><i data-lucide="menu" class="lucide-md"></i></button>
+        <button class="header-icon-btn d-none d-lg-flex" data-toggle-sidebar aria-label="Toggle"><i data-lucide="menu" class="lucide-md"></i></button>
+        <div class="header-breadcrumb d-none d-md-flex" data-breadcrumb><span class="text-muted">Home</span></div>
+        <div class="flex-grow-1"></div>
+        <div class="search-wrap d-none d-sm-block">
+          <input type="text" class="form-control form-control-sm search-input w-200" placeholder="Search...">
+          <i data-lucide="search" class="lucide-sm search-icon"></i>
+        </div>
+        <button class="header-icon-btn" data-toggle-dark aria-label="Dark"><i data-lucide="moon" class="lucide-md"></i></button>
+        <div class="dropdown">
+          <button class="header-icon-btn" data-bs-toggle="dropdown" aria-label="Notifications">
+            <i data-lucide="bell" class="lucide-md"></i>
+            <span class="notif-dot">3</span>
+          </button>
+          <div class="dropdown-menu dropdown-menu-end notif-menu">
+            <div class="notif-header">
+              <strong>Notifications</strong>
+              <span class="badge badge-soft-primary">3 new</span>
+            </div>
+            <div class="notif-list custom-scrollbar">
+              <div class="notif-item unread">
+                <div class="icon-circle icon-circle-sm icon-circle-bg-success-soft"><i data-lucide="check-circle-2" class="lucide-sm"></i></div>
+                <div class="flex-grow-1">
+                  <div class="notif-title">Order Completed</div>
+                  <div class="notif-msg">Order #1234 has been fulfilled</div>
+                  <div class="notif-time">2 min ago</div>
+                </div>
+              </div>
+              <div class="notif-item unread">
+                <div class="icon-circle icon-circle-sm icon-circle-bg-info-soft"><i data-lucide="info" class="lucide-sm"></i></div>
+                <div class="flex-grow-1">
+                  <div class="notif-title">New User Registered</div>
+                  <div class="notif-msg">Sarah Johnson joined the platform</div>
+                  <div class="notif-time">15 min ago</div>
+                </div>
+              </div>
+              <div class="notif-item">
+                <div class="icon-circle icon-circle-sm icon-circle-bg-warning-soft"><i data-lucide="alert-circle" class="lucide-sm"></i></div>
+                <div class="flex-grow-1">
+                  <div class="notif-title">Low Stock Alert</div>
+                  <div class="notif-msg">Wireless Mouse is running low</div>
+                  <div class="notif-time">1 hr ago</div>
+                </div>
+              </div>
+            </div>
+            <div class="notif-footer">
+              <a href="#" class="text-primary fw-medium notif-footer-link">View all notifications</a>
+            </div>
+          </div>
+        </div>
+        <button class="header-icon-btn" data-toggle-settings aria-label="Settings"><i data-lucide="settings" class="lucide-md"></i></button>
+        <div class="dropdown">
+          <button class="user-button" data-bs-toggle="dropdown">
+            <div class="avatar avatar-sm">JD</div>
+            <div class="d-none d-sm-block text-start">
+              <div class="user-name">John Doe</div>
+              <div class="user-role">Admin</div>
+            </div>
+            <i data-lucide="chevron-down" class="lucide-sm d-none d-sm-inline"></i>
+          </button>
+          <div class="dropdown-menu dropdown-menu-end user-menu">
+            <div class="user-menu-header">
+              <div class="fw-semibold">John Doe</div>
+              <div class="text-muted small">john@liner.com</div>
+            </div>
+            <a class="dropdown-item user-menu-item" href="account.html"><i data-lucide="user" class="lucide-sm"></i> My Profile</a>
+            <a class="dropdown-item user-menu-item" href="pricing.html"><i data-lucide="credit-card" class="lucide-sm"></i> Billing</a>
+            <a class="dropdown-item user-menu-item" href="account.html"><i data-lucide="shield" class="lucide-sm"></i> Security</a>
+            <a class="dropdown-item user-menu-item" href="faq.html"><i data-lucide="help-circle" class="lucide-sm"></i> Help Center</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item user-menu-item text-danger" href="login.html"><i data-lucide="log-out" class="lucide-sm"></i> Sign Out</a>
+          </div>
+        </div>
+      </header>
+<div class="settings-overlay" data-close-settings></div>
+      <div class="settings-panel">
+        <div class="settings-section d-flex align-items-center justify-content-between">
+          <div>
+            <h5 class="mb-0 fw-bold">Theme Settings</h5>
+            <div class="text-muted small mt-1">Customize your dashboard appearance</div>
+          </div>
+          <button class="btn btn-icon btn-icon-sm" data-close-settings aria-label="Close"><i data-lucide="x" class="lucide-md"></i></button>
+        </div>
+        <div class="flex-grow-1 overflow-auto custom-scrollbar">
+          <div class="settings-section">
+            <h6>Color Mode</h6>
+            <div class="d-flex gap-2">
+              <button class="mode-card light active" data-mode="light">
+                <div class="mini-preview">
+                  <div class="mini-header"><div class="mini-bar w-18"></div></div>
+                  <div class="flex-grow-1 mini-bg-light"></div>
+                </div>
+                <div class="d-flex align-items-center justify-content-between"><strong class="text-xs">Light</strong></div>
+              </button>
+              <button class="mode-card dark" data-mode="dark">
+                <div class="mini-preview">
+                  <div class="mini-header"><div class="mini-bar w-18"></div></div>
+                  <div class="flex-grow-1 mini-bg-dark"></div>
+                </div>
+                <div class="d-flex align-items-center justify-content-between"><strong class="text-xs">Dark</strong></div>
+              </button>
+            </div>
+          </div>
+          <div class="settings-section">
+            <h6>Color Preset</h6>
+            <div class="swatch-grid"><button class="color-swatch-btn" data-color="navy">
+        <div class="swatch bg-swatch-navy"></div>
+        <div class="swatch-label">Navy</div>
+      </button><button class="color-swatch-btn" data-color="blue">
+        <div class="swatch bg-swatch-blue"></div>
+        <div class="swatch-label">Blue</div>
+      </button><button class="color-swatch-btn" data-color="green">
+        <div class="swatch bg-swatch-green"></div>
+        <div class="swatch-label">Emerald</div>
+      </button><button class="color-swatch-btn" data-color="orange">
+        <div class="swatch bg-swatch-orange"></div>
+        <div class="swatch-label">Orange</div>
+      </button><button class="color-swatch-btn" data-color="red">
+        <div class="swatch bg-swatch-red"></div>
+        <div class="swatch-label">Rose</div>
+      </button></div>
+          </div>
+          <div class="settings-section">
+            <h6>Layout</h6>
+            <label class="setting-toggle">
+              <span class="toggle-label">Collapsed Sidebar</span>
+              <span class="switch" data-setting="collapsed"></span>
+            </label>
+            <label class="setting-toggle">
+              <span class="toggle-label">Horizontal Menu</span>
+              <span class="switch" data-setting="horizontal"></span>
+            </label>
+          </div>
+          <div class="settings-section">
+            <h6>Regional</h6>
+            <label class="setting-toggle">
+              <span class="toggle-label">RTL Direction</span>
+              <span class="switch" data-setting="rtl"></span>
+            </label>
+          </div>
+        </div>
+        <div class="settings-footer">
+          <button class="btn btn-primary w-100" data-close-settings>Apply &amp; Close</button>
+        </div>
+      </div>
+<main class="app-main space-y-10 pb-12">
+  <div class="flex items-start justify-between mb-6">
+    <div>
+      <h1 class="text-2xl font-bold text-slate-900 m-0">Widgets</h1>
+      <p class="text-sm text-slate-500 mt-1 mb-0">A premium showcase of reusable UI widgets for your dashboard</p>
+    </div>
+  </div>
+  <section>
+  <div class="flex items-center gap-3 mb-5">
+    <div class="flex-1"><h2 class="text-base font-bold text-slate-800 m-0">Stat Widgets</h2><p class="text-xs text-slate-500 mt-0-5 m-0">Gradient cards with live sparklines</p></div>
+    <div class="flex-1" style="height:1px;background:#e2e8f0"></div>
+  </div>
+  <div class="grid grid-cols-4 gap-5">
+  <div class="rounded-2xl p-5 text-white bg-primary-500" style="box-shadow:0 10px 15px -3px rgba(0,0,0,.1)">
+    <div class="flex items-center justify-between mb-3">
+      <div class="w-9 h-9 rounded-xl flex items-center justify-center" style="background:rgb(255 255 255 / .2)"><i data-lucide="users" class="lucide-md"></i></div>
+      <span class="flex items-center gap-1 text-xs font-semibold px-2 py-0-5 rounded-full" style="background:rgb(255 255 255 / .25)"><i data-lucide="trending-up" class="lucide-xxs"></i>+12%</span>
+    </div>
+    <p class="text-3xl font-bold tracking-tight m-0">24,521</p>
+    <p class="text-xs opacity-80 mt-0-5 mb-3 m-0">Total Users</p>
+    <div id="wg-grad-spark-0" style="height:48px"></div>
+  </div><div class="rounded-2xl p-5 text-white bg-emerald-500" style="box-shadow:0 10px 15px -3px rgba(0,0,0,.1)">
+    <div class="flex items-center justify-between mb-3">
+      <div class="w-9 h-9 rounded-xl flex items-center justify-center" style="background:rgb(255 255 255 / .2)"><i data-lucide="dollar-sign" class="lucide-md"></i></div>
+      <span class="flex items-center gap-1 text-xs font-semibold px-2 py-0-5 rounded-full" style="background:rgb(255 255 255 / .25)"><i data-lucide="trending-up" class="lucide-xxs"></i>+18%</span>
+    </div>
+    <p class="text-3xl font-bold tracking-tight m-0">$48,295</p>
+    <p class="text-xs opacity-80 mt-0-5 mb-3 m-0">Revenue</p>
+    <div id="wg-grad-spark-1" style="height:48px"></div>
+  </div><div class="rounded-2xl p-5 text-white bg-amber-500" style="box-shadow:0 10px 15px -3px rgba(0,0,0,.1)">
+    <div class="flex items-center justify-between mb-3">
+      <div class="w-9 h-9 rounded-xl flex items-center justify-center" style="background:rgb(255 255 255 / .2)"><i data-lucide="shopping-cart" class="lucide-md"></i></div>
+      <span class="flex items-center gap-1 text-xs font-semibold px-2 py-0-5 rounded-full" style="background:rgb(0 0 0 / .2)"><i data-lucide="trending-down" class="lucide-xxs"></i>-3%</span>
+    </div>
+    <p class="text-3xl font-bold tracking-tight m-0">1,842</p>
+    <p class="text-xs opacity-80 mt-0-5 mb-3 m-0">Orders</p>
+    <div id="wg-grad-spark-2" style="height:48px"></div>
+  </div><div class="rounded-2xl p-5 text-white bg-cyan-500" style="box-shadow:0 10px 15px -3px rgba(0,0,0,.1)">
+    <div class="flex items-center justify-between mb-3">
+      <div class="w-9 h-9 rounded-xl flex items-center justify-center" style="background:rgb(255 255 255 / .2)"><i data-lucide="activity" class="lucide-md"></i></div>
+      <span class="flex items-center gap-1 text-xs font-semibold px-2 py-0-5 rounded-full" style="background:rgb(255 255 255 / .25)"><i data-lucide="trending-up" class="lucide-xxs"></i>+7%</span>
+    </div>
+    <p class="text-3xl font-bold tracking-tight m-0">328</p>
+    <p class="text-xs opacity-80 mt-0-5 mb-3 m-0">Active Sessions</p>
+    <div id="wg-grad-spark-3" style="height:48px"></div>
+  </div>
+</div>
+</section>
+  <section>
+  <div class="flex items-center gap-3 mb-5">
+    <div class="flex-1"><h2 class="text-base font-bold text-slate-800 m-0">Light Stat Cards</h2><p class="text-xs text-slate-500 mt-0-5 m-0">Soft-tinted cards with icons and sparklines</p></div>
+    <div class="flex-1" style="height:1px;background:#e2e8f0"></div>
+  </div>
+  <div class="grid grid-cols-4 gap-5">
+  <div class="card p-5 bg-primary-50">
+    <div class="flex items-start justify-between mb-3">
+      <div class="w-10 h-10 rounded-xl bg-primary-500 flex items-center justify-center" style="box-shadow:0 1px 2px rgba(0,0,0,.05)"><i data-lucide="activity" class="lucide-md text-white"></i></div>
+      <span class="flex items-center gap-1 text-xs font-semibold text-emerald-600"><i data-lucide="trending-up" class="lucide-xs"></i>+9.4%</span>
+    </div>
+    <p class="text-2xl font-bold text-slate-900 tracking-tight m-0">128,430</p>
+    <p class="text-xs text-slate-500 mt-0-5 mb-3 m-0">Page Views</p>
+    <div id="wg-light-spark-0" style="height:40px"></div>
+  </div><div class="card p-5 bg-cyan-50">
+    <div class="flex items-start justify-between mb-3">
+      <div class="w-10 h-10 rounded-xl bg-cyan-500 flex items-center justify-center" style="box-shadow:0 1px 2px rgba(0,0,0,.05)"><i data-lucide="users" class="lucide-md text-white"></i></div>
+      <span class="flex items-center gap-1 text-xs font-semibold text-emerald-600"><i data-lucide="trending-up" class="lucide-xs"></i>+5.1%</span>
+    </div>
+    <p class="text-2xl font-bold text-slate-900 tracking-tight m-0">3,210</p>
+    <p class="text-xs text-slate-500 mt-0-5 mb-3 m-0">New Signups</p>
+    <div id="wg-light-spark-1" style="height:40px"></div>
+  </div><div class="card p-5 bg-emerald-50">
+    <div class="flex items-start justify-between mb-3">
+      <div class="w-10 h-10 rounded-xl bg-emerald-500 flex items-center justify-center" style="box-shadow:0 1px 2px rgba(0,0,0,.05)"><i data-lucide="trending-up" class="lucide-md text-white"></i></div>
+      <span class="flex items-center gap-1 text-xs font-semibold text-emerald-600"><i data-lucide="trending-up" class="lucide-xs"></i>+1.2%</span>
+    </div>
+    <p class="text-2xl font-bold text-slate-900 tracking-tight m-0">8.42%</p>
+    <p class="text-xs text-slate-500 mt-0-5 mb-3 m-0">Conversions</p>
+    <div id="wg-light-spark-2" style="height:40px"></div>
+  </div><div class="card p-5 bg-amber-50">
+    <div class="flex items-start justify-between mb-3">
+      <div class="w-10 h-10 rounded-xl bg-amber-500 flex items-center justify-center" style="box-shadow:0 1px 2px rgba(0,0,0,.05)"><i data-lucide="dollar-sign" class="lucide-md text-white"></i></div>
+      <span class="flex items-center gap-1 text-xs font-semibold text-red-500"><i data-lucide="trending-down" class="lucide-xs"></i>-2.5%</span>
+    </div>
+    <p class="text-2xl font-bold text-slate-900 tracking-tight m-0">$94.30</p>
+    <p class="text-xs text-slate-500 mt-0-5 mb-3 m-0">Avg. Order Val</p>
+    <div id="wg-light-spark-3" style="height:40px"></div>
+  </div>
+</div>
+</section>
+  <section>
+  <div class="flex items-center gap-3 mb-5">
+    <div class="flex-1"><h2 class="text-base font-bold text-slate-800 m-0">Profile & User Cards</h2><p class="text-xs text-slate-500 mt-0-5 m-0">User profile, team member, and testimonial cards</p></div>
+    <div class="flex-1" style="height:1px;background:#e2e8f0"></div>
+  </div>
+  <div class="grid grid-cols-3 gap-5">
+  <!-- Profile card -->
+  <div class="card">
+    <div class="relative mb-8">
+      <div style="height:96px;position:relative;overflow:hidden;border-top-left-radius:12px;border-top-right-radius:12px">
+        <img src="img/unsplash/mountain-landscape.jpg" alt="Cover" class="w-full h-full object-cover">
+        <div class="absolute inset-0" style="background:linear-gradient(to top,rgba(0,0,0,.3),transparent)"></div>
+      </div>
+      <div class="absolute" style="bottom:-24px;left:20px;z-index:10">
+        <img src="img/avatars/avatar-man-profile.jpg" alt="John Doe" class="w-16 h-16 rounded-2xl object-cover" style="border:4px solid #fff;box-shadow:0 10px 15px -3px rgba(0,0,0,.1)">
+      </div>
+    </div>
+    <div class="px-5 pb-5">
+      <div class="flex items-end justify-between mb-4"><div></div><button class="btn btn-primary btn-sm">Follow</button></div>
+      <h3 class="font-bold text-slate-900 text-base m-0">John Doe</h3>
+      <p class="text-xs text-slate-500 mb-1 m-0">Senior Frontend Developer</p>
+      <p class="text-xs text-slate-400 mb-4 m-0">San Francisco, CA · he/him</p>
+      <div class="grid grid-cols-3 border-t pt-4 text-center">
+        <div class="px-2" style="border-right:1px solid #f1f5f9"><p class="font-bold text-slate-900 text-base m-0">57</p><p class="text-slate-400 mt-0-5 m-0" style="font-size:11px">Posts</p></div>
+        <div class="px-2" style="border-right:1px solid #f1f5f9"><p class="font-bold text-slate-900 text-base m-0">1.2k</p><p class="text-slate-400 mt-0-5 m-0" style="font-size:11px">Followers</p></div>
+        <div class="px-2"><p class="font-bold text-slate-900 text-base m-0">348</p><p class="text-slate-400 mt-0-5 m-0" style="font-size:11px">Following</p></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Team member card -->
+  <div class="card p-5">
+    <div class="flex items-start gap-4 mb-4">
+      <div class="relative">
+        <img src="img/avatars/avatar-woman-sarah-chen.jpg" alt="Sarah Chen" class="w-14 h-14 rounded-2xl object-cover">
+        <span class="absolute" style="bottom:-2px;right:-2px;width:16px;height:16px;border-radius:9999px;background:#10b981;border:2px solid #fff"></span>
+      </div>
+      <div class="flex-1 min-w-0">
+        <h3 class="font-bold text-slate-900 m-0" style="line-height:1.25">Sarah Chen</h3>
+        <p class="text-xs text-slate-500 m-0">Full-Stack Engineer</p>
+        <span class="badge badge-success mt-1">Online</span>
+      </div>
+      <div class="text-right"><p class="text-xs text-slate-400 m-0">Department</p><p class="text-xs font-semibold text-slate-700 mt-0-5 m-0">Engineering</p></div>
+    </div>
+    <p class="text-xs text-slate-500 leading-relaxed mb-4 m-0">Building scalable web applications with a passion for clean code and great developer experiences.</p>
+    <div class="flex flex-wrap gap-1-5 mb-4">
+      <span class="badge badge-primary" style="font-size:11px">React</span><span class="badge badge-primary" style="font-size:11px">TypeScript</span><span class="badge badge-primary" style="font-size:11px">Go</span><span class="badge badge-primary" style="font-size:11px">Docker</span><span class="badge badge-primary" style="font-size:11px">AWS</span>
+    </div>
+    <div class="grid grid-cols-3 gap-2 border-t pt-4">
+      <div class="text-center"><p class="font-bold text-slate-900 m-0">14</p><p class="text-slate-400 mt-0-5 m-0" style="font-size:10px">Projects</p></div>
+      <div class="text-center"><p class="font-bold text-slate-900 m-0">428</p><p class="text-slate-400 mt-0-5 m-0" style="font-size:10px">Commits</p></div>
+      <div class="text-center"><p class="font-bold text-slate-900 m-0">91</p><p class="text-slate-400 mt-0-5 m-0" style="font-size:10px">Reviews</p></div>
+    </div>
+  </div>
+
+  <!-- Testimonial card -->
+  <div class="card p-6 flex flex-col justify-between">
+    <div>
+      <div class="flex gap-0-5 mb-4"><svg width="16" height="16" viewBox="0 0 24 24" fill="#fbbf24" stroke="#fbbf24" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="16" height="16" viewBox="0 0 24 24" fill="#fbbf24" stroke="#fbbf24" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="16" height="16" viewBox="0 0 24 24" fill="#fbbf24" stroke="#fbbf24" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="16" height="16" viewBox="0 0 24 24" fill="#fbbf24" stroke="#fbbf24" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="16" height="16" viewBox="0 0 24 24" fill="#fbbf24" stroke="#fbbf24" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+      <blockquote class="text-slate-700 text-sm leading-relaxed mb-5 m-0">"Liner is hands-down the best admin template I've used. The component quality is outstanding, the dark mode is flawless, and the Tailwind integration saves us weeks of work on every project."</blockquote>
+    </div>
+    <div class="flex items-center gap-3 border-t pt-4">
+      <img src="img/avatars/avatar-man-david.jpg" alt="Marcus Reynolds" class="w-10 h-10 rounded-full object-cover">
+      <div><p class="text-sm font-semibold text-slate-900 m-0">Marcus Reynolds</p><p class="text-xs text-slate-400 m-0">CTO at BuildFast Inc.</p></div>
+      <span class="ml-auto badge badge-warning">Verified</span>
+    </div>
+  </div>
+</div>
+</section>
+  <section>
+  <div class="flex items-center gap-3 mb-5">
+    <div class="flex-1"><h2 class="text-base font-bold text-slate-800 m-0">Progress & Goal Widgets</h2><p class="text-xs text-slate-500 mt-0-5 m-0">Goal trackers and skill progress bars</p></div>
+    <div class="flex-1" style="height:1px;background:#e2e8f0"></div>
+  </div>
+  <div class="grid grid-cols-2 gap-5">
+  <div class="card p-6">
+    <div class="flex items-center justify-between mb-5">
+      <div><h3 class="font-bold text-slate-900 m-0">Q1 Goal Tracker</h3><p class="text-xs text-slate-500 mt-0-5 m-0">January – March 2026</p></div>
+      <span class="badge badge-success">On Track</span>
+    </div>
+    <div class="space-y-5">
+      <div>
+        <div class="flex items-center justify-between mb-1-5"><span class="text-sm text-slate-700 font-medium">Annual Revenue Target</span><span class="text-sm font-bold text-slate-900">68%</span></div>
+        <div class="rounded-full bg-slate-100 overflow-hidden" style="height:10px"><div class="h-full rounded-full bg-primary-500" style="width:68%;transition:width .7s"></div></div>
+      </div><div>
+        <div class="flex items-center justify-between mb-1-5"><span class="text-sm text-slate-700 font-medium">New User Acquisition</span><span class="text-sm font-bold text-slate-900">84%</span></div>
+        <div class="rounded-full bg-slate-100 overflow-hidden" style="height:10px"><div class="h-full rounded-full bg-cyan-500" style="width:84%;transition:width .7s"></div></div>
+      </div><div>
+        <div class="flex items-center justify-between mb-1-5"><span class="text-sm text-slate-700 font-medium">Support Ticket SLA</span><span class="text-sm font-bold text-slate-900">93%</span></div>
+        <div class="rounded-full bg-slate-100 overflow-hidden" style="height:10px"><div class="h-full rounded-full bg-emerald-500" style="width:93%;transition:width .7s"></div></div>
+      </div><div>
+        <div class="flex items-center justify-between mb-1-5"><span class="text-sm text-slate-700 font-medium">Product Roadmap Items</span><span class="text-sm font-bold text-slate-900">45%</span></div>
+        <div class="rounded-full bg-slate-100 overflow-hidden" style="height:10px"><div class="h-full rounded-full bg-amber-500" style="width:45%;transition:width .7s"></div></div>
+      </div>
+    </div>
+  </div>
+  <div class="card p-6">
+    <div class="flex items-center justify-between mb-5">
+      <div><h3 class="font-bold text-slate-900 m-0">Skills Overview</h3><p class="text-xs text-slate-500 mt-0-5 m-0">Team competency ratings</p></div>
+      <button class="btn-outline btn-sm">Edit</button>
+    </div>
+    <div class="space-y-5">
+      <div>
+        <div class="flex items-center justify-between mb-1-5"><span class="text-sm text-slate-700 font-medium">React & TypeScript</span><span class="text-sm font-bold text-slate-900">92%</span></div>
+        <div class="rounded-full bg-slate-100 overflow-hidden" style="height:10px"><div class="h-full rounded-full bg-primary-500" style="width:92%;transition:width .7s"></div></div>
+      </div><div>
+        <div class="flex items-center justify-between mb-1-5"><span class="text-sm text-slate-700 font-medium">Node.js / Express</span><span class="text-sm font-bold text-slate-900">78%</span></div>
+        <div class="rounded-full bg-slate-100 overflow-hidden" style="height:10px"><div class="h-full rounded-full bg-cyan-500" style="width:78%;transition:width .7s"></div></div>
+      </div><div>
+        <div class="flex items-center justify-between mb-1-5"><span class="text-sm text-slate-700 font-medium">PostgreSQL</span><span class="text-sm font-bold text-slate-900">65%</span></div>
+        <div class="rounded-full bg-slate-100 overflow-hidden" style="height:10px"><div class="h-full rounded-full bg-emerald-500" style="width:65%;transition:width .7s"></div></div>
+      </div><div>
+        <div class="flex items-center justify-between mb-1-5"><span class="text-sm text-slate-700 font-medium">DevOps / CI-CD</span><span class="text-sm font-bold text-slate-900">55%</span></div>
+        <div class="rounded-full bg-slate-100 overflow-hidden" style="height:10px"><div class="h-full rounded-full bg-amber-500" style="width:55%;transition:width .7s"></div></div>
+      </div><div>
+        <div class="flex items-center justify-between mb-1-5"><span class="text-sm text-slate-700 font-medium">UI / UX Design</span><span class="text-sm font-bold text-slate-900">80%</span></div>
+        <div class="rounded-full bg-slate-100 overflow-hidden" style="height:10px"><div class="h-full rounded-full bg-violet-500" style="width:80%;transition:width .7s"></div></div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+  <section>
+  <div class="flex items-center gap-3 mb-5">
+    <div class="flex-1"><h2 class="text-base font-bold text-slate-800 m-0">Interactive Widgets</h2><p class="text-xs text-slate-500 mt-0-5 m-0">Todo list, weather conditions, and quick actions</p></div>
+    <div class="flex-1" style="height:1px;background:#e2e8f0"></div>
+  </div>
+  <div class="grid grid-cols-3 gap-5">
+  <!-- Todo Widget -->
+  <div class="card p-6" data-wg-todo>
+    <div class="flex items-center justify-between mb-5">
+      <h3 class="font-bold text-slate-900 m-0">My Tasks</h3>
+      <div class="flex items-center gap-2"><span class="badge badge-primary" data-wg-todo-count>4 left</span></div>
+    </div>
+    <div class="space-y-1 mb-4" data-wg-todo-list>
+      <div class="flex items-center gap-3 px-2 py-2-5 rounded-xl wg-todo-row" data-wg-todo-id="0">
+        <button class="wg-todo-cb wg-todo-cb-on" data-wg-todo-toggle><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></button>
+        <span class="flex-1 text-sm wg-todo-text wg-todo-text-done">Review pull requests</span>
+        <button class="wg-todo-rm" data-wg-todo-remove><i data-lucide="x" class="lucide-xs"></i></button>
+      </div><div class="flex items-center gap-3 px-2 py-2-5 rounded-xl wg-todo-row" data-wg-todo-id="1">
+        <button class="wg-todo-cb wg-todo-cb-on" data-wg-todo-toggle><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></button>
+        <span class="flex-1 text-sm wg-todo-text wg-todo-text-done">Update dependencies</span>
+        <button class="wg-todo-rm" data-wg-todo-remove><i data-lucide="x" class="lucide-xs"></i></button>
+      </div><div class="flex items-center gap-3 px-2 py-2-5 rounded-xl wg-todo-row" data-wg-todo-id="2">
+        <button class="wg-todo-cb " data-wg-todo-toggle></button>
+        <span class="flex-1 text-sm wg-todo-text ">Write unit tests</span>
+        <button class="wg-todo-rm" data-wg-todo-remove><i data-lucide="x" class="lucide-xs"></i></button>
+      </div><div class="flex items-center gap-3 px-2 py-2-5 rounded-xl wg-todo-row" data-wg-todo-id="3">
+        <button class="wg-todo-cb " data-wg-todo-toggle></button>
+        <span class="flex-1 text-sm wg-todo-text ">Deploy to staging</span>
+        <button class="wg-todo-rm" data-wg-todo-remove><i data-lucide="x" class="lucide-xs"></i></button>
+      </div><div class="flex items-center gap-3 px-2 py-2-5 rounded-xl wg-todo-row" data-wg-todo-id="4">
+        <button class="wg-todo-cb " data-wg-todo-toggle></button>
+        <span class="flex-1 text-sm wg-todo-text ">Update documentation</span>
+        <button class="wg-todo-rm" data-wg-todo-remove><i data-lucide="x" class="lucide-xs"></i></button>
+      </div><div class="flex items-center gap-3 px-2 py-2-5 rounded-xl wg-todo-row" data-wg-todo-id="5">
+        <button class="wg-todo-cb " data-wg-todo-toggle></button>
+        <span class="flex-1 text-sm wg-todo-text ">Notify QA team</span>
+        <button class="wg-todo-rm" data-wg-todo-remove><i data-lucide="x" class="lucide-xs"></i></button>
+      </div>
+    </div>
+    <div class="flex gap-2 pt-3 border-t">
+      <input type="text" class="input flex-1" placeholder="Add a new task…" data-wg-todo-input>
+      <button class="btn btn-primary px-3" data-wg-todo-add><i data-lucide="plus" class="lucide-md"></i></button>
+    </div>
+  </div>
+
+  <!-- Weather Widget -->
+  <div class="card overflow-hidden">
+    <div class="bg-sky-500 p-5 text-white">
+      <div class="flex items-start justify-between mb-3">
+        <div><p class="font-semibold m-0">San Francisco</p><p class="text-xs opacity-70 m-0">California, USA</p></div>
+        <i data-lucide="sun" class="lucide-xxl text-yellow-200 opacity-90"></i>
+      </div>
+      <div class="flex items-end gap-3">
+        <p class="text-5xl font-bold tracking-tight m-0">72°F</p>
+        <div class="pb-1"><p class="text-sm font-medium opacity-90 m-0">Sunny</p><p class="text-xs opacity-70 m-0">Feels like 69°F</p></div>
+      </div>
+      <div class="flex items-center gap-4 mt-3 pt-3 text-xs opacity-80" style="border-top:1px solid rgb(255 255 255 / .2)">
+        <span class="flex items-center gap-1"><i data-lucide="wind" class="lucide-xxs"></i> 12 mph</span>
+        <span class="flex items-center gap-1"><i data-lucide="droplets" class="lucide-xxs"></i> 45%</span>
+        <span class="ml-auto">H: 76° / L: 65°</span>
+      </div>
+    </div>
+    <div class="grid grid-cols-5 p-1">
+      <div class="flex flex-col items-center py-3 gap-1" >
+        <span class="text-xs font-semibold text-slate-500">Mon</span>
+        <span class="text-xl">☀️</span>
+        <span class="text-xs font-bold text-slate-800">74°</span>
+        <span class="text-xs text-slate-400">63°</span>
+      </div><div class="flex flex-col items-center py-3 gap-1" style="border-left:1px solid #f1f5f9">
+        <span class="text-xs font-semibold text-slate-500">Tue</span>
+        <span class="text-xl">⛅</span>
+        <span class="text-xs font-bold text-slate-800">71°</span>
+        <span class="text-xs text-slate-400">61°</span>
+      </div><div class="flex flex-col items-center py-3 gap-1" style="border-left:1px solid #f1f5f9">
+        <span class="text-xs font-semibold text-slate-500">Wed</span>
+        <span class="text-xl">🌧️</span>
+        <span class="text-xs font-bold text-slate-800">65°</span>
+        <span class="text-xs text-slate-400">57°</span>
+      </div><div class="flex flex-col items-center py-3 gap-1" style="border-left:1px solid #f1f5f9">
+        <span class="text-xs font-semibold text-slate-500">Thu</span>
+        <span class="text-xl">⛅</span>
+        <span class="text-xs font-bold text-slate-800">68°</span>
+        <span class="text-xs text-slate-400">59°</span>
+      </div><div class="flex flex-col items-center py-3 gap-1" style="border-left:1px solid #f1f5f9">
+        <span class="text-xs font-semibold text-slate-500">Fri</span>
+        <span class="text-xl">☀️</span>
+        <span class="text-xs font-bold text-slate-800">76°</span>
+        <span class="text-xs text-slate-400">64°</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Quick Actions Widget -->
+  <div class="card p-5">
+    <h3 class="font-bold text-slate-900 mb-4 m-0">Quick Actions</h3>
+    <div class="grid grid-cols-3 gap-3">
+      <button class="wg-quick-action">
+        <div class="w-10 h-10 rounded-xl bg-primary-100 flex items-center justify-center wg-quick-icon"><i data-lucide="layout-dashboard" class="lucide-md text-primary-600"></i></div>
+        <span class="wg-quick-label">Dashboard</span>
+      </button><button class="wg-quick-action">
+        <div class="w-10 h-10 rounded-xl bg-cyan-100 flex items-center justify-center wg-quick-icon"><i data-lucide="file-bar-chart" class="lucide-md text-cyan-600"></i></div>
+        <span class="wg-quick-label">Reports</span>
+      </button><button class="wg-quick-action">
+        <div class="w-10 h-10 rounded-xl bg-violet-100 flex items-center justify-center wg-quick-icon"><i data-lucide="users" class="lucide-md text-violet-600"></i></div>
+        <span class="wg-quick-label">Users</span>
+      </button><button class="wg-quick-action">
+        <div class="w-10 h-10 rounded-xl bg-slate-100 flex items-center justify-center wg-quick-icon"><i data-lucide="settings" class="lucide-md text-slate-600"></i></div>
+        <span class="wg-quick-label">Settings</span>
+      </button><button class="wg-quick-action">
+        <div class="w-10 h-10 rounded-xl bg-emerald-100 flex items-center justify-center wg-quick-icon"><i data-lucide="help-circle" class="lucide-md text-emerald-600"></i></div>
+        <span class="wg-quick-label">Support</span>
+      </button><button class="wg-quick-action">
+        <div class="w-10 h-10 rounded-xl bg-amber-100 flex items-center justify-center wg-quick-icon"><i data-lucide="credit-card" class="lucide-md text-amber-600"></i></div>
+        <span class="wg-quick-label">Billing</span>
+      </button>
+    </div>
+  </div>
+</div>
+</section>
+  <section>
+  <div class="flex items-center gap-3 mb-5">
+    <div class="flex-1"><h2 class="text-base font-bold text-slate-800 m-0">Activity & Notifications</h2><p class="text-xs text-slate-500 mt-0-5 m-0">Real-time feed with engagement metrics</p></div>
+    <div class="flex-1" style="height:1px;background:#e2e8f0"></div>
+  </div>
+  <div class="grid grid-cols-5 gap-5">
+  <div class="md-col-span-3 card p-6">
+    <div class="flex items-center justify-between mb-5">
+      <h3 class="font-bold text-slate-900 m-0">Activity Feed</h3>
+      <div class="flex items-center gap-2">
+        <div class="relative"><i data-lucide="bell" class="lucide-md text-slate-400"></i><span class="absolute" style="top:-4px;right:-4px;width:16px;height:16px;border-radius:9999px;background:#f43f5e;color:#fff;font-size:9px;font-weight:700;display:flex;align-items:center;justify-content:center">6</span></div>
+        <button class="btn-ghost btn-sm text-xs">Mark all read</button>
+      </div>
+    </div>
+    <div>
+      <div class="flex items-center gap-3 py-3-5 wg-activity-row">
+        <img src="img/avatars/avatar-woman-jessica.jpg" alt="" class="w-8 h-8 rounded-full object-cover shrink-0">
+        <div class="flex-1 min-w-0"><p class="text-sm text-slate-700 leading-snug m-0">Jessica Lee signed up for the Pro plan</p></div>
+        <span class="text-slate-400 shrink-0" style="font-size:11px;white-space:nowrap">2 min ago</span>
+      </div><div class="flex items-center gap-3 py-3-5 wg-activity-row">
+        <img src="img/avatars/avatar-man-henry.jpg" alt="" class="w-8 h-8 rounded-full object-cover shrink-0">
+        <div class="flex-1 min-w-0"><p class="text-sm text-slate-700 leading-snug m-0">Order #10482 was marked as delivered</p></div>
+        <span class="text-slate-400 shrink-0" style="font-size:11px;white-space:nowrap">14 min ago</span>
+      </div><div class="flex items-center gap-3 py-3-5 wg-activity-row">
+        <img src="img/avatars/avatar-man-marcus.jpg" alt="" class="w-8 h-8 rounded-full object-cover shrink-0">
+        <div class="flex-1 min-w-0"><p class="text-sm text-slate-700 leading-snug m-0">Payment of $320.00 received from Marcus Webb</p></div>
+        <span class="text-slate-400 shrink-0" style="font-size:11px;white-space:nowrap">38 min ago</span>
+      </div><div class="flex items-center gap-3 py-3-5 wg-activity-row">
+        <img src="img/avatars/avatar-woman-sarah-kim.jpg" alt="" class="w-8 h-8 rounded-full object-cover shrink-0">
+        <div class="flex-1 min-w-0"><p class="text-sm text-slate-700 leading-snug m-0">New support ticket #4921 opened by Sarah Kim</p></div>
+        <span class="text-slate-400 shrink-0" style="font-size:11px;white-space:nowrap">1 hr ago</span>
+      </div><div class="flex items-center gap-3 py-3-5 wg-activity-row">
+        <div class="w-8 h-8 rounded-full bg-rose-500 flex items-center justify-center shrink-0"><i data-lucide="bell" class="lucide-sm text-white"></i></div>
+        <div class="flex-1 min-w-0"><p class="text-sm text-slate-700 leading-snug m-0">Server latency alert triggered on eu-west-2</p></div>
+        <span class="text-slate-400 shrink-0" style="font-size:11px;white-space:nowrap">2 hr ago</span>
+      </div><div class="flex items-center gap-3 py-3-5 wg-activity-row">
+        <img src="img/avatars/avatar-man-daniel.jpg" alt="" class="w-8 h-8 rounded-full object-cover shrink-0">
+        <div class="flex-1 min-w-0"><p class="text-sm text-slate-700 leading-snug m-0">Deployment to production completed successfully</p></div>
+        <span class="text-slate-400 shrink-0" style="font-size:11px;white-space:nowrap">3 hr ago</span>
+      </div>
+    </div>
+    <button class="w-full mt-4 btn-outline text-xs" style="padding:8px 14px">View all activity</button>
+  </div>
+  <div class="md-col-span-2 space-y-5">
+    <div class="card p-4 flex items-center gap-4">
+      <div class="w-12 h-12 rounded-2xl bg-primary-500 flex items-center justify-center shrink-0" style="box-shadow:0 1px 2px rgba(0,0,0,.05)"><i data-lucide="eye" class="lucide-md text-white"></i></div>
+      <div class="flex-1 min-w-0"><p class="text-slate-400 m-0" style="font-size:11px">Page Views</p><p class="text-xl font-bold text-slate-800 m-0">284K</p></div>
+      <span class="text-xs font-bold flex items-center gap-0-5 text-emerald-500"><i data-lucide="arrow-up-right" class="lucide-xxs"></i>+8.2%</span>
+    </div><div class="card p-4 flex items-center gap-4">
+      <div class="w-12 h-12 rounded-2xl bg-rose-500 flex items-center justify-center shrink-0" style="box-shadow:0 1px 2px rgba(0,0,0,.05)"><i data-lucide="activity" class="lucide-md text-white"></i></div>
+      <div class="flex-1 min-w-0"><p class="text-slate-400 m-0" style="font-size:11px">Bounce Rate</p><p class="text-xl font-bold text-slate-800 m-0">24.8%</p></div>
+      <span class="text-xs font-bold flex items-center gap-0-5 text-rose-500"><i data-lucide="arrow-up-right" class="lucide-xxs rotate-90"></i>-2.1%</span>
+    </div><div class="card p-4 flex items-center gap-4">
+      <div class="w-12 h-12 rounded-2xl bg-emerald-500 flex items-center justify-center shrink-0" style="box-shadow:0 1px 2px rgba(0,0,0,.05)"><i data-lucide="clock" class="lucide-md text-white"></i></div>
+      <div class="flex-1 min-w-0"><p class="text-slate-400 m-0" style="font-size:11px">Avg Session</p><p class="text-xl font-bold text-slate-800 m-0">4m 32s</p></div>
+      <span class="text-xs font-bold flex items-center gap-0-5 text-emerald-500"><i data-lucide="arrow-up-right" class="lucide-xxs"></i>+12%</span>
+    </div><div class="card p-4 flex items-center gap-4">
+      <div class="w-12 h-12 rounded-2xl bg-amber-500 flex items-center justify-center shrink-0" style="box-shadow:0 1px 2px rgba(0,0,0,.05)"><i data-lucide="target" class="lucide-md text-white"></i></div>
+      <div class="flex-1 min-w-0"><p class="text-slate-400 m-0" style="font-size:11px">Conversions</p><p class="text-xl font-bold text-slate-800 m-0">3.2K</p></div>
+      <span class="text-xs font-bold flex items-center gap-0-5 text-emerald-500"><i data-lucide="arrow-up-right" class="lucide-xxs"></i>+5.4%</span>
+    </div>
+  </div>
+</div>
+</section>
+  <section>
+  <div class="flex items-center gap-3 mb-5">
+    <div class="flex-1"><h2 class="text-base font-bold text-slate-800 m-0">Social Stats Widgets</h2><p class="text-xs text-slate-500 mt-0-5 m-0">Platform follower counts with trend charts</p></div>
+    <div class="flex-1" style="height:1px;background:#e2e8f0"></div>
+  </div>
+  <div class="grid grid-cols-4 gap-5">
+  <div class="card p-5">
+    <div class="flex items-center justify-between mb-4">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-sky-500 flex items-center justify-center" style="box-shadow:0 1px 2px rgba(0,0,0,.05)"><i data-lucide="twitter" class="lucide-md text-white"></i></div>
+        <div><p class="font-bold text-sm text-slate-900 m-0">Twitter</p><p class="text-slate-400 m-0" style="font-size:11px">@linerapp</p></div>
+      </div>
+    </div>
+    <div class="mb-1"><p class="text-2xl font-bold text-slate-900 tracking-tight m-0">48.2k</p><p class="text-xs text-slate-500 m-0">followers</p></div>
+    <p class="text-xs text-emerald-500 font-semibold mb-3 m-0">+142 today</p>
+    <div id="wg-social-bars-0" style="height:48px"></div>
+  </div><div class="card p-5">
+    <div class="flex items-center justify-between mb-4">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-pink-500 flex items-center justify-center" style="box-shadow:0 1px 2px rgba(0,0,0,.05)"><i data-lucide="instagram" class="lucide-md text-white"></i></div>
+        <div><p class="font-bold text-sm text-slate-900 m-0">Instagram</p><p class="text-slate-400 m-0" style="font-size:11px">@liner.ui</p></div>
+      </div>
+    </div>
+    <div class="mb-1"><p class="text-2xl font-bold text-slate-900 tracking-tight m-0">92.1k</p><p class="text-xs text-slate-500 m-0">followers</p></div>
+    <p class="text-xs text-emerald-500 font-semibold mb-3 m-0">+380 today</p>
+    <div id="wg-social-bars-1" style="height:48px"></div>
+  </div><div class="card p-5">
+    <div class="flex items-center justify-between mb-4">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-blue-700 flex items-center justify-center" style="box-shadow:0 1px 2px rgba(0,0,0,.05)"><i data-lucide="linkedin" class="lucide-md text-white"></i></div>
+        <div><p class="font-bold text-sm text-slate-900 m-0">LinkedIn</p><p class="text-slate-400 m-0" style="font-size:11px">Liner Inc.</p></div>
+      </div>
+    </div>
+    <div class="mb-1"><p class="text-2xl font-bold text-slate-900 tracking-tight m-0">12.4k</p><p class="text-xs text-slate-500 m-0">followers</p></div>
+    <p class="text-xs text-emerald-500 font-semibold mb-3 m-0">+58 today</p>
+    <div id="wg-social-bars-2" style="height:48px"></div>
+  </div><div class="card p-5">
+    <div class="flex items-center justify-between mb-4">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-red-500 flex items-center justify-center" style="box-shadow:0 1px 2px rgba(0,0,0,.05)"><i data-lucide="youtube" class="lucide-md text-white"></i></div>
+        <div><p class="font-bold text-sm text-slate-900 m-0">YouTube</p><p class="text-slate-400 m-0" style="font-size:11px">LinerTV</p></div>
+      </div>
+    </div>
+    <div class="mb-1"><p class="text-2xl font-bold text-slate-900 tracking-tight m-0">8.9k</p><p class="text-xs text-slate-500 m-0">followers</p></div>
+    <p class="text-xs text-emerald-500 font-semibold mb-3 m-0">+23 today</p>
+    <div id="wg-social-bars-3" style="height:48px"></div>
+  </div>
+</div>
+</section>
+  <section>
+  <div class="flex items-center gap-3 mb-5">
+    <div class="flex-1"><h2 class="text-base font-bold text-slate-800 m-0">Calendar & Feature Widgets</h2><p class="text-xs text-slate-500 mt-0-5 m-0">Calendar with events and feature highlight cards</p></div>
+    <div class="flex-1" style="height:1px;background:#e2e8f0"></div>
+  </div>
+  <div class="grid grid-cols-3 gap-5">
+  <div class="card p-5">
+    <div class="flex items-center justify-between mb-4">
+      <div><h3 class="font-bold text-slate-900 m-0">March 2026</h3><p class="text-xs text-slate-400 mt-0-5 m-0">3 events this month</p></div>
+      <div class="flex gap-1"><button class="wg-cal-nav">‹</button><button class="wg-cal-nav">›</button></div>
+    </div>
+    <div class="grid grid-cols-7 mb-1">
+      <div class="text-center font-semibold text-slate-400 py-1" style="font-size:11px">Su</div><div class="text-center font-semibold text-slate-400 py-1" style="font-size:11px">Mo</div><div class="text-center font-semibold text-slate-400 py-1" style="font-size:11px">Tu</div><div class="text-center font-semibold text-slate-400 py-1" style="font-size:11px">We</div><div class="text-center font-semibold text-slate-400 py-1" style="font-size:11px">Th</div><div class="text-center font-semibold text-slate-400 py-1" style="font-size:11px">Fr</div><div class="text-center font-semibold text-slate-400 py-1" style="font-size:11px">Sa</div>
+    </div>
+    <div class="grid grid-cols-7" style="row-gap:2px">
+      <div class="flex flex-col items-center">
+          <div class="wg-cal-day text-slate-700 ">1</div>
+
+        </div><div class="flex flex-col items-center">
+          <div class="wg-cal-day text-slate-700 ">2</div>
+
+        </div><div class="flex flex-col items-center">
+          <div class="wg-cal-day text-slate-700 ">3</div>
+
+        </div><div class="flex flex-col items-center">
+          <div class="wg-cal-day text-slate-700 ">4</div>
+
+        </div><div class="flex flex-col items-center">
+          <div class="wg-cal-day text-slate-700 wg-cal-event">5</div>
+          <div class="w-1-5 h-1-5 rounded-full mb-0-5 bg-primary-400" style="margin-top:-4px"></div>
+        </div><div class="flex flex-col items-center">
+          <div class="wg-cal-day text-slate-700 ">6</div>
+
+        </div><div class="flex flex-col items-center">
+          <div class="wg-cal-day text-slate-700 ">7</div>
+
+        </div><div class="flex flex-col items-center">
+          <div class="wg-cal-day text-slate-700 ">8</div>
+
+        </div><div class="flex flex-col items-center">
+          <div class="wg-cal-day text-slate-700 ">9</div>
+
+        </div><div class="flex flex-col items-center">
+          <div class="wg-cal-day text-slate-700 ">10</div>
+
+        </div><div class="flex flex-col items-center">
+          <div class="wg-cal-day wg-cal-today ">11</div>
+          <div class="w-1-5 h-1-5 rounded-full mb-0-5 " style="margin-top:-4px;background:rgb(255 255 255 / .6)"></div>
+        </div><div class="flex flex-col items-center">
+          <div class="wg-cal-day text-slate-700 ">12</div>
+
+        </div><div class="flex flex-col items-center">
+          <div class="wg-cal-day text-slate-700 ">13</div>
+
+        </div><div class="flex flex-col items-center">
+          <div class="wg-cal-day text-slate-700 ">14</div>
+
+        </div><div class="flex flex-col items-center">
+          <div class="wg-cal-day text-slate-700 ">15</div>
+
+        </div><div class="flex flex-col items-center">
+          <div class="wg-cal-day text-slate-700 ">16</div>
+
+        </div><div class="flex flex-col items-center">
+          <div class="wg-cal-day text-slate-700 ">17</div>
+
+        </div><div class="flex flex-col items-center">
+          <div class="wg-cal-day text-slate-700 ">18</div>
+
+        </div><div class="flex flex-col items-center">
+          <div class="wg-cal-day text-slate-700 ">19</div>
+
+        </div><div class="flex flex-col items-center">
+          <div class="wg-cal-day text-slate-700 ">20</div>
+
+        </div><div class="flex flex-col items-center">
+          <div class="wg-cal-day text-slate-700 ">21</div>
+
+        </div><div class="flex flex-col items-center">
+          <div class="wg-cal-day text-slate-700 wg-cal-event">22</div>
+          <div class="w-1-5 h-1-5 rounded-full mb-0-5 bg-primary-400" style="margin-top:-4px"></div>
+        </div><div class="flex flex-col items-center">
+          <div class="wg-cal-day text-slate-700 ">23</div>
+
+        </div><div class="flex flex-col items-center">
+          <div class="wg-cal-day text-slate-700 ">24</div>
+
+        </div><div class="flex flex-col items-center">
+          <div class="wg-cal-day text-slate-700 ">25</div>
+
+        </div><div class="flex flex-col items-center">
+          <div class="wg-cal-day text-slate-700 ">26</div>
+
+        </div><div class="flex flex-col items-center">
+          <div class="wg-cal-day text-slate-700 wg-cal-event">27</div>
+          <div class="w-1-5 h-1-5 rounded-full mb-0-5 bg-primary-400" style="margin-top:-4px"></div>
+        </div><div class="flex flex-col items-center">
+          <div class="wg-cal-day text-slate-700 ">28</div>
+
+        </div><div class="flex flex-col items-center">
+          <div class="wg-cal-day text-slate-700 ">29</div>
+
+        </div><div class="flex flex-col items-center">
+          <div class="wg-cal-day text-slate-700 ">30</div>
+
+        </div><div class="flex flex-col items-center">
+          <div class="wg-cal-day text-slate-700 ">31</div>
+
+        </div>
+    </div>
+    <div class="mt-4 pt-4 border-t space-y-2">
+      <div class="flex items-center gap-3">
+        <div class="w-2 h-2 rounded-full bg-cyan-500 shrink-0"></div>
+        <span class="text-xs font-semibold text-slate-400 w-12 shrink-0">Mar 5</span>
+        <span class="text-xs text-slate-700">Team Standup</span>
+      </div><div class="flex items-center gap-3">
+        <div class="w-2 h-2 rounded-full bg-primary-500 shrink-0"></div>
+        <span class="text-xs font-semibold text-slate-400 w-12 shrink-0">Mar 11</span>
+        <span class="text-xs text-slate-700">Product Demo (Today)</span>
+      </div><div class="flex items-center gap-3">
+        <div class="w-2 h-2 rounded-full bg-amber-500 shrink-0"></div>
+        <span class="text-xs font-semibold text-slate-400 w-12 shrink-0">Mar 22</span>
+        <span class="text-xs text-slate-700">Quarterly Review</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="space-y-4">
+    <div class="bg-emerald-50 rounded-2xl p-4 border">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-emerald-500 flex items-center justify-center shrink-0" style="box-shadow:0 1px 2px rgba(0,0,0,.05)"><i data-lucide="shield" class="lucide-md text-white"></i></div>
+        <div class="flex-1 min-w-0"><h4 class="text-sm font-bold text-slate-800 m-0">Security Shield</h4><p class="text-xs text-slate-500 mt-0-5 m-0">99.9% uptime with enterprise-grade encryption</p></div>
+      </div>
+    </div><div class="bg-amber-50 rounded-2xl p-4 border">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-amber-500 flex items-center justify-center shrink-0" style="box-shadow:0 1px 2px rgba(0,0,0,.05)"><i data-lucide="zap" class="lucide-md text-white"></i></div>
+        <div class="flex-1 min-w-0"><h4 class="text-sm font-bold text-slate-800 m-0">Lightning Fast</h4><p class="text-xs text-slate-500 mt-0-5 m-0">Sub-100ms response times worldwide</p></div>
+      </div>
+    </div><div class="bg-sky-50 rounded-2xl p-4 border">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-sky-500 flex items-center justify-center shrink-0" style="box-shadow:0 1px 2px rgba(0,0,0,.05)"><i data-lucide="globe" class="lucide-md text-white"></i></div>
+        <div class="flex-1 min-w-0"><h4 class="text-sm font-bold text-slate-800 m-0">Global Scale</h4><p class="text-xs text-slate-500 mt-0-5 m-0">42 edge locations across 6 continents</p></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card p-5">
+    <div class="flex items-center justify-between mb-4">
+      <h3 class="font-bold text-slate-900 m-0">Leaderboard</h3>
+      <span class="badge badge-warning"><i data-lucide="flame" class="lucide-xxs"></i> This Week</span>
+    </div>
+    <div class="space-y-3">
+      <div class="flex items-center gap-3 p-2 rounded-xl wg-lb-row">
+        <span class="text-sm font-bold text-slate-400 w-5 text-center">🥇</span>
+        <img src="img/avatars/avatar-woman-alice.jpg" alt="Alice Johnson" class="w-8 h-8 rounded-full object-cover shrink-0">
+        <div class="flex-1 min-w-0"><p class="text-sm font-semibold text-slate-700 truncate m-0">Alice Johnson</p></div>
+        <span class="text-xs font-bold text-slate-600">2,840 pts</span>
+      </div><div class="flex items-center gap-3 p-2 rounded-xl wg-lb-row">
+        <span class="text-sm font-bold text-slate-400 w-5 text-center">🥈</span>
+        <img src="img/avatars/avatar-man-bob.jpg" alt="Bob Martinez" class="w-8 h-8 rounded-full object-cover shrink-0">
+        <div class="flex-1 min-w-0"><p class="text-sm font-semibold text-slate-700 truncate m-0">Bob Martinez</p></div>
+        <span class="text-xs font-bold text-slate-600">2,560 pts</span>
+      </div><div class="flex items-center gap-3 p-2 rounded-xl wg-lb-row">
+        <span class="text-sm font-bold text-slate-400 w-5 text-center">🥉</span>
+        <img src="img/avatars/avatar-woman-carol.jpg" alt="Carol White" class="w-8 h-8 rounded-full object-cover shrink-0">
+        <div class="flex-1 min-w-0"><p class="text-sm font-semibold text-slate-700 truncate m-0">Carol White</p></div>
+        <span class="text-xs font-bold text-slate-600">2,310 pts</span>
+      </div><div class="flex items-center gap-3 p-2 rounded-xl wg-lb-row">
+        <span class="text-sm font-bold text-slate-400 w-5 text-center">4</span>
+        <img src="img/avatars/avatar-man-john.jpg" alt="David Lee" class="w-8 h-8 rounded-full object-cover shrink-0">
+        <div class="flex-1 min-w-0"><p class="text-sm font-semibold text-slate-700 truncate m-0">David Lee</p></div>
+        <span class="text-xs font-bold text-slate-600">1,980 pts</span>
+      </div><div class="flex items-center gap-3 p-2 rounded-xl wg-lb-row">
+        <span class="text-sm font-bold text-slate-400 w-5 text-center">5</span>
+        <img src="img/avatars/avatar-woman-grace.jpg" alt="Eva Brown" class="w-8 h-8 rounded-full object-cover shrink-0">
+        <div class="flex-1 min-w-0"><p class="text-sm font-semibold text-slate-700 truncate m-0">Eva Brown</p></div>
+        <span class="text-xs font-bold text-slate-600">1,740 pts</span>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+  <section>
+  <div class="flex items-center gap-3 mb-5">
+    <div class="flex-1"><h2 class="text-base font-bold text-slate-800 m-0">Image & Media Cards</h2><p class="text-xs text-slate-500 mt-0-5 m-0">Blog post preview and media content cards</p></div>
+    <div class="flex-1" style="height:1px;background:#e2e8f0"></div>
+  </div>
+  <div class="grid grid-cols-3 gap-5">
+  <div class="card overflow-hidden wg-media-card flex flex-col">
+    <div style="height:176px;position:relative;overflow:hidden">
+      <img src="img/unsplash/dashboard-charts.jpg" alt="Building Scalable React Architectures in 2026" class="w-full h-full object-cover wg-media-img">
+      <div class="absolute inset-0" style="background:linear-gradient(to top,rgba(0,0,0,.4),transparent)"></div>
+      <span class="badge badge-primary absolute" style="top:12px;left:12px;background:rgb(255 255 255 / .2);color:#fff;border:1px solid rgb(255 255 255 / .3);backdrop-filter:blur(4px)">Engineering</span>
+    </div>
+    <div class="p-5 flex flex-col flex-1">
+      <h4 class="font-bold text-slate-900 text-sm leading-snug mb-2 m-0">Building Scalable React Architectures in 2026</h4>
+      <p class="text-xs text-slate-500 leading-relaxed mb-4 flex-1 m-0">A deep dive into modern patterns for large-scale React apps — from code splitting to server components and beyond.</p>
+      <div class="flex items-center justify-between pt-3 border-t">
+        <div class="flex items-center gap-2">
+          <img src="img/avatars/avatar-man-profile.jpg" alt="John Doe" class="w-7 h-7 rounded-full object-cover">
+          <div><p class="text-xs font-semibold text-slate-700 m-0">John Doe</p><p class="text-slate-400 m-0" style="font-size:10px">Mar 8, 2026</p></div>
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="text-slate-400" style="font-size:10px">6 min read</span>
+          <button class="btn btn-primary btn-sm" style="font-size:11px;padding:4px 12px">Read More</button>
+        </div>
+      </div>
+    </div>
+  </div><div class="card overflow-hidden wg-media-card flex flex-col">
+    <div style="height:176px;position:relative;overflow:hidden">
+      <img src="img/unsplash/app-wireframes.jpg" alt="The Art of Micro-Interactions: Delighting Users with Motion" class="w-full h-full object-cover wg-media-img">
+      <div class="absolute inset-0" style="background:linear-gradient(to top,rgba(0,0,0,.4),transparent)"></div>
+      <span class="badge badge-info absolute" style="top:12px;left:12px;background:rgb(255 255 255 / .2);color:#fff;border:1px solid rgb(255 255 255 / .3);backdrop-filter:blur(4px)">Design</span>
+    </div>
+    <div class="p-5 flex flex-col flex-1">
+      <h4 class="font-bold text-slate-900 text-sm leading-snug mb-2 m-0">The Art of Micro-Interactions: Delighting Users with Motion</h4>
+      <p class="text-xs text-slate-500 leading-relaxed mb-4 flex-1 m-0">How subtle animations and transitions create memorable interfaces that keep users engaged and reduce cognitive load.</p>
+      <div class="flex items-center justify-between pt-3 border-t">
+        <div class="flex items-center gap-2">
+          <img src="img/avatars/avatar-woman-sarah-chen.jpg" alt="Sarah Chen" class="w-7 h-7 rounded-full object-cover">
+          <div><p class="text-xs font-semibold text-slate-700 m-0">Sarah Chen</p><p class="text-slate-400 m-0" style="font-size:10px">Mar 5, 2026</p></div>
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="text-slate-400" style="font-size:10px">4 min read</span>
+          <button class="btn btn-primary btn-sm" style="font-size:11px;padding:4px 12px">Read More</button>
+        </div>
+      </div>
+    </div>
+  </div><div class="card overflow-hidden wg-media-card flex flex-col">
+    <div style="height:176px;position:relative;overflow:hidden">
+      <img src="img/unsplash/analytics-dashboard.jpg" alt="Shipping Faster Without Sacrificing Quality" class="w-full h-full object-cover wg-media-img">
+      <div class="absolute inset-0" style="background:linear-gradient(to top,rgba(0,0,0,.4),transparent)"></div>
+      <span class="badge badge-success absolute" style="top:12px;left:12px;background:rgb(255 255 255 / .2);color:#fff;border:1px solid rgb(255 255 255 / .3);backdrop-filter:blur(4px)">Product</span>
+    </div>
+    <div class="p-5 flex flex-col flex-1">
+      <h4 class="font-bold text-slate-900 text-sm leading-snug mb-2 m-0">Shipping Faster Without Sacrificing Quality</h4>
+      <p class="text-xs text-slate-500 leading-relaxed mb-4 flex-1 m-0">Battle-tested strategies from hyper-growth startups on maintaining engineering excellence under relentless delivery pressure.</p>
+      <div class="flex items-center justify-between pt-3 border-t">
+        <div class="flex items-center gap-2">
+          <img src="img/avatars/avatar-man-david.jpg" alt="Marcus R." class="w-7 h-7 rounded-full object-cover">
+          <div><p class="text-xs font-semibold text-slate-700 m-0">Marcus R.</p><p class="text-slate-400 m-0" style="font-size:10px">Mar 1, 2026</p></div>
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="text-slate-400" style="font-size:10px">5 min read</span>
+          <button class="btn btn-primary btn-sm" style="font-size:11px;padding:4px 12px">Read More</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+  <section>
+  <div class="flex items-center gap-3 mb-5">
+    <div class="flex-1"><h2 class="text-base font-bold text-slate-800 m-0">Countdown & Pricing Widgets</h2><p class="text-xs text-slate-500 mt-0-5 m-0">Launch countdown and plan comparison cards</p></div>
+    <div class="flex-1" style="height:1px;background:#e2e8f0"></div>
+  </div>
+  <div class="grid grid-cols-3 gap-5">
+  <div class="md-col-span-2 card overflow-hidden" data-wg-countdown>
+    <div class="bg-primary-600 px-8 pt-8 pb-6 text-white text-center">
+      <div class="inline-flex items-center gap-2 px-4 py-1-5 rounded-full mb-4" style="background:rgb(255 255 255 / .15);backdrop-filter:blur(4px);border:1px solid rgb(255 255 255 / .25)">
+        <div class="w-2 h-2 rounded-full bg-emerald-400 wg-pulse"></div>
+        <span class="text-xs font-semibold uppercase tracking-widest">Coming Soon</span>
+      </div>
+      <h3 class="text-2xl font-bold mb-1 m-0">Product Launch</h3>
+      <p class="text-sm opacity-75 mb-6 m-0">June 1, 2026 · The next generation of Liner</p>
+      <div class="grid grid-cols-4 gap-3">
+        <div class="wg-cd-cell"><p class="text-4xl font-bold tabular-nums m-0" style="line-height:1" data-wg-cd="days">00</p><p class="text-xs opacity-70 mt-1-5 uppercase font-medium m-0" style="letter-spacing:.05em">Days</p></div><div class="wg-cd-cell"><p class="text-4xl font-bold tabular-nums m-0" style="line-height:1" data-wg-cd="hours">00</p><p class="text-xs opacity-70 mt-1-5 uppercase font-medium m-0" style="letter-spacing:.05em">Hours</p></div><div class="wg-cd-cell"><p class="text-4xl font-bold tabular-nums m-0" style="line-height:1" data-wg-cd="minutes">00</p><p class="text-xs opacity-70 mt-1-5 uppercase font-medium m-0" style="letter-spacing:.05em">Minutes</p></div><div class="wg-cd-cell"><p class="text-4xl font-bold tabular-nums m-0" style="line-height:1" data-wg-cd="seconds">00</p><p class="text-xs opacity-70 mt-1-5 uppercase font-medium m-0" style="letter-spacing:.05em">Seconds</p></div>
+      </div>
+    </div>
+    <div class="px-8 py-5 flex flex-col flex-row-sm items-center justify-between gap-4">
+      <div><p class="text-sm font-semibold text-slate-900 m-0">Get notified on launch day</p><p class="text-xs text-slate-500 mt-0-5 m-0">Be the first to experience Liner 2.0</p></div>
+      <div class="flex gap-2 w-full" style="width:auto"><input type="email" placeholder="you@company.com" class="input" style="width:208px"><button class="btn-gradient shrink-0">Notify Me</button></div>
+    </div>
+  </div>
+
+  <div class="card p-0 overflow-hidden flex flex-col">
+    <div class="bg-emerald-500 p-5 text-white text-center">
+      <i data-lucide="award" class="lucide-lg mx-auto mb-2 opacity-90"></i>
+      <h4 class="font-bold text-lg m-0">Pro Plan</h4>
+      <p class="text-xs opacity-75 m-0">Most popular choice</p>
+      <div class="mt-3"><span class="text-4xl font-bold">$29</span><span class="text-sm opacity-70">/mo</span></div>
+    </div>
+    <div class="p-5 flex-1 flex flex-col">
+      <div class="space-y-3 flex-1">
+        <div class="flex items-center gap-2-5">
+          <div class="w-5 h-5 rounded-full bg-emerald-100 flex items-center justify-center shrink-0"><i data-lucide="check" class="lucide-xxs text-emerald-600"></i></div>
+          <span class="text-sm text-slate-600">Unlimited projects</span>
+        </div><div class="flex items-center gap-2-5">
+          <div class="w-5 h-5 rounded-full bg-emerald-100 flex items-center justify-center shrink-0"><i data-lucide="check" class="lucide-xxs text-emerald-600"></i></div>
+          <span class="text-sm text-slate-600">Priority support</span>
+        </div><div class="flex items-center gap-2-5">
+          <div class="w-5 h-5 rounded-full bg-emerald-100 flex items-center justify-center shrink-0"><i data-lucide="check" class="lucide-xxs text-emerald-600"></i></div>
+          <span class="text-sm text-slate-600">Advanced analytics</span>
+        </div><div class="flex items-center gap-2-5">
+          <div class="w-5 h-5 rounded-full bg-emerald-100 flex items-center justify-center shrink-0"><i data-lucide="check" class="lucide-xxs text-emerald-600"></i></div>
+          <span class="text-sm text-slate-600">Custom integrations</span>
+        </div><div class="flex items-center gap-2-5">
+          <div class="w-5 h-5 rounded-full bg-emerald-100 flex items-center justify-center shrink-0"><i data-lucide="check" class="lucide-xxs text-emerald-600"></i></div>
+          <span class="text-sm text-slate-600">Team collaboration</span>
+        </div>
+      </div>
+      <button class="w-full mt-5 btn btn-primary" style="padding:10px 16px">Get Started</button>
+    </div>
+  </div>
+</div>
+</section>
+</main>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lucide@latest/dist/umd/lucide.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/apexcharts@3.49.1/dist/apexcharts.min.js"></script>
+</body>
+</html>

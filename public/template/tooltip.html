@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/svg+xml" href="img/logo.svg"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tooltip | Liner Admin</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/css/theme.css" rel="stylesheet">
+  <script src="assets/js/app.js"></script>
+</head>
+<body>
+
+<aside class="app-sidebar" data-sidebar>
+        <a href="dashboard.html" class="sidebar-brand text-decoration-none">
+          <img src="img/logo.svg" alt="Liner" class="brand-logo-lg-img">
+          <div class="brand-text">
+            <div class="brand-name">Liner</div>
+            <div class="brand-sub">Admin</div>
+          </div>
+        </a>
+        <nav class="sidebar-nav custom-scrollbar"><div class="sidebar-group-title">Dashboards</div><a href="dashboard.html" class="sidebar-nav-link" data-path="dashboard.html">
+            <i data-lucide="layout-dashboard" class="lucide-md"></i><span class="link-label">Modern</span>
+          </a><a href="analytics.html" class="sidebar-nav-link" data-path="analytics.html">
+            <i data-lucide="activity" class="lucide-md"></i><span class="link-label">Analytics</span>
+          </a><a href="ecommerce.html" class="sidebar-nav-link" data-path="ecommerce.html">
+            <i data-lucide="shopping-cart" class="lucide-md"></i><span class="link-label">eCommerce</span>
+          </a><a href="music.html" class="sidebar-nav-link" data-path="music.html">
+            <i data-lucide="music" class="lucide-md"></i><span class="link-label">Music</span>
+          </a><a href="general.html" class="sidebar-nav-link" data-path="general.html">
+            <i data-lucide="globe-2" class="lucide-md"></i><span class="link-label">General</span>
+          </a><div class="sidebar-group-title">Apps</div><a href="calendar.html" class="sidebar-nav-link" data-path="calendar.html">
+            <i data-lucide="calendar" class="lucide-md"></i><span class="link-label">Calendar</span>
+          </a><a href="kanban.html" class="sidebar-nav-link" data-path="kanban.html">
+            <i data-lucide="kanban-square" class="lucide-md"></i><span class="link-label">Kanban</span>
+          </a><a href="chat.html" class="sidebar-nav-link" data-path="chat.html">
+            <i data-lucide="message-square" class="lucide-md"></i><span class="link-label">Chat</span>
+          </a><a href="email.html" class="sidebar-nav-link" data-path="email.html">
+            <i data-lucide="mail" class="lucide-md"></i><span class="link-label">Email</span>
+          </a><a href="notes.html" class="sidebar-nav-link" data-path="notes.html">
+            <i data-lucide="sticky-note" class="lucide-md"></i><span class="link-label">Notes</span>
+          </a><a href="contacts.html" class="sidebar-nav-link" data-path="contacts.html">
+            <i data-lucide="users" class="lucide-md"></i><span class="link-label">Contacts</span>
+          </a><a href="tickets.html" class="sidebar-nav-link" data-path="tickets.html">
+            <i data-lucide="ticket" class="lucide-md"></i><span class="link-label">Tickets</span>
+          </a><a href="invoice-list.html" class="sidebar-nav-link" data-path="invoice-list.html">
+            <i data-lucide="file-text" class="lucide-md"></i><span class="link-label">Invoice</span>
+          </a><a href="user-profile.html" class="sidebar-nav-link" data-path="user-profile.html">
+            <i data-lucide="user-circle" class="lucide-md"></i><span class="link-label">User Profile</span>
+          </a>
+            <a href="#" class="sidebar-nav-link sidebar-parent" data-toggle-submenu data-paths="blog-posts.html,blog-post.html,blog-detail.html">
+              <i data-lucide="book-open" class="lucide-md"></i>
+              <span class="link-label">Blog</span>
+              <i data-lucide="chevron-down" class="lucide-sm toggle-icon"></i>
+            </a>
+            <div class="sidebar-submenu"><a href="blog-posts.html" class="sidebar-nav-link" data-path="blog-posts.html">
+              <i data-lucide="book-open" class="lucide-sm"></i><span class="link-label">Blog Posts</span>
+            </a><a href="blog-post.html" class="sidebar-nav-link" data-path="blog-post.html">
+              <i data-lucide="file-text" class="lucide-sm"></i><span class="link-label">Blog Post</span>
+            </a><a href="blog-detail.html" class="sidebar-nav-link" data-path="blog-detail.html">
+              <i data-lucide="eye" class="lucide-sm"></i><span class="link-label">Blog Detail</span>
+            </a></div>
+            <a href="#" class="sidebar-nav-link sidebar-parent" data-toggle-submenu data-paths="ecommerce-shop.html,ecommerce-detail.html,ecommerce-list.html,ecommerce-checkout.html">
+              <i data-lucide="shopping-bag" class="lucide-md"></i>
+              <span class="link-label">eCommerce</span>
+              <i data-lucide="chevron-down" class="lucide-sm toggle-icon"></i>
+            </a>
+            <div class="sidebar-submenu"><a href="ecommerce-shop.html" class="sidebar-nav-link" data-path="ecommerce-shop.html">
+              <i data-lucide="store" class="lucide-sm"></i><span class="link-label">Shop</span>
+            </a><a href="ecommerce-detail.html" class="sidebar-nav-link" data-path="ecommerce-detail.html">
+              <i data-lucide="package" class="lucide-sm"></i><span class="link-label">Detail</span>
+            </a><a href="ecommerce-list.html" class="sidebar-nav-link" data-path="ecommerce-list.html">
+              <i data-lucide="list" class="lucide-sm"></i><span class="link-label">List</span>
+            </a><a href="ecommerce-checkout.html" class="sidebar-nav-link" data-path="ecommerce-checkout.html">
+              <i data-lucide="credit-card" class="lucide-sm"></i><span class="link-label">Checkout</span>
+            </a></div><div class="sidebar-group-title">UI Elements</div><a href="alert.html" class="sidebar-nav-link" data-path="alert.html">
+            <i data-lucide="alert-circle" class="lucide-md"></i><span class="link-label">Alert</span>
+          </a><a href="accordion.html" class="sidebar-nav-link" data-path="accordion.html">
+            <i data-lucide="layers" class="lucide-md"></i><span class="link-label">Accordion</span>
+          </a><a href="avatar.html" class="sidebar-nav-link" data-path="avatar.html">
+            <i data-lucide="user-circle" class="lucide-md"></i><span class="link-label">Avatar</span>
+          </a><a href="chip.html" class="sidebar-nav-link" data-path="chip.html">
+            <i data-lucide="tag" class="lucide-md"></i><span class="link-label">Chip</span>
+          </a><a href="dialog.html" class="sidebar-nav-link" data-path="dialog.html">
+            <i data-lucide="message-square" class="lucide-md"></i><span class="link-label">Dialog</span>
+          </a><a href="list.html" class="sidebar-nav-link" data-path="list.html">
+            <i data-lucide="align-left" class="lucide-md"></i><span class="link-label">List</span>
+          </a><a href="popover.html" class="sidebar-nav-link" data-path="popover.html">
+            <i data-lucide="message-circle" class="lucide-md"></i><span class="link-label">Popover</span>
+          </a><a href="rating.html" class="sidebar-nav-link" data-path="rating.html">
+            <i data-lucide="star" class="lucide-md"></i><span class="link-label">Rating</span>
+          </a><a href="tabs.html" class="sidebar-nav-link" data-path="tabs.html">
+            <i data-lucide="layout-grid" class="lucide-md"></i><span class="link-label">Tabs</span>
+          </a><a href="tooltip.html" class="sidebar-nav-link" data-path="tooltip.html">
+            <i data-lucide="info" class="lucide-md"></i><span class="link-label">Tooltip</span>
+          </a><a href="typography.html" class="sidebar-nav-link" data-path="typography.html">
+            <i data-lucide="type" class="lucide-md"></i><span class="link-label">Typography</span>
+          </a><a href="buttons.html" class="sidebar-nav-link" data-path="buttons.html">
+            <i data-lucide="zap" class="lucide-md"></i><span class="link-label">Buttons</span>
+          </a><a href="cards.html" class="sidebar-nav-link" data-path="cards.html">
+            <i data-lucide="square-stack" class="lucide-md"></i><span class="link-label">Cards</span>
+          </a><div class="sidebar-group-title">Forms</div><a href="form-elements.html" class="sidebar-nav-link" data-path="form-elements.html">
+            <i data-lucide="square-pen" class="lucide-md"></i><span class="link-label">Form Elements</span>
+          </a><a href="form-layouts.html" class="sidebar-nav-link" data-path="form-layouts.html">
+            <i data-lucide="layout-template" class="lucide-md"></i><span class="link-label">Form Layouts</span>
+          </a><a href="form-horizontal.html" class="sidebar-nav-link" data-path="form-horizontal.html">
+            <i data-lucide="rows" class="lucide-md"></i><span class="link-label">Form Horizontal</span>
+          </a><a href="form-validation.html" class="sidebar-nav-link" data-path="form-validation.html">
+            <i data-lucide="check-circle" class="lucide-md"></i><span class="link-label">Form Validation</span>
+          </a><div class="sidebar-group-title">Tables</div><a href="basic-table.html" class="sidebar-nav-link" data-path="basic-table.html">
+            <i data-lucide="table-2" class="lucide-md"></i><span class="link-label">Basic Table</span>
+          </a><a href="enhanced-table.html" class="sidebar-nav-link" data-path="enhanced-table.html">
+            <i data-lucide="table-properties" class="lucide-md"></i><span class="link-label">Enhanced Table</span>
+          </a><div class="sidebar-group-title">Charts</div><a href="line-chart.html" class="sidebar-nav-link" data-path="line-chart.html">
+            <i data-lucide="line-chart" class="lucide-md"></i><span class="link-label">Line Chart</span>
+          </a><a href="area-chart.html" class="sidebar-nav-link" data-path="area-chart.html">
+            <i data-lucide="area-chart" class="lucide-md"></i><span class="link-label">Area Chart</span>
+          </a><a href="bar-chart.html" class="sidebar-nav-link" data-path="bar-chart.html">
+            <i data-lucide="bar-chart-3" class="lucide-md"></i><span class="link-label">Bar Chart</span>
+          </a><a href="column-chart.html" class="sidebar-nav-link" data-path="column-chart.html">
+            <i data-lucide="bar-chart-2" class="lucide-md"></i><span class="link-label">Column Chart</span>
+          </a><a href="donut-chart.html" class="sidebar-nav-link" data-path="donut-chart.html">
+            <i data-lucide="pie-chart" class="lucide-md"></i><span class="link-label">Donut Chart</span>
+          </a><a href="radialbar-chart.html" class="sidebar-nav-link" data-path="radialbar-chart.html">
+            <i data-lucide="activity" class="lucide-md"></i><span class="link-label">Radialbar Chart</span>
+          </a><div class="sidebar-group-title">Pages</div><a href="account.html" class="sidebar-nav-link" data-path="account.html">
+            <i data-lucide="settings" class="lucide-md"></i><span class="link-label">Account Settings</span>
+          </a><a href="pricing.html" class="sidebar-nav-link" data-path="pricing.html">
+            <i data-lucide="credit-card" class="lucide-md"></i><span class="link-label">Pricing</span>
+          </a><a href="faq.html" class="sidebar-nav-link" data-path="faq.html">
+            <i data-lucide="help-circle" class="lucide-md"></i><span class="link-label">FAQ</span>
+          </a><a href="widgets.html" class="sidebar-nav-link" data-path="widgets.html">
+            <i data-lucide="layout-grid" class="lucide-md"></i><span class="link-label">Widgets</span>
+          </a><a href="apikeys.html" class="sidebar-nav-link" data-path="apikeys.html">
+            <i data-lucide="key" class="lucide-md"></i><span class="link-label">API Keys</span>
+          </a><div class="sidebar-group-title">Icons</div><a href="lucide-icons.html" class="sidebar-nav-link" data-path="lucide-icons.html">
+            <i data-lucide="smile" class="lucide-md"></i><span class="link-label">Lucide Icons</span>
+          </a><a href="custom-icons.html" class="sidebar-nav-link" data-path="custom-icons.html">
+            <i data-lucide="star" class="lucide-md"></i><span class="link-label">Custom Icons</span>
+          </a><div class="sidebar-group-title">Auth</div><a href="login.html" class="sidebar-nav-link" data-path="login.html">
+            <i data-lucide="log-in" class="lucide-md"></i><span class="link-label">Login</span>
+          </a><a href="register.html" class="sidebar-nav-link" data-path="register.html">
+            <i data-lucide="user-plus" class="lucide-md"></i><span class="link-label">Register</span>
+          </a><a href="forgot-password.html" class="sidebar-nav-link" data-path="forgot-password.html">
+            <i data-lucide="key-round" class="lucide-md"></i><span class="link-label">Forgot Password</span>
+          </a><a href="two-steps.html" class="sidebar-nav-link" data-path="two-steps.html">
+            <i data-lucide="shield" class="lucide-md"></i><span class="link-label">Two Step</span>
+          </a><a href="error.html" class="sidebar-nav-link" data-path="error.html">
+            <i data-lucide="alert-circle" class="lucide-md"></i><span class="link-label">Error</span>
+          </a><a href="maintenance.html" class="sidebar-nav-link" data-path="maintenance.html">
+            <i data-lucide="wrench" class="lucide-md"></i><span class="link-label">Maintenance</span>
+          </a></nav>
+        <div class="sidebar-footer">
+          <div class="user-mini">
+            <div class="user-avatar-mini">JD</div>
+            <div class="sidebar-footer-info flex-grow-1 overflow-hidden">
+              <div class="user-mini-name">John Doe</div>
+              <div class="user-mini-email">john@liner.com</div>
+            </div>
+            <i data-lucide="chevron-right" class="lucide-sm sidebar-footer-info"></i>
+          </div>
+        </div>
+      </aside>
+      <div class="sidebar-backdrop"></div>
+<header class="app-header">
+        <button class="header-icon-btn d-lg-none" data-toggle-mobile-sidebar aria-label="Menu"><i data-lucide="menu" class="lucide-md"></i></button>
+        <button class="header-icon-btn d-none d-lg-flex" data-toggle-sidebar aria-label="Toggle"><i data-lucide="menu" class="lucide-md"></i></button>
+        <div class="header-breadcrumb d-none d-md-flex" data-breadcrumb><span class="text-muted">Home</span></div>
+        <div class="flex-grow-1"></div>
+        <div class="search-wrap d-none d-sm-block">
+          <input type="text" class="form-control form-control-sm search-input w-200" placeholder="Search...">
+          <i data-lucide="search" class="lucide-sm search-icon"></i>
+        </div>
+        <button class="header-icon-btn" data-toggle-dark aria-label="Dark"><i data-lucide="moon" class="lucide-md"></i></button>
+        <div class="dropdown">
+          <button class="header-icon-btn" data-bs-toggle="dropdown" aria-label="Notifications">
+            <i data-lucide="bell" class="lucide-md"></i>
+            <span class="notif-dot">3</span>
+          </button>
+          <div class="dropdown-menu dropdown-menu-end notif-menu">
+            <div class="notif-header">
+              <strong>Notifications</strong>
+              <span class="badge badge-soft-primary">3 new</span>
+            </div>
+            <div class="notif-list custom-scrollbar">
+              <div class="notif-item unread">
+                <div class="icon-circle icon-circle-sm icon-circle-bg-success-soft"><i data-lucide="check-circle-2" class="lucide-sm"></i></div>
+                <div class="flex-grow-1">
+                  <div class="notif-title">Order Completed</div>
+                  <div class="notif-msg">Order #1234 has been fulfilled</div>
+                  <div class="notif-time">2 min ago</div>
+                </div>
+              </div>
+              <div class="notif-item unread">
+                <div class="icon-circle icon-circle-sm icon-circle-bg-info-soft"><i data-lucide="info" class="lucide-sm"></i></div>
+                <div class="flex-grow-1">
+                  <div class="notif-title">New User Registered</div>
+                  <div class="notif-msg">Sarah Johnson joined the platform</div>
+                  <div class="notif-time">15 min ago</div>
+                </div>
+              </div>
+              <div class="notif-item">
+                <div class="icon-circle icon-circle-sm icon-circle-bg-warning-soft"><i data-lucide="alert-circle" class="lucide-sm"></i></div>
+                <div class="flex-grow-1">
+                  <div class="notif-title">Low Stock Alert</div>
+                  <div class="notif-msg">Wireless Mouse is running low</div>
+                  <div class="notif-time">1 hr ago</div>
+                </div>
+              </div>
+            </div>
+            <div class="notif-footer">
+              <a href="#" class="text-primary fw-medium notif-footer-link">View all notifications</a>
+            </div>
+          </div>
+        </div>
+        <button class="header-icon-btn" data-toggle-settings aria-label="Settings"><i data-lucide="settings" class="lucide-md"></i></button>
+        <div class="dropdown">
+          <button class="user-button" data-bs-toggle="dropdown">
+            <div class="avatar avatar-sm">JD</div>
+            <div class="d-none d-sm-block text-start">
+              <div class="user-name">John Doe</div>
+              <div class="user-role">Admin</div>
+            </div>
+            <i data-lucide="chevron-down" class="lucide-sm d-none d-sm-inline"></i>
+          </button>
+          <div class="dropdown-menu dropdown-menu-end user-menu">
+            <div class="user-menu-header">
+              <div class="fw-semibold">John Doe</div>
+              <div class="text-muted small">john@liner.com</div>
+            </div>
+            <a class="dropdown-item user-menu-item" href="account.html"><i data-lucide="user" class="lucide-sm"></i> My Profile</a>
+            <a class="dropdown-item user-menu-item" href="pricing.html"><i data-lucide="credit-card" class="lucide-sm"></i> Billing</a>
+            <a class="dropdown-item user-menu-item" href="account.html"><i data-lucide="shield" class="lucide-sm"></i> Security</a>
+            <a class="dropdown-item user-menu-item" href="faq.html"><i data-lucide="help-circle" class="lucide-sm"></i> Help Center</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item user-menu-item text-danger" href="login.html"><i data-lucide="log-out" class="lucide-sm"></i> Sign Out</a>
+          </div>
+        </div>
+      </header>
+<div class="settings-overlay" data-close-settings></div>
+      <div class="settings-panel">
+        <div class="settings-section d-flex align-items-center justify-content-between">
+          <div>
+            <h5 class="mb-0 fw-bold">Theme Settings</h5>
+            <div class="text-muted small mt-1">Customize your dashboard appearance</div>
+          </div>
+          <button class="btn btn-icon btn-icon-sm" data-close-settings aria-label="Close"><i data-lucide="x" class="lucide-md"></i></button>
+        </div>
+        <div class="flex-grow-1 overflow-auto custom-scrollbar">
+          <div class="settings-section">
+            <h6>Color Mode</h6>
+            <div class="d-flex gap-2">
+              <button class="mode-card light active" data-mode="light">
+                <div class="mini-preview">
+                  <div class="mini-header"><div class="mini-bar w-18"></div></div>
+                  <div class="flex-grow-1 mini-bg-light"></div>
+                </div>
+                <div class="d-flex align-items-center justify-content-between"><strong class="text-xs">Light</strong></div>
+              </button>
+              <button class="mode-card dark" data-mode="dark">
+                <div class="mini-preview">
+                  <div class="mini-header"><div class="mini-bar w-18"></div></div>
+                  <div class="flex-grow-1 mini-bg-dark"></div>
+                </div>
+                <div class="d-flex align-items-center justify-content-between"><strong class="text-xs">Dark</strong></div>
+              </button>
+            </div>
+          </div>
+          <div class="settings-section">
+            <h6>Color Preset</h6>
+            <div class="swatch-grid"><button class="color-swatch-btn" data-color="navy">
+        <div class="swatch bg-swatch-navy"></div>
+        <div class="swatch-label">Navy</div>
+      </button><button class="color-swatch-btn" data-color="blue">
+        <div class="swatch bg-swatch-blue"></div>
+        <div class="swatch-label">Blue</div>
+      </button><button class="color-swatch-btn" data-color="green">
+        <div class="swatch bg-swatch-green"></div>
+        <div class="swatch-label">Emerald</div>
+      </button><button class="color-swatch-btn" data-color="orange">
+        <div class="swatch bg-swatch-orange"></div>
+        <div class="swatch-label">Orange</div>
+      </button><button class="color-swatch-btn" data-color="red">
+        <div class="swatch bg-swatch-red"></div>
+        <div class="swatch-label">Rose</div>
+      </button></div>
+          </div>
+          <div class="settings-section">
+            <h6>Layout</h6>
+            <label class="setting-toggle">
+              <span class="toggle-label">Collapsed Sidebar</span>
+              <span class="switch" data-setting="collapsed"></span>
+            </label>
+            <label class="setting-toggle">
+              <span class="toggle-label">Horizontal Menu</span>
+              <span class="switch" data-setting="horizontal"></span>
+            </label>
+          </div>
+          <div class="settings-section">
+            <h6>Regional</h6>
+            <label class="setting-toggle">
+              <span class="toggle-label">RTL Direction</span>
+              <span class="switch" data-setting="rtl"></span>
+            </label>
+          </div>
+        </div>
+        <div class="settings-footer">
+          <button class="btn btn-primary w-100" data-close-settings>Apply &amp; Close</button>
+        </div>
+      </div>
+<main class="app-main space-y-6">
+  <div class="flex items-start justify-between mb-6">
+    <div>
+      <h1 class="text-2xl font-bold text-slate-900 m-0">Tooltip</h1>
+      <p class="text-sm text-slate-500 mt-1 mb-0">Contextual information displayed on hover</p>
+    </div>
+  </div>
+
+  <div class="grid grid-cols-1 grid-cols-lg-2 gap-6">
+
+    <!-- Positions -->
+    <div class="card p-6">
+      <h3 class="font-semibold text-slate-800 mb-2 m-0">Tooltip Positions</h3>
+      <p class="text-xs text-slate-500 mb-4">Tooltips can be placed on any side of the trigger element.</p>
+      <div class="flex flex-wrap items-center justify-center gap-8 py-8"><div class="tt-wrap"><div class="tt-trigger"><button class="btn btn-outline btn-sm capitalize">top</button></div><div class="tt-bubble tt-top tt-color-default tt-default">Tooltip on top</div></div><div class="tt-wrap"><div class="tt-trigger"><button class="btn btn-outline btn-sm capitalize">bottom</button></div><div class="tt-bubble tt-bottom tt-color-default tt-default">Tooltip on bottom</div></div><div class="tt-wrap"><div class="tt-trigger"><button class="btn btn-outline btn-sm capitalize">left</button></div><div class="tt-bubble tt-left tt-color-default tt-default">Tooltip on left</div></div><div class="tt-wrap"><div class="tt-trigger"><button class="btn btn-outline btn-sm capitalize">right</button></div><div class="tt-bubble tt-right tt-color-default tt-default">Tooltip on right</div></div></div>
+    </div>
+
+    <!-- On icons -->
+    <div class="card p-6">
+      <h3 class="font-semibold text-slate-800 mb-2 m-0">Tooltip on Icons</h3>
+      <p class="text-xs text-slate-500 mb-4">Icon buttons with descriptive tooltips for accessibility.</p>
+      <div class="flex items-center gap-4"><div class="tt-wrap"><div class="tt-trigger"><button class="tt-icon-btn text-cyan-500"><i data-lucide="info" class="lucide-md"></i></button></div><div class="tt-bubble tt-top tt-color-default tt-default">More information</div></div><div class="tt-wrap"><div class="tt-trigger"><button class="tt-icon-btn text-slate-500"><i data-lucide="settings" class="lucide-md"></i></button></div><div class="tt-bubble tt-top tt-color-default tt-default">Open settings</div></div><div class="tt-wrap"><div class="tt-trigger"><button class="tt-icon-btn text-rose-500"><i data-lucide="heart" class="lucide-md"></i></button></div><div class="tt-bubble tt-top tt-color-default tt-default">Add to favorites</div></div><div class="tt-wrap"><div class="tt-trigger"><button class="tt-icon-btn text-amber-500"><i data-lucide="star" class="lucide-md"></i></button></div><div class="tt-bubble tt-top tt-color-default tt-default">Rate this item</div></div><div class="tt-wrap"><div class="tt-trigger"><button class="tt-icon-btn text-primary-500"><i data-lucide="copy" class="lucide-md"></i></button></div><div class="tt-bubble tt-top tt-color-default tt-default">Copy to clipboard</div></div></div>
+    </div>
+
+    <!-- Color Tooltips -->
+    <div class="card p-6">
+      <h3 class="font-semibold text-slate-800 mb-2 m-0">Color Tooltips</h3>
+      <p class="text-xs text-slate-500 mb-4">Tooltips with different colored backgrounds to convey semantic meaning.</p>
+      <div class="flex flex-wrap items-center gap-4"><div class="tt-wrap"><div class="tt-trigger"><button class="btn btn-outline btn-sm">Default</button></div><div class="tt-bubble tt-top tt-color-default tt-default">Default tooltip</div></div><div class="tt-wrap"><div class="tt-trigger"><button class="btn btn-primary btn-sm">Primary</button></div><div class="tt-bubble tt-top tt-color-primary tt-default">Primary tooltip</div></div><div class="tt-wrap"><div class="tt-trigger"><button class="btn btn-success btn-sm">Success</button></div><div class="tt-bubble tt-top tt-color-success tt-default">Success tooltip</div></div><div class="tt-wrap"><div class="tt-trigger"><button class="btn btn-warning btn-sm">Warning</button></div><div class="tt-bubble tt-top tt-color-warning tt-default">Warning tooltip</div></div><div class="tt-wrap"><div class="tt-trigger"><button class="btn btn-danger btn-sm">Danger</button></div><div class="tt-bubble tt-top tt-color-danger tt-default">Danger tooltip</div></div><div class="tt-wrap"><div class="tt-trigger"><button class="btn btn-info btn-sm">Info</button></div><div class="tt-bubble tt-top tt-color-info tt-default">Info tooltip</div></div></div>
+    </div>
+
+    <!-- Sizes -->
+    <div class="card p-6">
+      <h3 class="font-semibold text-slate-800 mb-2 m-0">Tooltip Sizes</h3>
+      <p class="text-xs text-slate-500 mb-4">Different sized tooltips for varying levels of detail and emphasis.</p>
+      <div class="flex flex-wrap items-center gap-4"><div class="tt-wrap"><div class="tt-trigger"><button class="btn btn-outline btn-sm">Small</button></div><div class="tt-bubble tt-top tt-color-default tt-sm">Small tooltip</div></div><div class="tt-wrap"><div class="tt-trigger"><button class="btn btn-outline btn-sm">Medium</button></div><div class="tt-bubble tt-top tt-color-default tt-default">Default size tooltip</div></div><div class="tt-wrap"><div class="tt-trigger"><button class="btn btn-outline btn-sm">Large</button></div><div class="tt-bubble tt-top tt-color-default tt-lg">Large tooltip with more detail</div></div></div>
+      <div class="mt-5 p-4 rounded-xl bg-slate-50 border">
+        <h4 class="font-semibold text-slate-700 mb-2 m-0" style="font-size:12px">Size Reference</h4>
+        <div class="space-y-1-5">
+          <div class="flex items-start gap-2" style="font-size:11px"><span class="font-medium text-slate-600 w-14 shrink-0">Small</span><span class="text-slate-400">-</span><span class="text-slate-500">10px font, minimal padding. Best for Dense UIs, icon labels.</span></div>
+          <div class="flex items-start gap-2" style="font-size:11px"><span class="font-medium text-slate-600 w-14 shrink-0">Medium</span><span class="text-slate-400">-</span><span class="text-slate-500">12px font, standard padding. Best for General purpose (default).</span></div>
+          <div class="flex items-start gap-2" style="font-size:11px"><span class="font-medium text-slate-600 w-14 shrink-0">Large</span><span class="text-slate-400">-</span><span class="text-slate-500">14px font, generous padding. Best for Important hints, onboarding.</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Profile Tooltip Cards -->
+    <div class="card p-6">
+      <h3 class="font-semibold text-slate-800 mb-2 m-0">Profile Tooltip Cards</h3>
+      <p class="text-xs text-slate-500 mb-4">Hover over avatars to reveal detailed user profile previews.</p>
+      <div class="flex items-center gap-4"><div class="tt-wrap"><div class="tt-trigger"><div class="tt-avatar-wrap"><img src="img/avatars/avatar-woman-alice.jpg" alt="Sarah Chen" class="w-11 h-11 rounded-full object-cover tt-avatar-img"><div class="tt-avatar-dot bg-emerald-500"></div></div></div><div class="tt-rich tt-bottom"><div class="">
+    <div class="flex items-center gap-3 mb-3">
+      <div class="relative">
+        <img src="img/avatars/avatar-woman-alice.jpg" alt="Sarah Chen" class="w-12 h-12 rounded-full object-cover">
+        <div class="tt-rich-status bg-emerald-500"></div>
+      </div>
+      <div>
+        <p class="font-semibold text-sm text-slate-800 m-0">Sarah Chen</p>
+        <p class="text-xs text-slate-500 m-0">Product Designer</p>
+      </div>
+    </div>
+    <div class="space-y-1-5 mb-3">
+      <div class="flex items-center gap-2 text-xs text-slate-500"><i data-lucide="map-pin" class="lucide-xxs"></i> San Francisco</div>
+      <div class="flex items-center gap-2 text-xs text-slate-500"><i data-lucide="file-text" class="lucide-xxs"></i> 24 projects</div>
+    </div>
+    <div class="flex gap-2">
+      <button class="flex-1 py-1-5 rounded-lg bg-primary-500 text-white text-xs font-medium">Follow</button>
+      <button class="flex-1 py-1-5 rounded-lg border text-xs font-medium text-slate-600">Message</button>
+    </div>
+  </div></div></div><div class="tt-wrap"><div class="tt-trigger"><div class="tt-avatar-wrap"><img src="img/avatars/avatar-man-bob.jpg" alt="Marcus Rivera" class="w-11 h-11 rounded-full object-cover tt-avatar-img"><div class="tt-avatar-dot bg-amber-500"></div></div></div><div class="tt-rich tt-bottom"><div class="">
+    <div class="flex items-center gap-3 mb-3">
+      <div class="relative">
+        <img src="img/avatars/avatar-man-bob.jpg" alt="Marcus Rivera" class="w-12 h-12 rounded-full object-cover">
+        <div class="tt-rich-status bg-amber-500"></div>
+      </div>
+      <div>
+        <p class="font-semibold text-sm text-slate-800 m-0">Marcus Rivera</p>
+        <p class="text-xs text-slate-500 m-0">Lead Developer</p>
+      </div>
+    </div>
+    <div class="space-y-1-5 mb-3">
+      <div class="flex items-center gap-2 text-xs text-slate-500"><i data-lucide="map-pin" class="lucide-xxs"></i> New York</div>
+      <div class="flex items-center gap-2 text-xs text-slate-500"><i data-lucide="file-text" class="lucide-xxs"></i> 38 projects</div>
+    </div>
+    <div class="flex gap-2">
+      <button class="flex-1 py-1-5 rounded-lg bg-primary-500 text-white text-xs font-medium">Follow</button>
+      <button class="flex-1 py-1-5 rounded-lg border text-xs font-medium text-slate-600">Message</button>
+    </div>
+  </div></div></div><div class="tt-wrap"><div class="tt-trigger"><div class="tt-avatar-wrap"><img src="img/avatars/avatar-woman-carol.jpg" alt="Emily Watson" class="w-11 h-11 rounded-full object-cover tt-avatar-img"><div class="tt-avatar-dot bg-emerald-500"></div></div></div><div class="tt-rich tt-bottom"><div class="">
+    <div class="flex items-center gap-3 mb-3">
+      <div class="relative">
+        <img src="img/avatars/avatar-woman-carol.jpg" alt="Emily Watson" class="w-12 h-12 rounded-full object-cover">
+        <div class="tt-rich-status bg-emerald-500"></div>
+      </div>
+      <div>
+        <p class="font-semibold text-sm text-slate-800 m-0">Emily Watson</p>
+        <p class="text-xs text-slate-500 m-0">Marketing Lead</p>
+      </div>
+    </div>
+    <div class="space-y-1-5 mb-3">
+      <div class="flex items-center gap-2 text-xs text-slate-500"><i data-lucide="map-pin" class="lucide-xxs"></i> London</div>
+      <div class="flex items-center gap-2 text-xs text-slate-500"><i data-lucide="file-text" class="lucide-xxs"></i> 12 projects</div>
+    </div>
+    <div class="flex gap-2">
+      <button class="flex-1 py-1-5 rounded-lg bg-primary-500 text-white text-xs font-medium">Follow</button>
+      <button class="flex-1 py-1-5 rounded-lg border text-xs font-medium text-slate-600">Message</button>
+    </div>
+  </div></div></div><div class="tt-wrap"><div class="tt-trigger"><div class="tt-avatar-wrap"><img src="img/avatars/avatar-man-david.jpg" alt="Alex Kim" class="w-11 h-11 rounded-full object-cover tt-avatar-img"><div class="tt-avatar-dot bg-red-500"></div></div></div><div class="tt-rich tt-bottom"><div class="">
+    <div class="flex items-center gap-3 mb-3">
+      <div class="relative">
+        <img src="img/avatars/avatar-man-david.jpg" alt="Alex Kim" class="w-12 h-12 rounded-full object-cover">
+        <div class="tt-rich-status bg-red-500"></div>
+      </div>
+      <div>
+        <p class="font-semibold text-sm text-slate-800 m-0">Alex Kim</p>
+        <p class="text-xs text-slate-500 m-0">Data Scientist</p>
+      </div>
+    </div>
+    <div class="space-y-1-5 mb-3">
+      <div class="flex items-center gap-2 text-xs text-slate-500"><i data-lucide="map-pin" class="lucide-xxs"></i> Toronto</div>
+      <div class="flex items-center gap-2 text-xs text-slate-500"><i data-lucide="file-text" class="lucide-xxs"></i> 19 projects</div>
+    </div>
+    <div class="flex gap-2">
+      <button class="flex-1 py-1-5 rounded-lg bg-primary-500 text-white text-xs font-medium">Follow</button>
+      <button class="flex-1 py-1-5 rounded-lg border text-xs font-medium text-slate-600">Message</button>
+    </div>
+  </div></div></div></div>
+    </div>
+
+    <!-- Product Preview -->
+    <div class="card p-6">
+      <h3 class="font-semibold text-slate-800 mb-2 m-0">Product Preview Tooltips</h3>
+      <p class="text-xs text-slate-500 mb-4">Hover over product links to see a quick preview with image and details.</p>
+      <div class="flex flex-wrap gap-3"><div class="tt-wrap"><div class="tt-trigger"><button class="flex items-center gap-2 px-3 py-2 rounded-xl border tt-prod-trigger"><img src="img/unsplash/wireless-headphones.jpg" alt="Wireless Headphones" class="w-7 h-7 rounded-lg object-cover"><span class="text-sm font-medium text-slate-700">Wireless Headphones</span></button></div><div class="tt-rich tt-bottom"><div class="">
+    <div class="tt-rich-cover h-32"><img src="img/unsplash/wireless-headphones.jpg" alt="Wireless Headphones"><span class="tt-rich-badge bg-primary-500">Best Seller</span></div>
+    <div class="mt-3">
+      <p class="font-semibold text-sm text-slate-800 m-0">Wireless Headphones</p>
+      <div class="flex items-center gap-2 mt-1">
+        <div class="flex items-center gap-0-5"><svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="tt-star-on"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="tt-star-on"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="tt-star-on"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="tt-star-on"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="tt-star-off"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+        <span class="text-xs text-slate-400">4.8</span>
+      </div>
+      <div class="flex items-center justify-between mt-2">
+        <span class="text-lg font-bold text-primary-600">$249.99</span>
+        <span class="text-xs text-emerald-500 font-medium flex items-center gap-0-5"><i data-lucide="check-circle" class="lucide-xxs"></i> In Stock</span>
+      </div>
+    </div>
+  </div></div></div><div class="tt-wrap"><div class="tt-trigger"><button class="flex items-center gap-2 px-3 py-2 rounded-xl border tt-prod-trigger"><img src="img/unsplash/mechanical-keyboard.jpg" alt="Mechanical Keyboard" class="w-7 h-7 rounded-lg object-cover"><span class="text-sm font-medium text-slate-700">Mechanical Keyboard</span></button></div><div class="tt-rich tt-bottom"><div class="">
+    <div class="tt-rich-cover h-32"><img src="img/unsplash/mechanical-keyboard.jpg" alt="Mechanical Keyboard"><span class="tt-rich-badge bg-primary-500">New</span></div>
+    <div class="mt-3">
+      <p class="font-semibold text-sm text-slate-800 m-0">Mechanical Keyboard</p>
+      <div class="flex items-center gap-2 mt-1">
+        <div class="flex items-center gap-0-5"><svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="tt-star-on"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="tt-star-on"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="tt-star-on"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="tt-star-on"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="tt-star-off"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+        <span class="text-xs text-slate-400">4.5</span>
+      </div>
+      <div class="flex items-center justify-between mt-2">
+        <span class="text-lg font-bold text-primary-600">$149.99</span>
+        <span class="text-xs text-emerald-500 font-medium flex items-center gap-0-5"><i data-lucide="check-circle" class="lucide-xxs"></i> In Stock</span>
+      </div>
+    </div>
+  </div></div></div><div class="tt-wrap"><div class="tt-trigger"><button class="flex items-center gap-2 px-3 py-2 rounded-xl border tt-prod-trigger"><img src="img/unsplash/minimalist-watch.jpg" alt="Minimalist Watch" class="w-7 h-7 rounded-lg object-cover"><span class="text-sm font-medium text-slate-700">Minimalist Watch</span></button></div><div class="tt-rich tt-bottom"><div class="">
+    <div class="tt-rich-cover h-32"><img src="img/unsplash/minimalist-watch.jpg" alt="Minimalist Watch"><span class="tt-rich-badge bg-primary-500">Popular</span></div>
+    <div class="mt-3">
+      <p class="font-semibold text-sm text-slate-800 m-0">Minimalist Watch</p>
+      <div class="flex items-center gap-2 mt-1">
+        <div class="flex items-center gap-0-5"><svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="tt-star-on"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="tt-star-on"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="tt-star-on"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="tt-star-on"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="tt-star-off"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+        <span class="text-xs text-slate-400">4.9</span>
+      </div>
+      <div class="flex items-center justify-between mt-2">
+        <span class="text-lg font-bold text-primary-600">$319.00</span>
+        <span class="text-xs text-emerald-500 font-medium flex items-center gap-0-5"><i data-lucide="check-circle" class="lucide-xxs"></i> In Stock</span>
+      </div>
+    </div>
+  </div></div></div></div>
+    </div>
+
+    <!-- Table with tooltips (full width) -->
+    <div class="card p-6 lg-col-span-2">
+      <h3 class="font-semibold text-slate-800 mb-2 m-0">Tooltip on Table Actions</h3>
+      <p class="text-xs text-slate-500 mb-4">Action buttons in tables with descriptive tooltips for better usability.</p>
+      <div class="table-wrapper">
+        <table class="table">
+          <thead><tr><th>User</th><th>Role</th><th>Status</th><th>Activity</th><th>Actions</th></tr></thead>
+          <tbody><tr>
+  <td><div class="flex items-center gap-3"><img src="img/avatars/avatar-woman-alice.jpg" alt="Alice Johnson" class="w-8 h-8 rounded-full object-cover"><span class="font-medium text-slate-800">Alice Johnson</span></div></td>
+  <td class="text-slate-500">Frontend Dev</td>
+  <td><span class="badge badge-success">Active</span></td>
+  <td class="text-xs text-slate-400">2 min ago</td>
+  <td><div class="flex items-center gap-1">
+    <div class="tt-wrap"><div class="tt-trigger"><button class="tt-tbl-btn tt-tbl-view"><i data-lucide="eye" class="lucide-xs"></i></button></div><div class="tt-bubble tt-top tt-color-default tt-default">View profile</div></div>
+    <div class="tt-wrap"><div class="tt-trigger"><button class="tt-tbl-btn tt-tbl-edit"><i data-lucide="edit" class="lucide-xs"></i></button></div><div class="tt-bubble tt-top tt-color-default tt-default">Edit user</div></div>
+    <div class="tt-wrap"><div class="tt-trigger"><button class="tt-tbl-btn tt-tbl-del"><i data-lucide="trash-2" class="lucide-xs"></i></button></div><div class="tt-bubble tt-top tt-color-default tt-default">Delete user</div></div>
+  </div></td>
+</tr><tr>
+  <td><div class="flex items-center gap-3"><img src="img/avatars/avatar-man-bob.jpg" alt="Bob Smith" class="w-8 h-8 rounded-full object-cover"><span class="font-medium text-slate-800">Bob Smith</span></div></td>
+  <td class="text-slate-500">Backend Dev</td>
+  <td><span class="badge badge-success">Active</span></td>
+  <td class="text-xs text-slate-400">1 hour ago</td>
+  <td><div class="flex items-center gap-1">
+    <div class="tt-wrap"><div class="tt-trigger"><button class="tt-tbl-btn tt-tbl-view"><i data-lucide="eye" class="lucide-xs"></i></button></div><div class="tt-bubble tt-top tt-color-default tt-default">View profile</div></div>
+    <div class="tt-wrap"><div class="tt-trigger"><button class="tt-tbl-btn tt-tbl-edit"><i data-lucide="edit" class="lucide-xs"></i></button></div><div class="tt-bubble tt-top tt-color-default tt-default">Edit user</div></div>
+    <div class="tt-wrap"><div class="tt-trigger"><button class="tt-tbl-btn tt-tbl-del"><i data-lucide="trash-2" class="lucide-xs"></i></button></div><div class="tt-bubble tt-top tt-color-default tt-default">Delete user</div></div>
+  </div></td>
+</tr><tr>
+  <td><div class="flex items-center gap-3"><img src="img/avatars/avatar-woman-carol.jpg" alt="Carol White" class="w-8 h-8 rounded-full object-cover"><span class="font-medium text-slate-800">Carol White</span></div></td>
+  <td class="text-slate-500">Designer</td>
+  <td><span class="badge badge-success">Active</span></td>
+  <td class="text-xs text-slate-400">3 hours ago</td>
+  <td><div class="flex items-center gap-1">
+    <div class="tt-wrap"><div class="tt-trigger"><button class="tt-tbl-btn tt-tbl-view"><i data-lucide="eye" class="lucide-xs"></i></button></div><div class="tt-bubble tt-top tt-color-default tt-default">View profile</div></div>
+    <div class="tt-wrap"><div class="tt-trigger"><button class="tt-tbl-btn tt-tbl-edit"><i data-lucide="edit" class="lucide-xs"></i></button></div><div class="tt-bubble tt-top tt-color-default tt-default">Edit user</div></div>
+    <div class="tt-wrap"><div class="tt-trigger"><button class="tt-tbl-btn tt-tbl-del"><i data-lucide="trash-2" class="lucide-xs"></i></button></div><div class="tt-bubble tt-top tt-color-default tt-default">Delete user</div></div>
+  </div></td>
+</tr></tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Rich Content Tooltips -->
+    <div class="card p-6">
+      <h3 class="font-semibold text-slate-800 mb-2 m-0">Rich Content Tooltips</h3>
+      <p class="text-xs text-slate-500 mb-4">Tooltips with structured content, including formatted text and interactive elements.</p>
+      <div class="flex flex-wrap gap-4"><div class="tt-wrap"><div class="tt-trigger"><button class="btn btn-outline btn-sm">User Info</button></div><div class="tt-bubble tt-rich-bubble tt-right tt-color-default tt-default"><div><div class="flex items-center gap-2 mb-2"><img src="img/avatars/avatar-man-john.jpg" alt="" class="w-8 h-8 rounded-full object-cover"><div><p class="font-semibold m-0">John Doe</p><p class="text-slate-400 m-0" style="font-size:10px">Senior Frontend Developer</p></div></div><p class="text-slate-400 m-0" style="font-size:10px">john@example.com</p></div></div></div><div class="tt-wrap"><div class="tt-trigger"><button class="btn btn-primary btn-sm">Shortcuts</button></div><div class="tt-bubble tt-rich-bubble tt-bottom tt-color-default tt-default"><div><p class="font-semibold mb-1 m-0">Keyboard Shortcuts</p><div class="space-y-1-5 mt-2">
+    <div class="flex items-center justify-between"><span class="text-slate-400">Search</span><div class="flex items-center gap-1"><kbd class="tt-kbd">Ctrl</kbd><kbd class="tt-kbd">K</kbd></div></div>
+    <div class="flex items-center justify-between"><span class="text-slate-400">Save</span><div class="flex items-center gap-1"><kbd class="tt-kbd">Ctrl</kbd><kbd class="tt-kbd">S</kbd></div></div>
+    <div class="flex items-center justify-between"><span class="text-slate-400">New file</span><div class="flex items-center gap-1"><kbd class="tt-kbd">Ctrl</kbd><kbd class="tt-kbd">N</kbd></div></div>
+  </div></div></div></div><div class="tt-wrap"><div class="tt-trigger"><button class="btn btn-secondary btn-sm"><i data-lucide="lock" class="lucide-xs"></i> Pro Feature</button></div><div class="tt-bubble tt-rich-bubble tt-top tt-color-default tt-default"><div><div class="flex items-center gap-2 mb-2"><i data-lucide="crown" class="lucide-xs text-amber-400"></i><p class="font-semibold m-0">Pro Feature</p></div><p class="text-slate-400 leading-relaxed m-0">This feature is only available on Pro and Enterprise plans. Upgrade to unlock advanced capabilities.</p><button class="mt-2 w-full py-1 rounded bg-primary-600 text-white text-xs">Upgrade Now</button></div></div></div></div>
+    </div>
+
+    <!-- Tooltip Styles -->
+    <div class="card p-6">
+      <h3 class="font-semibold text-slate-800 mb-2 m-0">Tooltip Styles</h3>
+      <p class="text-xs text-slate-500 mb-4">Different visual styles to match various UI contexts.</p>
+      <div class="flex flex-wrap items-center gap-4">
+        <div class="tt-wrap"><div class="tt-trigger"><button class="btn btn-outline btn-sm">Dark</button></div><div class="tt-bubble tt-top tt-color-default tt-default">Default dark tooltip</div></div>
+        <div class="tt-wrap"><div class="tt-trigger"><button class="btn btn-outline btn-sm">Primary</button></div><div class="tt-bubble tt-top tt-color-primary tt-default">Primary style</div></div>
+        <div class="tt-wrap"><div class="tt-trigger"><button class="btn btn-outline btn-sm">Success</button></div><div class="tt-bubble tt-top tt-color-success tt-default">Success indicator</div></div>
+      </div>
+      <div class="mt-5 grid grid-cols-2 gap-3"><div class="tt-wrap"><div class="tt-trigger"><button class="w-full flex items-center gap-3 p-3 rounded-xl bg-amber-50"><i data-lucide="zap" class="lucide-md text-amber-500"></i><span class="text-xs font-medium text-slate-700">Performance</span></button></div><div class="tt-bubble tt-top tt-color-default tt-default">View performance metrics</div></div><div class="tt-wrap"><div class="tt-trigger"><button class="w-full flex items-center gap-3 p-3 rounded-xl bg-emerald-50"><i data-lucide="shield" class="lucide-md text-emerald-500"></i><span class="text-xs font-medium text-slate-700">Security</span></button></div><div class="tt-bubble tt-top tt-color-default tt-default">Security settings</div></div><div class="tt-wrap"><div class="tt-trigger"><button class="w-full flex items-center gap-3 p-3 rounded-xl bg-blue-50"><i data-lucide="bell" class="lucide-md text-blue-500"></i><span class="text-xs font-medium text-slate-700">Alerts</span></button></div><div class="tt-bubble tt-top tt-color-default tt-default">Configure alert preferences</div></div><div class="tt-wrap"><div class="tt-trigger"><button class="w-full flex items-center gap-3 p-3 rounded-xl bg-violet-50"><i data-lucide="download" class="lucide-md text-violet-500"></i><span class="text-xs font-medium text-slate-700">Export</span></button></div><div class="tt-bubble tt-top tt-color-default tt-default">Download as CSV or PDF</div></div></div>
+    </div>
+
+    <!-- Premium Tooltips -->
+    <div class="card p-6">
+      <h3 class="font-semibold text-slate-800 mb-2 m-0">Premium Feature Tooltips</h3>
+      <p class="text-xs text-slate-500 mb-4">Upgrade prompts and locked feature hints displayed on hover.</p>
+      <div class="flex flex-wrap gap-3"><div class="tt-wrap"><div class="tt-trigger"><button class="btn btn-sm tt-gradient-btn"><i data-lucide="crown" class="lucide-xs"></i> Pro Plan</button></div><div class="tt-rich tt-bottom"><div class="">
+    <div class="tt-premium-header"><div class="tt-premium-glow"></div><div class="tt-premium-content"><i data-lucide="crown" class="lucide-lg text-white"></i><p class="font-bold text-white text-sm m-0 mt-1">Upgrade to Pro</p><p class="text-white m-0 opacity-70" style="font-size:12px">Starting at $12/mo</p></div></div>
+    <div class="space-y-2 mb-3">
+      <div class="flex items-center gap-2 text-xs text-slate-600"><i data-lucide="zap" class="lucide-xxs text-primary-500"></i> Unlimited projects</div>
+      <div class="flex items-center gap-2 text-xs text-slate-600"><i data-lucide="users" class="lucide-xxs text-primary-500"></i> Team collaboration</div>
+      <div class="flex items-center gap-2 text-xs text-slate-600"><i data-lucide="sparkles" class="lucide-xxs text-primary-500"></i> AI-powered features</div>
+    </div>
+    <button class="w-full py-1-5 rounded-lg tt-gradient-btn text-white text-xs font-semibold">Start Free Trial</button>
+  </div></div></div><div class="tt-wrap"><div class="tt-trigger"><button class="btn btn-outline btn-sm"><i data-lucide="lock" class="lucide-xs"></i> AI Assist</button></div><div class="tt-rich tt-bottom"><div class="">
+    <div class="flex items-start gap-3 mb-3">
+      <div class="w-10 h-10 rounded-xl tt-amber-grad flex items-center justify-center shrink-0"><i data-lucide="sparkles" class="lucide-md text-white"></i></div>
+      <div><p class="font-semibold text-sm text-slate-800 m-0">AI Smart Assist</p><span class="text-amber-600 m-0" style="font-size:9px;font-weight:700;background:#fef3c7;padding:2px 6px;border-radius:4px">PRO</span></div>
+    </div>
+    <p class="text-xs text-slate-500 leading-relaxed mb-3 m-0">AI-powered suggestions and auto-completions to boost your productivity.</p>
+    <div class="flex items-center justify-between p-2 rounded-lg bg-amber-50">
+      <span class="text-amber-700 font-medium" style="font-size:10px">Requires Pro plan</span>
+      <button class="px-2 py-0-5 rounded bg-amber-500 text-white" style="font-size:10px;font-weight:700">Upgrade</button>
+    </div>
+  </div></div></div><div class="tt-wrap"><div class="tt-trigger"><button class="btn btn-outline btn-sm"><i data-lucide="gift" class="lucide-xs"></i> Special Offer</button></div><div class="tt-rich tt-bottom"><div class="">
+    <div class="tt-rich-cover h-24"><img src="img/unsplash/starry-night-mountain.jpg" alt=""><div class="tt-cover-grad"></div><div class="tt-cover-text"><span class="tt-rich-badge bg-rose-500">LIMITED</span><p class="font-bold text-white text-sm mt-1 m-0">50% Off Annual</p></div></div>
+    <div class="mt-3"><p class="text-xs text-slate-500 mb-3 m-0">Get our annual Pro plan at half price. Offer expires soon!</p><button class="w-full py-1-5 rounded-lg bg-rose-500 text-white text-xs font-semibold">Claim Offer</button></div>
+  </div></div></div></div>
+    </div>
+
+    <!-- Analytics Tooltips -->
+    <div class="card p-6">
+      <h3 class="font-semibold text-slate-800 mb-2 m-0">Analytics Tooltips</h3>
+      <p class="text-xs text-slate-500 mb-4">Stats and metrics that expand with details on hover.</p>
+      <div class="grid grid-cols-2 gap-3"><div class="tt-wrap"><div class="tt-trigger"><div class="p-3 rounded-xl bg-slate-50 tt-stat-card">
+    <p class="text-xs text-slate-500 mb-0-5 m-0">Revenue</p>
+    <div class="flex items-baseline gap-2">
+      <p class="text-lg font-bold text-slate-800 m-0">$48.2k</p>
+      <span class="font-semibold flex items-center gap-0-5 text-emerald-500" style="font-size:10px"><i data-lucide="trending-up" class="lucide-xxs"></i> +12.5%</span>
+    </div>
+  </div></div><div class="tt-rich tt-bottom"><div class="">
+    <div class="flex items-center justify-between mb-2"><p class="font-semibold text-sm text-slate-800 m-0">Revenue</p><span class="text-xs font-semibold text-emerald-500">+12.5%</span></div>
+    <div class="flex gap-1 h-10 items-end mb-2"><div class="flex-1 rounded-t bg-primary-400" style="height: 35%"></div><div class="flex-1 rounded-t bg-primary-400" style="height: 52%"></div><div class="flex-1 rounded-t bg-primary-400" style="height: 48%"></div><div class="flex-1 rounded-t bg-primary-400" style="height: 65%"></div><div class="flex-1 rounded-t bg-primary-400" style="height: 42%"></div><div class="flex-1 rounded-t bg-primary-400" style="height: 70%"></div><div class="flex-1 rounded-t bg-primary-400" style="height: 58%"></div><div class="flex-1 rounded-t bg-primary-400" style="height: 82%"></div><div class="flex-1 rounded-t bg-primary-400" style="height: 68%"></div><div class="flex-1 rounded-t bg-primary-400" style="height: 75%"></div><div class="flex-1 rounded-t bg-primary-400" style="height: 90%"></div><div class="flex-1 rounded-t bg-primary-400" style="height: 85%"></div></div>
+    <div class="flex justify-between mb-2" style="font-size:10px;color:#94a3b8"><span>Jan</span><span>Dec</span></div>
+    <div class="flex gap-3 pt-2 border-t"><div><p class="m-0" style="font-size:10px;color:#94a3b8">Previous</p><p class="text-xs font-semibold text-slate-600 m-0">$42.8k</p></div><div><p class="m-0" style="font-size:10px;color:#94a3b8">Target</p><p class="text-xs font-semibold text-primary-600 m-0">$50k</p></div></div>
+  </div></div></div><div class="tt-wrap"><div class="tt-trigger"><div class="p-3 rounded-xl bg-slate-50 tt-stat-card">
+    <p class="text-xs text-slate-500 mb-0-5 m-0">Users</p>
+    <div class="flex items-baseline gap-2">
+      <p class="text-lg font-bold text-slate-800 m-0">2,847</p>
+      <span class="font-semibold flex items-center gap-0-5 text-emerald-500" style="font-size:10px"><i data-lucide="trending-up" class="lucide-xxs"></i> +8.3%</span>
+    </div>
+  </div></div><div class="tt-rich tt-bottom"><div class="">
+    <div class="flex items-center justify-between mb-2"><p class="font-semibold text-sm text-slate-800 m-0">Users</p><span class="text-xs font-semibold text-emerald-500">+8.3%</span></div>
+    <div class="flex gap-1 h-10 items-end mb-2"><div class="flex-1 rounded-t bg-primary-400" style="height: 40%"></div><div class="flex-1 rounded-t bg-primary-400" style="height: 45%"></div><div class="flex-1 rounded-t bg-primary-400" style="height: 55%"></div><div class="flex-1 rounded-t bg-primary-400" style="height: 50%"></div><div class="flex-1 rounded-t bg-primary-400" style="height: 62%"></div><div class="flex-1 rounded-t bg-primary-400" style="height: 58%"></div><div class="flex-1 rounded-t bg-primary-400" style="height: 72%"></div><div class="flex-1 rounded-t bg-primary-400" style="height: 68%"></div><div class="flex-1 rounded-t bg-primary-400" style="height: 80%"></div><div class="flex-1 rounded-t bg-primary-400" style="height: 75%"></div><div class="flex-1 rounded-t bg-primary-400" style="height: 88%"></div><div class="flex-1 rounded-t bg-primary-400" style="height: 92%"></div></div>
+    <div class="flex justify-between mb-2" style="font-size:10px;color:#94a3b8"><span>Jan</span><span>Dec</span></div>
+    <div class="flex gap-3 pt-2 border-t"><div><p class="m-0" style="font-size:10px;color:#94a3b8">Previous</p><p class="text-xs font-semibold text-slate-600 m-0">2,628</p></div><div><p class="m-0" style="font-size:10px;color:#94a3b8">Target</p><p class="text-xs font-semibold text-primary-600 m-0">3,000</p></div></div>
+  </div></div></div><div class="tt-wrap"><div class="tt-trigger"><div class="p-3 rounded-xl bg-slate-50 tt-stat-card">
+    <p class="text-xs text-slate-500 mb-0-5 m-0">Bounce Rate</p>
+    <div class="flex items-baseline gap-2">
+      <p class="text-lg font-bold text-slate-800 m-0">24.5%</p>
+      <span class="font-semibold flex items-center gap-0-5 text-rose-500" style="font-size:10px"><i data-lucide="trending-up" class="lucide-xxs rotate-180"></i> -3.2%</span>
+    </div>
+  </div></div><div class="tt-rich tt-bottom"><div class="">
+    <div class="flex items-center justify-between mb-2"><p class="font-semibold text-sm text-slate-800 m-0">Bounce Rate</p><span class="text-xs font-semibold text-rose-500">-3.2%</span></div>
+    <div class="flex gap-1 h-10 items-end mb-2"><div class="flex-1 rounded-t bg-rose-400" style="height: 65%"></div><div class="flex-1 rounded-t bg-rose-400" style="height: 58%"></div><div class="flex-1 rounded-t bg-rose-400" style="height: 62%"></div><div class="flex-1 rounded-t bg-rose-400" style="height: 55%"></div><div class="flex-1 rounded-t bg-rose-400" style="height: 50%"></div><div class="flex-1 rounded-t bg-rose-400" style="height: 48%"></div><div class="flex-1 rounded-t bg-rose-400" style="height: 52%"></div><div class="flex-1 rounded-t bg-rose-400" style="height: 45%"></div><div class="flex-1 rounded-t bg-rose-400" style="height: 42%"></div><div class="flex-1 rounded-t bg-rose-400" style="height: 38%"></div><div class="flex-1 rounded-t bg-rose-400" style="height: 35%"></div><div class="flex-1 rounded-t bg-rose-400" style="height: 30%"></div></div>
+    <div class="flex justify-between mb-2" style="font-size:10px;color:#94a3b8"><span>Jan</span><span>Dec</span></div>
+    <div class="flex gap-3 pt-2 border-t"><div><p class="m-0" style="font-size:10px;color:#94a3b8">Previous</p><p class="text-xs font-semibold text-slate-600 m-0">27.7%</p></div><div><p class="m-0" style="font-size:10px;color:#94a3b8">Target</p><p class="text-xs font-semibold text-primary-600 m-0"><25%</p></div></div>
+  </div></div></div><div class="tt-wrap"><div class="tt-trigger"><div class="p-3 rounded-xl bg-slate-50 tt-stat-card">
+    <p class="text-xs text-slate-500 mb-0-5 m-0">Conversion</p>
+    <div class="flex items-baseline gap-2">
+      <p class="text-lg font-bold text-slate-800 m-0">3.8%</p>
+      <span class="font-semibold flex items-center gap-0-5 text-emerald-500" style="font-size:10px"><i data-lucide="trending-up" class="lucide-xxs"></i> +0.4%</span>
+    </div>
+  </div></div><div class="tt-rich tt-bottom"><div class="">
+    <div class="flex items-center justify-between mb-2"><p class="font-semibold text-sm text-slate-800 m-0">Conversion</p><span class="text-xs font-semibold text-emerald-500">+0.4%</span></div>
+    <div class="flex gap-1 h-10 items-end mb-2"><div class="flex-1 rounded-t bg-primary-400" style="height: 20%"></div><div class="flex-1 rounded-t bg-primary-400" style="height: 25%"></div><div class="flex-1 rounded-t bg-primary-400" style="height: 22%"></div><div class="flex-1 rounded-t bg-primary-400" style="height: 30%"></div><div class="flex-1 rounded-t bg-primary-400" style="height: 28%"></div><div class="flex-1 rounded-t bg-primary-400" style="height: 35%"></div><div class="flex-1 rounded-t bg-primary-400" style="height: 32%"></div><div class="flex-1 rounded-t bg-primary-400" style="height: 40%"></div><div class="flex-1 rounded-t bg-primary-400" style="height: 38%"></div><div class="flex-1 rounded-t bg-primary-400" style="height: 42%"></div><div class="flex-1 rounded-t bg-primary-400" style="height: 45%"></div><div class="flex-1 rounded-t bg-primary-400" style="height: 48%"></div></div>
+    <div class="flex justify-between mb-2" style="font-size:10px;color:#94a3b8"><span>Jan</span><span>Dec</span></div>
+    <div class="flex gap-3 pt-2 border-t"><div><p class="m-0" style="font-size:10px;color:#94a3b8">Previous</p><p class="text-xs font-semibold text-slate-600 m-0">3.4%</p></div><div><p class="m-0" style="font-size:10px;color:#94a3b8">Target</p><p class="text-xs font-semibold text-primary-600 m-0">4.0%</p></div></div>
+  </div></div></div></div>
+    </div>
+
+    <!-- Event Tooltips -->
+    <div class="card p-6">
+      <h3 class="font-semibold text-slate-800 mb-2 m-0">Event Tooltips</h3>
+      <p class="text-xs text-slate-500 mb-4">Calendar events and schedule details revealed on hover.</p>
+      <div class="flex flex-wrap gap-3"><div class="tt-wrap"><div class="tt-trigger"><div class="flex items-center gap-2 px-3 py-2 rounded-xl border tt-prod-trigger">
+    <div class="w-2 h-8 rounded-full bg-primary-500"></div>
+    <div><p class="text-sm font-medium text-slate-700 m-0">Team Standup</p><p class="text-slate-400 m-0" style="font-size:10px">9:00 AM</p></div>
+  </div></div><div class="tt-rich tt-bottom"><div class="">
+    <div class="bg-primary-500 tt-event-header"><p class="font-semibold text-sm text-white m-0">Team Standup</p><p class="text-white m-0" style="font-size:12px;opacity:.7">Today</p></div>
+    <div class="space-y-2 mb-3">
+      <div class="flex items-center gap-2 text-xs text-slate-600"><i data-lucide="clock" class="lucide-xxs text-slate-400"></i> 9:00 AM (30 min)</div>
+      <div class="flex items-center gap-2 text-xs text-slate-600"><i data-lucide="map-pin" class="lucide-xxs text-slate-400"></i> Zoom Meeting</div>
+    </div>
+    <div><p class="mb-1-5 m-0" style="font-size:10px;color:#94a3b8">Attendees (3)</p>
+      <div class="flex items-center"><img src="img/avatars/avatar-woman-alice.jpg" alt="" class="tt-stack-img"><img src="img/avatars/avatar-man-bob.jpg" alt="" class="tt-stack-img"><img src="img/avatars/avatar-woman-carol.jpg" alt="" class="tt-stack-img"></div>
+    </div>
+  </div></div></div><div class="tt-wrap"><div class="tt-trigger"><div class="flex items-center gap-2 px-3 py-2 rounded-xl border tt-prod-trigger">
+    <div class="w-2 h-8 rounded-full bg-violet-500"></div>
+    <div><p class="text-sm font-medium text-slate-700 m-0">Design Review</p><p class="text-slate-400 m-0" style="font-size:10px">2:00 PM</p></div>
+  </div></div><div class="tt-rich tt-bottom"><div class="">
+    <div class="bg-violet-500 tt-event-header"><p class="font-semibold text-sm text-white m-0">Design Review</p><p class="text-white m-0" style="font-size:12px;opacity:.7">Today</p></div>
+    <div class="space-y-2 mb-3">
+      <div class="flex items-center gap-2 text-xs text-slate-600"><i data-lucide="clock" class="lucide-xxs text-slate-400"></i> 2:00 PM (1 hour)</div>
+      <div class="flex items-center gap-2 text-xs text-slate-600"><i data-lucide="map-pin" class="lucide-xxs text-slate-400"></i> Design Studio</div>
+    </div>
+    <div><p class="mb-1-5 m-0" style="font-size:10px;color:#94a3b8">Attendees (2)</p>
+      <div class="flex items-center"><img src="img/avatars/avatar-woman-jessica.jpg" alt="" class="tt-stack-img"><img src="img/avatars/avatar-man-mike.jpg" alt="" class="tt-stack-img"></div>
+    </div>
+  </div></div></div><div class="tt-wrap"><div class="tt-trigger"><div class="flex items-center gap-2 px-3 py-2 rounded-xl border tt-prod-trigger">
+    <div class="w-2 h-8 rounded-full bg-emerald-500"></div>
+    <div><p class="text-sm font-medium text-slate-700 m-0">Sprint Planning</p><p class="text-slate-400 m-0" style="font-size:10px">4:30 PM</p></div>
+  </div></div><div class="tt-rich tt-bottom"><div class="">
+    <div class="bg-emerald-500 tt-event-header"><p class="font-semibold text-sm text-white m-0">Sprint Planning</p><p class="text-white m-0" style="font-size:12px;opacity:.7">Today</p></div>
+    <div class="space-y-2 mb-3">
+      <div class="flex items-center gap-2 text-xs text-slate-600"><i data-lucide="clock" class="lucide-xxs text-slate-400"></i> 4:30 PM (45 min)</div>
+      <div class="flex items-center gap-2 text-xs text-slate-600"><i data-lucide="map-pin" class="lucide-xxs text-slate-400"></i> Conference Room A</div>
+    </div>
+    <div><p class="mb-1-5 m-0" style="font-size:10px;color:#94a3b8">Attendees (4)</p>
+      <div class="flex items-center"><img src="img/avatars/avatar-man-david.jpg" alt="" class="tt-stack-img"><img src="img/avatars/avatar-woman-grace.jpg" alt="" class="tt-stack-img"><img src="img/avatars/avatar-man-henry.jpg" alt="" class="tt-stack-img"><img src="img/avatars/avatar-woman-sarah-kim.jpg" alt="" class="tt-stack-img"></div>
+    </div>
+  </div></div></div></div>
+    </div>
+
+    <!-- Status Tooltips -->
+    <div class="card p-6">
+      <h3 class="font-semibold text-slate-800 mb-2 m-0">Status &amp; Badge Tooltips</h3>
+      <p class="text-xs text-slate-500 mb-4">Hover over status badges and indicators for more context.</p>
+      <div class="flex flex-wrap gap-4"><div class="tt-wrap"><div class="tt-trigger"><span class="badge badge-success cursor-pointer"><i data-lucide="check-circle" class="lucide-xxs"></i> Operational</span></div><div class="tt-rich tt-bottom"><div class="">
+      <div class="flex items-center gap-2 mb-2"><div class="w-2-5 h-2-5 rounded-full bg-emerald-500"></div><p class="font-semibold text-sm text-slate-800 m-0">All Systems Operational</p></div>
+      <div class="space-y-1-5">
+        <div class="flex items-center justify-between text-xs"><span class="text-slate-500">API Server</span><div class="flex items-center gap-1-5"><div class="w-1-5 h-1-5 rounded-full bg-emerald-500"></div><span class="text-slate-600">Operational</span></div></div>
+        <div class="flex items-center justify-between text-xs"><span class="text-slate-500">Database</span><div class="flex items-center gap-1-5"><div class="w-1-5 h-1-5 rounded-full bg-emerald-500"></div><span class="text-slate-600">Operational</span></div></div>
+        <div class="flex items-center justify-between text-xs"><span class="text-slate-500">CDN</span><div class="flex items-center gap-1-5"><div class="w-1-5 h-1-5 rounded-full bg-emerald-500"></div><span class="text-slate-600">Operational</span></div></div>
+        <div class="flex items-center justify-between text-xs"><span class="text-slate-500">Email Service</span><div class="flex items-center gap-1-5"><div class="w-1-5 h-1-5 rounded-full bg-amber-500"></div><span class="text-slate-600">Degraded</span></div></div>
+      </div>
+      <p class="mt-2 pt-2 border-t m-0" style="font-size:10px;color:#94a3b8">Last checked: 2 minutes ago</p>
+    </div></div></div><div class="tt-wrap"><div class="tt-trigger"><span class="badge badge-warning cursor-pointer"><i data-lucide="alert-triangle" class="lucide-xxs"></i> Degraded</span></div><div class="tt-rich tt-bottom"><div class="">
+      <div class="flex items-center gap-2 mb-2"><i data-lucide="alert-triangle" class="lucide-xs text-amber-500"></i><p class="font-semibold text-sm text-slate-800 m-0">Performance Warning</p></div>
+      <p class="text-xs text-slate-500 leading-relaxed mb-2 m-0">Response times are higher than usual. Our team is investigating the issue.</p>
+      <div class="p-2 rounded-lg bg-amber-50"><span class="text-amber-700" style="font-size:10px">Avg: 420ms (target: 200ms)</span></div>
+    </div></div></div><div class="tt-wrap"><div class="tt-trigger"><span class="badge badge-primary cursor-pointer"><i data-lucide="shield" class="lucide-xxs"></i> Verified</span></div><div class="tt-rich tt-bottom"><div class="">
+      <div class="flex items-center gap-2 mb-2"><i data-lucide="shield" class="lucide-xs text-primary-500"></i><p class="font-semibold text-sm text-slate-800 m-0">Verified Account</p></div>
+      <p class="text-xs text-slate-500 leading-relaxed m-0">This account has been verified through email confirmation and identity verification.</p>
+      <p class="mt-2 m-0" style="font-size:10px;color:#94a3b8">Verified since Jan 15, 2024</p>
+    </div></div></div><div class="tt-wrap"><div class="tt-trigger"><span class="px-2-5 py-1 rounded-full text-xs font-semibold tt-pro-badge cursor-pointer"><i data-lucide="crown" class="lucide-xxs"></i> PRO</span></div><div class="tt-rich tt-bottom"><div class="">
+      <div class="flex items-center gap-2 mb-2"><i data-lucide="crown" class="lucide-xs text-amber-500"></i><p class="font-semibold text-sm text-slate-800 m-0">Pro Member</p></div>
+      <p class="text-xs text-slate-500 leading-relaxed mb-2 m-0">This user has an active Pro subscription with full access to premium features.</p>
+      <div class="flex items-center gap-2" style="font-size:10px;color:#94a3b8"><i data-lucide="calendar" class="lucide-xxs"></i> Renews Mar 15, 2027</div>
+    </div></div></div></div>
+    </div>
+
+    <!-- Image Preview Tooltips -->
+    <div class="card p-6">
+      <h3 class="font-semibold text-slate-800 mb-2 m-0">Image Preview Tooltips</h3>
+      <p class="text-xs text-slate-500 mb-4">Hover over links or thumbnails to see full image previews.</p>
+      <div class="flex flex-wrap gap-3"><div class="tt-wrap"><div class="tt-trigger"><div class="flex items-center gap-2 px-3 py-2 rounded-xl border tt-prod-trigger"><img src="img/unsplash/mountain-landscape.jpg" alt="Mountain Vista" class="w-8 h-8 rounded-lg object-cover"><div><p class="text-sm font-medium text-slate-700 m-0">Mountain Vista</p><p class="m-0" style="font-size:10px;color:#94a3b8">2.4 MB</p></div></div></div><div class="tt-rich tt-bottom"><div class="">
+    <div class="tt-rich-cover" style="height:144px"><img src="img/unsplash/mountain-landscape.jpg" alt="Mountain Vista"></div>
+    <div class="mt-3 flex items-center justify-between"><div><p class="text-sm font-semibold text-slate-800 m-0">Mountain Vista</p><p class="m-0" style="font-size:10px;color:#94a3b8">1920x1080 - 2.4 MB</p></div><button class="p-1-5 rounded-lg bg-slate-100"><i data-lucide="download" class="lucide-xxs text-slate-500"></i></button></div>
+  </div></div></div><div class="tt-wrap"><div class="tt-trigger"><div class="flex items-center gap-2 px-3 py-2 rounded-xl border tt-prod-trigger"><img src="img/unsplash/beach-ocean.jpg" alt="Ocean Beach" class="w-8 h-8 rounded-lg object-cover"><div><p class="text-sm font-medium text-slate-700 m-0">Ocean Beach</p><p class="m-0" style="font-size:10px;color:#94a3b8">3.1 MB</p></div></div></div><div class="tt-rich tt-bottom"><div class="">
+    <div class="tt-rich-cover" style="height:144px"><img src="img/unsplash/beach-ocean.jpg" alt="Ocean Beach"></div>
+    <div class="mt-3 flex items-center justify-between"><div><p class="text-sm font-semibold text-slate-800 m-0">Ocean Beach</p><p class="m-0" style="font-size:10px;color:#94a3b8">2560x1440 - 3.1 MB</p></div><button class="p-1-5 rounded-lg bg-slate-100"><i data-lucide="download" class="lucide-xxs text-slate-500"></i></button></div>
+  </div></div></div><div class="tt-wrap"><div class="tt-trigger"><div class="flex items-center gap-2 px-3 py-2 rounded-xl border tt-prod-trigger"><img src="img/unsplash/forest-path.jpg" alt="Forest Path" class="w-8 h-8 rounded-lg object-cover"><div><p class="text-sm font-medium text-slate-700 m-0">Forest Path</p><p class="m-0" style="font-size:10px;color:#94a3b8">1.8 MB</p></div></div></div><div class="tt-rich tt-bottom"><div class="">
+    <div class="tt-rich-cover" style="height:144px"><img src="img/unsplash/forest-path.jpg" alt="Forest Path"></div>
+    <div class="mt-3 flex items-center justify-between"><div><p class="text-sm font-semibold text-slate-800 m-0">Forest Path</p><p class="m-0" style="font-size:10px;color:#94a3b8">1920x1080 - 1.8 MB</p></div><button class="p-1-5 rounded-lg bg-slate-100"><i data-lucide="download" class="lucide-xxs text-slate-500"></i></button></div>
+  </div></div></div></div>
+    </div>
+
+  </div>
+</main>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lucide@latest/dist/umd/lucide.min.js"></script>
+</body>
+</html>

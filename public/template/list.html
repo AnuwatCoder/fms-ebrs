@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/svg+xml" href="img/logo.svg"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>List | Liner Admin</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/css/theme.css" rel="stylesheet">
+  <script src="assets/js/app.js"></script>
+</head>
+<body>
+
+<aside class="app-sidebar" data-sidebar>
+        <a href="dashboard.html" class="sidebar-brand text-decoration-none">
+          <img src="img/logo.svg" alt="Liner" class="brand-logo-lg-img">
+          <div class="brand-text">
+            <div class="brand-name">Liner</div>
+            <div class="brand-sub">Admin</div>
+          </div>
+        </a>
+        <nav class="sidebar-nav custom-scrollbar"><div class="sidebar-group-title">Dashboards</div><a href="dashboard.html" class="sidebar-nav-link" data-path="dashboard.html">
+            <i data-lucide="layout-dashboard" class="lucide-md"></i><span class="link-label">Modern</span>
+          </a><a href="analytics.html" class="sidebar-nav-link" data-path="analytics.html">
+            <i data-lucide="activity" class="lucide-md"></i><span class="link-label">Analytics</span>
+          </a><a href="ecommerce.html" class="sidebar-nav-link" data-path="ecommerce.html">
+            <i data-lucide="shopping-cart" class="lucide-md"></i><span class="link-label">eCommerce</span>
+          </a><a href="music.html" class="sidebar-nav-link" data-path="music.html">
+            <i data-lucide="music" class="lucide-md"></i><span class="link-label">Music</span>
+          </a><a href="general.html" class="sidebar-nav-link" data-path="general.html">
+            <i data-lucide="globe-2" class="lucide-md"></i><span class="link-label">General</span>
+          </a><div class="sidebar-group-title">Apps</div><a href="calendar.html" class="sidebar-nav-link" data-path="calendar.html">
+            <i data-lucide="calendar" class="lucide-md"></i><span class="link-label">Calendar</span>
+          </a><a href="kanban.html" class="sidebar-nav-link" data-path="kanban.html">
+            <i data-lucide="kanban-square" class="lucide-md"></i><span class="link-label">Kanban</span>
+          </a><a href="chat.html" class="sidebar-nav-link" data-path="chat.html">
+            <i data-lucide="message-square" class="lucide-md"></i><span class="link-label">Chat</span>
+          </a><a href="email.html" class="sidebar-nav-link" data-path="email.html">
+            <i data-lucide="mail" class="lucide-md"></i><span class="link-label">Email</span>
+          </a><a href="notes.html" class="sidebar-nav-link" data-path="notes.html">
+            <i data-lucide="sticky-note" class="lucide-md"></i><span class="link-label">Notes</span>
+          </a><a href="contacts.html" class="sidebar-nav-link" data-path="contacts.html">
+            <i data-lucide="users" class="lucide-md"></i><span class="link-label">Contacts</span>
+          </a><a href="tickets.html" class="sidebar-nav-link" data-path="tickets.html">
+            <i data-lucide="ticket" class="lucide-md"></i><span class="link-label">Tickets</span>
+          </a><a href="invoice-list.html" class="sidebar-nav-link" data-path="invoice-list.html">
+            <i data-lucide="file-text" class="lucide-md"></i><span class="link-label">Invoice</span>
+          </a><a href="user-profile.html" class="sidebar-nav-link" data-path="user-profile.html">
+            <i data-lucide="user-circle" class="lucide-md"></i><span class="link-label">User Profile</span>
+          </a>
+            <a href="#" class="sidebar-nav-link sidebar-parent" data-toggle-submenu data-paths="blog-posts.html,blog-post.html,blog-detail.html">
+              <i data-lucide="book-open" class="lucide-md"></i>
+              <span class="link-label">Blog</span>
+              <i data-lucide="chevron-down" class="lucide-sm toggle-icon"></i>
+            </a>
+            <div class="sidebar-submenu"><a href="blog-posts.html" class="sidebar-nav-link" data-path="blog-posts.html">
+              <i data-lucide="book-open" class="lucide-sm"></i><span class="link-label">Blog Posts</span>
+            </a><a href="blog-post.html" class="sidebar-nav-link" data-path="blog-post.html">
+              <i data-lucide="file-text" class="lucide-sm"></i><span class="link-label">Blog Post</span>
+            </a><a href="blog-detail.html" class="sidebar-nav-link" data-path="blog-detail.html">
+              <i data-lucide="eye" class="lucide-sm"></i><span class="link-label">Blog Detail</span>
+            </a></div>
+            <a href="#" class="sidebar-nav-link sidebar-parent" data-toggle-submenu data-paths="ecommerce-shop.html,ecommerce-detail.html,ecommerce-list.html,ecommerce-checkout.html">
+              <i data-lucide="shopping-bag" class="lucide-md"></i>
+              <span class="link-label">eCommerce</span>
+              <i data-lucide="chevron-down" class="lucide-sm toggle-icon"></i>
+            </a>
+            <div class="sidebar-submenu"><a href="ecommerce-shop.html" class="sidebar-nav-link" data-path="ecommerce-shop.html">
+              <i data-lucide="store" class="lucide-sm"></i><span class="link-label">Shop</span>
+            </a><a href="ecommerce-detail.html" class="sidebar-nav-link" data-path="ecommerce-detail.html">
+              <i data-lucide="package" class="lucide-sm"></i><span class="link-label">Detail</span>
+            </a><a href="ecommerce-list.html" class="sidebar-nav-link" data-path="ecommerce-list.html">
+              <i data-lucide="list" class="lucide-sm"></i><span class="link-label">List</span>
+            </a><a href="ecommerce-checkout.html" class="sidebar-nav-link" data-path="ecommerce-checkout.html">
+              <i data-lucide="credit-card" class="lucide-sm"></i><span class="link-label">Checkout</span>
+            </a></div><div class="sidebar-group-title">UI Elements</div><a href="alert.html" class="sidebar-nav-link" data-path="alert.html">
+            <i data-lucide="alert-circle" class="lucide-md"></i><span class="link-label">Alert</span>
+          </a><a href="accordion.html" class="sidebar-nav-link" data-path="accordion.html">
+            <i data-lucide="layers" class="lucide-md"></i><span class="link-label">Accordion</span>
+          </a><a href="avatar.html" class="sidebar-nav-link" data-path="avatar.html">
+            <i data-lucide="user-circle" class="lucide-md"></i><span class="link-label">Avatar</span>
+          </a><a href="chip.html" class="sidebar-nav-link" data-path="chip.html">
+            <i data-lucide="tag" class="lucide-md"></i><span class="link-label">Chip</span>
+          </a><a href="dialog.html" class="sidebar-nav-link" data-path="dialog.html">
+            <i data-lucide="message-square" class="lucide-md"></i><span class="link-label">Dialog</span>
+          </a><a href="list.html" class="sidebar-nav-link" data-path="list.html">
+            <i data-lucide="align-left" class="lucide-md"></i><span class="link-label">List</span>
+          </a><a href="popover.html" class="sidebar-nav-link" data-path="popover.html">
+            <i data-lucide="message-circle" class="lucide-md"></i><span class="link-label">Popover</span>
+          </a><a href="rating.html" class="sidebar-nav-link" data-path="rating.html">
+            <i data-lucide="star" class="lucide-md"></i><span class="link-label">Rating</span>
+          </a><a href="tabs.html" class="sidebar-nav-link" data-path="tabs.html">
+            <i data-lucide="layout-grid" class="lucide-md"></i><span class="link-label">Tabs</span>
+          </a><a href="tooltip.html" class="sidebar-nav-link" data-path="tooltip.html">
+            <i data-lucide="info" class="lucide-md"></i><span class="link-label">Tooltip</span>
+          </a><a href="typography.html" class="sidebar-nav-link" data-path="typography.html">
+            <i data-lucide="type" class="lucide-md"></i><span class="link-label">Typography</span>
+          </a><a href="buttons.html" class="sidebar-nav-link" data-path="buttons.html">
+            <i data-lucide="zap" class="lucide-md"></i><span class="link-label">Buttons</span>
+          </a><a href="cards.html" class="sidebar-nav-link" data-path="cards.html">
+            <i data-lucide="square-stack" class="lucide-md"></i><span class="link-label">Cards</span>
+          </a><div class="sidebar-group-title">Forms</div><a href="form-elements.html" class="sidebar-nav-link" data-path="form-elements.html">
+            <i data-lucide="square-pen" class="lucide-md"></i><span class="link-label">Form Elements</span>
+          </a><a href="form-layouts.html" class="sidebar-nav-link" data-path="form-layouts.html">
+            <i data-lucide="layout-template" class="lucide-md"></i><span class="link-label">Form Layouts</span>
+          </a><a href="form-horizontal.html" class="sidebar-nav-link" data-path="form-horizontal.html">
+            <i data-lucide="rows" class="lucide-md"></i><span class="link-label">Form Horizontal</span>
+          </a><a href="form-validation.html" class="sidebar-nav-link" data-path="form-validation.html">
+            <i data-lucide="check-circle" class="lucide-md"></i><span class="link-label">Form Validation</span>
+          </a><div class="sidebar-group-title">Tables</div><a href="basic-table.html" class="sidebar-nav-link" data-path="basic-table.html">
+            <i data-lucide="table-2" class="lucide-md"></i><span class="link-label">Basic Table</span>
+          </a><a href="enhanced-table.html" class="sidebar-nav-link" data-path="enhanced-table.html">
+            <i data-lucide="table-properties" class="lucide-md"></i><span class="link-label">Enhanced Table</span>
+          </a><div class="sidebar-group-title">Charts</div><a href="line-chart.html" class="sidebar-nav-link" data-path="line-chart.html">
+            <i data-lucide="line-chart" class="lucide-md"></i><span class="link-label">Line Chart</span>
+          </a><a href="area-chart.html" class="sidebar-nav-link" data-path="area-chart.html">
+            <i data-lucide="area-chart" class="lucide-md"></i><span class="link-label">Area Chart</span>
+          </a><a href="bar-chart.html" class="sidebar-nav-link" data-path="bar-chart.html">
+            <i data-lucide="bar-chart-3" class="lucide-md"></i><span class="link-label">Bar Chart</span>
+          </a><a href="column-chart.html" class="sidebar-nav-link" data-path="column-chart.html">
+            <i data-lucide="bar-chart-2" class="lucide-md"></i><span class="link-label">Column Chart</span>
+          </a><a href="donut-chart.html" class="sidebar-nav-link" data-path="donut-chart.html">
+            <i data-lucide="pie-chart" class="lucide-md"></i><span class="link-label">Donut Chart</span>
+          </a><a href="radialbar-chart.html" class="sidebar-nav-link" data-path="radialbar-chart.html">
+            <i data-lucide="activity" class="lucide-md"></i><span class="link-label">Radialbar Chart</span>
+          </a><div class="sidebar-group-title">Pages</div><a href="account.html" class="sidebar-nav-link" data-path="account.html">
+            <i data-lucide="settings" class="lucide-md"></i><span class="link-label">Account Settings</span>
+          </a><a href="pricing.html" class="sidebar-nav-link" data-path="pricing.html">
+            <i data-lucide="credit-card" class="lucide-md"></i><span class="link-label">Pricing</span>
+          </a><a href="faq.html" class="sidebar-nav-link" data-path="faq.html">
+            <i data-lucide="help-circle" class="lucide-md"></i><span class="link-label">FAQ</span>
+          </a><a href="widgets.html" class="sidebar-nav-link" data-path="widgets.html">
+            <i data-lucide="layout-grid" class="lucide-md"></i><span class="link-label">Widgets</span>
+          </a><a href="apikeys.html" class="sidebar-nav-link" data-path="apikeys.html">
+            <i data-lucide="key" class="lucide-md"></i><span class="link-label">API Keys</span>
+          </a><div class="sidebar-group-title">Icons</div><a href="lucide-icons.html" class="sidebar-nav-link" data-path="lucide-icons.html">
+            <i data-lucide="smile" class="lucide-md"></i><span class="link-label">Lucide Icons</span>
+          </a><a href="custom-icons.html" class="sidebar-nav-link" data-path="custom-icons.html">
+            <i data-lucide="star" class="lucide-md"></i><span class="link-label">Custom Icons</span>
+          </a><div class="sidebar-group-title">Auth</div><a href="login.html" class="sidebar-nav-link" data-path="login.html">
+            <i data-lucide="log-in" class="lucide-md"></i><span class="link-label">Login</span>
+          </a><a href="register.html" class="sidebar-nav-link" data-path="register.html">
+            <i data-lucide="user-plus" class="lucide-md"></i><span class="link-label">Register</span>
+          </a><a href="forgot-password.html" class="sidebar-nav-link" data-path="forgot-password.html">
+            <i data-lucide="key-round" class="lucide-md"></i><span class="link-label">Forgot Password</span>
+          </a><a href="two-steps.html" class="sidebar-nav-link" data-path="two-steps.html">
+            <i data-lucide="shield" class="lucide-md"></i><span class="link-label">Two Step</span>
+          </a><a href="error.html" class="sidebar-nav-link" data-path="error.html">
+            <i data-lucide="alert-circle" class="lucide-md"></i><span class="link-label">Error</span>
+          </a><a href="maintenance.html" class="sidebar-nav-link" data-path="maintenance.html">
+            <i data-lucide="wrench" class="lucide-md"></i><span class="link-label">Maintenance</span>
+          </a></nav>
+        <div class="sidebar-footer">
+          <div class="user-mini">
+            <div class="user-avatar-mini">JD</div>
+            <div class="sidebar-footer-info flex-grow-1 overflow-hidden">
+              <div class="user-mini-name">John Doe</div>
+              <div class="user-mini-email">john@liner.com</div>
+            </div>
+            <i data-lucide="chevron-right" class="lucide-sm sidebar-footer-info"></i>
+          </div>
+        </div>
+      </aside>
+      <div class="sidebar-backdrop"></div>
+<header class="app-header">
+        <button class="header-icon-btn d-lg-none" data-toggle-mobile-sidebar aria-label="Menu"><i data-lucide="menu" class="lucide-md"></i></button>
+        <button class="header-icon-btn d-none d-lg-flex" data-toggle-sidebar aria-label="Toggle"><i data-lucide="menu" class="lucide-md"></i></button>
+        <div class="header-breadcrumb d-none d-md-flex" data-breadcrumb><span class="text-muted">Home</span></div>
+        <div class="flex-grow-1"></div>
+        <div class="search-wrap d-none d-sm-block">
+          <input type="text" class="form-control form-control-sm search-input w-200" placeholder="Search...">
+          <i data-lucide="search" class="lucide-sm search-icon"></i>
+        </div>
+        <button class="header-icon-btn" data-toggle-dark aria-label="Dark"><i data-lucide="moon" class="lucide-md"></i></button>
+        <div class="dropdown">
+          <button class="header-icon-btn" data-bs-toggle="dropdown" aria-label="Notifications">
+            <i data-lucide="bell" class="lucide-md"></i>
+            <span class="notif-dot">3</span>
+          </button>
+          <div class="dropdown-menu dropdown-menu-end notif-menu">
+            <div class="notif-header">
+              <strong>Notifications</strong>
+              <span class="badge badge-soft-primary">3 new</span>
+            </div>
+            <div class="notif-list custom-scrollbar">
+              <div class="notif-item unread">
+                <div class="icon-circle icon-circle-sm icon-circle-bg-success-soft"><i data-lucide="check-circle-2" class="lucide-sm"></i></div>
+                <div class="flex-grow-1">
+                  <div class="notif-title">Order Completed</div>
+                  <div class="notif-msg">Order #1234 has been fulfilled</div>
+                  <div class="notif-time">2 min ago</div>
+                </div>
+              </div>
+              <div class="notif-item unread">
+                <div class="icon-circle icon-circle-sm icon-circle-bg-info-soft"><i data-lucide="info" class="lucide-sm"></i></div>
+                <div class="flex-grow-1">
+                  <div class="notif-title">New User Registered</div>
+                  <div class="notif-msg">Sarah Johnson joined the platform</div>
+                  <div class="notif-time">15 min ago</div>
+                </div>
+              </div>
+              <div class="notif-item">
+                <div class="icon-circle icon-circle-sm icon-circle-bg-warning-soft"><i data-lucide="alert-circle" class="lucide-sm"></i></div>
+                <div class="flex-grow-1">
+                  <div class="notif-title">Low Stock Alert</div>
+                  <div class="notif-msg">Wireless Mouse is running low</div>
+                  <div class="notif-time">1 hr ago</div>
+                </div>
+              </div>
+            </div>
+            <div class="notif-footer">
+              <a href="#" class="text-primary fw-medium notif-footer-link">View all notifications</a>
+            </div>
+          </div>
+        </div>
+        <button class="header-icon-btn" data-toggle-settings aria-label="Settings"><i data-lucide="settings" class="lucide-md"></i></button>
+        <div class="dropdown">
+          <button class="user-button" data-bs-toggle="dropdown">
+            <div class="avatar avatar-sm">JD</div>
+            <div class="d-none d-sm-block text-start">
+              <div class="user-name">John Doe</div>
+              <div class="user-role">Admin</div>
+            </div>
+            <i data-lucide="chevron-down" class="lucide-sm d-none d-sm-inline"></i>
+          </button>
+          <div class="dropdown-menu dropdown-menu-end user-menu">
+            <div class="user-menu-header">
+              <div class="fw-semibold">John Doe</div>
+              <div class="text-muted small">john@liner.com</div>
+            </div>
+            <a class="dropdown-item user-menu-item" href="account.html"><i data-lucide="user" class="lucide-sm"></i> My Profile</a>
+            <a class="dropdown-item user-menu-item" href="pricing.html"><i data-lucide="credit-card" class="lucide-sm"></i> Billing</a>
+            <a class="dropdown-item user-menu-item" href="account.html"><i data-lucide="shield" class="lucide-sm"></i> Security</a>
+            <a class="dropdown-item user-menu-item" href="faq.html"><i data-lucide="help-circle" class="lucide-sm"></i> Help Center</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item user-menu-item text-danger" href="login.html"><i data-lucide="log-out" class="lucide-sm"></i> Sign Out</a>
+          </div>
+        </div>
+      </header>
+<div class="settings-overlay" data-close-settings></div>
+      <div class="settings-panel">
+        <div class="settings-section d-flex align-items-center justify-content-between">
+          <div>
+            <h5 class="mb-0 fw-bold">Theme Settings</h5>
+            <div class="text-muted small mt-1">Customize your dashboard appearance</div>
+          </div>
+          <button class="btn btn-icon btn-icon-sm" data-close-settings aria-label="Close"><i data-lucide="x" class="lucide-md"></i></button>
+        </div>
+        <div class="flex-grow-1 overflow-auto custom-scrollbar">
+          <div class="settings-section">
+            <h6>Color Mode</h6>
+            <div class="d-flex gap-2">
+              <button class="mode-card light active" data-mode="light">
+                <div class="mini-preview">
+                  <div class="mini-header"><div class="mini-bar w-18"></div></div>
+                  <div class="flex-grow-1 mini-bg-light"></div>
+                </div>
+                <div class="d-flex align-items-center justify-content-between"><strong class="text-xs">Light</strong></div>
+              </button>
+              <button class="mode-card dark" data-mode="dark">
+                <div class="mini-preview">
+                  <div class="mini-header"><div class="mini-bar w-18"></div></div>
+                  <div class="flex-grow-1 mini-bg-dark"></div>
+                </div>
+                <div class="d-flex align-items-center justify-content-between"><strong class="text-xs">Dark</strong></div>
+              </button>
+            </div>
+          </div>
+          <div class="settings-section">
+            <h6>Color Preset</h6>
+            <div class="swatch-grid"><button class="color-swatch-btn" data-color="navy">
+        <div class="swatch bg-swatch-navy"></div>
+        <div class="swatch-label">Navy</div>
+      </button><button class="color-swatch-btn" data-color="blue">
+        <div class="swatch bg-swatch-blue"></div>
+        <div class="swatch-label">Blue</div>
+      </button><button class="color-swatch-btn" data-color="green">
+        <div class="swatch bg-swatch-green"></div>
+        <div class="swatch-label">Emerald</div>
+      </button><button class="color-swatch-btn" data-color="orange">
+        <div class="swatch bg-swatch-orange"></div>
+        <div class="swatch-label">Orange</div>
+      </button><button class="color-swatch-btn" data-color="red">
+        <div class="swatch bg-swatch-red"></div>
+        <div class="swatch-label">Rose</div>
+      </button></div>
+          </div>
+          <div class="settings-section">
+            <h6>Layout</h6>
+            <label class="setting-toggle">
+              <span class="toggle-label">Collapsed Sidebar</span>
+              <span class="switch" data-setting="collapsed"></span>
+            </label>
+            <label class="setting-toggle">
+              <span class="toggle-label">Horizontal Menu</span>
+              <span class="switch" data-setting="horizontal"></span>
+            </label>
+          </div>
+          <div class="settings-section">
+            <h6>Regional</h6>
+            <label class="setting-toggle">
+              <span class="toggle-label">RTL Direction</span>
+              <span class="switch" data-setting="rtl"></span>
+            </label>
+          </div>
+        </div>
+        <div class="settings-footer">
+          <button class="btn btn-primary w-100" data-close-settings>Apply &amp; Close</button>
+        </div>
+      </div>
+<main class="app-main space-y-6">
+  <div class="flex items-start justify-between mb-6">
+    <div>
+      <h1 class="text-2xl font-bold text-slate-900 m-0">List</h1>
+      <p class="text-sm text-slate-500 mt-1 mb-0">Flexible and customizable list components</p>
+    </div>
+  </div>
+
+  <div class="grid grid-cols-1 grid-cols-lg-2 gap-6">
+    <!-- Basic List -->
+    <div class="card p-6">
+      <h3 class="font-semibold text-slate-800 mb-4 m-0">Basic List</h3>
+      <ul class="ls-basic divide-y">
+        <li class="py-3 text-sm text-slate-700">Dashboard Overview</li><li class="py-3 text-sm text-slate-700">User Management</li><li class="py-3 text-sm text-slate-700">Analytics Reports</li><li class="py-3 text-sm text-slate-700">System Settings</li><li class="py-3 text-sm text-slate-700">Help Center</li>
+      </ul>
+    </div>
+
+    <!-- List with Icons -->
+    <div class="card p-6">
+      <h3 class="font-semibold text-slate-800 mb-4 m-0">List with Icons</h3>
+      <ul class="ls-basic divide-y">
+        <li class="flex items-center gap-3 py-3">
+          <div class="w-9 h-9 rounded-xl bg-primary-50 flex items-center justify-center shrink-0"><i data-lucide="user" class="lucide-sm text-primary-600"></i></div>
+          <div class="flex-1 min-w-0"><p class="text-sm font-medium text-slate-700 m-0">Profile</p><p class="text-xs text-slate-400 m-0">Manage your account</p></div>
+
+        </li><li class="flex items-center gap-3 py-3">
+          <div class="w-9 h-9 rounded-xl bg-primary-50 flex items-center justify-center shrink-0"><i data-lucide="bell" class="lucide-sm text-primary-600"></i></div>
+          <div class="flex-1 min-w-0"><p class="text-sm font-medium text-slate-700 m-0">Notifications</p><p class="text-xs text-slate-400 m-0">Set notification preferences</p></div>
+          <span class="badge badge-primary">3</span>
+        </li><li class="flex items-center gap-3 py-3">
+          <div class="w-9 h-9 rounded-xl bg-primary-50 flex items-center justify-center shrink-0"><i data-lucide="settings" class="lucide-sm text-primary-600"></i></div>
+          <div class="flex-1 min-w-0"><p class="text-sm font-medium text-slate-700 m-0">Settings</p><p class="text-xs text-slate-400 m-0">App configuration</p></div>
+
+        </li><li class="flex items-center gap-3 py-3">
+          <div class="w-9 h-9 rounded-xl bg-primary-50 flex items-center justify-center shrink-0"><i data-lucide="mail" class="lucide-sm text-primary-600"></i></div>
+          <div class="flex-1 min-w-0"><p class="text-sm font-medium text-slate-700 m-0">Messages</p><p class="text-xs text-slate-400 m-0">Inbox and sent items</p></div>
+          <span class="badge badge-primary">12</span>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Ordered List -->
+    <div class="card p-6">
+      <h3 class="font-semibold text-slate-800 mb-4 m-0">Ordered List</h3>
+      <ol class="space-y-3 ls-reset">
+        <li class="flex items-start gap-3 text-sm">
+          <span class="ls-num">1</span><span class="text-slate-600">Install dependencies with npm install</span>
+        </li><li class="flex items-start gap-3 text-sm">
+          <span class="ls-num">2</span><span class="text-slate-600">Configure environment variables</span>
+        </li><li class="flex items-start gap-3 text-sm">
+          <span class="ls-num">3</span><span class="text-slate-600">Run database migrations</span>
+        </li><li class="flex items-start gap-3 text-sm">
+          <span class="ls-num">4</span><span class="text-slate-600">Start development server</span>
+        </li><li class="flex items-start gap-3 text-sm">
+          <span class="ls-num">5</span><span class="text-slate-600">Open http://localhost:3000</span>
+        </li>
+      </ol>
+    </div>
+
+    <!-- Interactive List -->
+    <div class="card p-6">
+      <h3 class="font-semibold text-slate-800 mb-4 m-0">Interactive List</h3>
+      <ul class="ls-reset">
+        <li><button class="ls-interactive ls-interactive-active" data-ls-interactive><i data-lucide="user" class="lucide-sm"></i><span class="flex-1 text-sm font-medium ls-interactive-label">Profile</span><i data-lucide="chevron-right" class="lucide-xs text-slate-300"></i></button></li><li><button class="ls-interactive" data-ls-interactive><i data-lucide="bell" class="lucide-sm"></i><span class="flex-1 text-sm font-medium ls-interactive-label">Notifications</span><i data-lucide="chevron-right" class="lucide-xs text-slate-300"></i></button></li><li><button class="ls-interactive" data-ls-interactive><i data-lucide="settings" class="lucide-sm"></i><span class="flex-1 text-sm font-medium ls-interactive-label">Settings</span><i data-lucide="chevron-right" class="lucide-xs text-slate-300"></i></button></li><li><button class="ls-interactive" data-ls-interactive><i data-lucide="mail" class="lucide-sm"></i><span class="flex-1 text-sm font-medium ls-interactive-label">Messages</span><i data-lucide="chevron-right" class="lucide-xs text-slate-300"></i></button></li>
+      </ul>
+    </div>
+
+    <!-- Checklist -->
+    <div class="card p-6">
+      <h3 class="font-semibold text-slate-800 mb-4 m-0">Checklist</h3>
+      <ul class="space-y-2 ls-reset">
+        <li><button class="ls-check" data-ls-check>
+          <div class="ls-check-box"><i data-lucide="check" class="lucide-xxs text-white ls-check-icon"></i></div>
+          <span class="text-sm text-slate-700 ls-check-label">Set up project structure</span>
+        </button></li><li><button class="ls-check" data-ls-check>
+          <div class="ls-check-box"><i data-lucide="check" class="lucide-xxs text-white ls-check-icon"></i></div>
+          <span class="text-sm text-slate-700 ls-check-label">Create design system</span>
+        </button></li><li><button class="ls-check" data-ls-check>
+          <div class="ls-check-box"><i data-lucide="check" class="lucide-xxs text-white ls-check-icon"></i></div>
+          <span class="text-sm text-slate-700 ls-check-label">Build core components</span>
+        </button></li><li><button class="ls-check" data-ls-check>
+          <div class="ls-check-box"><i data-lucide="check" class="lucide-xxs text-white ls-check-icon"></i></div>
+          <span class="text-sm text-slate-700 ls-check-label">Write unit tests</span>
+        </button></li><li><button class="ls-check" data-ls-check>
+          <div class="ls-check-box"><i data-lucide="check" class="lucide-xxs text-white ls-check-icon"></i></div>
+          <span class="text-sm text-slate-700 ls-check-label">Deploy to staging</span>
+        </button></li><li><button class="ls-check" data-ls-check>
+          <div class="ls-check-box"><i data-lucide="check" class="lucide-xxs text-white ls-check-icon"></i></div>
+          <span class="text-sm text-slate-700 ls-check-label">Run performance audit</span>
+        </button></li>
+      </ul>
+    </div>
+
+    <!-- Nested List -->
+    <div class="card p-6">
+      <h3 class="font-semibold text-slate-800 mb-4 m-0">Nested List</h3>
+      <ul class="space-y-2 text-sm ls-reset">
+        <li>
+          <div class="flex items-center gap-2 font-semibold text-slate-700 mb-1"><div class="w-2 h-2 rounded-full bg-primary-500"></div>Frontend</div>
+          <ul class="ls-nested">
+            <li class="text-slate-500 flex items-center gap-2"><div class="w-1-5 h-1-5 rounded-full bg-slate-300"></div>React</li><li class="text-slate-500 flex items-center gap-2"><div class="w-1-5 h-1-5 rounded-full bg-slate-300"></div>TypeScript</li><li class="text-slate-500 flex items-center gap-2"><div class="w-1-5 h-1-5 rounded-full bg-slate-300"></div>Tailwind CSS</li>
+          </ul>
+        </li><li>
+          <div class="flex items-center gap-2 font-semibold text-slate-700 mb-1"><div class="w-2 h-2 rounded-full bg-primary-500"></div>Backend</div>
+          <ul class="ls-nested">
+            <li class="text-slate-500 flex items-center gap-2"><div class="w-1-5 h-1-5 rounded-full bg-slate-300"></div>Node.js</li><li class="text-slate-500 flex items-center gap-2"><div class="w-1-5 h-1-5 rounded-full bg-slate-300"></div>Express</li><li class="text-slate-500 flex items-center gap-2"><div class="w-1-5 h-1-5 rounded-full bg-slate-300"></div>PostgreSQL</li>
+          </ul>
+        </li><li>
+          <div class="flex items-center gap-2 font-semibold text-slate-700 mb-1"><div class="w-2 h-2 rounded-full bg-primary-500"></div>DevOps</div>
+          <ul class="ls-nested">
+            <li class="text-slate-500 flex items-center gap-2"><div class="w-1-5 h-1-5 rounded-full bg-slate-300"></div>Docker</li><li class="text-slate-500 flex items-center gap-2"><div class="w-1-5 h-1-5 rounded-full bg-slate-300"></div>Kubernetes</li><li class="text-slate-500 flex items-center gap-2"><div class="w-1-5 h-1-5 rounded-full bg-slate-300"></div>CI/CD</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Avatar List (full width) -->
+    <div class="card p-6 lg-col-span-2">
+      <h3 class="font-semibold text-slate-800 mb-4 m-0">List with Avatars</h3>
+      <ul class="ls-basic divide-y">
+        <li class="flex items-center gap-4 py-3">
+            <div class="relative shrink-0"><img src="img/avatars/avatar-woman-alice.jpg" alt="Alice Johnson" class="w-10 h-10 rounded-full object-cover"><div class="ls-avatar-status bg-emerald-500"></div></div>
+            <div class="flex-1 min-w-0"><p class="text-sm font-semibold text-slate-800 m-0">Alice Johnson</p><p class="text-xs text-slate-500 m-0">Frontend Developer</p></div>
+            <div class="flex items-center gap-0-5"><svg width="12" height="12" viewBox="0 0 24 24" fill="#fbbf24" stroke="#fbbf24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="12" height="12" viewBox="0 0 24 24" fill="#fbbf24" stroke="#fbbf24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="12" height="12" viewBox="0 0 24 24" fill="#fbbf24" stroke="#fbbf24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="12" height="12" viewBox="0 0 24 24" fill="#fbbf24" stroke="#fbbf24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="12" height="12" viewBox="0 0 24 24" fill="#fbbf24" stroke="#fbbf24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+            <button class="btn-outline btn-sm hidden-sm-flex"><i data-lucide="external-link" class="lucide-xs"></i></button>
+          </li><li class="flex items-center gap-4 py-3">
+            <div class="relative shrink-0"><img src="img/avatars/avatar-man-bob.jpg" alt="Bob Smith" class="w-10 h-10 rounded-full object-cover"><div class="ls-avatar-status bg-amber-500"></div></div>
+            <div class="flex-1 min-w-0"><p class="text-sm font-semibold text-slate-800 m-0">Bob Smith</p><p class="text-xs text-slate-500 m-0">Backend Developer</p></div>
+            <div class="flex items-center gap-0-5"><svg width="12" height="12" viewBox="0 0 24 24" fill="#fbbf24" stroke="#fbbf24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="12" height="12" viewBox="0 0 24 24" fill="#fbbf24" stroke="#fbbf24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="12" height="12" viewBox="0 0 24 24" fill="#fbbf24" stroke="#fbbf24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="12" height="12" viewBox="0 0 24 24" fill="#fbbf24" stroke="#fbbf24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+            <button class="btn-outline btn-sm hidden-sm-flex"><i data-lucide="external-link" class="lucide-xs"></i></button>
+          </li><li class="flex items-center gap-4 py-3">
+            <div class="relative shrink-0"><img src="img/avatars/avatar-woman-carol.jpg" alt="Carol White" class="w-10 h-10 rounded-full object-cover"><div class="ls-avatar-status bg-slate-400"></div></div>
+            <div class="flex-1 min-w-0"><p class="text-sm font-semibold text-slate-800 m-0">Carol White</p><p class="text-xs text-slate-500 m-0">UX Designer</p></div>
+            <div class="flex items-center gap-0-5"><svg width="12" height="12" viewBox="0 0 24 24" fill="#fbbf24" stroke="#fbbf24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="12" height="12" viewBox="0 0 24 24" fill="#fbbf24" stroke="#fbbf24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="12" height="12" viewBox="0 0 24 24" fill="#fbbf24" stroke="#fbbf24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="12" height="12" viewBox="0 0 24 24" fill="#fbbf24" stroke="#fbbf24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="12" height="12" viewBox="0 0 24 24" fill="#fbbf24" stroke="#fbbf24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+            <button class="btn-outline btn-sm hidden-sm-flex"><i data-lucide="external-link" class="lucide-xs"></i></button>
+          </li><li class="flex items-center gap-4 py-3">
+            <div class="relative shrink-0"><img src="img/avatars/avatar-man-david.jpg" alt="David Lee" class="w-10 h-10 rounded-full object-cover"><div class="ls-avatar-status bg-emerald-500"></div></div>
+            <div class="flex-1 min-w-0"><p class="text-sm font-semibold text-slate-800 m-0">David Lee</p><p class="text-xs text-slate-500 m-0">DevOps Engineer</p></div>
+            <div class="flex items-center gap-0-5"><svg width="12" height="12" viewBox="0 0 24 24" fill="#fbbf24" stroke="#fbbf24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="12" height="12" viewBox="0 0 24 24" fill="#fbbf24" stroke="#fbbf24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="12" height="12" viewBox="0 0 24 24" fill="#fbbf24" stroke="#fbbf24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="12" height="12" viewBox="0 0 24 24" fill="#fbbf24" stroke="#fbbf24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+            <button class="btn-outline btn-sm hidden-sm-flex"><i data-lucide="external-link" class="lucide-xs"></i></button>
+          </li>
+      </ul>
+    </div>
+
+    <!-- List with Avatars & Actions -->
+    <div class="card p-6">
+      <h3 class="font-semibold text-slate-800 mb-4 m-0">List with Avatars &amp; Actions</h3>
+      <p class="text-sm text-slate-500 mb-4">Rich user list with detailed info and action buttons</p>
+      <ul class="space-y-3 ls-reset">
+        <li class="ls-rich">
+            <div class="relative shrink-0"><img src="img/avatars/avatar-woman-grace.jpg" alt="Jessica Park" class="w-11 h-11 rounded-full object-cover"><div class="ls-rich-status bg-emerald-500"></div></div>
+            <div class="flex-1 min-w-0">
+              <p class="text-sm font-semibold text-slate-800 m-0">Jessica Park</p>
+              <div class="flex items-center gap-3 mt-0-5">
+                <span class="text-xs text-slate-500 flex items-center gap-1"><i data-lucide="briefcase" class="lucide-xxs"></i>Senior Designer</span>
+                <span class="text-xs text-slate-400 flex items-center gap-1"><i data-lucide="map-pin" class="lucide-xxs"></i>San Francisco</span>
+              </div>
+            </div>
+            <div class="hidden-sm-flex flex-col items-end gap-0-5">
+              <span class="text-xs font-medium text-primary-600">14 tasks</span>
+              <span class="text-xs text-slate-400 flex items-center gap-1"><i data-lucide="calendar" class="lucide-xxs"></i>Jan 2023</span>
+            </div>
+            <button class="ls-more-btn"><i data-lucide="more-vertical" class="lucide-xs text-slate-400"></i></button>
+          </li><li class="ls-rich">
+            <div class="relative shrink-0"><img src="img/avatars/avatar-man-mike.jpg" alt="Ryan Cooper" class="w-11 h-11 rounded-full object-cover"><div class="ls-rich-status bg-emerald-500"></div></div>
+            <div class="flex-1 min-w-0">
+              <p class="text-sm font-semibold text-slate-800 m-0">Ryan Cooper</p>
+              <div class="flex items-center gap-3 mt-0-5">
+                <span class="text-xs text-slate-500 flex items-center gap-1"><i data-lucide="briefcase" class="lucide-xxs"></i>Full Stack Dev</span>
+                <span class="text-xs text-slate-400 flex items-center gap-1"><i data-lucide="map-pin" class="lucide-xxs"></i>New York</span>
+              </div>
+            </div>
+            <div class="hidden-sm-flex flex-col items-end gap-0-5">
+              <span class="text-xs font-medium text-primary-600">23 tasks</span>
+              <span class="text-xs text-slate-400 flex items-center gap-1"><i data-lucide="calendar" class="lucide-xxs"></i>Mar 2022</span>
+            </div>
+            <button class="ls-more-btn"><i data-lucide="more-vertical" class="lucide-xs text-slate-400"></i></button>
+          </li><li class="ls-rich">
+            <div class="relative shrink-0"><img src="img/avatars/avatar-woman-jessica.jpg" alt="Maya Singh" class="w-11 h-11 rounded-full object-cover"><div class="ls-rich-status bg-amber-500"></div></div>
+            <div class="flex-1 min-w-0">
+              <p class="text-sm font-semibold text-slate-800 m-0">Maya Singh</p>
+              <div class="flex items-center gap-3 mt-0-5">
+                <span class="text-xs text-slate-500 flex items-center gap-1"><i data-lucide="briefcase" class="lucide-xxs"></i>Project Manager</span>
+                <span class="text-xs text-slate-400 flex items-center gap-1"><i data-lucide="map-pin" class="lucide-xxs"></i>London</span>
+              </div>
+            </div>
+            <div class="hidden-sm-flex flex-col items-end gap-0-5">
+              <span class="text-xs font-medium text-primary-600">8 tasks</span>
+              <span class="text-xs text-slate-400 flex items-center gap-1"><i data-lucide="calendar" class="lucide-xxs"></i>Jul 2023</span>
+            </div>
+            <button class="ls-more-btn"><i data-lucide="more-vertical" class="lucide-xs text-slate-400"></i></button>
+          </li><li class="ls-rich">
+            <div class="relative shrink-0"><img src="img/avatars/avatar-man-henry.jpg" alt="Lucas Chen" class="w-11 h-11 rounded-full object-cover"><div class="ls-rich-status bg-red-500"></div></div>
+            <div class="flex-1 min-w-0">
+              <p class="text-sm font-semibold text-slate-800 m-0">Lucas Chen</p>
+              <div class="flex items-center gap-3 mt-0-5">
+                <span class="text-xs text-slate-500 flex items-center gap-1"><i data-lucide="briefcase" class="lucide-xxs"></i>Data Engineer</span>
+                <span class="text-xs text-slate-400 flex items-center gap-1"><i data-lucide="map-pin" class="lucide-xxs"></i>Toronto</span>
+              </div>
+            </div>
+            <div class="hidden-sm-flex flex-col items-end gap-0-5">
+              <span class="text-xs font-medium text-primary-600">19 tasks</span>
+              <span class="text-xs text-slate-400 flex items-center gap-1"><i data-lucide="calendar" class="lucide-xxs"></i>Nov 2022</span>
+            </div>
+            <button class="ls-more-btn"><i data-lucide="more-vertical" class="lucide-xs text-slate-400"></i></button>
+          </li><li class="ls-rich">
+            <div class="relative shrink-0"><img src="img/avatars/avatar-woman-sarah-kim.jpg" alt="Sophie Martin" class="w-11 h-11 rounded-full object-cover"><div class="ls-rich-status bg-slate-400"></div></div>
+            <div class="flex-1 min-w-0">
+              <p class="text-sm font-semibold text-slate-800 m-0">Sophie Martin</p>
+              <div class="flex items-center gap-3 mt-0-5">
+                <span class="text-xs text-slate-500 flex items-center gap-1"><i data-lucide="briefcase" class="lucide-xxs"></i>QA Engineer</span>
+                <span class="text-xs text-slate-400 flex items-center gap-1"><i data-lucide="map-pin" class="lucide-xxs"></i>Berlin</span>
+              </div>
+            </div>
+            <div class="hidden-sm-flex flex-col items-end gap-0-5">
+              <span class="text-xs font-medium text-primary-600">6 tasks</span>
+              <span class="text-xs text-slate-400 flex items-center gap-1"><i data-lucide="calendar" class="lucide-xxs"></i>Sep 2023</span>
+            </div>
+            <button class="ls-more-btn"><i data-lucide="more-vertical" class="lucide-xs text-slate-400"></i></button>
+          </li>
+      </ul>
+    </div>
+
+    <!-- Horizontal List -->
+    <div class="card p-6">
+      <h3 class="font-semibold text-slate-800 mb-4 m-0">Horizontal List</h3>
+      <p class="text-sm text-slate-500 mb-4">Scrollable horizontal list for compact display</p>
+      <div class="ls-horiz">
+        <div class="ls-horiz-tile">
+          <div class="ls-horiz-icon bg-primary-500"><span class="text-lg">🎨</span></div>
+          <p class="text-xs font-semibold text-slate-700 truncate m-0">Design</p>
+          <p class="text-xs text-slate-400 mt-0-5 m-0">24 items</p>
+        </div><div class="ls-horiz-tile">
+          <div class="ls-horiz-icon bg-sky-500"><span class="text-lg">💻</span></div>
+          <p class="text-xs font-semibold text-slate-700 truncate m-0">Development</p>
+          <p class="text-xs text-slate-400 mt-0-5 m-0">42 items</p>
+        </div><div class="ls-horiz-tile">
+          <div class="ls-horiz-icon bg-emerald-500"><span class="text-lg">📊</span></div>
+          <p class="text-xs font-semibold text-slate-700 truncate m-0">Marketing</p>
+          <p class="text-xs text-slate-400 mt-0-5 m-0">18 items</p>
+        </div><div class="ls-horiz-tile">
+          <div class="ls-horiz-icon bg-amber-500"><span class="text-lg">📈</span></div>
+          <p class="text-xs font-semibold text-slate-700 truncate m-0">Analytics</p>
+          <p class="text-xs text-slate-400 mt-0-5 m-0">31 items</p>
+        </div><div class="ls-horiz-tile">
+          <div class="ls-horiz-icon bg-rose-500"><span class="text-lg">🎧</span></div>
+          <p class="text-xs font-semibold text-slate-700 truncate m-0">Support</p>
+          <p class="text-xs text-slate-400 mt-0-5 m-0">15 items</p>
+        </div><div class="ls-horiz-tile">
+          <div class="ls-horiz-icon bg-primary-500"><span class="text-lg">💰</span></div>
+          <p class="text-xs font-semibold text-slate-700 truncate m-0">Finance</p>
+          <p class="text-xs text-slate-400 mt-0-5 m-0">9 items</p>
+        </div>
+      </div>
+      <div class="mt-4 pt-4 border-t">
+        <p class="text-xs font-semibold text-slate-600 uppercase tracking-wider mb-3 m-0">Recent Activity</p>
+        <div class="flex gap-2 overflow-x-auto pb-1">
+          <div class="ls-activity-chip bg-violet-100 text-violet-700">
+            <p class="m-0">Updated landing page design</p>
+            <p class="opacity-60 mt-0-5 m-0">2m ago</p>
+          </div><div class="ls-activity-chip bg-sky-100 text-sky-700">
+            <p class="m-0">Deployed v2.1.0 to staging</p>
+            <p class="opacity-60 mt-0-5 m-0">15m ago</p>
+          </div><div class="ls-activity-chip bg-emerald-100 text-emerald-700">
+            <p class="m-0">Merged PR #142</p>
+            <p class="opacity-60 mt-0-5 m-0">1h ago</p>
+          </div><div class="ls-activity-chip bg-amber-100 text-amber-700">
+            <p class="m-0">Fixed checkout bug</p>
+            <p class="opacity-60 mt-0-5 m-0">3h ago</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lucide@latest/dist/umd/lucide.min.js"></script>
+</body>
+</html>

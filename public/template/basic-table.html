@@ -1,0 +1,1064 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/svg+xml" href="img/logo.svg"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Basic Table | Liner Admin</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/css/theme.css" rel="stylesheet">
+  <script src="assets/js/app.js"></script>
+</head>
+<body>
+
+<aside class="app-sidebar" data-sidebar>
+        <a href="dashboard.html" class="sidebar-brand text-decoration-none">
+          <img src="img/logo.svg" alt="Liner" class="brand-logo-lg-img">
+          <div class="brand-text">
+            <div class="brand-name">Liner</div>
+            <div class="brand-sub">Admin</div>
+          </div>
+        </a>
+        <nav class="sidebar-nav custom-scrollbar"><div class="sidebar-group-title">Dashboards</div><a href="dashboard.html" class="sidebar-nav-link" data-path="dashboard.html">
+            <i data-lucide="layout-dashboard" class="lucide-md"></i><span class="link-label">Modern</span>
+          </a><a href="analytics.html" class="sidebar-nav-link" data-path="analytics.html">
+            <i data-lucide="activity" class="lucide-md"></i><span class="link-label">Analytics</span>
+          </a><a href="ecommerce.html" class="sidebar-nav-link" data-path="ecommerce.html">
+            <i data-lucide="shopping-cart" class="lucide-md"></i><span class="link-label">eCommerce</span>
+          </a><a href="music.html" class="sidebar-nav-link" data-path="music.html">
+            <i data-lucide="music" class="lucide-md"></i><span class="link-label">Music</span>
+          </a><a href="general.html" class="sidebar-nav-link" data-path="general.html">
+            <i data-lucide="globe-2" class="lucide-md"></i><span class="link-label">General</span>
+          </a><div class="sidebar-group-title">Apps</div><a href="calendar.html" class="sidebar-nav-link" data-path="calendar.html">
+            <i data-lucide="calendar" class="lucide-md"></i><span class="link-label">Calendar</span>
+          </a><a href="kanban.html" class="sidebar-nav-link" data-path="kanban.html">
+            <i data-lucide="kanban-square" class="lucide-md"></i><span class="link-label">Kanban</span>
+          </a><a href="chat.html" class="sidebar-nav-link" data-path="chat.html">
+            <i data-lucide="message-square" class="lucide-md"></i><span class="link-label">Chat</span>
+          </a><a href="email.html" class="sidebar-nav-link" data-path="email.html">
+            <i data-lucide="mail" class="lucide-md"></i><span class="link-label">Email</span>
+          </a><a href="notes.html" class="sidebar-nav-link" data-path="notes.html">
+            <i data-lucide="sticky-note" class="lucide-md"></i><span class="link-label">Notes</span>
+          </a><a href="contacts.html" class="sidebar-nav-link" data-path="contacts.html">
+            <i data-lucide="users" class="lucide-md"></i><span class="link-label">Contacts</span>
+          </a><a href="tickets.html" class="sidebar-nav-link" data-path="tickets.html">
+            <i data-lucide="ticket" class="lucide-md"></i><span class="link-label">Tickets</span>
+          </a><a href="invoice-list.html" class="sidebar-nav-link" data-path="invoice-list.html">
+            <i data-lucide="file-text" class="lucide-md"></i><span class="link-label">Invoice</span>
+          </a><a href="user-profile.html" class="sidebar-nav-link" data-path="user-profile.html">
+            <i data-lucide="user-circle" class="lucide-md"></i><span class="link-label">User Profile</span>
+          </a>
+            <a href="#" class="sidebar-nav-link sidebar-parent" data-toggle-submenu data-paths="blog-posts.html,blog-post.html,blog-detail.html">
+              <i data-lucide="book-open" class="lucide-md"></i>
+              <span class="link-label">Blog</span>
+              <i data-lucide="chevron-down" class="lucide-sm toggle-icon"></i>
+            </a>
+            <div class="sidebar-submenu"><a href="blog-posts.html" class="sidebar-nav-link" data-path="blog-posts.html">
+              <i data-lucide="book-open" class="lucide-sm"></i><span class="link-label">Blog Posts</span>
+            </a><a href="blog-post.html" class="sidebar-nav-link" data-path="blog-post.html">
+              <i data-lucide="file-text" class="lucide-sm"></i><span class="link-label">Blog Post</span>
+            </a><a href="blog-detail.html" class="sidebar-nav-link" data-path="blog-detail.html">
+              <i data-lucide="eye" class="lucide-sm"></i><span class="link-label">Blog Detail</span>
+            </a></div>
+            <a href="#" class="sidebar-nav-link sidebar-parent" data-toggle-submenu data-paths="ecommerce-shop.html,ecommerce-detail.html,ecommerce-list.html,ecommerce-checkout.html">
+              <i data-lucide="shopping-bag" class="lucide-md"></i>
+              <span class="link-label">eCommerce</span>
+              <i data-lucide="chevron-down" class="lucide-sm toggle-icon"></i>
+            </a>
+            <div class="sidebar-submenu"><a href="ecommerce-shop.html" class="sidebar-nav-link" data-path="ecommerce-shop.html">
+              <i data-lucide="store" class="lucide-sm"></i><span class="link-label">Shop</span>
+            </a><a href="ecommerce-detail.html" class="sidebar-nav-link" data-path="ecommerce-detail.html">
+              <i data-lucide="package" class="lucide-sm"></i><span class="link-label">Detail</span>
+            </a><a href="ecommerce-list.html" class="sidebar-nav-link" data-path="ecommerce-list.html">
+              <i data-lucide="list" class="lucide-sm"></i><span class="link-label">List</span>
+            </a><a href="ecommerce-checkout.html" class="sidebar-nav-link" data-path="ecommerce-checkout.html">
+              <i data-lucide="credit-card" class="lucide-sm"></i><span class="link-label">Checkout</span>
+            </a></div><div class="sidebar-group-title">UI Elements</div><a href="alert.html" class="sidebar-nav-link" data-path="alert.html">
+            <i data-lucide="alert-circle" class="lucide-md"></i><span class="link-label">Alert</span>
+          </a><a href="accordion.html" class="sidebar-nav-link" data-path="accordion.html">
+            <i data-lucide="layers" class="lucide-md"></i><span class="link-label">Accordion</span>
+          </a><a href="avatar.html" class="sidebar-nav-link" data-path="avatar.html">
+            <i data-lucide="user-circle" class="lucide-md"></i><span class="link-label">Avatar</span>
+          </a><a href="chip.html" class="sidebar-nav-link" data-path="chip.html">
+            <i data-lucide="tag" class="lucide-md"></i><span class="link-label">Chip</span>
+          </a><a href="dialog.html" class="sidebar-nav-link" data-path="dialog.html">
+            <i data-lucide="message-square" class="lucide-md"></i><span class="link-label">Dialog</span>
+          </a><a href="list.html" class="sidebar-nav-link" data-path="list.html">
+            <i data-lucide="align-left" class="lucide-md"></i><span class="link-label">List</span>
+          </a><a href="popover.html" class="sidebar-nav-link" data-path="popover.html">
+            <i data-lucide="message-circle" class="lucide-md"></i><span class="link-label">Popover</span>
+          </a><a href="rating.html" class="sidebar-nav-link" data-path="rating.html">
+            <i data-lucide="star" class="lucide-md"></i><span class="link-label">Rating</span>
+          </a><a href="tabs.html" class="sidebar-nav-link" data-path="tabs.html">
+            <i data-lucide="layout-grid" class="lucide-md"></i><span class="link-label">Tabs</span>
+          </a><a href="tooltip.html" class="sidebar-nav-link" data-path="tooltip.html">
+            <i data-lucide="info" class="lucide-md"></i><span class="link-label">Tooltip</span>
+          </a><a href="typography.html" class="sidebar-nav-link" data-path="typography.html">
+            <i data-lucide="type" class="lucide-md"></i><span class="link-label">Typography</span>
+          </a><a href="buttons.html" class="sidebar-nav-link" data-path="buttons.html">
+            <i data-lucide="zap" class="lucide-md"></i><span class="link-label">Buttons</span>
+          </a><a href="cards.html" class="sidebar-nav-link" data-path="cards.html">
+            <i data-lucide="square-stack" class="lucide-md"></i><span class="link-label">Cards</span>
+          </a><div class="sidebar-group-title">Forms</div><a href="form-elements.html" class="sidebar-nav-link" data-path="form-elements.html">
+            <i data-lucide="square-pen" class="lucide-md"></i><span class="link-label">Form Elements</span>
+          </a><a href="form-layouts.html" class="sidebar-nav-link" data-path="form-layouts.html">
+            <i data-lucide="layout-template" class="lucide-md"></i><span class="link-label">Form Layouts</span>
+          </a><a href="form-horizontal.html" class="sidebar-nav-link" data-path="form-horizontal.html">
+            <i data-lucide="rows" class="lucide-md"></i><span class="link-label">Form Horizontal</span>
+          </a><a href="form-validation.html" class="sidebar-nav-link" data-path="form-validation.html">
+            <i data-lucide="check-circle" class="lucide-md"></i><span class="link-label">Form Validation</span>
+          </a><div class="sidebar-group-title">Tables</div><a href="basic-table.html" class="sidebar-nav-link" data-path="basic-table.html">
+            <i data-lucide="table-2" class="lucide-md"></i><span class="link-label">Basic Table</span>
+          </a><a href="enhanced-table.html" class="sidebar-nav-link" data-path="enhanced-table.html">
+            <i data-lucide="table-properties" class="lucide-md"></i><span class="link-label">Enhanced Table</span>
+          </a><div class="sidebar-group-title">Charts</div><a href="line-chart.html" class="sidebar-nav-link" data-path="line-chart.html">
+            <i data-lucide="line-chart" class="lucide-md"></i><span class="link-label">Line Chart</span>
+          </a><a href="area-chart.html" class="sidebar-nav-link" data-path="area-chart.html">
+            <i data-lucide="area-chart" class="lucide-md"></i><span class="link-label">Area Chart</span>
+          </a><a href="bar-chart.html" class="sidebar-nav-link" data-path="bar-chart.html">
+            <i data-lucide="bar-chart-3" class="lucide-md"></i><span class="link-label">Bar Chart</span>
+          </a><a href="column-chart.html" class="sidebar-nav-link" data-path="column-chart.html">
+            <i data-lucide="bar-chart-2" class="lucide-md"></i><span class="link-label">Column Chart</span>
+          </a><a href="donut-chart.html" class="sidebar-nav-link" data-path="donut-chart.html">
+            <i data-lucide="pie-chart" class="lucide-md"></i><span class="link-label">Donut Chart</span>
+          </a><a href="radialbar-chart.html" class="sidebar-nav-link" data-path="radialbar-chart.html">
+            <i data-lucide="activity" class="lucide-md"></i><span class="link-label">Radialbar Chart</span>
+          </a><div class="sidebar-group-title">Pages</div><a href="account.html" class="sidebar-nav-link" data-path="account.html">
+            <i data-lucide="settings" class="lucide-md"></i><span class="link-label">Account Settings</span>
+          </a><a href="pricing.html" class="sidebar-nav-link" data-path="pricing.html">
+            <i data-lucide="credit-card" class="lucide-md"></i><span class="link-label">Pricing</span>
+          </a><a href="faq.html" class="sidebar-nav-link" data-path="faq.html">
+            <i data-lucide="help-circle" class="lucide-md"></i><span class="link-label">FAQ</span>
+          </a><a href="widgets.html" class="sidebar-nav-link" data-path="widgets.html">
+            <i data-lucide="layout-grid" class="lucide-md"></i><span class="link-label">Widgets</span>
+          </a><a href="apikeys.html" class="sidebar-nav-link" data-path="apikeys.html">
+            <i data-lucide="key" class="lucide-md"></i><span class="link-label">API Keys</span>
+          </a><div class="sidebar-group-title">Icons</div><a href="lucide-icons.html" class="sidebar-nav-link" data-path="lucide-icons.html">
+            <i data-lucide="smile" class="lucide-md"></i><span class="link-label">Lucide Icons</span>
+          </a><a href="custom-icons.html" class="sidebar-nav-link" data-path="custom-icons.html">
+            <i data-lucide="star" class="lucide-md"></i><span class="link-label">Custom Icons</span>
+          </a><div class="sidebar-group-title">Auth</div><a href="login.html" class="sidebar-nav-link" data-path="login.html">
+            <i data-lucide="log-in" class="lucide-md"></i><span class="link-label">Login</span>
+          </a><a href="register.html" class="sidebar-nav-link" data-path="register.html">
+            <i data-lucide="user-plus" class="lucide-md"></i><span class="link-label">Register</span>
+          </a><a href="forgot-password.html" class="sidebar-nav-link" data-path="forgot-password.html">
+            <i data-lucide="key-round" class="lucide-md"></i><span class="link-label">Forgot Password</span>
+          </a><a href="two-steps.html" class="sidebar-nav-link" data-path="two-steps.html">
+            <i data-lucide="shield" class="lucide-md"></i><span class="link-label">Two Step</span>
+          </a><a href="error.html" class="sidebar-nav-link" data-path="error.html">
+            <i data-lucide="alert-circle" class="lucide-md"></i><span class="link-label">Error</span>
+          </a><a href="maintenance.html" class="sidebar-nav-link" data-path="maintenance.html">
+            <i data-lucide="wrench" class="lucide-md"></i><span class="link-label">Maintenance</span>
+          </a></nav>
+        <div class="sidebar-footer">
+          <div class="user-mini">
+            <div class="user-avatar-mini">JD</div>
+            <div class="sidebar-footer-info flex-grow-1 overflow-hidden">
+              <div class="user-mini-name">John Doe</div>
+              <div class="user-mini-email">john@liner.com</div>
+            </div>
+            <i data-lucide="chevron-right" class="lucide-sm sidebar-footer-info"></i>
+          </div>
+        </div>
+      </aside>
+      <div class="sidebar-backdrop"></div>
+<header class="app-header">
+        <button class="header-icon-btn d-lg-none" data-toggle-mobile-sidebar aria-label="Menu"><i data-lucide="menu" class="lucide-md"></i></button>
+        <button class="header-icon-btn d-none d-lg-flex" data-toggle-sidebar aria-label="Toggle"><i data-lucide="menu" class="lucide-md"></i></button>
+        <div class="header-breadcrumb d-none d-md-flex" data-breadcrumb><span class="text-muted">Home</span></div>
+        <div class="flex-grow-1"></div>
+        <div class="search-wrap d-none d-sm-block">
+          <input type="text" class="form-control form-control-sm search-input w-200" placeholder="Search...">
+          <i data-lucide="search" class="lucide-sm search-icon"></i>
+        </div>
+        <button class="header-icon-btn" data-toggle-dark aria-label="Dark"><i data-lucide="moon" class="lucide-md"></i></button>
+        <div class="dropdown">
+          <button class="header-icon-btn" data-bs-toggle="dropdown" aria-label="Notifications">
+            <i data-lucide="bell" class="lucide-md"></i>
+            <span class="notif-dot">3</span>
+          </button>
+          <div class="dropdown-menu dropdown-menu-end notif-menu">
+            <div class="notif-header">
+              <strong>Notifications</strong>
+              <span class="badge badge-soft-primary">3 new</span>
+            </div>
+            <div class="notif-list custom-scrollbar">
+              <div class="notif-item unread">
+                <div class="icon-circle icon-circle-sm icon-circle-bg-success-soft"><i data-lucide="check-circle-2" class="lucide-sm"></i></div>
+                <div class="flex-grow-1">
+                  <div class="notif-title">Order Completed</div>
+                  <div class="notif-msg">Order #1234 has been fulfilled</div>
+                  <div class="notif-time">2 min ago</div>
+                </div>
+              </div>
+              <div class="notif-item unread">
+                <div class="icon-circle icon-circle-sm icon-circle-bg-info-soft"><i data-lucide="info" class="lucide-sm"></i></div>
+                <div class="flex-grow-1">
+                  <div class="notif-title">New User Registered</div>
+                  <div class="notif-msg">Sarah Johnson joined the platform</div>
+                  <div class="notif-time">15 min ago</div>
+                </div>
+              </div>
+              <div class="notif-item">
+                <div class="icon-circle icon-circle-sm icon-circle-bg-warning-soft"><i data-lucide="alert-circle" class="lucide-sm"></i></div>
+                <div class="flex-grow-1">
+                  <div class="notif-title">Low Stock Alert</div>
+                  <div class="notif-msg">Wireless Mouse is running low</div>
+                  <div class="notif-time">1 hr ago</div>
+                </div>
+              </div>
+            </div>
+            <div class="notif-footer">
+              <a href="#" class="text-primary fw-medium notif-footer-link">View all notifications</a>
+            </div>
+          </div>
+        </div>
+        <button class="header-icon-btn" data-toggle-settings aria-label="Settings"><i data-lucide="settings" class="lucide-md"></i></button>
+        <div class="dropdown">
+          <button class="user-button" data-bs-toggle="dropdown">
+            <div class="avatar avatar-sm">JD</div>
+            <div class="d-none d-sm-block text-start">
+              <div class="user-name">John Doe</div>
+              <div class="user-role">Admin</div>
+            </div>
+            <i data-lucide="chevron-down" class="lucide-sm d-none d-sm-inline"></i>
+          </button>
+          <div class="dropdown-menu dropdown-menu-end user-menu">
+            <div class="user-menu-header">
+              <div class="fw-semibold">John Doe</div>
+              <div class="text-muted small">john@liner.com</div>
+            </div>
+            <a class="dropdown-item user-menu-item" href="account.html"><i data-lucide="user" class="lucide-sm"></i> My Profile</a>
+            <a class="dropdown-item user-menu-item" href="pricing.html"><i data-lucide="credit-card" class="lucide-sm"></i> Billing</a>
+            <a class="dropdown-item user-menu-item" href="account.html"><i data-lucide="shield" class="lucide-sm"></i> Security</a>
+            <a class="dropdown-item user-menu-item" href="faq.html"><i data-lucide="help-circle" class="lucide-sm"></i> Help Center</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item user-menu-item text-danger" href="login.html"><i data-lucide="log-out" class="lucide-sm"></i> Sign Out</a>
+          </div>
+        </div>
+      </header>
+<div class="settings-overlay" data-close-settings></div>
+      <div class="settings-panel">
+        <div class="settings-section d-flex align-items-center justify-content-between">
+          <div>
+            <h5 class="mb-0 fw-bold">Theme Settings</h5>
+            <div class="text-muted small mt-1">Customize your dashboard appearance</div>
+          </div>
+          <button class="btn btn-icon btn-icon-sm" data-close-settings aria-label="Close"><i data-lucide="x" class="lucide-md"></i></button>
+        </div>
+        <div class="flex-grow-1 overflow-auto custom-scrollbar">
+          <div class="settings-section">
+            <h6>Color Mode</h6>
+            <div class="d-flex gap-2">
+              <button class="mode-card light active" data-mode="light">
+                <div class="mini-preview">
+                  <div class="mini-header"><div class="mini-bar w-18"></div></div>
+                  <div class="flex-grow-1 mini-bg-light"></div>
+                </div>
+                <div class="d-flex align-items-center justify-content-between"><strong class="text-xs">Light</strong></div>
+              </button>
+              <button class="mode-card dark" data-mode="dark">
+                <div class="mini-preview">
+                  <div class="mini-header"><div class="mini-bar w-18"></div></div>
+                  <div class="flex-grow-1 mini-bg-dark"></div>
+                </div>
+                <div class="d-flex align-items-center justify-content-between"><strong class="text-xs">Dark</strong></div>
+              </button>
+            </div>
+          </div>
+          <div class="settings-section">
+            <h6>Color Preset</h6>
+            <div class="swatch-grid"><button class="color-swatch-btn" data-color="navy">
+        <div class="swatch bg-swatch-navy"></div>
+        <div class="swatch-label">Navy</div>
+      </button><button class="color-swatch-btn" data-color="blue">
+        <div class="swatch bg-swatch-blue"></div>
+        <div class="swatch-label">Blue</div>
+      </button><button class="color-swatch-btn" data-color="green">
+        <div class="swatch bg-swatch-green"></div>
+        <div class="swatch-label">Emerald</div>
+      </button><button class="color-swatch-btn" data-color="orange">
+        <div class="swatch bg-swatch-orange"></div>
+        <div class="swatch-label">Orange</div>
+      </button><button class="color-swatch-btn" data-color="red">
+        <div class="swatch bg-swatch-red"></div>
+        <div class="swatch-label">Rose</div>
+      </button></div>
+          </div>
+          <div class="settings-section">
+            <h6>Layout</h6>
+            <label class="setting-toggle">
+              <span class="toggle-label">Collapsed Sidebar</span>
+              <span class="switch" data-setting="collapsed"></span>
+            </label>
+            <label class="setting-toggle">
+              <span class="toggle-label">Horizontal Menu</span>
+              <span class="switch" data-setting="horizontal"></span>
+            </label>
+          </div>
+          <div class="settings-section">
+            <h6>Regional</h6>
+            <label class="setting-toggle">
+              <span class="toggle-label">RTL Direction</span>
+              <span class="switch" data-setting="rtl"></span>
+            </label>
+          </div>
+        </div>
+        <div class="settings-footer">
+          <button class="btn btn-primary w-100" data-close-settings>Apply &amp; Close</button>
+        </div>
+      </div>
+<main class="app-main space-y-8">
+  <div class="flex items-start justify-between mb-6">
+    <div>
+      <h1 class="text-2xl font-bold text-slate-900 m-0">Table Styles</h1>
+      <p class="text-sm text-slate-500 mt-1 mb-0">Different table variations and styles for various use cases</p>
+    </div>
+  </div>
+
+  <div>
+  <div class="mb-4">
+  <h2 class="text-lg font-bold text-slate-800 m-0">Employee Directory</h2>
+  <p class="text-sm text-slate-500 mt-0-5 m-0">Full-featured table with search, filters, and pagination</p>
+</div>
+  <div class="grid grid-cols-2 grid-cols-lg-4 gap-4 mb-4">
+    <div class="card p-5 flex items-center gap-4">
+  <div class="w-12 h-12 rounded-2xl flex items-center justify-center shrink-0 bg-primary-100"><i data-lucide="users" class="lucide-md text-primary-600"></i></div>
+  <div class="min-w-0">
+    <p class="text-xs font-semibold uppercase tracking-wider text-slate-500 m-0">Total Employees</p>
+    <p class="text-2xl font-bold text-slate-800 mt-0-5 m-0">15</p>
+    <p class="text-xs text-emerald-600 mt-0-5 m-0">+2 this month</p>
+  </div>
+</div>
+    <div class="card p-5 flex items-center gap-4">
+  <div class="w-12 h-12 rounded-2xl flex items-center justify-center shrink-0 bg-emerald-100"><i data-lucide="user-check" class="lucide-md text-emerald-600"></i></div>
+  <div class="min-w-0">
+    <p class="text-xs font-semibold uppercase tracking-wider text-slate-500 m-0">Active</p>
+    <p class="text-2xl font-bold text-slate-800 mt-0-5 m-0">11</p>
+    <p class="text-xs text-emerald-600 mt-0-5 m-0">73% of team</p>
+  </div>
+</div>
+    <div class="card p-5 flex items-center gap-4">
+  <div class="w-12 h-12 rounded-2xl flex items-center justify-center shrink-0 bg-amber-100"><i data-lucide="calendar" class="lucide-md text-amber-600"></i></div>
+  <div class="min-w-0">
+    <p class="text-xs font-semibold uppercase tracking-wider text-slate-500 m-0">On Leave</p>
+    <p class="text-2xl font-bold text-slate-800 mt-0-5 m-0">2</p>
+
+  </div>
+</div>
+    <div class="card p-5 flex items-center gap-4">
+  <div class="w-12 h-12 rounded-2xl flex items-center justify-center shrink-0 bg-violet-100"><i data-lucide="building-2" class="lucide-md text-violet-600"></i></div>
+  <div class="min-w-0">
+    <p class="text-xs font-semibold uppercase tracking-wider text-slate-500 m-0">Departments</p>
+    <p class="text-2xl font-bold text-slate-800 mt-0-5 m-0">10</p>
+
+  </div>
+</div>
+  </div>
+  <div class="card overflow-hidden" data-bt-emp>
+    <div class="p-4 border-b flex flex-col flex-row-sm gap-3">
+      <div class="relative flex-1" style="max-width:24rem">
+        <div class="bt-icon-l"><i data-lucide="search" class="lucide-xs"></i></div>
+        <input type="text" placeholder="Search employees…" class="input pl-9 text-sm w-full" data-bt-search>
+      </div>
+      <div class="flex items-center gap-2 flex-wrap">
+        <div class="relative">
+          <div class="bt-icon-l" style="left:10px"><i data-lucide="filter" class="lucide-xs"></i></div>
+          <select class="input text-sm bt-filter-sel" data-bt-dept>
+            <option value="All">All Departments</option>
+            <option value="Content">Content</option><option value="Data">Data</option><option value="Design">Design</option><option value="DevOps">DevOps</option><option value="Engineering">Engineering</option><option value="Finance">Finance</option><option value="HR">HR</option><option value="Management">Management</option><option value="Marketing">Marketing</option><option value="Product">Product</option><option value="QA">QA</option><option value="Sales">Sales</option>
+          </select>
+        </div>
+        <button class="btn-outline btn-sm"><i data-lucide="download" class="lucide-xs"></i> CSV</button>
+        <button class="btn-gradient btn-sm"><i data-lucide="plus" class="lucide-xs"></i> New</button>
+      </div>
+    </div>
+    <div class="table-wrapper">
+      <table class="bt-table">
+        <thead><tr><th>ID</th><th>Employee</th><th>Department</th><th>Role</th><th>Salary</th><th>Joined</th><th>Status</th><th>Actions</th></tr></thead>
+        <tbody data-bt-tbody></tbody>
+      </table>
+    </div>
+    <div class="flex flex-col flex-row-sm items-start items-center-sm justify-between gap-3 px-4 py-3 border-t">
+      <p class="text-sm text-slate-500 m-0" data-bt-info>Showing <span class="font-semibold text-slate-700">0</span> – <span class="font-semibold text-slate-700">0</span> of <span class="font-semibold text-slate-700">0</span> employees</p>
+      <div class="flex items-center gap-1" data-bt-pager></div>
+    </div>
+  </div>
+  <script type="application/json" data-bt-data>[{"id":"EMP-001","name":"Alice Johnson","department":"Product","role":"Product Manager","email":"alice@company.com","status":"active","salaryRaw":95000,"joinDate":"Jan 15, 2024","img":"avatar-woman-alice.jpg","salary":"$95,000"},{"id":"EMP-002","name":"Bob Smith","department":"Engineering","role":"Senior Developer","email":"bob@company.com","status":"active","salaryRaw":115000,"joinDate":"Mar 10, 2023","img":"avatar-man-bob.jpg","salary":"$1,15,000"},{"id":"EMP-003","name":"Carol Williams","department":"Design","role":"UX Designer","email":"carol@company.com","status":"on_leave","salaryRaw":85000,"joinDate":"Jun 22, 2023","img":"avatar-woman-carol.jpg","salary":"$85,000"},{"id":"EMP-004","name":"David Brown","department":"Marketing","role":"Marketing Director","email":"david@company.com","status":"active","salaryRaw":105000,"joinDate":"Sep 05, 2022","img":"avatar-man-david.jpg","salary":"$1,05,000"},{"id":"EMP-005","name":"Emma Davis","department":"QA","role":"QA Lead","email":"emma@company.com","status":"active","salaryRaw":88000,"joinDate":"Nov 18, 2023","img":"avatar-woman-grace.jpg","salary":"$88,000"},{"id":"EMP-006","name":"Frank Wilson","department":"DevOps","role":"DevOps Engineer","email":"frank@company.com","status":"inactive","salaryRaw":110000,"joinDate":"Apr 02, 2022","img":"avatar-man-mike.jpg","salary":"$1,10,000"},{"id":"EMP-007","name":"Grace Lee","department":"Data","role":"Data Scientist","email":"grace@company.com","status":"active","salaryRaw":120000,"joinDate":"Feb 14, 2024","img":"avatar-woman-jessica.jpg","salary":"$1,20,000"},{"id":"EMP-008","name":"Henry Martinez","department":"Management","role":"CTO","email":"henry@company.com","status":"active","salaryRaw":180000,"joinDate":"Jan 01, 2020","img":"avatar-man-henry.jpg","salary":"$1,80,000"},{"id":"EMP-009","name":"Iris Chen","department":"Engineering","role":"Frontend Developer","email":"iris@company.com","status":"active","salaryRaw":95000,"joinDate":"Jul 08, 2023","img":"avatar-woman-sarah-kim.jpg","salary":"$95,000"},{"id":"EMP-010","name":"James Anderson","department":"Sales","role":"Sales Manager","email":"james@company.com","status":"active","salaryRaw":90000,"joinDate":"May 22, 2022","img":"avatar-man-john.jpg","salary":"$90,000"},{"id":"EMP-011","name":"Kate Thompson","department":"Content","role":"Content Strategist","email":"kate@company.com","status":"on_leave","salaryRaw":72000,"joinDate":"Oct 15, 2023","img":"avatar-woman-emma.jpg","salary":"$72,000"},{"id":"EMP-012","name":"Liam Garcia","department":"Engineering","role":"Backend Developer","email":"liam@company.com","status":"active","salaryRaw":105000,"joinDate":"Aug 30, 2023","img":"avatar-man-marcus.jpg","salary":"$1,05,000"},{"id":"EMP-013","name":"Mia Johnson","department":"HR","role":"HR Manager","email":"mia@company.com","status":"active","salaryRaw":78000,"joinDate":"Dec 01, 2022","img":"avatar-woman-eva.jpg","salary":"$78,000"},{"id":"EMP-014","name":"Noah Wilson","department":"Finance","role":"CFO","email":"noah@company.com","status":"active","salaryRaw":165000,"joinDate":"Mar 15, 2021","img":"avatar-man-daniel.jpg","salary":"$1,65,000"},{"id":"EMP-015","name":"Olivia Martin","department":"Design","role":"Graphic Designer","email":"olivia@company.com","status":"inactive","salaryRaw":68000,"joinDate":"Jan 20, 2024","img":"avatar-woman-lisa.jpg","salary":"$68,000"}]</script>
+  <script type="application/json" data-bt-dept-colors>{"Engineering":"bg-indigo-100 text-indigo-700","Product":"bg-violet-100 text-violet-700","Design":"bg-pink-100 text-pink-700","Marketing":"bg-amber-100 text-amber-700","QA":"bg-cyan-100 text-cyan-700","DevOps":"bg-teal-100 text-teal-700","Data":"bg-blue-100 text-blue-700","Management":"bg-rose-100 text-rose-700","Sales":"bg-orange-100 text-orange-700","Content":"bg-lime-100 text-lime-700","HR":"bg-emerald-100 text-emerald-700","Finance":"bg-sky-100 text-sky-700"}</script>
+</div>
+  <div>
+  <div class="mb-4">
+  <h2 class="text-lg font-bold text-slate-800 m-0">Striped Table</h2>
+  <p class="text-sm text-slate-500 mt-0-5 m-0">Alternating row backgrounds for easier reading</p>
+</div>
+  <div class="card overflow-hidden">
+    <div class="table-wrapper">
+      <table class="bt-table">
+        <thead><tr class="bg-slate-50"><th>Employee</th><th>Department</th><th>Role</th><th>Salary</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr class="bg-white">
+            <td><div class="flex items-center gap-3"><img src="img/avatars/avatar-woman-alice.jpg" alt="Alice Johnson" class="w-8 h-8 rounded-full object-cover"><span class="font-medium text-sm text-slate-800">Alice Johnson</span></div></td>
+            <td><span class="bt-dept bg-violet-100 text-violet-700">Product</span></td>
+            <td class="text-sm text-slate-600">Product Manager</td>
+            <td class="text-sm font-semibold text-slate-700">$95,000</td>
+            <td><span class="bt-badge bg-emerald-100 text-emerald-700"><span class="bt-badge-dot bg-emerald-500"></span>Active</span></td>
+          </tr><tr class="bg-slate-50">
+            <td><div class="flex items-center gap-3"><img src="img/avatars/avatar-man-bob.jpg" alt="Bob Smith" class="w-8 h-8 rounded-full object-cover"><span class="font-medium text-sm text-slate-800">Bob Smith</span></div></td>
+            <td><span class="bt-dept bg-indigo-100 text-indigo-700">Engineering</span></td>
+            <td class="text-sm text-slate-600">Senior Developer</td>
+            <td class="text-sm font-semibold text-slate-700">$1,15,000</td>
+            <td><span class="bt-badge bg-emerald-100 text-emerald-700"><span class="bt-badge-dot bg-emerald-500"></span>Active</span></td>
+          </tr><tr class="bg-white">
+            <td><div class="flex items-center gap-3"><img src="img/avatars/avatar-woman-carol.jpg" alt="Carol Williams" class="w-8 h-8 rounded-full object-cover"><span class="font-medium text-sm text-slate-800">Carol Williams</span></div></td>
+            <td><span class="bt-dept bg-pink-100 text-pink-700">Design</span></td>
+            <td class="text-sm text-slate-600">UX Designer</td>
+            <td class="text-sm font-semibold text-slate-700">$85,000</td>
+            <td><span class="bt-badge bg-amber-100 text-amber-700"><span class="bt-badge-dot bg-amber-500"></span>On Leave</span></td>
+          </tr><tr class="bg-slate-50">
+            <td><div class="flex items-center gap-3"><img src="img/avatars/avatar-man-david.jpg" alt="David Brown" class="w-8 h-8 rounded-full object-cover"><span class="font-medium text-sm text-slate-800">David Brown</span></div></td>
+            <td><span class="bt-dept bg-amber-100 text-amber-700">Marketing</span></td>
+            <td class="text-sm text-slate-600">Marketing Director</td>
+            <td class="text-sm font-semibold text-slate-700">$1,05,000</td>
+            <td><span class="bt-badge bg-emerald-100 text-emerald-700"><span class="bt-badge-dot bg-emerald-500"></span>Active</span></td>
+          </tr><tr class="bg-white">
+            <td><div class="flex items-center gap-3"><img src="img/avatars/avatar-woman-grace.jpg" alt="Emma Davis" class="w-8 h-8 rounded-full object-cover"><span class="font-medium text-sm text-slate-800">Emma Davis</span></div></td>
+            <td><span class="bt-dept bg-cyan-100 text-cyan-700">QA</span></td>
+            <td class="text-sm text-slate-600">QA Lead</td>
+            <td class="text-sm font-semibold text-slate-700">$88,000</td>
+            <td><span class="bt-badge bg-emerald-100 text-emerald-700"><span class="bt-badge-dot bg-emerald-500"></span>Active</span></td>
+          </tr><tr class="bg-slate-50">
+            <td><div class="flex items-center gap-3"><img src="img/avatars/avatar-man-mike.jpg" alt="Frank Wilson" class="w-8 h-8 rounded-full object-cover"><span class="font-medium text-sm text-slate-800">Frank Wilson</span></div></td>
+            <td><span class="bt-dept bg-teal-100 text-teal-700">DevOps</span></td>
+            <td class="text-sm text-slate-600">DevOps Engineer</td>
+            <td class="text-sm font-semibold text-slate-700">$1,10,000</td>
+            <td><span class="bt-badge bg-slate-100 text-slate-600"><span class="bt-badge-dot bg-slate-400"></span>Inactive</span></td>
+          </tr><tr class="bg-white">
+            <td><div class="flex items-center gap-3"><img src="img/avatars/avatar-woman-jessica.jpg" alt="Grace Lee" class="w-8 h-8 rounded-full object-cover"><span class="font-medium text-sm text-slate-800">Grace Lee</span></div></td>
+            <td><span class="bt-dept bg-blue-100 text-blue-700">Data</span></td>
+            <td class="text-sm text-slate-600">Data Scientist</td>
+            <td class="text-sm font-semibold text-slate-700">$1,20,000</td>
+            <td><span class="bt-badge bg-emerald-100 text-emerald-700"><span class="bt-badge-dot bg-emerald-500"></span>Active</span></td>
+          </tr><tr class="bg-slate-50">
+            <td><div class="flex items-center gap-3"><img src="img/avatars/avatar-man-henry.jpg" alt="Henry Martinez" class="w-8 h-8 rounded-full object-cover"><span class="font-medium text-sm text-slate-800">Henry Martinez</span></div></td>
+            <td><span class="bt-dept bg-rose-100 text-rose-700">Management</span></td>
+            <td class="text-sm text-slate-600">CTO</td>
+            <td class="text-sm font-semibold text-slate-700">$1,80,000</td>
+            <td><span class="bt-badge bg-emerald-100 text-emerald-700"><span class="bt-badge-dot bg-emerald-500"></span>Active</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+  <div>
+  <div class="mb-4">
+  <h2 class="text-lg font-bold text-slate-800 m-0">Bordered Table</h2>
+  <p class="text-sm text-slate-500 mt-0-5 m-0">Full borders on all cells for a classic grid look</p>
+</div>
+  <div class="card overflow-hidden">
+    <div class="table-wrapper">
+      <table class="bt-bordered-table">
+        <thead><tr>
+          <th>Name</th><th>Email</th><th>Department</th><th>Role</th><th>Join Date</th>
+        </tr></thead>
+        <tbody>
+          <tr>
+            <td class="font-medium text-slate-800">Alice Johnson</td>
+            <td class="text-slate-500">alice@company.com</td>
+            <td class="text-slate-600">Product</td>
+            <td class="text-slate-600">Product Manager</td>
+            <td class="text-slate-500">Jan 15, 2024</td>
+          </tr><tr>
+            <td class="font-medium text-slate-800">Bob Smith</td>
+            <td class="text-slate-500">bob@company.com</td>
+            <td class="text-slate-600">Engineering</td>
+            <td class="text-slate-600">Senior Developer</td>
+            <td class="text-slate-500">Mar 10, 2023</td>
+          </tr><tr>
+            <td class="font-medium text-slate-800">Carol Williams</td>
+            <td class="text-slate-500">carol@company.com</td>
+            <td class="text-slate-600">Design</td>
+            <td class="text-slate-600">UX Designer</td>
+            <td class="text-slate-500">Jun 22, 2023</td>
+          </tr><tr>
+            <td class="font-medium text-slate-800">David Brown</td>
+            <td class="text-slate-500">david@company.com</td>
+            <td class="text-slate-600">Marketing</td>
+            <td class="text-slate-600">Marketing Director</td>
+            <td class="text-slate-500">Sep 05, 2022</td>
+          </tr><tr>
+            <td class="font-medium text-slate-800">Emma Davis</td>
+            <td class="text-slate-500">emma@company.com</td>
+            <td class="text-slate-600">QA</td>
+            <td class="text-slate-600">QA Lead</td>
+            <td class="text-slate-500">Nov 18, 2023</td>
+          </tr><tr>
+            <td class="font-medium text-slate-800">Frank Wilson</td>
+            <td class="text-slate-500">frank@company.com</td>
+            <td class="text-slate-600">DevOps</td>
+            <td class="text-slate-600">DevOps Engineer</td>
+            <td class="text-slate-500">Apr 02, 2022</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+  <div>
+  <div class="mb-4">
+  <h2 class="text-lg font-bold text-slate-800 m-0">Compact / Dense Table</h2>
+  <p class="text-sm text-slate-500 mt-0-5 m-0">Reduced padding for high-density data display</p>
+</div>
+  <div class="card overflow-hidden">
+    <div class="table-wrapper">
+      <table class="bt-compact-table">
+        <thead><tr class="border-b"><th>ID</th><th>Name</th><th>Dept</th><th>Role</th><th>Salary</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr>
+            <td class="font-mono text-primary-600">EMP-001</td>
+            <td class="font-medium text-slate-800">Alice Johnson</td>
+            <td class="text-slate-600">Product</td>
+            <td class="text-slate-600">Product Manager</td>
+            <td class="font-semibold text-slate-700">$95,000</td>
+            <td><span class="bt-status-dot bg-emerald-500"></span><span class="text-slate-600 capitalize">active</span></td>
+          </tr><tr>
+            <td class="font-mono text-primary-600">EMP-002</td>
+            <td class="font-medium text-slate-800">Bob Smith</td>
+            <td class="text-slate-600">Engineering</td>
+            <td class="text-slate-600">Senior Developer</td>
+            <td class="font-semibold text-slate-700">$1,15,000</td>
+            <td><span class="bt-status-dot bg-emerald-500"></span><span class="text-slate-600 capitalize">active</span></td>
+          </tr><tr>
+            <td class="font-mono text-primary-600">EMP-003</td>
+            <td class="font-medium text-slate-800">Carol Williams</td>
+            <td class="text-slate-600">Design</td>
+            <td class="text-slate-600">UX Designer</td>
+            <td class="font-semibold text-slate-700">$85,000</td>
+            <td><span class="bt-status-dot bg-amber-500"></span><span class="text-slate-600 capitalize">on leave</span></td>
+          </tr><tr>
+            <td class="font-mono text-primary-600">EMP-004</td>
+            <td class="font-medium text-slate-800">David Brown</td>
+            <td class="text-slate-600">Marketing</td>
+            <td class="text-slate-600">Marketing Director</td>
+            <td class="font-semibold text-slate-700">$1,05,000</td>
+            <td><span class="bt-status-dot bg-emerald-500"></span><span class="text-slate-600 capitalize">active</span></td>
+          </tr><tr>
+            <td class="font-mono text-primary-600">EMP-005</td>
+            <td class="font-medium text-slate-800">Emma Davis</td>
+            <td class="text-slate-600">QA</td>
+            <td class="text-slate-600">QA Lead</td>
+            <td class="font-semibold text-slate-700">$88,000</td>
+            <td><span class="bt-status-dot bg-emerald-500"></span><span class="text-slate-600 capitalize">active</span></td>
+          </tr><tr>
+            <td class="font-mono text-primary-600">EMP-006</td>
+            <td class="font-medium text-slate-800">Frank Wilson</td>
+            <td class="text-slate-600">DevOps</td>
+            <td class="text-slate-600">DevOps Engineer</td>
+            <td class="font-semibold text-slate-700">$1,10,000</td>
+            <td><span class="bt-status-dot bg-slate-400"></span><span class="text-slate-600 capitalize">inactive</span></td>
+          </tr><tr>
+            <td class="font-mono text-primary-600">EMP-007</td>
+            <td class="font-medium text-slate-800">Grace Lee</td>
+            <td class="text-slate-600">Data</td>
+            <td class="text-slate-600">Data Scientist</td>
+            <td class="font-semibold text-slate-700">$1,20,000</td>
+            <td><span class="bt-status-dot bg-emerald-500"></span><span class="text-slate-600 capitalize">active</span></td>
+          </tr><tr>
+            <td class="font-mono text-primary-600">EMP-008</td>
+            <td class="font-medium text-slate-800">Henry Martinez</td>
+            <td class="text-slate-600">Management</td>
+            <td class="text-slate-600">CTO</td>
+            <td class="font-semibold text-slate-700">$1,80,000</td>
+            <td><span class="bt-status-dot bg-emerald-500"></span><span class="text-slate-600 capitalize">active</span></td>
+          </tr><tr>
+            <td class="font-mono text-primary-600">EMP-009</td>
+            <td class="font-medium text-slate-800">Iris Chen</td>
+            <td class="text-slate-600">Engineering</td>
+            <td class="text-slate-600">Frontend Developer</td>
+            <td class="font-semibold text-slate-700">$95,000</td>
+            <td><span class="bt-status-dot bg-emerald-500"></span><span class="text-slate-600 capitalize">active</span></td>
+          </tr><tr>
+            <td class="font-mono text-primary-600">EMP-010</td>
+            <td class="font-medium text-slate-800">James Anderson</td>
+            <td class="text-slate-600">Sales</td>
+            <td class="text-slate-600">Sales Manager</td>
+            <td class="font-semibold text-slate-700">$90,000</td>
+            <td><span class="bt-status-dot bg-emerald-500"></span><span class="text-slate-600 capitalize">active</span></td>
+          </tr><tr>
+            <td class="font-mono text-primary-600">EMP-011</td>
+            <td class="font-medium text-slate-800">Kate Thompson</td>
+            <td class="text-slate-600">Content</td>
+            <td class="text-slate-600">Content Strategist</td>
+            <td class="font-semibold text-slate-700">$72,000</td>
+            <td><span class="bt-status-dot bg-amber-500"></span><span class="text-slate-600 capitalize">on leave</span></td>
+          </tr><tr>
+            <td class="font-mono text-primary-600">EMP-012</td>
+            <td class="font-medium text-slate-800">Liam Garcia</td>
+            <td class="text-slate-600">Engineering</td>
+            <td class="text-slate-600">Backend Developer</td>
+            <td class="font-semibold text-slate-700">$1,05,000</td>
+            <td><span class="bt-status-dot bg-emerald-500"></span><span class="text-slate-600 capitalize">active</span></td>
+          </tr><tr>
+            <td class="font-mono text-primary-600">EMP-013</td>
+            <td class="font-medium text-slate-800">Mia Johnson</td>
+            <td class="text-slate-600">HR</td>
+            <td class="text-slate-600">HR Manager</td>
+            <td class="font-semibold text-slate-700">$78,000</td>
+            <td><span class="bt-status-dot bg-emerald-500"></span><span class="text-slate-600 capitalize">active</span></td>
+          </tr><tr>
+            <td class="font-mono text-primary-600">EMP-014</td>
+            <td class="font-medium text-slate-800">Noah Wilson</td>
+            <td class="text-slate-600">Finance</td>
+            <td class="text-slate-600">CFO</td>
+            <td class="font-semibold text-slate-700">$1,65,000</td>
+            <td><span class="bt-status-dot bg-emerald-500"></span><span class="text-slate-600 capitalize">active</span></td>
+          </tr><tr>
+            <td class="font-mono text-primary-600">EMP-015</td>
+            <td class="font-medium text-slate-800">Olivia Martin</td>
+            <td class="text-slate-600">Design</td>
+            <td class="text-slate-600">Graphic Designer</td>
+            <td class="font-semibold text-slate-700">$68,000</td>
+            <td><span class="bt-status-dot bg-slate-400"></span><span class="text-slate-600 capitalize">inactive</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+  <div class="grid grid-cols-1 grid-cols-lg-2 gap-8"><div>
+  <div class="mb-4">
+  <h2 class="text-lg font-bold text-slate-800 m-0">Product Inventory</h2>
+  <p class="text-sm text-slate-500 mt-0-5 m-0">Table with product images, ratings, and stock status</p>
+</div>
+  <div class="card overflow-hidden">
+    <div class="table-wrapper">
+      <table class="bt-table">
+        <thead><tr><th>Product</th><th>Price</th><th>Stock</th><th>Sold</th><th>Rating</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><div class="flex items-center gap-3"><img src="img/unsplash/macbook-laptop.jpg" alt="MacBook Pro 16"" class="w-10 h-10 rounded-xl object-cover"><div><p class="text-sm font-semibold text-slate-800 m-0">MacBook Pro 16"</p><p class="text-xs text-slate-400 m-0">Laptops</p></div></div></td>
+            <td class="text-sm font-bold text-slate-800">$2499</td>
+            <td class="text-sm text-slate-600">45</td>
+            <td><div class="flex items-center gap-1 text-sm text-slate-600"><i data-lucide="shopping-cart" class="lucide-xxs text-slate-400"></i>312</div></td>
+            <td><div class="flex items-center gap-1"><svg width="13" height="13" viewBox="0 0 24 24" fill="#fbbf24" stroke="#fbbf24" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><span class="text-sm font-medium text-slate-700">4.8</span></div></td>
+            <td><span class="bt-dept bg-emerald-100 text-emerald-700">In Stock</span></td>
+          </tr><tr>
+            <td><div class="flex items-center gap-3"><img src="img/unsplash/sony-headphones.jpg" alt="Sony WH-1000XM5" class="w-10 h-10 rounded-xl object-cover"><div><p class="text-sm font-semibold text-slate-800 m-0">Sony WH-1000XM5</p><p class="text-xs text-slate-400 m-0">Audio</p></div></div></td>
+            <td class="text-sm font-bold text-slate-800">$349</td>
+            <td class="text-sm text-slate-600">128</td>
+            <td><div class="flex items-center gap-1 text-sm text-slate-600"><i data-lucide="shopping-cart" class="lucide-xxs text-slate-400"></i>856</div></td>
+            <td><div class="flex items-center gap-1"><svg width="13" height="13" viewBox="0 0 24 24" fill="#fbbf24" stroke="#fbbf24" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><span class="text-sm font-medium text-slate-700">4.7</span></div></td>
+            <td><span class="bt-dept bg-emerald-100 text-emerald-700">In Stock</span></td>
+          </tr><tr>
+            <td><div class="flex items-center gap-3"><img src="img/unsplash/ipad-tablet.jpg" alt="iPad Air M2" class="w-10 h-10 rounded-xl object-cover"><div><p class="text-sm font-semibold text-slate-800 m-0">iPad Air M2</p><p class="text-xs text-slate-400 m-0">Tablets</p></div></div></td>
+            <td class="text-sm font-bold text-slate-800">$799</td>
+            <td class="text-sm text-slate-600">0</td>
+            <td><div class="flex items-center gap-1 text-sm text-slate-600"><i data-lucide="shopping-cart" class="lucide-xxs text-slate-400"></i>543</div></td>
+            <td><div class="flex items-center gap-1"><svg width="13" height="13" viewBox="0 0 24 24" fill="#fbbf24" stroke="#fbbf24" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><span class="text-sm font-medium text-slate-700">4.6</span></div></td>
+            <td><span class="bt-dept bg-red-100 text-red-700">Out of Stock</span></td>
+          </tr><tr>
+            <td><div class="flex items-center gap-3"><img src="img/unsplash/mechanical-keyboard.jpg" alt="Mechanical Keyboard" class="w-10 h-10 rounded-xl object-cover"><div><p class="text-sm font-semibold text-slate-800 m-0">Mechanical Keyboard</p><p class="text-xs text-slate-400 m-0">Accessories</p></div></div></td>
+            <td class="text-sm font-bold text-slate-800">$189</td>
+            <td class="text-sm text-slate-600">67</td>
+            <td><div class="flex items-center gap-1 text-sm text-slate-600"><i data-lucide="shopping-cart" class="lucide-xxs text-slate-400"></i>1,205</div></td>
+            <td><div class="flex items-center gap-1"><svg width="13" height="13" viewBox="0 0 24 24" fill="#fbbf24" stroke="#fbbf24" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><span class="text-sm font-medium text-slate-700">4.9</span></div></td>
+            <td><span class="bt-dept bg-emerald-100 text-emerald-700">In Stock</span></td>
+          </tr><tr>
+            <td><div class="flex items-center gap-3"><img src="img/unsplash/curved-monitor.jpg" alt="LG UltraWide 34"" class="w-10 h-10 rounded-xl object-cover"><div><p class="text-sm font-semibold text-slate-800 m-0">LG UltraWide 34"</p><p class="text-xs text-slate-400 m-0">Monitors</p></div></div></td>
+            <td class="text-sm font-bold text-slate-800">$699</td>
+            <td class="text-sm text-slate-600">12</td>
+            <td><div class="flex items-center gap-1 text-sm text-slate-600"><i data-lucide="shopping-cart" class="lucide-xxs text-slate-400"></i>198</div></td>
+            <td><div class="flex items-center gap-1"><svg width="13" height="13" viewBox="0 0 24 24" fill="#fbbf24" stroke="#fbbf24" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><span class="text-sm font-medium text-slate-700">4.5</span></div></td>
+            <td><span class="bt-dept bg-amber-100 text-amber-700">Low Stock</span></td>
+          </tr><tr>
+            <td><div class="flex items-center gap-3"><img src="img/unsplash/wireless-mouse.jpg" alt="Logitech MX Master" class="w-10 h-10 rounded-xl object-cover"><div><p class="text-sm font-semibold text-slate-800 m-0">Logitech MX Master</p><p class="text-xs text-slate-400 m-0">Accessories</p></div></div></td>
+            <td class="text-sm font-bold text-slate-800">$99</td>
+            <td class="text-sm text-slate-600">234</td>
+            <td><div class="flex items-center gap-1 text-sm text-slate-600"><i data-lucide="shopping-cart" class="lucide-xxs text-slate-400"></i>2,341</div></td>
+            <td><div class="flex items-center gap-1"><svg width="13" height="13" viewBox="0 0 24 24" fill="#fbbf24" stroke="#fbbf24" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><span class="text-sm font-medium text-slate-700">4.8</span></div></td>
+            <td><span class="bt-dept bg-emerald-100 text-emerald-700">In Stock</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div><div>
+  <div class="mb-4">
+  <h2 class="text-lg font-bold text-slate-800 m-0">Recent Orders</h2>
+  <p class="text-sm text-slate-500 mt-0-5 m-0">Order tracking with status indicators and customer info</p>
+</div>
+  <div class="card overflow-hidden">
+    <div class="table-wrapper">
+      <table class="bt-table">
+        <thead><tr><th>Order</th><th>Customer</th><th>Total</th><th>Date</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><div><p class="text-sm font-bold text-slate-800 m-0">#ORD-7841</p><p class="text-xs text-slate-400 m-0">3 items · Credit Card</p></div></td>
+            <td><div class="flex items-center gap-2-5"><img src="img/avatars/avatar-woman-sarah-chen.jpg" alt="Sarah Connor" class="w-8 h-8 rounded-full object-cover"><div><p class="text-sm font-medium text-slate-800 m-0">Sarah Connor</p><p class="text-xs text-slate-400 m-0">sarah@email.com</p></div></div></td>
+            <td class="text-sm font-bold text-slate-800">$459.99</td>
+            <td class="text-xs text-slate-500">Mar 10, 2026</td>
+            <td><span class="bt-status-pill bg-emerald-100 text-emerald-700"><i data-lucide="check-circle" class="lucide-xxs"></i>Delivered</span></td>
+          </tr><tr>
+            <td><div><p class="text-sm font-bold text-slate-800 m-0">#ORD-7842</p><p class="text-xs text-slate-400 m-0">1 items · PayPal</p></div></td>
+            <td><div class="flex items-center gap-2-5"><img src="img/avatars/avatar-man-profile.jpg" alt="John Wick" class="w-8 h-8 rounded-full object-cover"><div><p class="text-sm font-medium text-slate-800 m-0">John Wick</p><p class="text-xs text-slate-400 m-0">john@email.com</p></div></div></td>
+            <td class="text-sm font-bold text-slate-800">$2,499</td>
+            <td class="text-xs text-slate-500">Mar 11, 2026</td>
+            <td><span class="bt-status-pill bg-blue-100 text-blue-700"><i data-lucide="clock" class="lucide-xxs"></i>Processing</span></td>
+          </tr><tr>
+            <td><div><p class="text-sm font-bold text-slate-800 m-0">#ORD-7843</p><p class="text-xs text-slate-400 m-0">5 items · Debit Card</p></div></td>
+            <td><div class="flex items-center gap-2-5"><img src="img/avatars/avatar-woman-rachel.jpg" alt="Ellen Ripley" class="w-8 h-8 rounded-full object-cover"><div><p class="text-sm font-medium text-slate-800 m-0">Ellen Ripley</p><p class="text-xs text-slate-400 m-0">ellen@email.com</p></div></div></td>
+            <td class="text-sm font-bold text-slate-800">$187.5</td>
+            <td class="text-xs text-slate-500">Mar 11, 2026</td>
+            <td><span class="bt-status-pill bg-cyan-100 text-cyan-700"><i data-lucide="package" class="lucide-xxs"></i>Shipped</span></td>
+          </tr><tr>
+            <td><div><p class="text-sm font-bold text-slate-800 m-0">#ORD-7844</p><p class="text-xs text-slate-400 m-0">2 items · Credit Card</p></div></td>
+            <td><div class="flex items-center gap-2-5"><img src="img/avatars/avatar-man-tom.jpg" alt="Tony Stark" class="w-8 h-8 rounded-full object-cover"><div><p class="text-sm font-medium text-slate-800 m-0">Tony Stark</p><p class="text-xs text-slate-400 m-0">tony@email.com</p></div></div></td>
+            <td class="text-sm font-bold text-slate-800">$1,249</td>
+            <td class="text-xs text-slate-500">Mar 12, 2026</td>
+            <td><span class="bt-status-pill bg-amber-100 text-amber-700"><i data-lucide="alert-circle" class="lucide-xxs"></i>Pending</span></td>
+          </tr><tr>
+            <td><div><p class="text-sm font-bold text-slate-800 m-0">#ORD-7845</p><p class="text-xs text-slate-400 m-0">4 items · PayPal</p></div></td>
+            <td><div class="flex items-center gap-2-5"><img src="img/avatars/avatar-woman-natalie.jpg" alt="Diana Prince" class="w-8 h-8 rounded-full object-cover"><div><p class="text-sm font-medium text-slate-800 m-0">Diana Prince</p><p class="text-xs text-slate-400 m-0">diana@email.com</p></div></div></td>
+            <td class="text-sm font-bold text-slate-800">$324.75</td>
+            <td class="text-xs text-slate-500">Mar 12, 2026</td>
+            <td><span class="bt-status-pill bg-red-100 text-red-700"><i data-lucide="x-circle" class="lucide-xxs"></i>Cancelled</span></td>
+          </tr><tr>
+            <td><div><p class="text-sm font-bold text-slate-800 m-0">#ORD-7846</p><p class="text-xs text-slate-400 m-0">7 items · Wire Transfer</p></div></td>
+            <td><div class="flex items-center gap-2-5"><img src="img/avatars/avatar-man-james.jpg" alt="Bruce Wayne" class="w-8 h-8 rounded-full object-cover"><div><p class="text-sm font-medium text-slate-800 m-0">Bruce Wayne</p><p class="text-xs text-slate-400 m-0">bruce@email.com</p></div></div></td>
+            <td class="text-sm font-bold text-slate-800">$3,150</td>
+            <td class="text-xs text-slate-500">Mar 12, 2026</td>
+            <td><span class="bt-status-pill bg-emerald-100 text-emerald-700"><i data-lucide="check-circle" class="lucide-xxs"></i>Delivered</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div></div>
+
+  <div>
+  <div class="mb-4">
+  <h2 class="text-lg font-bold text-slate-800 m-0">Gradient Header Table</h2>
+  <p class="text-sm text-slate-500 mt-0-5 m-0">Eye-catching gradient header with clean data rows</p>
+</div>
+  <div class="card overflow-hidden">
+    <div class="table-wrapper">
+      <table class="bt-gradient-table">
+        <thead><tr class="bt-grad-header">
+          <th>Country</th><th>Users</th><th>Revenue</th><th>Growth</th><th>Conversion</th>
+        </tr></thead>
+        <tbody>
+          <tr>
+            <td><div class="flex items-center gap-2-5"><span class="text-xl">🇺🇸</span><span class="text-sm font-semibold text-slate-800">United States</span></div></td>
+            <td class="text-sm font-medium text-slate-700">12,453</td>
+            <td class="text-sm font-bold text-slate-800">$245.8k</td>
+            <td><div class="inline-flex items-center gap-1 text-sm font-semibold text-emerald-600"><i data-lucide="trending-up" class="lucide-xs"></i>+12.5%</div></td>
+            <td><div class="flex items-center gap-2"><div class="w-16 h-1-5 bg-slate-100 rounded-full overflow-hidden"><div class="h-full rounded-full bg-primary-500" style="width:64%"></div></div><span class="text-xs font-medium text-slate-600">3.2%</span></div></td>
+          </tr><tr>
+            <td><div class="flex items-center gap-2-5"><span class="text-xl">🇬🇧</span><span class="text-sm font-semibold text-slate-800">United Kingdom</span></div></td>
+            <td class="text-sm font-medium text-slate-700">8,721</td>
+            <td class="text-sm font-bold text-slate-800">$178.4k</td>
+            <td><div class="inline-flex items-center gap-1 text-sm font-semibold text-emerald-600"><i data-lucide="trending-up" class="lucide-xs"></i>+8.3%</div></td>
+            <td><div class="flex items-center gap-2"><div class="w-16 h-1-5 bg-slate-100 rounded-full overflow-hidden"><div class="h-full rounded-full bg-primary-500" style="width:55.99999999999999%"></div></div><span class="text-xs font-medium text-slate-600">2.8%</span></div></td>
+          </tr><tr>
+            <td><div class="flex items-center gap-2-5"><span class="text-xl">🇩🇪</span><span class="text-sm font-semibold text-slate-800">Germany</span></div></td>
+            <td class="text-sm font-medium text-slate-700">6,534</td>
+            <td class="text-sm font-bold text-slate-800">$134.2k</td>
+            <td><div class="inline-flex items-center gap-1 text-sm font-semibold text-emerald-600"><i data-lucide="trending-up" class="lucide-xs"></i>+15.1%</div></td>
+            <td><div class="flex items-center gap-2"><div class="w-16 h-1-5 bg-slate-100 rounded-full overflow-hidden"><div class="h-full rounded-full bg-primary-500" style="width:70%"></div></div><span class="text-xs font-medium text-slate-600">3.5%</span></div></td>
+          </tr><tr>
+            <td><div class="flex items-center gap-2-5"><span class="text-xl">🇨🇦</span><span class="text-sm font-semibold text-slate-800">Canada</span></div></td>
+            <td class="text-sm font-medium text-slate-700">5,892</td>
+            <td class="text-sm font-bold text-slate-800">$112.3k</td>
+            <td><div class="inline-flex items-center gap-1 text-sm font-semibold text-red-500"><i data-lucide="trending-down" class="lucide-xs"></i>-2.4%</div></td>
+            <td><div class="flex items-center gap-2"><div class="w-16 h-1-5 bg-slate-100 rounded-full overflow-hidden"><div class="h-full rounded-full bg-primary-500" style="width:42.00000000000001%"></div></div><span class="text-xs font-medium text-slate-600">2.1%</span></div></td>
+          </tr><tr>
+            <td><div class="flex items-center gap-2-5"><span class="text-xl">🇦🇺</span><span class="text-sm font-semibold text-slate-800">Australia</span></div></td>
+            <td class="text-sm font-medium text-slate-700">4,231</td>
+            <td class="text-sm font-bold text-slate-800">$98.7k</td>
+            <td><div class="inline-flex items-center gap-1 text-sm font-semibold text-emerald-600"><i data-lucide="trending-up" class="lucide-xs"></i>+6.7%</div></td>
+            <td><div class="flex items-center gap-2"><div class="w-16 h-1-5 bg-slate-100 rounded-full overflow-hidden"><div class="h-full rounded-full bg-primary-500" style="width:57.99999999999999%"></div></div><span class="text-xs font-medium text-slate-600">2.9%</span></div></td>
+          </tr><tr>
+            <td><div class="flex items-center gap-2-5"><span class="text-xl">🇯🇵</span><span class="text-sm font-semibold text-slate-800">Japan</span></div></td>
+            <td class="text-sm font-medium text-slate-700">3,867</td>
+            <td class="text-sm font-bold text-slate-800">$87.5k</td>
+            <td><div class="inline-flex items-center gap-1 text-sm font-semibold text-emerald-600"><i data-lucide="trending-up" class="lucide-xs"></i>+22.3%</div></td>
+            <td><div class="flex items-center gap-2"><div class="w-16 h-1-5 bg-slate-100 rounded-full overflow-hidden"><div class="h-full rounded-full bg-primary-500" style="width:82%"></div></div><span class="text-xs font-medium text-slate-600">4.1%</span></div></td>
+          </tr><tr>
+            <td><div class="flex items-center gap-2-5"><span class="text-xl">🇫🇷</span><span class="text-sm font-semibold text-slate-800">France</span></div></td>
+            <td class="text-sm font-medium text-slate-700">3,456</td>
+            <td class="text-sm font-bold text-slate-800">$76.8k</td>
+            <td><div class="inline-flex items-center gap-1 text-sm font-semibold text-red-500"><i data-lucide="trending-down" class="lucide-xs"></i>-1.2%</div></td>
+            <td><div class="flex items-center gap-2"><div class="w-16 h-1-5 bg-slate-100 rounded-full overflow-hidden"><div class="h-full rounded-full bg-primary-500" style="width:38%"></div></div><span class="text-xs font-medium text-slate-600">1.9%</span></div></td>
+          </tr><tr>
+            <td><div class="flex items-center gap-2-5"><span class="text-xl">🇮🇳</span><span class="text-sm font-semibold text-slate-800">India</span></div></td>
+            <td class="text-sm font-medium text-slate-700">15,234</td>
+            <td class="text-sm font-bold text-slate-800">$45.6k</td>
+            <td><div class="inline-flex items-center gap-1 text-sm font-semibold text-emerald-600"><i data-lucide="trending-up" class="lucide-xs"></i>+34.5%</div></td>
+            <td><div class="flex items-center gap-2"><div class="w-16 h-1-5 bg-slate-100 rounded-full overflow-hidden"><div class="h-full rounded-full bg-primary-500" style="width:24%"></div></div><span class="text-xs font-medium text-slate-600">1.2%</span></div></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+  <div>
+  <div class="mb-4">
+  <h2 class="text-lg font-bold text-slate-800 m-0">Card-Style Rows</h2>
+  <p class="text-sm text-slate-500 mt-0-5 m-0">Each row styled as a card with hover elevation effect</p>
+</div>
+  <div class="space-y-2">
+    <div class="card p-4 flex items-center gap-4 bt-card-row">
+      <img src="img/avatars/avatar-woman-alice.jpg" alt="Alice Johnson" class="w-12 h-12 rounded-2xl object-cover">
+      <div class="flex-1 min-w-0">
+        <p class="text-sm font-bold text-slate-800 m-0">Alice Johnson</p>
+        <p class="text-xs text-slate-400 m-0">Product Manager · Product</p>
+      </div>
+      <div class="hidden-sm-flex items-center gap-2">
+        <div class="flex items-center gap-1 text-xs text-slate-500"><i data-lucide="mail" class="lucide-xxs"></i>alice@company.com</div>
+      </div>
+      <div class="hidden-md-block text-sm font-bold text-slate-700">$95,000</div>
+      <div><span class="bt-badge bg-emerald-100 text-emerald-700"><span class="bt-badge-dot bg-emerald-500"></span>Active</span></div>
+      <button class="w-8 h-8 rounded-lg flex items-center justify-center text-slate-400 bt-card-arrow"><i data-lucide="arrow-up-right" class="lucide-sm"></i></button>
+    </div><div class="card p-4 flex items-center gap-4 bt-card-row">
+      <img src="img/avatars/avatar-man-bob.jpg" alt="Bob Smith" class="w-12 h-12 rounded-2xl object-cover">
+      <div class="flex-1 min-w-0">
+        <p class="text-sm font-bold text-slate-800 m-0">Bob Smith</p>
+        <p class="text-xs text-slate-400 m-0">Senior Developer · Engineering</p>
+      </div>
+      <div class="hidden-sm-flex items-center gap-2">
+        <div class="flex items-center gap-1 text-xs text-slate-500"><i data-lucide="mail" class="lucide-xxs"></i>bob@company.com</div>
+      </div>
+      <div class="hidden-md-block text-sm font-bold text-slate-700">$1,15,000</div>
+      <div><span class="bt-badge bg-emerald-100 text-emerald-700"><span class="bt-badge-dot bg-emerald-500"></span>Active</span></div>
+      <button class="w-8 h-8 rounded-lg flex items-center justify-center text-slate-400 bt-card-arrow"><i data-lucide="arrow-up-right" class="lucide-sm"></i></button>
+    </div><div class="card p-4 flex items-center gap-4 bt-card-row">
+      <img src="img/avatars/avatar-woman-carol.jpg" alt="Carol Williams" class="w-12 h-12 rounded-2xl object-cover">
+      <div class="flex-1 min-w-0">
+        <p class="text-sm font-bold text-slate-800 m-0">Carol Williams</p>
+        <p class="text-xs text-slate-400 m-0">UX Designer · Design</p>
+      </div>
+      <div class="hidden-sm-flex items-center gap-2">
+        <div class="flex items-center gap-1 text-xs text-slate-500"><i data-lucide="mail" class="lucide-xxs"></i>carol@company.com</div>
+      </div>
+      <div class="hidden-md-block text-sm font-bold text-slate-700">$85,000</div>
+      <div><span class="bt-badge bg-amber-100 text-amber-700"><span class="bt-badge-dot bg-amber-500"></span>On Leave</span></div>
+      <button class="w-8 h-8 rounded-lg flex items-center justify-center text-slate-400 bt-card-arrow"><i data-lucide="arrow-up-right" class="lucide-sm"></i></button>
+    </div><div class="card p-4 flex items-center gap-4 bt-card-row">
+      <img src="img/avatars/avatar-man-david.jpg" alt="David Brown" class="w-12 h-12 rounded-2xl object-cover">
+      <div class="flex-1 min-w-0">
+        <p class="text-sm font-bold text-slate-800 m-0">David Brown</p>
+        <p class="text-xs text-slate-400 m-0">Marketing Director · Marketing</p>
+      </div>
+      <div class="hidden-sm-flex items-center gap-2">
+        <div class="flex items-center gap-1 text-xs text-slate-500"><i data-lucide="mail" class="lucide-xxs"></i>david@company.com</div>
+      </div>
+      <div class="hidden-md-block text-sm font-bold text-slate-700">$1,05,000</div>
+      <div><span class="bt-badge bg-emerald-100 text-emerald-700"><span class="bt-badge-dot bg-emerald-500"></span>Active</span></div>
+      <button class="w-8 h-8 rounded-lg flex items-center justify-center text-slate-400 bt-card-arrow"><i data-lucide="arrow-up-right" class="lucide-sm"></i></button>
+    </div><div class="card p-4 flex items-center gap-4 bt-card-row">
+      <img src="img/avatars/avatar-woman-grace.jpg" alt="Emma Davis" class="w-12 h-12 rounded-2xl object-cover">
+      <div class="flex-1 min-w-0">
+        <p class="text-sm font-bold text-slate-800 m-0">Emma Davis</p>
+        <p class="text-xs text-slate-400 m-0">QA Lead · QA</p>
+      </div>
+      <div class="hidden-sm-flex items-center gap-2">
+        <div class="flex items-center gap-1 text-xs text-slate-500"><i data-lucide="mail" class="lucide-xxs"></i>emma@company.com</div>
+      </div>
+      <div class="hidden-md-block text-sm font-bold text-slate-700">$88,000</div>
+      <div><span class="bt-badge bg-emerald-100 text-emerald-700"><span class="bt-badge-dot bg-emerald-500"></span>Active</span></div>
+      <button class="w-8 h-8 rounded-lg flex items-center justify-center text-slate-400 bt-card-arrow"><i data-lucide="arrow-up-right" class="lucide-sm"></i></button>
+    </div><div class="card p-4 flex items-center gap-4 bt-card-row">
+      <img src="img/avatars/avatar-man-mike.jpg" alt="Frank Wilson" class="w-12 h-12 rounded-2xl object-cover">
+      <div class="flex-1 min-w-0">
+        <p class="text-sm font-bold text-slate-800 m-0">Frank Wilson</p>
+        <p class="text-xs text-slate-400 m-0">DevOps Engineer · DevOps</p>
+      </div>
+      <div class="hidden-sm-flex items-center gap-2">
+        <div class="flex items-center gap-1 text-xs text-slate-500"><i data-lucide="mail" class="lucide-xxs"></i>frank@company.com</div>
+      </div>
+      <div class="hidden-md-block text-sm font-bold text-slate-700">$1,10,000</div>
+      <div><span class="bt-badge bg-slate-100 text-slate-600"><span class="bt-badge-dot bg-slate-400"></span>Inactive</span></div>
+      <button class="w-8 h-8 rounded-lg flex items-center justify-center text-slate-400 bt-card-arrow"><i data-lucide="arrow-up-right" class="lucide-sm"></i></button>
+    </div>
+  </div>
+</div>
+  <div>
+  <div class="mb-4">
+  <h2 class="text-lg font-bold text-slate-800 m-0">Dark Header Table</h2>
+  <p class="text-sm text-slate-500 mt-0-5 m-0">Inverted dark header with contrasting body rows</p>
+</div>
+  <div class="card overflow-hidden">
+    <div class="table-wrapper">
+      <table class="bt-dark-table">
+        <thead><tr class="bt-dark-header"><th>Employee</th><th>Contact</th><th>Department</th><th>Salary</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><div class="flex items-center gap-3"><img src="img/avatars/avatar-woman-alice.jpg" alt="Alice Johnson" class="w-9 h-9 rounded-full object-cover" style="box-shadow:0 0 0 2px #f1f5f9"><div><p class="text-sm font-semibold text-slate-800 m-0">Alice Johnson</p><p class="text-xs text-slate-400 m-0">Product Manager</p></div></div></td>
+            <td><div class="space-y-0-5"><div class="flex items-center gap-1-5 text-xs text-slate-500"><i data-lucide="mail" class="lucide-xxs"></i> alice@company.com</div><div class="flex items-center gap-1-5 text-xs text-slate-400"><i data-lucide="map-pin" class="lucide-xxs"></i> New York, US</div></div></td>
+            <td><span class="bt-dept bg-violet-100 text-violet-700">Product</span></td>
+            <td class="text-sm font-bold text-slate-800">$95,000</td>
+            <td><span class="bt-badge bg-emerald-100 text-emerald-700"><span class="bt-badge-dot bg-emerald-500"></span>Active</span></td>
+          </tr><tr>
+            <td><div class="flex items-center gap-3"><img src="img/avatars/avatar-man-bob.jpg" alt="Bob Smith" class="w-9 h-9 rounded-full object-cover" style="box-shadow:0 0 0 2px #f1f5f9"><div><p class="text-sm font-semibold text-slate-800 m-0">Bob Smith</p><p class="text-xs text-slate-400 m-0">Senior Developer</p></div></div></td>
+            <td><div class="space-y-0-5"><div class="flex items-center gap-1-5 text-xs text-slate-500"><i data-lucide="mail" class="lucide-xxs"></i> bob@company.com</div><div class="flex items-center gap-1-5 text-xs text-slate-400"><i data-lucide="map-pin" class="lucide-xxs"></i> New York, US</div></div></td>
+            <td><span class="bt-dept bg-indigo-100 text-indigo-700">Engineering</span></td>
+            <td class="text-sm font-bold text-slate-800">$1,15,000</td>
+            <td><span class="bt-badge bg-emerald-100 text-emerald-700"><span class="bt-badge-dot bg-emerald-500"></span>Active</span></td>
+          </tr><tr>
+            <td><div class="flex items-center gap-3"><img src="img/avatars/avatar-woman-carol.jpg" alt="Carol Williams" class="w-9 h-9 rounded-full object-cover" style="box-shadow:0 0 0 2px #f1f5f9"><div><p class="text-sm font-semibold text-slate-800 m-0">Carol Williams</p><p class="text-xs text-slate-400 m-0">UX Designer</p></div></div></td>
+            <td><div class="space-y-0-5"><div class="flex items-center gap-1-5 text-xs text-slate-500"><i data-lucide="mail" class="lucide-xxs"></i> carol@company.com</div><div class="flex items-center gap-1-5 text-xs text-slate-400"><i data-lucide="map-pin" class="lucide-xxs"></i> New York, US</div></div></td>
+            <td><span class="bt-dept bg-pink-100 text-pink-700">Design</span></td>
+            <td class="text-sm font-bold text-slate-800">$85,000</td>
+            <td><span class="bt-badge bg-amber-100 text-amber-700"><span class="bt-badge-dot bg-amber-500"></span>On Leave</span></td>
+          </tr><tr>
+            <td><div class="flex items-center gap-3"><img src="img/avatars/avatar-man-david.jpg" alt="David Brown" class="w-9 h-9 rounded-full object-cover" style="box-shadow:0 0 0 2px #f1f5f9"><div><p class="text-sm font-semibold text-slate-800 m-0">David Brown</p><p class="text-xs text-slate-400 m-0">Marketing Director</p></div></div></td>
+            <td><div class="space-y-0-5"><div class="flex items-center gap-1-5 text-xs text-slate-500"><i data-lucide="mail" class="lucide-xxs"></i> david@company.com</div><div class="flex items-center gap-1-5 text-xs text-slate-400"><i data-lucide="map-pin" class="lucide-xxs"></i> New York, US</div></div></td>
+            <td><span class="bt-dept bg-amber-100 text-amber-700">Marketing</span></td>
+            <td class="text-sm font-bold text-slate-800">$1,05,000</td>
+            <td><span class="bt-badge bg-emerald-100 text-emerald-700"><span class="bt-badge-dot bg-emerald-500"></span>Active</span></td>
+          </tr><tr>
+            <td><div class="flex items-center gap-3"><img src="img/avatars/avatar-woman-grace.jpg" alt="Emma Davis" class="w-9 h-9 rounded-full object-cover" style="box-shadow:0 0 0 2px #f1f5f9"><div><p class="text-sm font-semibold text-slate-800 m-0">Emma Davis</p><p class="text-xs text-slate-400 m-0">QA Lead</p></div></div></td>
+            <td><div class="space-y-0-5"><div class="flex items-center gap-1-5 text-xs text-slate-500"><i data-lucide="mail" class="lucide-xxs"></i> emma@company.com</div><div class="flex items-center gap-1-5 text-xs text-slate-400"><i data-lucide="map-pin" class="lucide-xxs"></i> New York, US</div></div></td>
+            <td><span class="bt-dept bg-cyan-100 text-cyan-700">QA</span></td>
+            <td class="text-sm font-bold text-slate-800">$88,000</td>
+            <td><span class="bt-badge bg-emerald-100 text-emerald-700"><span class="bt-badge-dot bg-emerald-500"></span>Active</span></td>
+          </tr><tr>
+            <td><div class="flex items-center gap-3"><img src="img/avatars/avatar-man-mike.jpg" alt="Frank Wilson" class="w-9 h-9 rounded-full object-cover" style="box-shadow:0 0 0 2px #f1f5f9"><div><p class="text-sm font-semibold text-slate-800 m-0">Frank Wilson</p><p class="text-xs text-slate-400 m-0">DevOps Engineer</p></div></div></td>
+            <td><div class="space-y-0-5"><div class="flex items-center gap-1-5 text-xs text-slate-500"><i data-lucide="mail" class="lucide-xxs"></i> frank@company.com</div><div class="flex items-center gap-1-5 text-xs text-slate-400"><i data-lucide="map-pin" class="lucide-xxs"></i> New York, US</div></div></td>
+            <td><span class="bt-dept bg-teal-100 text-teal-700">DevOps</span></td>
+            <td class="text-sm font-bold text-slate-800">$1,10,000</td>
+            <td><span class="bt-badge bg-slate-100 text-slate-600"><span class="bt-badge-dot bg-slate-400"></span>Inactive</span></td>
+          </tr><tr>
+            <td><div class="flex items-center gap-3"><img src="img/avatars/avatar-woman-jessica.jpg" alt="Grace Lee" class="w-9 h-9 rounded-full object-cover" style="box-shadow:0 0 0 2px #f1f5f9"><div><p class="text-sm font-semibold text-slate-800 m-0">Grace Lee</p><p class="text-xs text-slate-400 m-0">Data Scientist</p></div></div></td>
+            <td><div class="space-y-0-5"><div class="flex items-center gap-1-5 text-xs text-slate-500"><i data-lucide="mail" class="lucide-xxs"></i> grace@company.com</div><div class="flex items-center gap-1-5 text-xs text-slate-400"><i data-lucide="map-pin" class="lucide-xxs"></i> New York, US</div></div></td>
+            <td><span class="bt-dept bg-blue-100 text-blue-700">Data</span></td>
+            <td class="text-sm font-bold text-slate-800">$1,20,000</td>
+            <td><span class="bt-badge bg-emerald-100 text-emerald-700"><span class="bt-badge-dot bg-emerald-500"></span>Active</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+  <div>
+  <div class="mb-4">
+  <h2 class="text-lg font-bold text-slate-800 m-0">Selectable Table</h2>
+  <p class="text-sm text-slate-500 mt-0-5 m-0">Table with checkboxes for bulk actions</p>
+</div>
+  <div class="card overflow-hidden">
+    <div class="p-3 border-b flex items-center justify-between">
+      <p class="text-sm text-slate-500 m-0">Select items to perform bulk actions</p>
+      <div class="flex items-center gap-2">
+        <button class="btn-outline text-xs"><i data-lucide="trash-2" class="lucide-xxs"></i> Delete</button>
+        <button class="btn-outline text-xs"><i data-lucide="download" class="lucide-xxs"></i> Export</button>
+      </div>
+    </div>
+    <div class="table-wrapper">
+      <table class="bt-table">
+        <thead><tr><th class="w-10"><input type="checkbox" class="bt-cb" data-bt-sel-all></th><th>Employee</th><th>Department</th><th>Role</th><th>Salary</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr class="bt-sel-row">
+            <td><input type="checkbox" class="bt-cb" data-bt-sel-row></td>
+            <td><div class="flex items-center gap-3"><img src="img/avatars/avatar-woman-alice.jpg" alt="Alice Johnson" class="w-8 h-8 rounded-full object-cover"><div><p class="text-sm font-semibold text-slate-800 m-0">Alice Johnson</p><p class="text-xs text-slate-400 m-0">alice@company.com</p></div></div></td>
+            <td><span class="bt-dept bg-violet-100 text-violet-700">Product</span></td>
+            <td class="text-sm text-slate-600">Product Manager</td>
+            <td class="text-sm font-semibold text-slate-700">$95,000</td>
+            <td><span class="bt-badge bg-emerald-100 text-emerald-700"><span class="bt-badge-dot bg-emerald-500"></span>Active</span></td>
+          </tr><tr class="bt-sel-row">
+            <td><input type="checkbox" class="bt-cb" data-bt-sel-row></td>
+            <td><div class="flex items-center gap-3"><img src="img/avatars/avatar-man-bob.jpg" alt="Bob Smith" class="w-8 h-8 rounded-full object-cover"><div><p class="text-sm font-semibold text-slate-800 m-0">Bob Smith</p><p class="text-xs text-slate-400 m-0">bob@company.com</p></div></div></td>
+            <td><span class="bt-dept bg-indigo-100 text-indigo-700">Engineering</span></td>
+            <td class="text-sm text-slate-600">Senior Developer</td>
+            <td class="text-sm font-semibold text-slate-700">$1,15,000</td>
+            <td><span class="bt-badge bg-emerald-100 text-emerald-700"><span class="bt-badge-dot bg-emerald-500"></span>Active</span></td>
+          </tr><tr class="bt-sel-row">
+            <td><input type="checkbox" class="bt-cb" data-bt-sel-row></td>
+            <td><div class="flex items-center gap-3"><img src="img/avatars/avatar-woman-carol.jpg" alt="Carol Williams" class="w-8 h-8 rounded-full object-cover"><div><p class="text-sm font-semibold text-slate-800 m-0">Carol Williams</p><p class="text-xs text-slate-400 m-0">carol@company.com</p></div></div></td>
+            <td><span class="bt-dept bg-pink-100 text-pink-700">Design</span></td>
+            <td class="text-sm text-slate-600">UX Designer</td>
+            <td class="text-sm font-semibold text-slate-700">$85,000</td>
+            <td><span class="bt-badge bg-amber-100 text-amber-700"><span class="bt-badge-dot bg-amber-500"></span>On Leave</span></td>
+          </tr><tr class="bt-sel-row">
+            <td><input type="checkbox" class="bt-cb" data-bt-sel-row></td>
+            <td><div class="flex items-center gap-3"><img src="img/avatars/avatar-man-david.jpg" alt="David Brown" class="w-8 h-8 rounded-full object-cover"><div><p class="text-sm font-semibold text-slate-800 m-0">David Brown</p><p class="text-xs text-slate-400 m-0">david@company.com</p></div></div></td>
+            <td><span class="bt-dept bg-amber-100 text-amber-700">Marketing</span></td>
+            <td class="text-sm text-slate-600">Marketing Director</td>
+            <td class="text-sm font-semibold text-slate-700">$1,05,000</td>
+            <td><span class="bt-badge bg-emerald-100 text-emerald-700"><span class="bt-badge-dot bg-emerald-500"></span>Active</span></td>
+          </tr><tr class="bt-sel-row">
+            <td><input type="checkbox" class="bt-cb" data-bt-sel-row></td>
+            <td><div class="flex items-center gap-3"><img src="img/avatars/avatar-woman-grace.jpg" alt="Emma Davis" class="w-8 h-8 rounded-full object-cover"><div><p class="text-sm font-semibold text-slate-800 m-0">Emma Davis</p><p class="text-xs text-slate-400 m-0">emma@company.com</p></div></div></td>
+            <td><span class="bt-dept bg-cyan-100 text-cyan-700">QA</span></td>
+            <td class="text-sm text-slate-600">QA Lead</td>
+            <td class="text-sm font-semibold text-slate-700">$88,000</td>
+            <td><span class="bt-badge bg-emerald-100 text-emerald-700"><span class="bt-badge-dot bg-emerald-500"></span>Active</span></td>
+          </tr><tr class="bt-sel-row">
+            <td><input type="checkbox" class="bt-cb" data-bt-sel-row></td>
+            <td><div class="flex items-center gap-3"><img src="img/avatars/avatar-man-mike.jpg" alt="Frank Wilson" class="w-8 h-8 rounded-full object-cover"><div><p class="text-sm font-semibold text-slate-800 m-0">Frank Wilson</p><p class="text-xs text-slate-400 m-0">frank@company.com</p></div></div></td>
+            <td><span class="bt-dept bg-teal-100 text-teal-700">DevOps</span></td>
+            <td class="text-sm text-slate-600">DevOps Engineer</td>
+            <td class="text-sm font-semibold text-slate-700">$1,10,000</td>
+            <td><span class="bt-badge bg-slate-100 text-slate-600"><span class="bt-badge-dot bg-slate-400"></span>Inactive</span></td>
+          </tr><tr class="bt-sel-row">
+            <td><input type="checkbox" class="bt-cb" data-bt-sel-row></td>
+            <td><div class="flex items-center gap-3"><img src="img/avatars/avatar-woman-jessica.jpg" alt="Grace Lee" class="w-8 h-8 rounded-full object-cover"><div><p class="text-sm font-semibold text-slate-800 m-0">Grace Lee</p><p class="text-xs text-slate-400 m-0">grace@company.com</p></div></div></td>
+            <td><span class="bt-dept bg-blue-100 text-blue-700">Data</span></td>
+            <td class="text-sm text-slate-600">Data Scientist</td>
+            <td class="text-sm font-semibold text-slate-700">$1,20,000</td>
+            <td><span class="bt-badge bg-emerald-100 text-emerald-700"><span class="bt-badge-dot bg-emerald-500"></span>Active</span></td>
+          </tr><tr class="bt-sel-row">
+            <td><input type="checkbox" class="bt-cb" data-bt-sel-row></td>
+            <td><div class="flex items-center gap-3"><img src="img/avatars/avatar-man-henry.jpg" alt="Henry Martinez" class="w-8 h-8 rounded-full object-cover"><div><p class="text-sm font-semibold text-slate-800 m-0">Henry Martinez</p><p class="text-xs text-slate-400 m-0">henry@company.com</p></div></div></td>
+            <td><span class="bt-dept bg-rose-100 text-rose-700">Management</span></td>
+            <td class="text-sm text-slate-600">CTO</td>
+            <td class="text-sm font-semibold text-slate-700">$1,80,000</td>
+            <td><span class="bt-badge bg-emerald-100 text-emerald-700"><span class="bt-badge-dot bg-emerald-500"></span>Active</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+  <div>
+  <h2 class="text-base font-semibold text-slate-800 mb-3 m-0">Department Breakdown</h2>
+  <div class="grid grid-cols-6 gap-4">
+    <div class="card p-4">
+        <span class="bt-dept bg-indigo-100 text-indigo-700">Engineering</span>
+        <p class="mt-3 text-2xl font-bold text-slate-800 m-0">3</p>
+        <p class="text-xs text-slate-500 mb-2 m-0">Avg&nbsp;$105k</p>
+        <div class="h-1-5 bg-slate-100 rounded-full overflow-hidden"><div class="h-full rounded-full bg-primary-500" style="width:100%"></div></div>
+      </div><div class="card p-4">
+        <span class="bt-dept bg-pink-100 text-pink-700">Design</span>
+        <p class="mt-3 text-2xl font-bold text-slate-800 m-0">2</p>
+        <p class="text-xs text-slate-500 mb-2 m-0">Avg&nbsp;$77k</p>
+        <div class="h-1-5 bg-slate-100 rounded-full overflow-hidden"><div class="h-full rounded-full bg-primary-500" style="width:67%"></div></div>
+      </div><div class="card p-4">
+        <span class="bt-dept bg-violet-100 text-violet-700">Product</span>
+        <p class="mt-3 text-2xl font-bold text-slate-800 m-0">1</p>
+        <p class="text-xs text-slate-500 mb-2 m-0">Avg&nbsp;$95k</p>
+        <div class="h-1-5 bg-slate-100 rounded-full overflow-hidden"><div class="h-full rounded-full bg-primary-500" style="width:33%"></div></div>
+      </div><div class="card p-4">
+        <span class="bt-dept bg-amber-100 text-amber-700">Marketing</span>
+        <p class="mt-3 text-2xl font-bold text-slate-800 m-0">1</p>
+        <p class="text-xs text-slate-500 mb-2 m-0">Avg&nbsp;$105k</p>
+        <div class="h-1-5 bg-slate-100 rounded-full overflow-hidden"><div class="h-full rounded-full bg-primary-500" style="width:33%"></div></div>
+      </div><div class="card p-4">
+        <span class="bt-dept bg-cyan-100 text-cyan-700">QA</span>
+        <p class="mt-3 text-2xl font-bold text-slate-800 m-0">1</p>
+        <p class="text-xs text-slate-500 mb-2 m-0">Avg&nbsp;$88k</p>
+        <div class="h-1-5 bg-slate-100 rounded-full overflow-hidden"><div class="h-full rounded-full bg-primary-500" style="width:33%"></div></div>
+      </div><div class="card p-4">
+        <span class="bt-dept bg-teal-100 text-teal-700">DevOps</span>
+        <p class="mt-3 text-2xl font-bold text-slate-800 m-0">1</p>
+        <p class="text-xs text-slate-500 mb-2 m-0">Avg&nbsp;$110k</p>
+        <div class="h-1-5 bg-slate-100 rounded-full overflow-hidden"><div class="h-full rounded-full bg-primary-500" style="width:33%"></div></div>
+      </div>
+  </div>
+</div>
+</main>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lucide@latest/dist/umd/lucide.min.js"></script>
+</body>
+</html>

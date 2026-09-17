@@ -1,0 +1,375 @@
+.sidebar-nav-link .link-label {
+    min-width: 0;
+}
+
+.sidebar-nav-link.is-disabled {
+    cursor: not-allowed;
+    opacity: .72;
+}
+
+.sidebar-nav-link.is-disabled:hover {
+    background: transparent;
+    color: var(--slate-600);
+}
+
+html.dark .sidebar-nav-link.is-disabled:hover {
+    background: transparent;
+    color: var(--slate-400);
+}
+
+.menu-status {
+    margin-inline-start: auto;
+    padding: .125rem .375rem;
+    border-radius: 999px;
+    background: var(--slate-100);
+    color: var(--slate-500);
+    font-size: 9px;
+    font-weight: 600;
+    line-height: 1.4;
+    white-space: nowrap;
+}
+
+html.dark .menu-status {
+    background: rgb(51 65 85 / .65);
+    color: var(--slate-400);
+}
+
+/* The permission-aware menu is rendered by Blade, so keep it available when collapsed. */
+.app-sidebar.collapsed .sidebar-nav {
+    display: block !important;
+    padding: .75rem .5rem;
+}
+
+.app-sidebar.collapsed .sidebar-nav-link .menu-status {
+    display: none;
+}
+
+/* Dashboard */
+.dashboard-hero {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    padding: clamp(1.5rem, 3vw, 2.5rem);
+    border: 0;
+    color: #fff;
+    background:
+        linear-gradient(120deg, rgb(30 41 59 / .25), transparent 52%),
+        linear-gradient(135deg, #312e81 0%, #4f46e5 50%, #0ea5e9 100%);
+    box-shadow: 0 18px 45px rgb(79 70 229 / .22);
+}
+
+.dashboard-hero-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.dashboard-hero-copy {
+    max-width: 42rem;
+    color: rgb(255 255 255 / .78);
+}
+
+.dashboard-hero-orb {
+    position: absolute;
+    z-index: 1;
+    border-radius: 999px;
+    pointer-events: none;
+}
+
+.dashboard-hero-orb-one {
+    top: -8rem;
+    right: 19%;
+    width: 19rem;
+    height: 19rem;
+    background: rgb(255 255 255 / .1);
+}
+
+.dashboard-hero-orb-two {
+    right: -4rem;
+    bottom: -7rem;
+    width: 16rem;
+    height: 16rem;
+    border: 2.5rem solid rgb(255 255 255 / .08);
+}
+
+.dashboard-date-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: .5rem;
+    padding: .45rem .75rem;
+    border: 1px solid rgb(255 255 255 / .18);
+    border-radius: 999px;
+    color: rgb(255 255 255 / .9);
+    background: rgb(255 255 255 / .1);
+    font-size: .75rem;
+    font-weight: 600;
+    backdrop-filter: blur(8px);
+}
+
+.dashboard-quick-actions {
+    display: grid;
+    flex: 0 0 auto;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: .75rem;
+}
+
+.dashboard-quick-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: .55rem;
+    min-width: 9.75rem;
+    padding: .7rem .9rem;
+    border: 1px solid rgb(255 255 255 / .2);
+    border-radius: .8rem;
+    color: #fff;
+    background: rgb(255 255 255 / .11);
+    font-size: .8rem;
+    font-weight: 600;
+    text-decoration: none;
+    backdrop-filter: blur(10px);
+    transition: transform .18s ease, background-color .18s ease;
+}
+
+.dashboard-quick-link:hover {
+    color: #fff;
+    background: rgb(255 255 255 / .2);
+    transform: translateY(-2px);
+}
+
+.dashboard-metric-card {
+    position: relative;
+    overflow: hidden;
+    padding: 1.35rem;
+    border: 1px solid var(--slate-200);
+    transition: transform .18s ease, box-shadow .18s ease;
+}
+
+.dashboard-metric-card::before {
+    position: absolute;
+    top: 0;
+    right: 1.35rem;
+    left: 1.35rem;
+    height: 3px;
+    border-radius: 0 0 999px 999px;
+    background: var(--dashboard-accent);
+    content: '';
+}
+
+.dashboard-metric-card:hover {
+    box-shadow: 0 14px 28px rgb(15 23 42 / .08);
+    transform: translateY(-3px);
+}
+
+.dashboard-metric-primary { --dashboard-accent: #6366f1; --dashboard-soft: rgb(99 102 241 / .12); }
+.dashboard-metric-success { --dashboard-accent: #10b981; --dashboard-soft: rgb(16 185 129 / .12); }
+.dashboard-metric-info { --dashboard-accent: #0ea5e9; --dashboard-soft: rgb(14 165 233 / .12); }
+.dashboard-metric-danger { --dashboard-accent: #ef4444; --dashboard-soft: rgb(239 68 68 / .12); }
+
+.dashboard-metric-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.dashboard-metric-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.65rem;
+    height: 2.65rem;
+    border-radius: .8rem;
+    color: var(--dashboard-accent);
+    background: var(--dashboard-soft);
+}
+
+.dashboard-metric-label {
+    color: var(--slate-500);
+    font-size: .75rem;
+    font-weight: 600;
+}
+
+.dashboard-metric-value {
+    color: var(--slate-800);
+    font-size: clamp(1.75rem, 4vw, 2.25rem);
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+.dashboard-metric-caption {
+    margin-top: .55rem;
+    color: var(--slate-500);
+    font-size: .72rem;
+}
+
+.dashboard-rate-pill {
+    padding: .25rem .55rem;
+    border-radius: 999px;
+    color: #059669;
+    background: rgb(16 185 129 / .12);
+    font-size: .7rem;
+    font-weight: 700;
+}
+
+.dashboard-chart-card {
+    overflow: hidden;
+}
+
+.dashboard-card-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1.35rem 1.5rem;
+}
+
+.dashboard-eyebrow {
+    margin-bottom: .35rem;
+    color: #6366f1;
+    font-size: .66rem;
+    font-weight: 700;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+}
+
+.dashboard-eyebrow-danger {
+    color: #ef4444;
+}
+
+.dashboard-heading-icon {
+    display: inline-flex;
+    flex: 0 0 auto;
+    align-items: center;
+    justify-content: center;
+    width: 2.65rem;
+    height: 2.65rem;
+    border-radius: .85rem;
+}
+
+.dashboard-heading-icon-primary { color: #6366f1; background: rgb(99 102 241 / .1); }
+.dashboard-heading-icon-success { color: #10b981; background: rgb(16 185 129 / .1); }
+.dashboard-heading-icon-danger { color: #ef4444; background: rgb(239 68 68 / .1); }
+
+.dashboard-chart {
+    min-height: 330px;
+    padding: 0 .75rem .75rem;
+}
+
+.dashboard-chart-donut {
+    padding-inline: .25rem;
+}
+
+.dashboard-purpose {
+    max-width: 15rem;
+}
+
+.dashboard-empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 16rem;
+    padding: 2rem;
+    text-align: center;
+}
+
+.dashboard-empty-compact {
+    min-height: 18rem;
+}
+
+.dashboard-empty-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 3.5rem;
+    height: 3.5rem;
+    margin-bottom: 1rem;
+    border-radius: 1rem;
+    color: #6366f1;
+    background: rgb(99 102 241 / .1);
+}
+
+.dashboard-empty-icon-success {
+    color: #10b981;
+    background: rgb(16 185 129 / .1);
+}
+
+.dashboard-attention-list {
+    padding: .35rem 1.25rem 1.25rem;
+}
+
+.dashboard-attention-item {
+    display: flex;
+    align-items: flex-start;
+    gap: .85rem;
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--slate-200);
+}
+
+.dashboard-attention-item:last-child {
+    border-bottom: 0;
+}
+
+.dashboard-attention-icon {
+    display: inline-flex;
+    flex: 0 0 auto;
+    align-items: center;
+    justify-content: center;
+    width: 2.2rem;
+    height: 2.2rem;
+    border-radius: .7rem;
+    color: #ef4444;
+    background: rgb(239 68 68 / .1);
+}
+
+html.dark .dashboard-metric-card,
+html.dark .dashboard-attention-item {
+    border-color: var(--slate-700);
+}
+
+html.dark .dashboard-metric-card:hover {
+    box-shadow: 0 14px 28px rgb(0 0 0 / .18);
+}
+
+@media (max-width: 991.98px) {
+    .dashboard-hero-content {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .dashboard-quick-actions {
+        width: 100%;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .dashboard-quick-actions {
+        grid-template-columns: 1fr;
+    }
+
+    .dashboard-quick-link {
+        justify-content: flex-start;
+        width: 100%;
+    }
+
+    .dashboard-card-heading {
+        align-items: flex-start;
+        padding: 1.15rem;
+    }
+
+    .dashboard-heading-icon {
+        display: none;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .dashboard-metric-card,
+    .dashboard-quick-link {
+        transition: none;
+    }
+}

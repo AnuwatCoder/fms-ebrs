@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Documentation | Liner Bootstrap Admin</title>
+  <link rel="icon" type="image/svg+xml" href="img/logo.svg">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary: #034075;
+      --primary-50: #e6f0f9;
+      --primary-100: #b3d1ec;
+      --primary-600: #023666;
+      --primary-700: #022d57;
+      --slate-50:  #f8fafc;
+      --slate-100: #f1f5f9;
+      --slate-200: #e2e8f0;
+      --slate-300: #cbd5e1;
+      --slate-400: #94a3b8;
+      --slate-500: #64748b;
+      --slate-600: #475569;
+      --slate-700: #334155;
+      --slate-800: #1e293b;
+      --slate-900: #0f172a;
+      --code-bg: #0f172a;
+      --code-text: #e2e8f0;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      color: var(--slate-700);
+      background: #fff;
+      font-size: 15px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ===== Layout ===== */
+    .doc-app { display: flex; min-height: 100vh; }
+    .doc-sidebar {
+      position: fixed;
+      top: 0; left: 0; bottom: 0;
+      width: 280px;
+      background: #fff;
+      border-right: 1px solid var(--slate-200);
+      overflow-y: auto;
+      z-index: 20;
+    }
+    .doc-brand {
+      display: flex; align-items: center; gap: 12px;
+      padding: 20px 24px;
+      border-bottom: 1px solid var(--slate-100);
+      text-decoration: none; color: inherit;
+    }
+    .doc-brand-logo { width: 36px; height: 36px; }
+    .doc-brand-name { font-size: 18px; font-weight: 800; color: var(--slate-900); margin: 0; line-height: 1.1; }
+    .doc-brand-sub { font-size: 11px; font-weight: 600; color: var(--slate-400); letter-spacing: .12em; text-transform: uppercase; margin: 0; }
+
+    .doc-toc { padding: 16px 0 32px; }
+    .doc-toc-group { padding: 12px 24px 4px; font-size: 10px; font-weight: 700; color: var(--slate-400); text-transform: uppercase; letter-spacing: .12em; }
+    .doc-toc a {
+      display: block;
+      padding: 7px 24px;
+      color: var(--slate-600);
+      text-decoration: none;
+      font-size: 14px;
+      transition: background-color .15s, color .15s;
+      border-left: 3px solid transparent;
+    }
+    .doc-toc a:hover { background: var(--slate-50); color: var(--slate-900); }
+    .doc-toc a.active { background: var(--primary-50); color: var(--primary); border-left-color: var(--primary); font-weight: 600; }
+
+    .doc-main { flex: 1; margin-left: 280px; padding: 32px 56px 96px; max-width: 1024px; }
+    .doc-main > section { padding-top: 24px; margin-bottom: 56px; scroll-margin-top: 24px; }
+
+    /* ===== Typography ===== */
+    h1 { font-size: 38px; font-weight: 800; color: var(--slate-900); margin: 0 0 12px; line-height: 1.15; letter-spacing: -.02em; }
+    h2 { font-size: 26px; font-weight: 700; color: var(--slate-900); margin: 0 0 12px; padding-bottom: 12px; border-bottom: 1px solid var(--slate-200); letter-spacing: -.015em; }
+    h3 { font-size: 19px; font-weight: 700; color: var(--slate-800); margin: 28px 0 10px; }
+    h4 { font-size: 16px; font-weight: 600; color: var(--slate-800); margin: 20px 0 8px; }
+    p { margin: 0 0 14px; color: var(--slate-600); }
+    ul, ol { margin: 0 0 14px; padding-left: 24px; color: var(--slate-600); }
+    li { margin-bottom: 6px; }
+    a { color: var(--primary); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    strong { color: var(--slate-800); font-weight: 600; }
+
+    /* ===== Hero ===== */
+    .doc-hero {
+      background: linear-gradient(135deg, var(--primary) 0%, #023666 100%);
+      color: #fff;
+      padding: 40px 36px;
+      border-radius: 16px;
+      margin: 0 0 32px;
+      position: relative;
+      overflow: hidden;
+    }
+    .doc-hero::before, .doc-hero::after {
+      content: '';
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(255,255,255,.08);
+    }
+    .doc-hero::before { width: 240px; height: 240px; top: -80px; right: -40px; }
+    .doc-hero::after  { width: 160px; height: 160px; bottom: -60px; left: -40px; }
+    .doc-hero h1 { color: #fff; font-size: 36px; margin-bottom: 10px; position: relative; }
+    .doc-hero p { color: rgba(255,255,255,.85); font-size: 16px; max-width: 600px; position: relative; margin-bottom: 0; }
+    .doc-hero-meta {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(255,255,255,.15);
+      backdrop-filter: blur(6px);
+      padding: 5px 12px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: .04em;
+      margin-bottom: 16px;
+      position: relative;
+    }
+    .doc-hero-meta-dot { width: 7px; height: 7px; border-radius: 50%; background: #34d399; }
+
+    /* ===== Code blocks ===== */
+    code {
+      font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 13px;
+      padding: 2px 6px;
+      background: var(--slate-100);
+      color: var(--primary);
+      border-radius: 4px;
+    }
+    pre {
+      background: var(--code-bg);
+      color: var(--code-text);
+      padding: 18px 20px;
+      border-radius: 10px;
+      overflow-x: auto;
+      margin: 12px 0 18px;
+      font-family: 'JetBrains Mono', ui-monospace, monospace;
+      font-size: 13px;
+      line-height: 1.65;
+      position: relative;
+      border: 1px solid var(--slate-800);
+    }
+    pre code { background: transparent; color: inherit; padding: 0; border-radius: 0; font-size: inherit; }
+    .code-comment { color: #64748b; }
+    .code-keyword { color: #a78bfa; }
+    .code-string  { color: #86efac; }
+    .code-attr    { color: #93c5fd; }
+    .code-tag     { color: #f9a8d4; }
+    .code-fn      { color: #fde68a; }
+
+    /* ===== Cards & boxes ===== */
+    .doc-card {
+      background: #fff;
+      border: 1px solid var(--slate-200);
+      border-radius: 12px;
+      padding: 20px 22px;
+      margin: 12px 0 18px;
+    }
+    .doc-grid { display: grid; gap: 16px; }
+    .doc-grid-2 { grid-template-columns: repeat(2, 1fr); }
+    .doc-grid-3 { grid-template-columns: repeat(3, 1fr); }
+    @media (max-width: 768px) {
+      .doc-grid-2, .doc-grid-3 { grid-template-columns: 1fr; }
+    }
+
+    .doc-callout {
+      display: flex; gap: 14px;
+      padding: 16px 18px;
+      border-radius: 10px;
+      margin: 12px 0 18px;
+      border: 1px solid;
+    }
+    .doc-callout-icon { flex-shrink: 0; width: 22px; height: 22px; margin-top: 1px; }
+    .doc-callout-body p:last-child { margin-bottom: 0; }
+    .doc-callout-info    { background: #eff6ff; border-color: #bfdbfe; color: #1e40af; }
+    .doc-callout-warn    { background: #fffbeb; border-color: #fde68a; color: #92400e; }
+    .doc-callout-tip     { background: #ecfdf5; border-color: #a7f3d0; color: #065f46; }
+    .doc-callout strong  { color: inherit; }
+
+    .doc-badge {
+      display: inline-block;
+      padding: 2px 8px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .04em;
+      border-radius: 999px;
+      vertical-align: middle;
+      margin-left: 8px;
+    }
+    .doc-badge-new { background: #dcfce7; color: #166534; }
+
+    /* ===== Tables ===== */
+    table.doc-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 12px 0 18px;
+      font-size: 14px;
+    }
+    .doc-table th, .doc-table td {
+      padding: 10px 14px;
+      text-align: left;
+      border-bottom: 1px solid var(--slate-100);
+    }
+    .doc-table th {
+      background: var(--slate-50);
+      color: var(--slate-700);
+      font-weight: 600;
+      font-size: 12px;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+    }
+    .doc-table td code { font-size: 12px; }
+    .doc-table tbody tr:hover { background: var(--slate-50); }
+
+    /* ===== Mobile menu trigger ===== */
+    .doc-menu-toggle {
+      display: none;
+      position: fixed;
+      top: 16px; left: 16px;
+      width: 40px; height: 40px;
+      border-radius: 10px;
+      border: 1px solid var(--slate-200);
+      background: #fff;
+      color: var(--slate-700);
+      cursor: pointer;
+      align-items: center; justify-content: center;
+      z-index: 30;
+      box-shadow: 0 4px 12px rgb(0 0 0 / .08);
+    }
+    @media (max-width: 991.98px) {
+      .doc-sidebar { transform: translateX(-100%); transition: transform .3s; }
+      .doc-sidebar.open { transform: translateX(0); }
+      .doc-main { margin-left: 0; padding: 64px 24px 96px; }
+      .doc-menu-toggle { display: inline-flex; }
+    }
+
+    /* ===== Footer ===== */
+    .doc-footer {
+      margin-top: 64px;
+      padding-top: 32px;
+      border-top: 1px solid var(--slate-200);
+      text-align: center;
+      color: var(--slate-400);
+      font-size: 13px;
+    }
+  </style>
+</head>
+<body>
+
+<button class="doc-menu-toggle" id="docMenu" aria-label="Menu">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+</button>
+
+<div class="doc-app">
+
+  <!-- Sidebar TOC -->
+  <aside class="doc-sidebar" id="docSidebar">
+    <a href="#top" class="doc-brand">
+      <img src="img/logo.svg" alt="Liner" class="doc-brand-logo">
+      <div>
+        <p class="doc-brand-name">Liner</p>
+        <p class="doc-brand-sub">Bootstrap Docs</p>
+      </div>
+    </a>
+    <nav class="doc-toc" id="docToc">
+      <div class="doc-toc-group">Getting Started</div>
+      <a href="#introduction">Introduction</a>
+      <a href="#installation">Installation</a>
+      <a href="#folder-structure">Folder Structure</a>
+      <a href="#first-run">First Run</a>
+
+      <div class="doc-toc-group">Foundations</div>
+      <a href="#html-structure">HTML Structure</a>
+      <a href="#theme-css">theme.css</a>
+      <a href="#app-js">app.js</a>
+      <a href="#menu-config">Menu Configuration</a>
+
+      <div class="doc-toc-group">Customization</div>
+      <a href="#color-presets">Color Presets</a>
+      <a href="#dark-mode">Dark Mode</a>
+      <a href="#rtl-support">RTL Support</a>
+      <a href="#sidebar-modes">Sidebar Modes</a>
+      <a href="#horizontal-layout">Horizontal Layout</a>
+
+      <div class="doc-toc-group">Components</div>
+      <a href="#buttons-cards">Buttons &amp; Cards</a>
+      <a href="#tables">Tables</a>
+      <a href="#forms">Forms</a>
+      <a href="#charts">Charts</a>
+      <a href="#icons">Icons</a>
+
+      <div class="doc-toc-group">Pages</div>
+      <a href="#add-new-page">Add a New Page</a>
+      <a href="#page-list">Included Pages</a>
+
+      <div class="doc-toc-group">Reference</div>
+      <a href="#dependencies">Dependencies</a>
+      <a href="#browser-support">Browser Support</a>
+      <a href="#license">License</a>
+      <a href="#support">Support</a>
+    </nav>
+  </aside>
+
+  <!-- Main content -->
+  <main class="doc-main">
+
+    <!-- Hero -->
+    <section id="top" style="margin-bottom:24px;padding-top:0">
+      <div class="doc-hero">
+        <span class="doc-hero-meta"><span class="doc-hero-meta-dot"></span>Version 2.0 · Bootstrap 5.3</span>
+        <h1>Liner — Bootstrap Admin Documentation</h1>
+        <p>A complete guide to installing, customizing, and extending the Liner Bootstrap admin template. 60+ pre-built pages, dark mode, RTL, 5 color presets, and pixel-perfect design.</p>
+      </div>
+    </section>
+
+    <!-- Introduction -->
+    <section id="introduction">
+      <h2>Introduction</h2>
+      <p>Liner is a production-ready Bootstrap 5 admin template built with pure HTML, CSS, and vanilla JavaScript. No build step, no framework lock-in — just open the files and ship.</p>
+      <p>This Bootstrap version mirrors the React and Vue versions pixel-for-pixel, so you can switch stacks without redesigning. All features ship out of the box:</p>
+      <ul>
+        <li><strong>60+ pages</strong> across dashboards, apps, UI elements, forms, tables, charts, and authentication</li>
+        <li><strong>Dark / light mode</strong> with smooth transitions and persisted preference</li>
+        <li><strong>5 color presets</strong> — Navy, Blue, Emerald, Orange, Rose — switchable via the Settings Panel</li>
+        <li><strong>RTL support</strong> using CSS logical properties</li>
+        <li><strong>3 layout modes</strong> — expanded sidebar, collapsed icon-only sidebar (with hover flyouts), and horizontal top-nav</li>
+        <li><strong>ApexCharts</strong> integration for 6 chart types with theme-aware colors</li>
+        <li><strong>Lucide icons</strong> — 1,000+ crisp SVG icons</li>
+      </ul>
+    </section>
+
+    <!-- Installation -->
+    <section id="installation">
+      <h2>Installation</h2>
+      <p>Liner Bootstrap has zero build dependencies. You can use it three ways:</p>
+
+      <h3>1. Drop into XAMPP / any local server</h3>
+      <ol>
+        <li>Copy the template folder anywhere under your web root (e.g. <code>htdocs/</code>).</li>
+        <li>Start XAMPP / Apache / nginx.</li>
+        <li>Visit <code>http://localhost/dashboard.html</code>.</li>
+      </ol>
+
+      <h3>2. Direct file open</h3>
+      <p>Most pages work by opening <code>dashboard.html</code> directly in a browser. A few features (font loading, SVG icons via CDN) work better over <code>http://</code> than <code>file://</code>.</p>
+
+      <h3>3. Deploy to static host</h3>
+      <p>Upload the entire template folder to any static host — Netlify, GitHub Pages, Cloudflare Pages, S3, or your own server. No build required.</p>
+
+      <div class="doc-callout doc-callout-info">
+        <svg class="doc-callout-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+        <div class="doc-callout-body">
+          <p><strong>Tip:</strong> All CSS, JS, fonts, and chart libraries are loaded from public CDNs (jsDelivr, Google Fonts, simpleicons). For air-gapped deployments, mirror them locally and adjust the <code>&lt;link&gt;</code> and <code>&lt;script&gt;</code> tags in each page's <code>&lt;head&gt;</code>.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Folder Structure -->
+    <section id="folder-structure">
+      <h2>Folder Structure</h2>
+      <p>The Bootstrap version is intentionally flat — every page is a top-level HTML file that links to shared assets.</p>
+<pre><code>./
+├── <span class="code-tag">assets/</span>
+│   ├── css/
+│   │   └── theme.css      <span class="code-comment"># Single stylesheet — all components, layouts, utilities</span>
+│   └── js/
+│       └── app.js         <span class="code-comment"># Theme manager, layout init, per-page handlers</span>
+├── <span class="code-tag">img/</span>
+│   ├── avatars/           <span class="code-comment"># User avatars used across pages</span>
+│   ├── unsplash/          <span class="code-comment"># Cover images, product shots</span>
+│   ├── logo.svg
+│   └── favicon.svg
+├── <span class="code-tag">dashboard.html</span>          <span class="code-comment"># Default landing — Modern dashboard</span>
+├── analytics.html
+├── ecommerce.html
+├── music.html
+├── general.html
+├── calendar.html · chat.html · email.html · ...   <span class="code-comment"># 60+ pages total</span>
+└── documentation.html     <span class="code-comment"># You are here</span></code></pre>
+      <p>Each HTML page contains its sidebar, header, settings panel, and main content inline — there are no <code>&lt;iframe&gt;</code> includes. This makes pages independently deployable and easy to extract.</p>
+    </section>
+
+    <!-- First Run -->
+    <section id="first-run">
+      <h2>First Run</h2>
+      <p>Open <code>dashboard.html</code> in a browser. You should see:</p>
+      <ul>
+        <li>A vertical sidebar on the left with grouped menu items</li>
+        <li>A fixed top header with breadcrumb, search, dark-mode toggle, notifications, and settings gear</li>
+        <li>The main content area with stat cards and charts</li>
+      </ul>
+      <p>Click the gear icon (top right) to open the Settings Panel, where you can switch color preset, dark mode, RTL, sidebar collapse, and horizontal layout. All preferences persist in <code>localStorage</code>.</p>
+    </section>
+
+    <!-- HTML Structure -->
+    <section id="html-structure">
+      <h2>HTML Structure</h2>
+      <p>Every page follows the same skeleton:</p>
+<pre><code><span class="code-tag">&lt;!DOCTYPE html&gt;</span>
+<span class="code-tag">&lt;html</span> <span class="code-attr">lang</span>=<span class="code-string">"en"</span><span class="code-tag">&gt;</span>
+<span class="code-tag">&lt;head&gt;</span>
+  <span class="code-comment">&lt;!-- Page-specific title --&gt;</span>
+  <span class="code-tag">&lt;title&gt;</span>Dashboard | Liner<span class="code-tag">&lt;/title&gt;</span>
+  <span class="code-tag">&lt;link</span> <span class="code-attr">href</span>=<span class="code-string">"https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"</span> <span class="code-attr">rel</span>=<span class="code-string">"stylesheet"</span><span class="code-tag">&gt;</span>
+  <span class="code-tag">&lt;link</span> <span class="code-attr">href</span>=<span class="code-string">"assets/css/theme.css"</span> <span class="code-attr">rel</span>=<span class="code-string">"stylesheet"</span><span class="code-tag">&gt;</span>
+  <span class="code-tag">&lt;script</span> <span class="code-attr">src</span>=<span class="code-string">"assets/js/app.js"</span><span class="code-tag">&gt;&lt;/script&gt;</span>
+  <span class="code-comment">&lt;!-- Page slug — drives per-page JS routing --&gt;</span>
+  <span class="code-tag">&lt;script&gt;</span>window.LINER_PAGE = <span class="code-string">'dashboard.html'</span>;<span class="code-tag">&lt;/script&gt;</span>
+<span class="code-tag">&lt;/head&gt;</span>
+<span class="code-tag">&lt;body&gt;</span>
+  <span class="code-tag">&lt;aside</span> <span class="code-attr">class</span>=<span class="code-string">"app-sidebar"</span> <span class="code-attr">data-sidebar</span><span class="code-tag">&gt;</span>...<span class="code-tag">&lt;/aside&gt;</span>
+  <span class="code-tag">&lt;header</span> <span class="code-attr">class</span>=<span class="code-string">"app-header"</span><span class="code-tag">&gt;</span>...<span class="code-tag">&lt;/header&gt;</span>
+  <span class="code-tag">&lt;aside</span> <span class="code-attr">class</span>=<span class="code-string">"settings-panel"</span><span class="code-tag">&gt;</span>...<span class="code-tag">&lt;/aside&gt;</span>
+  <span class="code-tag">&lt;main</span> <span class="code-attr">class</span>=<span class="code-string">"app-main"</span><span class="code-tag">&gt;</span>
+    <span class="code-comment">&lt;!-- Page content --&gt;</span>
+  <span class="code-tag">&lt;/main&gt;</span>
+  <span class="code-tag">&lt;script</span> <span class="code-attr">src</span>=<span class="code-string">"https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"</span><span class="code-tag">&gt;&lt;/script&gt;</span>
+  <span class="code-tag">&lt;script</span> <span class="code-attr">src</span>=<span class="code-string">"https://unpkg.com/lucide@latest"</span><span class="code-tag">&gt;&lt;/script&gt;</span>
+<span class="code-tag">&lt;/body&gt;</span>
+<span class="code-tag">&lt;/html&gt;</span></code></pre>
+      <p>The four landmarks (<code>.app-sidebar</code>, <code>.app-header</code>, <code>.settings-panel</code>, <code>.app-main</code>) are required on every authenticated page. Auth pages (login, register, etc.) skip them.</p>
+    </section>
+
+    <!-- theme.css -->
+    <section id="theme-css">
+      <h2>theme.css</h2>
+      <p>Everything visual lives in <code>assets/css/theme.css</code>: design tokens, Tailwind-compat utility classes, Bootstrap overrides, component styles, and page-specific blocks. The file is heavily commented and organized into sections.</p>
+
+      <h3>Design tokens</h3>
+      <p>Color presets are defined as CSS custom properties at the top of the file:</p>
+<pre><code><span class="code-keyword">:root</span> <span class="code-tag">{</span>
+  <span class="code-attr">--p-500</span>:   0  66 118;    <span class="code-comment">/* Default: Navy primary */</span>
+  <span class="code-attr">--p-600</span>:   0  56 102;
+  <span class="code-attr">--sidebar-w</span>: 260px;
+  <span class="code-attr">--header-h</span>:  64px;
+<span class="code-tag">}</span>
+<span class="code-keyword">html.preset-blue</span>    <span class="code-tag">{</span> <span class="code-attr">--p-500</span>: 59 130 246; <span class="code-tag">}</span>
+<span class="code-keyword">html.preset-emerald</span> <span class="code-tag">{</span> <span class="code-attr">--p-500</span>: 16 185 129; <span class="code-tag">}</span></code></pre>
+      <p>To add your own brand color, add a new <code>html.preset-{name}</code> selector with <code>--p-50</code> through <code>--p-900</code> RGB triplets, then register it in the settings panel (see <a href="#color-presets">Color Presets</a>).</p>
+    </section>
+
+    <!-- app.js -->
+    <section id="app-js">
+      <h2>app.js</h2>
+      <p>The single <code>app.js</code> file is split into four parts:</p>
+      <ol>
+        <li><strong>Theme manager</strong> — handles dark mode, color preset, RTL, and sidebar state with <code>localStorage</code> persistence.</li>
+        <li><strong>Menu definition</strong> — <code>window.LINER_MENU</code> drives the sidebar and horizontal menu.</li>
+        <li><strong>Chart helpers</strong> — <code>LinerChartColors()</code> and <code>LinerApexBase()</code> return theme-aware ApexCharts config.</li>
+        <li><strong>Per-page handlers</strong> — each page declares <code>window.LINER_PAGE = 'foo.html'</code> and the matching block runs its specific JS.</li>
+      </ol>
+      <p>Per-page handlers follow this pattern:</p>
+<pre><code><span class="code-keyword">if</span> (<span class="code-fn">window.LINER_PAGE</span> === <span class="code-string">'dashboard.html'</span>) {
+  <span class="code-fn">document.addEventListener</span>(<span class="code-string">'DOMContentLoaded'</span>, () =&gt; {
+    <span class="code-keyword">const</span> C = <span class="code-fn">LinerChartColors</span>();
+    <span class="code-keyword">const</span> B = <span class="code-fn">LinerApexBase</span>();
+    <span class="code-comment">// Build charts, attach event listeners, etc.</span>
+  });
+}</code></pre>
+    </section>
+
+    <!-- Menu Configuration -->
+    <section id="menu-config">
+      <h2>Menu Configuration</h2>
+      <p>The sidebar and horizontal menu are both generated from a single source: <code>window.LINER_MENU</code> in <code>app.js</code>. Each entry is a group with a group icon and an array of items:</p>
+<pre><code><span class="code-fn">window.LINER_MENU</span> = [
+  {
+    <span class="code-attr">group</span>: <span class="code-string">'Dashboards'</span>,
+    <span class="code-attr">groupIcon</span>: <span class="code-string">'layout-dashboard'</span>,
+    <span class="code-attr">items</span>: [
+      { <span class="code-attr">label</span>: <span class="code-string">'Modern'</span>,    <span class="code-attr">icon</span>: <span class="code-string">'layout-dashboard'</span>, <span class="code-attr">path</span>: <span class="code-string">'dashboard.html'</span> },
+      { <span class="code-attr">label</span>: <span class="code-string">'Analytics'</span>, <span class="code-attr">icon</span>: <span class="code-string">'activity'</span>,         <span class="code-attr">path</span>: <span class="code-string">'analytics.html'</span> },
+    ],
+  },
+  {
+    <span class="code-attr">group</span>: <span class="code-string">'Apps'</span>,
+    <span class="code-attr">groupIcon</span>: <span class="code-string">'layers'</span>,
+    <span class="code-attr">items</span>: [
+      { <span class="code-attr">label</span>: <span class="code-string">'Blog'</span>, <span class="code-attr">icon</span>: <span class="code-string">'book-open'</span>, <span class="code-attr">children</span>: [
+        { <span class="code-attr">label</span>: <span class="code-string">'Posts'</span>,  <span class="code-attr">icon</span>: <span class="code-string">'book-open'</span>, <span class="code-attr">path</span>: <span class="code-string">'blog-posts.html'</span> },
+        { <span class="code-attr">label</span>: <span class="code-string">'Detail'</span>, <span class="code-attr">icon</span>: <span class="code-string">'eye'</span>,       <span class="code-attr">path</span>: <span class="code-string">'blog-detail.html'</span> },
+      ]},
+    ],
+  },
+];</code></pre>
+      <p>To add a new menu item: edit <code>app.js</code>, add an item to the appropriate group, and create the corresponding HTML page. The sidebar (expanded, collapsed, and horizontal modes) regenerates automatically.</p>
+
+      <div class="doc-callout doc-callout-tip">
+        <svg class="doc-callout-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        <div class="doc-callout-body">
+          <p><strong>Tip:</strong> Icons come from Lucide. Use the <code>data-lucide="icon-name"</code> attribute anywhere — the runtime converts them to inline SVG. Browse all icons at <a href="https://lucide.dev/icons" target="_blank" rel="noopener">lucide.dev/icons</a>.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Color Presets -->
+    <section id="color-presets">
+      <h2>Color Presets</h2>
+      <p>Liner ships with five built-in presets. Switch them via the Settings Panel or programmatically:</p>
+<pre><code><span class="code-fn">LinerTheme.setColor</span>(<span class="code-string">'emerald'</span>);  <span class="code-comment">// 'default' | 'blue' | 'emerald' | 'orange' | 'rose'</span></code></pre>
+      <h3>Add a custom preset</h3>
+      <p>In <code>theme.css</code>, add a new <code>html.preset-{name} { --p-50: r g b; ... --p-900: r g b; }</code> rule (RGB triplets, space-separated, no <code>rgb()</code> wrapper). Then add a swatch button in the Settings Panel of each page (or extend the panel template).</p>
+
+      <table class="doc-table">
+        <thead><tr><th>Preset</th><th>Class</th><th>--p-500</th></tr></thead>
+        <tbody>
+          <tr><td>Navy (default)</td><td><code>html</code> (no class)</td><td>0 66 118</td></tr>
+          <tr><td>Blue</td><td><code>html.preset-blue</code></td><td>59 130 246</td></tr>
+          <tr><td>Emerald</td><td><code>html.preset-emerald</code></td><td>16 185 129</td></tr>
+          <tr><td>Orange</td><td><code>html.preset-orange</code></td><td>249 115 22</td></tr>
+          <tr><td>Rose</td><td><code>html.preset-rose</code></td><td>244 63 94</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Dark Mode -->
+    <section id="dark-mode">
+      <h2>Dark Mode</h2>
+      <p>Dark mode is class-based — the root <code>&lt;html&gt;</code> element gets the <code>dark</code> class toggle. All component styles have dark variants via the <code>html.dark .selector</code> pattern in <code>theme.css</code>.</p>
+<pre><code><span class="code-comment">// Programmatic toggle</span>
+<span class="code-fn">LinerTheme.toggleDark</span>();
+
+<span class="code-comment">// Force a specific mode</span>
+<span class="code-fn">LinerTheme.setDark</span>(<span class="code-keyword">true</span>);   <span class="code-comment">// dark</span>
+<span class="code-fn">LinerTheme.setDark</span>(<span class="code-keyword">false</span>);  <span class="code-comment">// light</span>
+
+<span class="code-comment">// Read current state</span>
+<span class="code-keyword">const</span> isDark = <span class="code-fn">LinerTheme.isDark</span>;</code></pre>
+      <p>The user's preference persists in <code>localStorage</code> under <code>liner-theme</code> and is restored on every page load before paint (prevents flash).</p>
+    </section>
+
+    <!-- RTL -->
+    <section id="rtl-support">
+      <h2>RTL Support</h2>
+      <p>Right-to-left layouts are toggled by setting <code>dir="rtl"</code> on <code>&lt;html&gt;</code>. The stylesheet uses CSS logical properties (<code>margin-inline-start</code>, <code>border-inline-end</code>, <code>inset-inline-start</code>) so layouts mirror automatically.</p>
+<pre><code><span class="code-fn">LinerTheme.toggleRTL</span>();
+<span class="code-comment">// or</span>
+<span class="code-fn">document.documentElement.setAttribute</span>(<span class="code-string">'dir'</span>, <span class="code-string">'rtl'</span>);</code></pre>
+    </section>
+
+    <!-- Sidebar Modes -->
+    <section id="sidebar-modes">
+      <h2>Sidebar Modes</h2>
+      <h3>Expanded (default)</h3>
+      <p>Full 260px sidebar with group titles, icons, and labels. Items with children expand into nested submenus.</p>
+
+      <h3>Collapsed (icon + label)</h3>
+      <p>Toggled by clicking the menu icon in the header. Shows one icon-per-group with the group name as a small label. Hovering a group reveals a flyout dropdown containing all items, including nested children grouped by sub-headers.</p>
+<pre><code><span class="code-fn">LinerTheme.toggleCollapsed</span>();</code></pre>
+
+      <h3>Mobile drawer</h3>
+      <p>Below 992px the sidebar slides off-screen and the hamburger icon in the header opens it as an overlay. Backdrop click or link click closes it.</p>
+    </section>
+
+    <!-- Horizontal Layout -->
+    <section id="horizontal-layout">
+      <h2>Horizontal Layout</h2>
+      <p>Switches the navigation from the left sidebar to a top horizontal bar. Useful for content-heavy dashboards or marketing-style admin views.</p>
+<pre><code><span class="code-fn">LinerTheme.toggleHorizontal</span>();</code></pre>
+      <p>When active, <code>body.horizontal-mode</code> is set. The sidebar is hidden on desktop and replaced by a top bar generated from the same <code>window.LINER_MENU</code>. Hover any group to reveal its dropdown. On mobile, the horizontal bar is hidden and the sidebar drawer takes over.</p>
+    </section>
+
+    <!-- Buttons & Cards -->
+    <section id="buttons-cards">
+      <h2>Buttons &amp; Cards</h2>
+      <p>Built on Bootstrap 5.3 with custom overrides. All button variants pick up the current color preset.</p>
+<pre><code><span class="code-tag">&lt;button</span> <span class="code-attr">class</span>=<span class="code-string">"btn btn-primary"</span><span class="code-tag">&gt;</span>Primary<span class="code-tag">&lt;/button&gt;</span>
+<span class="code-tag">&lt;button</span> <span class="code-attr">class</span>=<span class="code-string">"btn-outline"</span><span class="code-tag">&gt;</span>Outline<span class="code-tag">&lt;/button&gt;</span>
+<span class="code-tag">&lt;button</span> <span class="code-attr">class</span>=<span class="code-string">"btn-gradient"</span><span class="code-tag">&gt;</span>Gradient<span class="code-tag">&lt;/button&gt;</span>
+<span class="code-tag">&lt;button</span> <span class="code-attr">class</span>=<span class="code-string">"btn btn-secondary btn-sm"</span><span class="code-tag">&gt;</span>Small<span class="code-tag">&lt;/button&gt;</span></code></pre>
+      <p>Cards use the <code>.card</code> class with optional <code>.p-5</code> / <code>.p-6</code> padding utilities. See <code>buttons.html</code> and <code>cards.html</code> for the full gallery.</p>
+    </section>
+
+    <!-- Tables -->
+    <section id="tables">
+      <h2>Tables</h2>
+      <p>Two table demos with progressively more features:</p>
+      <ul>
+        <li><a href="basic-table.html">basic-table.html</a> — 10 variants: striped, bordered, compact, gradient header, card-style rows, dark header, selectable, etc.</li>
+        <li><a href="enhanced-table.html">enhanced-table.html</a> — sortable headers, multi-select with bulk actions, expandable rows, file manager, changelog timeline.</li>
+      </ul>
+      <p>Common skeleton:</p>
+<pre><code><span class="code-tag">&lt;div</span> <span class="code-attr">class</span>=<span class="code-string">"table-wrapper"</span><span class="code-tag">&gt;</span>
+  <span class="code-tag">&lt;table</span> <span class="code-attr">class</span>=<span class="code-string">"bt-table"</span><span class="code-tag">&gt;</span>
+    <span class="code-tag">&lt;thead&gt;&lt;tr&gt;</span>...<span class="code-tag">&lt;/tr&gt;&lt;/thead&gt;</span>
+    <span class="code-tag">&lt;tbody&gt;</span>...<span class="code-tag">&lt;/tbody&gt;</span>
+  <span class="code-tag">&lt;/table&gt;</span>
+<span class="code-tag">&lt;/div&gt;</span></code></pre>
+    </section>
+
+    <!-- Forms -->
+    <section id="forms">
+      <h2>Forms</h2>
+      <p>Four pages cover all form patterns:</p>
+      <table class="doc-table">
+        <thead><tr><th>Page</th><th>Covers</th></tr></thead>
+        <tbody>
+          <tr><td><a href="form-elements.html">form-elements.html</a></td><td>14 input types — text, textarea, select, checkboxes, radios, toggles, range, file upload, date, color, tags</td></tr>
+          <tr><td><a href="form-layouts.html">form-layouts.html</a></td><td>5 complete forms — registration, billing, contact, settings, payment card</td></tr>
+          <tr><td><a href="form-horizontal.html">form-horizontal.html</a></td><td>Horizontal label-left forms for settings/configuration</td></tr>
+          <tr><td><a href="form-validation.html">form-validation.html</a></td><td>Live blur validation, required fields, input masks, multi-step wizard, credit-card form, onboarding</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Charts -->
+    <section id="charts">
+      <h2>Charts</h2>
+      <p>Charts use <strong>ApexCharts</strong> with theme-aware colors. Every chart picks up the current color preset, dark mode, and axis/grid colors automatically.</p>
+<pre><code><span class="code-keyword">const</span> C = <span class="code-fn">LinerChartColors</span>();   <span class="code-comment">// { primary, cyan, emerald, amber, rose, violet, grid, axis, text, bg }</span>
+<span class="code-keyword">const</span> B = <span class="code-fn">LinerApexBase</span>();      <span class="code-comment">// Defaults: fontFamily, toolbar off, grid colors, etc.</span>
+
+<span class="code-keyword">new</span> <span class="code-fn">ApexCharts</span>(<span class="code-fn">document.querySelector</span>(<span class="code-string">'#my-chart'</span>), {
+  ...B,
+  <span class="code-attr">chart</span>: { ...B.chart, <span class="code-attr">type</span>: <span class="code-string">'line'</span>, <span class="code-attr">height</span>: 280 },
+  <span class="code-attr">series</span>: [{ <span class="code-attr">name</span>: <span class="code-string">'Sales'</span>, <span class="code-attr">data</span>: [10, 20, 30, 40] }],
+  <span class="code-attr">colors</span>: [C.primary],
+}).<span class="code-fn">render</span>();</code></pre>
+      <p>Six dedicated pages: <code>line-chart.html</code>, <code>area-chart.html</code>, <code>bar-chart.html</code>, <code>column-chart.html</code>, <code>donut-chart.html</code>, <code>radialbar-chart.html</code> — each with 4–6 chart variants plus mini KPI sparklines.</p>
+    </section>
+
+    <!-- Icons -->
+    <section id="icons">
+      <h2>Icons</h2>
+      <p>Liner uses <a href="https://lucide.dev" target="_blank" rel="noopener">Lucide</a>. To render an icon, drop in:</p>
+<pre><code><span class="code-tag">&lt;i</span> <span class="code-attr">data-lucide</span>=<span class="code-string">"calendar"</span> <span class="code-attr">class</span>=<span class="code-string">"lucide-md"</span><span class="code-tag">&gt;&lt;/i&gt;</span></code></pre>
+      <p>The Lucide runtime (loaded via CDN) converts each <code>&lt;i&gt;</code> into an inline SVG. Available size classes: <code>.lucide-xxs</code> (10px), <code>.lucide-xs</code> (12px), <code>.lucide-sm</code> (14px), <code>.lucide-md</code> (18px), <code>.lucide-lg</code> (22px), <code>.lucide-xl</code> (28px). Color the icon with any text-color utility — <code>.text-primary-500</code>, <code>.text-emerald-600</code>, etc.</p>
+      <p>If you swap an icon dynamically via JS (e.g. eye → eye-off for password fields), call <code>lucide.createIcons()</code> to re-render.</p>
+    </section>
+
+    <!-- Add a New Page -->
+    <section id="add-new-page">
+      <h2>Add a New Page</h2>
+      <p>Five steps to add <code>my-page.html</code>:</p>
+      <ol>
+        <li><strong>Copy</strong> an existing page (e.g. <code>dashboard.html</code>) and rename it to <code>my-page.html</code>.</li>
+        <li><strong>Update</strong> <code>&lt;title&gt;</code> and the <code>window.LINER_PAGE</code> slug to <code>'my-page.html'</code>.</li>
+        <li><strong>Replace</strong> the content inside <code>&lt;main class="app-main"&gt;...&lt;/main&gt;</code>.</li>
+        <li><strong>Register</strong> the page in <code>window.LINER_MENU</code> (in <code>app.js</code>) so it shows up in the sidebar.</li>
+        <li><strong>Optional:</strong> add a per-page JS block in <code>app.js</code>:
+<pre><code><span class="code-keyword">if</span> (<span class="code-fn">window.LINER_PAGE</span> === <span class="code-string">'my-page.html'</span>) {
+  <span class="code-fn">document.addEventListener</span>(<span class="code-string">'DOMContentLoaded'</span>, () =&gt; {
+    <span class="code-comment">// Your page-specific JS</span>
+  });
+}</code></pre>
+        </li>
+      </ol>
+      <p>The active sidebar link is auto-detected from <code>window.location.pathname</code>, and breadcrumbs are inferred from the title.</p>
+    </section>
+
+    <!-- Page List -->
+    <section id="page-list">
+      <h2>Included Pages</h2>
+      <div class="doc-grid doc-grid-3">
+        <div class="doc-card">
+          <h4>Dashboards (5)</h4>
+          <ul style="font-size:13px">
+            <li><a href="dashboard.html">Modern</a></li>
+            <li><a href="analytics.html">Analytics</a></li>
+            <li><a href="ecommerce.html">E-Commerce</a></li>
+            <li><a href="music.html">Music</a></li>
+            <li><a href="general.html">General</a></li>
+          </ul>
+        </div>
+        <div class="doc-card">
+          <h4>Apps (9)</h4>
+          <ul style="font-size:13px">
+            <li><a href="calendar.html">Calendar</a></li>
+            <li><a href="kanban.html">Kanban</a></li>
+            <li><a href="chat.html">Chat</a></li>
+            <li><a href="email.html">Email</a></li>
+            <li><a href="notes.html">Notes</a></li>
+            <li><a href="contacts.html">Contacts</a></li>
+            <li><a href="tickets.html">Tickets</a></li>
+            <li><a href="invoice-list.html">Invoice</a></li>
+            <li><a href="user-profile.html">User Profile</a></li>
+          </ul>
+        </div>
+        <div class="doc-card">
+          <h4>UI Elements (13)</h4>
+          <ul style="font-size:13px">
+            <li><a href="alert.html">Alert</a></li>
+            <li><a href="accordion.html">Accordion</a></li>
+            <li><a href="avatar.html">Avatar</a></li>
+            <li><a href="buttons.html">Buttons</a></li>
+            <li><a href="cards.html">Cards</a></li>
+            <li><a href="chip.html">Chip</a></li>
+            <li><a href="dialog.html">Dialog</a></li>
+            <li><a href="list.html">List</a></li>
+            <li><a href="popover.html">Popover</a></li>
+            <li><a href="rating.html">Rating</a></li>
+            <li><a href="tabs.html">Tabs</a></li>
+            <li><a href="tooltip.html">Tooltip</a></li>
+            <li><a href="typography.html">Typography</a></li>
+          </ul>
+        </div>
+        <div class="doc-card">
+          <h4>Blog (3) &amp; E-Commerce (4)</h4>
+          <ul style="font-size:13px">
+            <li><a href="blog-posts.html">Blog Posts</a></li>
+            <li><a href="blog-post.html">Blog Post</a></li>
+            <li><a href="blog-detail.html">Blog Detail</a></li>
+            <li><a href="ecommerce-shop.html">Shop</a></li>
+            <li><a href="ecommerce-detail.html">Product Detail</a></li>
+            <li><a href="ecommerce-list.html">Product List</a></li>
+            <li><a href="ecommerce-checkout.html">Checkout</a></li>
+          </ul>
+        </div>
+        <div class="doc-card">
+          <h4>Forms (4) &amp; Tables (2)</h4>
+          <ul style="font-size:13px">
+            <li><a href="form-elements.html">Form Elements</a></li>
+            <li><a href="form-layouts.html">Form Layouts</a></li>
+            <li><a href="form-horizontal.html">Form Horizontal</a></li>
+            <li><a href="form-validation.html">Form Validation</a></li>
+            <li><a href="basic-table.html">Basic Table</a></li>
+            <li><a href="enhanced-table.html">Enhanced Table</a></li>
+          </ul>
+        </div>
+        <div class="doc-card">
+          <h4>Charts (6) &amp; Theme Pages (5)</h4>
+          <ul style="font-size:13px">
+            <li><a href="line-chart.html">Line</a></li>
+            <li><a href="area-chart.html">Area</a></li>
+            <li><a href="bar-chart.html">Bar</a></li>
+            <li><a href="column-chart.html">Column</a></li>
+            <li><a href="donut-chart.html">Donut</a></li>
+            <li><a href="radialbar-chart.html">Radialbar</a></li>
+            <li><a href="account.html">Account</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="widgets.html">Widgets</a></li>
+            <li><a href="apikeys.html">API Keys</a></li>
+          </ul>
+        </div>
+        <div class="doc-card">
+          <h4>Auth (6) &amp; Icons (2)</h4>
+          <ul style="font-size:13px">
+            <li><a href="login.html">Login</a></li>
+            <li><a href="register.html">Register</a></li>
+            <li><a href="forgot-password.html">Forgot Password</a></li>
+            <li><a href="two-steps.html">Two-Step</a></li>
+            <li><a href="error.html">Error</a></li>
+            <li><a href="maintenance.html">Maintenance</a></li>
+            <li><a href="lucide-icons.html">Lucide Icons</a></li>
+            <li><a href="custom-icons.html">Custom Icons</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Dependencies -->
+    <section id="dependencies">
+      <h2>Dependencies</h2>
+      <p>All dependencies load from public CDNs — no <code>npm install</code> needed.</p>
+      <table class="doc-table">
+        <thead><tr><th>Library</th><th>Version</th><th>Purpose</th></tr></thead>
+        <tbody>
+          <tr><td>Bootstrap</td><td>5.3.3</td><td>CSS reset, grid, components (overridden by theme.css)</td></tr>
+          <tr><td>ApexCharts</td><td>3.x</td><td>All charts</td></tr>
+          <tr><td>Lucide</td><td>latest</td><td>1,000+ icons</td></tr>
+          <tr><td>Inter</td><td>—</td><td>Primary font (Google Fonts)</td></tr>
+          <tr><td>JetBrains Mono</td><td>—</td><td>Code blocks (docs only)</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Browser Support -->
+    <section id="browser-support">
+      <h2>Browser Support</h2>
+      <ul>
+        <li>Chrome / Edge / Brave — last 2 versions</li>
+        <li>Firefox — last 2 versions</li>
+        <li>Safari — 14+</li>
+        <li>iOS Safari / Chrome Android — last 2 versions</li>
+      </ul>
+      <p>IE 11 is not supported. The template uses CSS custom properties, logical properties, and modern JS (arrow functions, async/await, optional chaining).</p>
+    </section>
+
+    <!-- License -->
+    <section id="license">
+      <h2>License</h2>
+      <p>Liner is sold under two license tiers via the marketplace listing:</p>
+      <ul>
+        <li><strong>Regular License</strong> — use in a single end product (one website, one app).</li>
+        <li><strong>Extended License</strong> — unlimited end products, including SaaS applications that charge end users.</li>
+      </ul>
+      <p>Source files may be modified freely. Redistribution as a competing template is prohibited. See the LICENSE file shipped with the download for full terms.</p>
+    </section>
+
+    <!-- Support -->
+    <section id="support">
+      <h2>Support</h2>
+      <p>For installation issues, customization questions, or bug reports, contact us through the marketplace support tab where you purchased Liner. Please include:</p>
+      <ul>
+        <li>Page URL / file name where the issue occurs</li>
+        <li>Browser + OS</li>
+        <li>Steps to reproduce</li>
+        <li>Screenshot or short screen recording if visual</li>
+      </ul>
+      <p>Average response time is under 24 hours on weekdays.</p>
+    </section>
+
+    <footer class="doc-footer">
+      <p>Liner Bootstrap Admin · v2.0 · Documentation last updated 2026</p>
+    </footer>
+  </main>
+</div>
+
+<script>
+  // Mobile menu toggle
+  document.getElementById('docMenu').addEventListener('click', function () {
+    document.getElementById('docSidebar').classList.toggle('open');
+  });
+
+  // Scroll-spy: highlight active TOC link
+  (function () {
+    var links = document.querySelectorAll('#docToc a');
+    var sections = Array.from(links).map(function (a) {
+      var id = a.getAttribute('href').slice(1);
+      return { link: a, el: document.getElementById(id) };
+    }).filter(function (x) { return x.el; });
+
+    function onScroll() {
+      var y = window.scrollY + 100;
+      var active = sections[0];
+      for (var i = 0; i < sections.length; i++) {
+        if (sections[i].el.offsetTop <= y) active = sections[i];
+      }
+      links.forEach(function (a) { a.classList.remove('active'); });
+      if (active) active.link.classList.add('active');
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+
+    // Close mobile sidebar after clicking a link
+    links.forEach(function (a) {
+      a.addEventListener('click', function () {
+        document.getElementById('docSidebar').classList.remove('open');
+      });
+    });
+  })();
+</script>
+
+</body>
+</html>
