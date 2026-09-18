@@ -1,16 +1,21 @@
 @extends('layouts.app')
 
-@section('title', 'สร้างคำขอยืม')
-@section('page-title', 'สร้างคำขอยืม')
+@php($editing = $borrowRequest->exists)
+
+@section('title', $editing ? 'แก้ไขฉบับร่างคำขอยืม' : 'สร้างคำขอยืม')
+@section('page-title', $editing ? 'แก้ไขฉบับร่างคำขอยืม' : 'สร้างคำขอยืม')
 
 @section('content')
 <section>
-    <h1 class="h3 fw-bold text-slate-800 mb-1">สร้างคำขอยืม</h1>
-    <p class="text-muted mb-0">ระบุช่วงเวลาการใช้งานและเลือกอุปกรณ์ที่ต้องการ</p>
+    <h1 class="h3 fw-bold text-slate-800 mb-1">{{ $editing ? 'แก้ไขฉบับร่าง '.$borrowRequest->request_no : 'สร้างคำขอยืม' }}</h1>
+    <p class="text-muted mb-0">ระบุช่วงเวลาการใช้งาน เลือกอุปกรณ์ และบันทึกไว้เป็นฉบับร่างหรือส่งอนุมัติ</p>
 </section>
 
-<form method="POST" action="{{ route('borrow.store') }}" class="grid grid-cols-1 xl:grid-cols-3 gap-4">
+<form method="POST" action="{{ $editing ? route('borrow.update', $borrowRequest) : route('borrow.store') }}" class="grid grid-cols-1 xl:grid-cols-3 gap-4">
     @csrf
+    @if ($editing)
+        @method('PATCH')
+    @endif
 
     <section class="xl:col-span-1 card p-4 align-self-start">
         <div class="d-flex align-items-center gap-2 mb-4">
@@ -22,13 +27,13 @@
 
         <div class="mb-3">
             <label for="purpose" class="form-label">วัตถุประสงค์ <span class="text-danger">*</span></label>
-            <textarea id="purpose" name="purpose" rows="4" class="form-control @error('purpose') is-invalid @enderror" required>{{ old('purpose') }}</textarea>
+            <textarea id="purpose" name="purpose" rows="4" class="form-control @error('purpose') is-invalid @enderror" required>{{ old('purpose', $borrowRequest->purpose) }}</textarea>
             @error('purpose')<div class="invalid-feedback">{{ $message }}</div>@enderror
         </div>
 
         <div class="mb-3">
             <label for="usage_location" class="form-label">สถานที่นำไปใช้งาน</label>
-            <input id="usage_location" name="usage_location" class="form-control" value="{{ old('usage_location') }}">
+            <input id="usage_location" name="usage_location" class="form-control" value="{{ old('usage_location', $borrowRequest->usage_location) }}">
         </div>
 
         <div class="row g-3 mb-3">
@@ -40,7 +45,7 @@
                     name="borrow_date"
                     class="form-control @error('borrow_date') is-invalid @enderror"
                     min="{{ today()->format('Y-m-d') }}"
-                    value="{{ old('borrow_date', today()->format('Y-m-d')) }}"
+                    value="{{ old('borrow_date', $borrowRequest->borrow_date?->format('Y-m-d') ?? today()->format('Y-m-d')) }}"
                     required
                 >
                 @error('borrow_date')<div class="invalid-feedback">{{ $message }}</div>@enderror
@@ -53,7 +58,7 @@
                     name="expected_return_date"
                     class="form-control @error('expected_return_date') is-invalid @enderror"
                     min="{{ today()->format('Y-m-d') }}"
-                    value="{{ old('expected_return_date', today()->addDays($defaultLoanDays)->format('Y-m-d')) }}"
+                    value="{{ old('expected_return_date', $borrowRequest->expected_return_date?->format('Y-m-d') ?? today()->addDays($defaultLoanDays)->format('Y-m-d')) }}"
                     required
                 >
                 @error('expected_return_date')<div class="invalid-feedback">{{ $message }}</div>@enderror
@@ -62,7 +67,7 @@
 
         <div class="mb-4">
             <label for="note" class="form-label">หมายเหตุ</label>
-            <textarea id="note" name="note" rows="3" class="form-control">{{ old('note') }}</textarea>
+            <textarea id="note" name="note" rows="3" class="form-control">{{ old('note', $borrowRequest->note) }}</textarea>
         </div>
 
         <div id="borrowing-terms" class="border rounded-3 overflow-hidden mb-4 @error('accept_terms') border-danger @enderror">
@@ -99,15 +104,29 @@
             </div>
         </div>
 
-        <button
-            type="submit"
-            class="btn btn-primary d-flex align-items-center justify-content-center gap-2"
-            data-borrow-submit
-            @disabled($equipment->isEmpty() || empty(old('equipment_ids')) || ! old('accept_terms'))
-        >
-            <i data-lucide="send" class="lucide-sm"></i>
-            ส่งคำขออนุมัติ
-        </button>
+        <div class="d-grid gap-2">
+            <button
+                type="submit"
+                name="intent"
+                value="draft"
+                class="btn btn-outline-primary d-flex align-items-center justify-content-center gap-2"
+                formnovalidate
+            >
+                <i data-lucide="save" class="lucide-sm"></i>
+                บันทึกฉบับร่าง
+            </button>
+            <button
+                type="submit"
+                name="intent"
+                value="submit"
+                class="btn btn-primary d-flex align-items-center justify-content-center gap-2"
+                data-borrow-submit
+                @disabled($equipment->isEmpty() || empty(old('equipment_ids', $selectedEquipmentIds)) || ! old('accept_terms'))
+            >
+                <i data-lucide="send" class="lucide-sm"></i>
+                ส่งคำขออนุมัติ
+            </button>
+        </div>
     </section>
 
     <section class="xl:col-span-2 card overflow-hidden">
@@ -136,7 +155,7 @@
             <p class="text-muted small mb-0">กรุณาเปลี่ยนช่วงวันที่หรือติดต่อเจ้าหน้าที่</p>
         </div>
 
-        @php($selectedEquipment = array_map('strval', (array) old('equipment_ids', [])))
+        @php($selectedEquipment = array_map('strval', (array) old('equipment_ids', $selectedEquipmentIds)))
         <div class="table-responsive {{ $equipment->isEmpty() ? 'd-none' : '' }}" data-availability-table>
             <table class="table align-middle mb-0">
                 <thead>

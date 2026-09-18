@@ -3,6 +3,7 @@
 namespace App\Actions\Administration;
 
 use App\Models\User;
+use App\Services\Authorization\PrivilegedAccessService;
 use App\Support\Auditing\AuditLogger;
 use Illuminate\Support\Facades\DB;
 use Spatie\Permission\Models\Permission;
@@ -10,7 +11,10 @@ use Spatie\Permission\Models\Role;
 
 class CreateRole
 {
-    public function __construct(private AuditLogger $auditLogger) {}
+    public function __construct(
+        private AuditLogger $auditLogger,
+        private PrivilegedAccessService $privilegedAccess,
+    ) {}
 
     /** @param list<int> $permissionIds */
     public function execute(User $actor, string $name, array $permissionIds): Role
@@ -24,6 +28,7 @@ class CreateRole
                 ->whereKey($permissionIds)
                 ->where('guard_name', 'web')
                 ->get();
+            $this->privilegedAccess->assertCanCreateRole($actor, $permissions);
             $role->syncPermissions($permissions);
 
             $this->auditLogger->record($actor, 'role.created', $role, [], [

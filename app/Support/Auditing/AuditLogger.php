@@ -14,14 +14,14 @@ class AuditLogger
      * @param  array<string, mixed>  $newValues
      */
     public function record(
-        User $causer,
+        ?User $causer,
         string $event,
         ?Model $subject = null,
         array $oldValues = [],
         array $newValues = [],
     ): AuditLog {
         return AuditLog::query()->create([
-            'causer_id' => $causer->id,
+            'causer_id' => $causer?->id,
             'event' => $event,
             'subject_type' => $subject?->getMorphClass(),
             'subject_id' => $subject?->getKey(),

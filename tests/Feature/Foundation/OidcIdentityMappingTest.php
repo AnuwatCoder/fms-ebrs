@@ -81,6 +81,27 @@ it('reuses the same local user when the oidc profile changes', function () {
         ->and(User::query()->count())->toBe(1);
 });
 
+it('does not restore the bootstrap super administrator role after it is removed', function () {
+    config(['auth.super_admin.email' => 'initial.admin@example.com']);
+
+    $action = app(SyncOidcUser::class);
+    $user = $action->execute('authentik', 'initial-admin-subject', [
+        'name' => 'Initial Administrator',
+        'email' => 'initial.admin@example.com',
+    ]);
+
+    expect($user->hasRole('SuperAdmin'))->toBeTrue();
+
+    $user->removeRole('SuperAdmin');
+
+    $syncedUser = $action->execute('authentik', 'initial-admin-subject', [
+        'name' => 'Initial Administrator',
+        'email' => 'initial.admin@example.com',
+    ]);
+
+    expect($syncedUser->hasRole('SuperAdmin'))->toBeFalse();
+});
+
 it('does not automatically link an identity by email', function () {
     User::factory()->create(['email' => 'existing@example.com']);
 

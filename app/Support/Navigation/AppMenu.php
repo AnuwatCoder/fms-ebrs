@@ -90,6 +90,14 @@ final class AppMenu
                         'active' => 'borrow.mine',
                     ],
                     [
+                        'key' => 'borrow.calendar',
+                        'label' => 'ปฏิทินการจอง',
+                        'icon' => 'calendar-days',
+                        'abilities' => ['equipment.view'],
+                        'route' => 'borrow.calendar',
+                        'active' => 'borrow.calendar',
+                    ],
+                    [
                         'key' => 'borrow.index',
                         'label' => 'คำขอยืมทั้งหมด',
                         'icon' => 'clipboard-list',

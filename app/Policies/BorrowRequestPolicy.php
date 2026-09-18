@@ -2,6 +2,7 @@
 
 namespace App\Policies;
 
+use App\Enums\BorrowRequestStatus;
 use App\Models\BorrowRequest;
 use App\Models\User;
 
@@ -23,14 +24,21 @@ class BorrowRequestPolicy
             || ($user->can('borrow.view-own') && $borrowRequest->user_id === $user->id);
     }
 
+    public function update(User $user, BorrowRequest $borrowRequest): bool
+    {
+        return $user->can('borrow.create')
+            && $borrowRequest->user_id === $user->id
+            && $borrowRequest->status === BorrowRequestStatus::Draft;
+    }
+
     public function approve(User $user, BorrowRequest $borrowRequest): bool
     {
-        return $user->can('approval.approve');
+        return $user->can('approval.approve') && $borrowRequest->user_id !== $user->id;
     }
 
     public function reject(User $user, BorrowRequest $borrowRequest): bool
     {
-        return $user->can('approval.reject');
+        return $user->can('approval.reject') && $borrowRequest->user_id !== $user->id;
     }
 
     public function checkout(User $user, BorrowRequest $borrowRequest): bool

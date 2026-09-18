@@ -3,12 +3,8 @@
 @endphp
 
 <aside class="app-sidebar" data-sidebar>
-    <a href="{{ route('dashboard') }}" class="sidebar-brand text-decoration-none">
-        <img src="{{ asset('template/img/logo.svg') }}" alt="EBRS" class="brand-logo-lg-img">
-        <div class="brand-text">
-            <div class="brand-name">EBRS</div>
-            <div class="brand-sub">Equipment</div>
-        </div>
+    <a href="{{ route('dashboard') }}" class="sidebar-brand text-decoration-none" aria-label="FMS EBRS หน้าหลัก">
+        <x-brand-wordmark class="sidebar-wordmark" />
     </a>
 
     <nav class="sidebar-nav custom-scrollbar" aria-label="เมนูหลัก">

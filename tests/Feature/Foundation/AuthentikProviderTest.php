@@ -27,7 +27,7 @@ it('redirects authentication requests through the Authentik provider', function 
     expect($location)
         ->toStartWith('https://auth.example.test/application/o/authorize/?')
         ->toContain('client_id=ebrs-client')
-        ->toContain('scope=openid+goauthentik.io%2Fapi+profile+email');
+        ->toContain('scope=openid+goauthentik.io%2Fapi+profile+email+psu_profile');
 });
 
 it('rejects Authentik redirects when its required configuration is missing', function () {
@@ -64,6 +64,7 @@ it('adds configured scopes to the Authentik authorization request', function () 
         ->toContain('goauthentik.io/api')
         ->toContain('profile')
         ->toContain('email')
+        ->toContain('psu_profile')
         ->toContain('groups')
         ->toContain('offline_access');
 });

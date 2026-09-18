@@ -15,6 +15,8 @@ class BorrowRequestQueryService
     /** @return array<string, mixed> */
     public function createForm(): array
     {
+        $borrowRequest = new BorrowRequest;
+
         return [
             'equipment' => $this->availability->availableBetween(
                 today(),
@@ -23,6 +25,27 @@ class BorrowRequestQueryService
             'defaultLoanDays' => (int) SystemSetting::read('default_loan_days'),
             'maxItems' => (int) SystemSetting::read('max_items_per_request'),
             'borrowingTerms' => config('borrowing.terms'),
+            'borrowRequest' => $borrowRequest,
+            'selectedEquipmentIds' => [],
+        ];
+    }
+
+    /** @return array<string, mixed> */
+    public function editForm(BorrowRequest $borrowRequest): array
+    {
+        $borrowRequest->load('items:id,borrow_request_id,equipment_id');
+
+        return [
+            'equipment' => $this->availability->availableBetween(
+                $borrowRequest->borrow_date,
+                $borrowRequest->expected_return_date,
+                $borrowRequest->id,
+            ),
+            'defaultLoanDays' => (int) SystemSetting::read('default_loan_days'),
+            'maxItems' => (int) SystemSetting::read('max_items_per_request'),
+            'borrowingTerms' => config('borrowing.terms'),
+            'borrowRequest' => $borrowRequest,
+            'selectedEquipmentIds' => $borrowRequest->items->pluck('equipment_id')->all(),
         ];
     }
 

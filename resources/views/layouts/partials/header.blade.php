@@ -3,8 +3,8 @@
 @endphp
 
 <header class="app-header">
-    <a href="{{ route('dashboard') }}" class="header-mobile-logo d-lg-none" aria-label="EBRS">
-        <img src="{{ asset('template/img/logo.svg') }}" alt="EBRS" width="28" height="28">
+    <a href="{{ route('dashboard') }}" class="header-mobile-logo d-lg-none" aria-label="FMS EBRS หน้าหลัก">
+        <x-brand-wordmark class="header-wordmark" />
     </a>
     <button class="header-icon-btn d-lg-none" data-toggle-mobile-sidebar aria-label="เปิดเมนู">
         <i data-lucide="menu" class="lucide-md"></i>
@@ -13,11 +13,13 @@
         <i data-lucide="menu" class="lucide-md"></i>
     </button>
 
-    <div class="header-breadcrumb d-none d-md-flex">
-        <span class="text-muted">หน้าหลัก</span>
-        <i data-lucide="chevron-right" class="lucide-sm"></i>
-        <span class="crumb-last">@yield('page-title', 'แดชบอร์ด')</span>
-    </div>
+    <nav class="header-breadcrumb d-none d-lg-flex" aria-label="breadcrumb">
+        @foreach ($headerBreadcrumbs as $breadcrumb)
+            <a href="{{ $breadcrumb['url'] }}" class="crumb-parent">{{ $breadcrumb['label'] }}</a>
+            <i data-lucide="chevron-right" class="lucide-sm" aria-hidden="true"></i>
+        @endforeach
+        <span class="crumb-last" aria-current="page">@yield('page-title', 'แดชบอร์ด')</span>
+    </nav>
 
     <div class="flex-grow-1"></div>
 
@@ -26,24 +28,52 @@
     </button>
 
     <div class="dropdown">
-        <button class="header-icon-btn" data-bs-toggle="dropdown" aria-label="การแจ้งเตือน">
+        <button class="header-icon-btn position-relative" data-bs-toggle="dropdown" aria-label="การแจ้งเตือน">
             <i data-lucide="bell" class="lucide-md"></i>
+            @if ($unreadNotificationCount > 0)
+                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">{{ $unreadNotificationCount > 99 ? '99+' : $unreadNotificationCount }}</span>
+            @endif
         </button>
         <div class="dropdown-menu dropdown-menu-end notif-menu">
             <div class="notif-header">
                 <strong>การแจ้งเตือน</strong>
-                <span class="badge badge-soft-primary">0 ใหม่</span>
+                <div class="d-flex align-items-center gap-2">
+                    <span class="badge badge-soft-primary">{{ number_format($unreadNotificationCount) }} ใหม่</span>
+                    @if ($unreadNotificationCount > 0)
+                        <form method="POST" action="{{ route('notifications.read-all') }}">
+                            @csrf
+                            <button type="submit" class="btn btn-link btn-sm p-0 text-xs">อ่านทั้งหมด</button>
+                        </form>
+                    @endif
+                </div>
             </div>
             <div class="notif-list custom-scrollbar">
-                <div class="notif-item">
-                    <div class="icon-circle icon-circle-sm icon-circle-bg-info-soft">
-                        <i data-lucide="bell-off" class="lucide-sm"></i>
+                @forelse ($headerNotifications as $notification)
+                    @php($notificationData = $notification->data)
+                    <form method="POST" action="{{ route('notifications.read', $notification->id) }}">
+                        @csrf
+                        <button type="submit" class="notif-item w-100 border-0 text-start {{ $notification->read_at ? 'bg-transparent' : 'bg-light-subtle' }}">
+                            <div class="icon-circle icon-circle-sm icon-circle-bg-{{ $notificationData['tone'] ?? 'primary' }}-soft">
+                                <i data-lucide="{{ $notificationData['icon'] ?? 'bell' }}" class="lucide-sm text-{{ $notificationData['tone'] ?? 'primary' }}"></i>
+                            </div>
+                            <div class="flex-grow-1 min-w-0">
+                                <div class="notif-title">{{ $notificationData['title'] ?? 'การแจ้งเตือน' }}</div>
+                                <div class="notif-msg">{{ $notificationData['message'] ?? '' }}</div>
+                                <div class="text-xs text-slate-400 mt-1">{{ $notification->created_at->diffForHumans() }}</div>
+                            </div>
+                        </button>
+                    </form>
+                @empty
+                    <div class="notif-item">
+                        <div class="icon-circle icon-circle-sm icon-circle-bg-info-soft">
+                            <i data-lucide="bell-off" class="lucide-sm"></i>
+                        </div>
+                        <div class="flex-grow-1">
+                            <div class="notif-title">ยังไม่มีการแจ้งเตือน</div>
+                            <div class="notif-msg">รายการใหม่จะแสดงที่นี่</div>
+                        </div>
                     </div>
-                    <div class="flex-grow-1">
-                        <div class="notif-title">ยังไม่มีการแจ้งเตือน</div>
-                        <div class="notif-msg">รายการใหม่จะแสดงที่นี่</div>
-                    </div>
-                </div>
+                @endforelse
             </div>
         </div>
     </div>

@@ -18,10 +18,10 @@ class DatabaseSeeder extends Seeder
             RolePermissionSeeder::class,
             EquipmentCategorySeeder::class,
             SystemSettingSeeder::class,
-            DevelopmentAdminSeeder::class,
         ]);
 
         if (app()->environment(['local', 'testing'])) {
+            $this->call(DevelopmentAdminSeeder::class);
             $this->call(WorkflowStatusSeeder::class);
         }
     }

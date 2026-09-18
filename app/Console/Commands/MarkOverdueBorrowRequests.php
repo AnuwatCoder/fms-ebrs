@@ -2,6 +2,7 @@
 
 namespace App\Console\Commands;
 
+use App\Actions\Borrowing\MarkBorrowRequestOverdue;
 use App\Enums\BorrowRequestStatus;
 use App\Models\BorrowRequest;
 use Illuminate\Console\Command;
@@ -12,12 +13,19 @@ class MarkOverdueBorrowRequests extends Command
 
     protected $description = 'Mark borrowed requests past their expected return date as overdue';
 
-    public function handle(): int
+    public function handle(MarkBorrowRequestOverdue $markOverdue): int
     {
-        $updated = BorrowRequest::query()
+        $updated = 0;
+
+        BorrowRequest::query()
             ->where('status', BorrowRequestStatus::Borrowed->value)
             ->whereDate('expected_return_date', '<', today())
-            ->update(['status' => BorrowRequestStatus::Overdue->value]);
+            ->select(['id'])
+            ->eachById(function (BorrowRequest $borrowRequest) use ($markOverdue, &$updated): void {
+                if ($markOverdue->execute($borrowRequest)) {
+                    $updated++;
+                }
+            });
 
         $this->info("Marked {$updated} borrow request(s) as overdue.");
 

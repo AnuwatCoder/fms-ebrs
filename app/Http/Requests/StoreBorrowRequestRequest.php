@@ -5,13 +5,25 @@ namespace App\Http\Requests;
 use App\Models\BorrowRequest;
 use App\Models\SystemSetting;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 use Illuminate\Validation\Validator;
 
 class StoreBorrowRequestRequest extends FormRequest
 {
+    public const INTENT_DRAFT = 'draft';
+
+    public const INTENT_SUBMIT = 'submit';
+
     public function authorize(): bool
     {
         return $this->user()?->can('create', BorrowRequest::class) === true;
+    }
+
+    protected function prepareForValidation(): void
+    {
+        if (! $this->has('intent')) {
+            $this->merge(['intent' => self::INTENT_SUBMIT]);
+        }
     }
 
     /** @return array<string, mixed> */
@@ -20,6 +32,7 @@ class StoreBorrowRequestRequest extends FormRequest
         $maxItems = (int) SystemSetting::read('max_items_per_request');
 
         return [
+            'intent' => ['required', Rule::in([self::INTENT_DRAFT, self::INTENT_SUBMIT])],
             'purpose' => ['required', 'string', 'max:2000'],
             'usage_location' => ['nullable', 'string', 'max:255'],
             'borrow_date' => ['required', 'date', 'after_or_equal:today'],
@@ -27,7 +40,9 @@ class StoreBorrowRequestRequest extends FormRequest
             'note' => ['nullable', 'string', 'max:2000'],
             'equipment_ids' => ['required', 'array', 'min:1', 'max:'.$maxItems],
             'equipment_ids.*' => ['required', 'integer', 'distinct', 'exists:equipment,id'],
-            'accept_terms' => ['required', 'accepted'],
+            'accept_terms' => $this->isSubmitting()
+                ? ['required', 'accepted']
+                : ['nullable'],
         ];
     }
 
@@ -61,5 +76,10 @@ class StoreBorrowRequestRequest extends FormRequest
                 );
             }
         }];
+    }
+
+    public function isSubmitting(): bool
+    {
+        return $this->input('intent') === self::INTENT_SUBMIT;
     }
 }

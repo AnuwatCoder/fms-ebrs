@@ -16,10 +16,12 @@ it('shows the OIDC login page to guests using only local template assets', funct
         ->assertSee('OpenID Connect')
         ->assertSee(asset('fonts/fonts.css'), false)
         ->assertSee(asset('template/vendor/bootstrap/css/bootstrap.min.css'), false)
+        ->assertSee(asset('template/assets/css/brand.css'), false)
         ->assertSee(asset('template/assets/css/auth.css'), false)
+        ->assertSee(asset('template/img/favicon.svg'), false)
         ->assertSee(asset('template/vendor/lucide/lucide.min.js'), false)
         ->assertSee('aria-label="FMS EBRS หน้าเข้าสู่ระบบ"', false)
-        ->assertSee('class="login-wordmark"', false)
+        ->assertSee('class="ebrs-wordmark"', false)
         ->assertDontSee('class="login-brand-mark"', false)
         ->assertSee('class="login-workflow-card"', false)
         ->assertDontSee('cdn.jsdelivr.net', false)
@@ -71,6 +73,13 @@ it('renders a permission-aware dashboard and limits borrowers to their own reque
         ->assertSee('BR-OWN-001')
         ->assertDontSee('BR-OTHER-001')
         ->assertSee(asset('template/assets/css/theme.css'), false)
+        ->assertSee(asset('template/assets/css/brand.css'), false)
+        ->assertSee(asset('template/img/favicon.svg'), false)
+        ->assertSee('class="ebrs-wordmark sidebar-wordmark"', false)
+        ->assertSee('class="ebrs-wordmark header-wordmark"', false)
+        ->assertSee('aria-label="breadcrumb"', false)
+        ->assertSee('class="crumb-last" aria-current="page">แดชบอร์ด</span>', false)
+        ->assertDontSee('<span class="text-muted">หน้าหลัก</span>', false)
         ->assertSee(asset('template/vendor/apexcharts/apexcharts.min.js'), false)
         ->assertSee('data-dashboard-role="borrower"', false)
         ->assertSee('ติดตามการยืมของคุณได้ในที่เดียว')
@@ -218,6 +227,43 @@ it('renders navigation for every application role without exposing unauthorized 
     }
 });
 
+it('renders linked breadcrumb parents for nested pages', function () {
+    $this->seed(RolePermissionSeeder::class);
+
+    $administrator = User::factory()->create();
+    $administrator->assignRole('SuperAdmin');
+    $managedUser = User::factory()->create();
+
+    $this->actingAs($administrator)
+        ->get(route('admin.users.edit', $managedUser))
+        ->assertOk()
+        ->assertSee('aria-label="breadcrumb"', false)
+        ->assertSee('href="'.route('dashboard').'" class="crumb-parent">แดชบอร์ด</a>', false)
+        ->assertSee('href="'.route('admin.users').'" class="crumb-parent">ผู้ใช้งาน</a>', false)
+        ->assertSee('class="crumb-last" aria-current="page">แก้ไขผู้ใช้งาน</span>', false);
+});
+
+it('links borrower request details back to the scoped own-request list', function () {
+    $this->seed(RolePermissionSeeder::class);
+
+    $borrower = User::factory()->create();
+    $borrower->assignRole('Borrower');
+    $borrowRequest = BorrowRequest::query()->create([
+        'request_no' => 'BR-BREADCRUMB-001',
+        'user_id' => $borrower->id,
+        'purpose' => 'Breadcrumb scope test',
+        'borrow_date' => today(),
+        'expected_return_date' => today()->addDay(),
+        'status' => BorrowRequestStatus::Pending,
+    ]);
+
+    $this->actingAs($borrower)
+        ->get(route('borrow.show', $borrowRequest))
+        ->assertOk()
+        ->assertSee('href="'.route('borrow.mine').'" class="crumb-parent">คำขอยืมของฉัน</a>', false)
+        ->assertDontSee('href="'.route('borrow.index').'" class="crumb-parent"', false);
+});
+
 it('renders the completed category and maintenance menus as working links', function () {
     $this->seed(RolePermissionSeeder::class);
 
@@ -243,9 +289,11 @@ it('ships every frontend dependency referenced by the layouts', function () {
         'template/vendor/lucide/lucide.min.js',
         'template/vendor/apexcharts/apexcharts.min.js',
         'template/assets/css/auth.css',
+        'template/assets/css/brand.css',
         'template/assets/css/theme.css',
         'template/assets/css/ebrs.css',
         'template/assets/js/app.js',
+        'template/img/favicon.svg',
     ];
 
     foreach ($assets as $asset) {

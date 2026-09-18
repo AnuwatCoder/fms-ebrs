@@ -5,12 +5,14 @@ namespace App\Providers;
 use App\Models\User;
 use App\Policies\RolePolicy;
 use App\Services\Authentication\AuthentikAccessService;
+use App\View\Composers\HeaderComposer;
 use Illuminate\Cache\RateLimiting\Limit;
 use Illuminate\Http\Request;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\Event;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\RateLimiter;
+use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 use SocialiteProviders\Authentik\Provider as AuthentikProvider;
 use SocialiteProviders\Manager\SocialiteWasCalled;
@@ -38,6 +40,7 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
         Paginator::useBootstrapFive();
+        View::composer('layouts.partials.header', HeaderComposer::class);
 
         Event::listen(function (SocialiteWasCalled $event): void {
             $event->extendSocialite('authentik', AuthentikProvider::class);
@@ -50,6 +53,14 @@ class AppServiceProvider extends ServiceProvider
 
         RateLimiter::for('authentik', function (Request $request): Limit {
             return Limit::perMinute(10)->by($request->ip());
+        });
+
+        RateLimiter::for('borrow-submissions', function (Request $request): Limit {
+            return Limit::perMinute(10)->by($request->user()?->getAuthIdentifier() ?? $request->ip());
+        });
+
+        RateLimiter::for('workflow', function (Request $request): Limit {
+            return Limit::perMinute(30)->by($request->user()?->getAuthIdentifier() ?? $request->ip());
         });
     }
 }

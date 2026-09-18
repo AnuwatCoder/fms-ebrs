@@ -12,10 +12,7 @@
     <section class="login-panel" aria-labelledby="login-title">
         <div class="login-panel-inner">
             <a href="{{ route('login') }}" class="login-brand" aria-label="FMS EBRS หน้าเข้าสู่ระบบ">
-                <span class="login-wordmark" aria-hidden="true">
-                    <span class="login-wordmark-fms">FMS</span>
-                    <span class="login-wordmark-ebrs">EBRS</span>
-                </span>
+                <x-brand-wordmark />
                 <span class="login-brand-divider" aria-hidden="true"></span>
                 <small>Equipment Borrowing<br>&amp; Return System</small>
             </a>

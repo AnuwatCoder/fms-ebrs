@@ -432,10 +432,14 @@ html.dark .app-header .header-icon-btn { color: var(--slate-400); }
 .app-header .header-icon-btn:hover { background: var(--slate-100); }
 html.dark .app-header .header-icon-btn:hover { background: rgb(51 65 85 / .8); }
 .header-breadcrumb {
-  display: flex; align-items: center; gap: .375rem; font-size: 13px;
+  display: flex; align-items: center; gap: .375rem; min-width: 0; font-size: 13px;
   color: var(--slate-400);
 }
-.header-breadcrumb .crumb-last { color: var(--slate-700); font-weight: 500; }
+.header-breadcrumb .crumb-parent { color: var(--slate-500); text-decoration: none; transition: color .15s; }
+.header-breadcrumb .crumb-parent:hover { color: rgb(var(--p-600)); }
+.header-breadcrumb .crumb-last { max-width: min(24vw, 18rem); overflow: hidden; color: var(--slate-700); font-weight: 500; text-overflow: ellipsis; white-space: nowrap; }
+html.dark .header-breadcrumb .crumb-parent { color: var(--slate-400); }
+html.dark .header-breadcrumb .crumb-parent:hover { color: rgb(var(--p-300)); }
 html.dark .header-breadcrumb .crumb-last { color: var(--slate-300); }
 .notif-dot {
   position: absolute; top: 6px; inset-inline-end: 6px;

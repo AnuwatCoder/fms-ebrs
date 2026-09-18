@@ -8,6 +8,7 @@ use App\Models\BorrowRequest;
 use App\Models\Equipment;
 use App\Models\User;
 use App\Services\Borrowing\EquipmentAvailabilityService;
+use App\Services\Notifications\BestEffortNotificationDispatcher;
 use App\Services\Notifications\BorrowRequestNotificationService;
 use App\Support\Auditing\AuditLogger;
 use Illuminate\Support\Carbon;
@@ -20,6 +21,7 @@ class CreateBorrowRequest
         private AuditLogger $auditLogger,
         private EquipmentAvailabilityService $availability,
         private BorrowRequestNotificationService $notifications,
+        private BestEffortNotificationDispatcher $notificationDispatcher,
     ) {}
 
     /**
@@ -33,10 +35,10 @@ class CreateBorrowRequest
      *     accept_terms: bool|int|string
      * } $attributes
      */
-    public function execute(User $borrower, array $attributes): BorrowRequest
+    public function execute(User $borrower, array $attributes, bool $submit = true): BorrowRequest
     {
-        $borrowRequest = DB::transaction(function () use ($borrower, $attributes): BorrowRequest {
-            if (! filter_var($attributes['accept_terms'] ?? false, FILTER_VALIDATE_BOOLEAN)) {
+        $borrowRequest = DB::transaction(function () use ($borrower, $attributes, $submit): BorrowRequest {
+            if ($submit && ! filter_var($attributes['accept_terms'] ?? false, FILTER_VALIDATE_BOOLEAN)) {
                 throw ValidationException::withMessages([
                     'accept_terms' => 'กรุณายอมรับข้อตกลงและเงื่อนไขการยืมก่อนส่งคำขอ',
                 ]);
@@ -72,32 +74,36 @@ class CreateBorrowRequest
                 'usage_location' => $attributes['usage_location'] ?? null,
                 'borrow_date' => $attributes['borrow_date'],
                 'expected_return_date' => $attributes['expected_return_date'],
-                'status' => BorrowRequestStatus::Pending,
+                'status' => $submit ? BorrowRequestStatus::Pending : BorrowRequestStatus::Draft,
                 'note' => $attributes['note'] ?? null,
-                'submitted_at' => now(),
-                'terms_accepted_at' => now(),
-                'terms_version' => (string) config('borrowing.terms.version'),
+                'submitted_at' => $submit ? now() : null,
+                'terms_accepted_at' => $submit ? now() : null,
+                'terms_version' => $submit ? (string) config('borrowing.terms.version') : null,
             ]);
 
             $borrowRequest->items()->createMany(array_map(
                 fn (int $equipmentId): array => [
                     'equipment_id' => $equipmentId,
-                    'status' => BorrowItemStatus::Pending,
+                    'status' => $submit ? BorrowItemStatus::Pending : BorrowItemStatus::Draft,
                 ],
                 $equipmentIds,
             ));
 
-            $this->auditLogger->record($borrower, 'borrow.submitted', $borrowRequest, [], [
+            $this->auditLogger->record($borrower, $submit ? 'borrow.submitted' : 'borrow.draft.created', $borrowRequest, [], [
                 'request_no' => $borrowRequest->request_no,
-                'status' => BorrowRequestStatus::Pending->value,
+                'status' => ($submit ? BorrowRequestStatus::Pending : BorrowRequestStatus::Draft)->value,
                 'equipment_ids' => $equipmentIds,
-                'terms_version' => $borrowRequest->terms_version,
+                'terms_version' => $submit ? $borrowRequest->terms_version : null,
             ]);
 
             return $borrowRequest;
         });
 
-        $this->notifications->notifyReviewers($borrowRequest);
+        if ($submit) {
+            $this->notificationDispatcher->dispatch(
+                fn (): mixed => $this->notifications->notifyReviewers($borrowRequest),
+            );
+        }
 
         return $borrowRequest;
     }

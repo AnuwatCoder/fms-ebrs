@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\MorphMany;
 
 class BorrowRequest extends Model
 {
@@ -59,5 +60,11 @@ class BorrowRequest extends Model
     public function incidents(): HasMany
     {
         return $this->hasMany(EquipmentIncident::class);
+    }
+
+    /** @return MorphMany<AuditLog, $this> */
+    public function auditLogs(): MorphMany
+    {
+        return $this->morphMany(AuditLog::class, 'subject');
     }
 }

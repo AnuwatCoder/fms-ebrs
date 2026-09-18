@@ -1,22 +1,24 @@
 <?php
 
+use App\Http\Controllers\Admin\AuditLogController;
 use App\Http\Controllers\Admin\PermissionController;
 use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\RoleSimulationController;
 use App\Http\Controllers\Admin\SystemSettingController;
 use App\Http\Controllers\Admin\UserController;
-use App\Http\Controllers\AuditLogController;
 use App\Http\Controllers\Auth\AuthentikController;
-use App\Http\Controllers\BorrowApprovalController;
-use App\Http\Controllers\BorrowRequestAvailabilityController;
-use App\Http\Controllers\BorrowRequestController;
-use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\EquipmentCategoryController;
-use App\Http\Controllers\EquipmentCheckoutController;
-use App\Http\Controllers\EquipmentController;
-use App\Http\Controllers\EquipmentReturnController;
-use App\Http\Controllers\MaintenanceController;
-use App\Http\Controllers\ReportController;
+use App\Http\Controllers\Borrowing\BorrowApprovalController;
+use App\Http\Controllers\Borrowing\BorrowCalendarController;
+use App\Http\Controllers\Borrowing\BorrowRequestAvailabilityController;
+use App\Http\Controllers\Borrowing\BorrowRequestController;
+use App\Http\Controllers\Checkout\EquipmentCheckoutController;
+use App\Http\Controllers\Dashboard\DashboardController;
+use App\Http\Controllers\Equipment\EquipmentCategoryController;
+use App\Http\Controllers\Equipment\EquipmentController;
+use App\Http\Controllers\Maintenance\MaintenanceController;
+use App\Http\Controllers\Notifications\NotificationController;
+use App\Http\Controllers\Reports\ReportController;
+use App\Http\Controllers\Returns\EquipmentReturnController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -45,7 +47,7 @@ Route::middleware('auth')->group(function () {
         ->middleware('permission:equipment.create')
         ->name('equipment.create');
     Route::post('/equipment', [EquipmentController::class, 'store'])
-        ->middleware('permission:equipment.create')
+        ->middleware(['permission:equipment.create', 'throttle:workflow'])
         ->name('equipment.store');
     Route::get('/equipment/{equipment}', [EquipmentController::class, 'show'])
         ->middleware(['permission:equipment.view', 'can:view,equipment'])
@@ -54,10 +56,10 @@ Route::middleware('auth')->group(function () {
         ->middleware(['permission:equipment.update', 'can:update,equipment'])
         ->name('equipment.edit');
     Route::patch('/equipment/{equipment}', [EquipmentController::class, 'update'])
-        ->middleware('permission:equipment.update')
+        ->middleware(['permission:equipment.update', 'throttle:workflow'])
         ->name('equipment.update');
     Route::delete('/equipment/{equipment}', [EquipmentController::class, 'destroy'])
-        ->middleware('permission:equipment.delete')
+        ->middleware(['permission:equipment.delete', 'throttle:workflow'])
         ->name('equipment.destroy');
 
     Route::get('/categories', [EquipmentCategoryController::class, 'index'])
@@ -67,16 +69,16 @@ Route::middleware('auth')->group(function () {
         ->middleware('permission:category.create')
         ->name('category.create');
     Route::post('/categories', [EquipmentCategoryController::class, 'store'])
-        ->middleware('permission:category.create')
+        ->middleware(['permission:category.create', 'throttle:workflow'])
         ->name('category.store');
     Route::get('/categories/{category}/edit', [EquipmentCategoryController::class, 'edit'])
         ->middleware(['permission:category.update', 'can:update,category'])
         ->name('category.edit');
     Route::patch('/categories/{category}', [EquipmentCategoryController::class, 'update'])
-        ->middleware('permission:category.update')
+        ->middleware(['permission:category.update', 'throttle:workflow'])
         ->name('category.update');
     Route::delete('/categories/{category}', [EquipmentCategoryController::class, 'destroy'])
-        ->middleware('permission:category.delete')
+        ->middleware(['permission:category.delete', 'throttle:workflow'])
         ->name('category.destroy');
 
     Route::get('/maintenance', [MaintenanceController::class, 'index'])
@@ -86,13 +88,13 @@ Route::middleware('auth')->group(function () {
         ->middleware('permission:maintenance.manage')
         ->name('maintenance.create');
     Route::post('/maintenance/incidents', [MaintenanceController::class, 'store'])
-        ->middleware('permission:maintenance.manage')
+        ->middleware(['permission:maintenance.manage', 'throttle:workflow'])
         ->name('maintenance.store');
     Route::get('/maintenance/incidents/{incident}/resolve', [MaintenanceController::class, 'resolve'])
         ->middleware(['permission:maintenance.manage', 'can:resolve,incident'])
         ->name('maintenance.resolve');
     Route::patch('/maintenance/incidents/{incident}/resolve', [MaintenanceController::class, 'update'])
-        ->middleware('permission:maintenance.manage')
+        ->middleware(['permission:maintenance.manage', 'throttle:workflow'])
         ->name('maintenance.update');
 
     Route::get('/borrow-requests/create', [BorrowRequestController::class, 'create'])
@@ -101,38 +103,50 @@ Route::middleware('auth')->group(function () {
     Route::get('/borrow-requests/availability', BorrowRequestAvailabilityController::class)
         ->middleware('permission:borrow.create')
         ->name('borrow.availability');
+    Route::get('/borrow-requests/calendar', BorrowCalendarController::class)
+        ->middleware('permission:equipment.view')
+        ->name('borrow.calendar');
     Route::post('/borrow-requests', [BorrowRequestController::class, 'store'])
-        ->middleware('permission:borrow.create')
+        ->middleware(['permission:borrow.create', 'throttle:borrow-submissions'])
         ->name('borrow.store');
     Route::get('/borrow-requests/mine', [BorrowRequestController::class, 'mine'])
         ->middleware('permission:borrow.view-own')
         ->name('borrow.mine');
+    Route::get('/borrow-requests/{borrowRequest}/edit', [BorrowRequestController::class, 'edit'])
+        ->middleware('can:update,borrowRequest')
+        ->name('borrow.edit');
+    Route::patch('/borrow-requests/{borrowRequest}', [BorrowRequestController::class, 'update'])
+        ->middleware(['can:update,borrowRequest', 'throttle:borrow-submissions'])
+        ->name('borrow.update');
     Route::patch('/borrow-requests/{borrowRequest}/cancel', [BorrowRequestController::class, 'cancel'])
-        ->middleware(['permission:borrow.cancel', 'can:cancel,borrowRequest'])
+        ->middleware(['permission:borrow.cancel', 'can:cancel,borrowRequest', 'throttle:workflow'])
         ->name('borrow.cancel');
     Route::get('/borrow-requests', [BorrowRequestController::class, 'index'])
         ->middleware('permission:borrow.view')
         ->name('borrow.index');
+    Route::get('/borrow-requests/{borrowRequest}', [BorrowRequestController::class, 'show'])
+        ->middleware('can:view,borrowRequest')
+        ->name('borrow.show');
 
     Route::get('/approvals', [BorrowApprovalController::class, 'index'])
         ->middleware('permission:approval.view')
         ->name('approval.index');
     Route::patch('/approvals/{borrowRequest}', [BorrowApprovalController::class, 'update'])
-        ->middleware('permission:approval.view')
+        ->middleware(['permission:approval.view', 'throttle:workflow'])
         ->name('approval.update');
 
     Route::get('/checkouts', [EquipmentCheckoutController::class, 'index'])
         ->middleware('permission:checkout.view')
         ->name('checkout.index');
     Route::patch('/checkouts/{borrowRequest}', [EquipmentCheckoutController::class, 'update'])
-        ->middleware('permission:checkout.process')
+        ->middleware(['permission:checkout.process', 'throttle:workflow'])
         ->name('checkout.update');
 
     Route::get('/returns', [EquipmentReturnController::class, 'index'])
         ->middleware('permission:return.view')
         ->name('return.index');
     Route::patch('/returns/{borrowRequest}', [EquipmentReturnController::class, 'update'])
-        ->middleware('permission:return.process')
+        ->middleware(['permission:return.process', 'throttle:workflow'])
         ->name('return.update');
 
     Route::prefix('reports')->group(function () {
@@ -152,8 +166,10 @@ Route::middleware('auth')->group(function () {
 
     Route::prefix('admin')->group(function () {
         Route::post('/role-simulation', [RoleSimulationController::class, 'store'])
+            ->middleware('throttle:workflow')
             ->name('admin.role-simulation.store');
         Route::delete('/role-simulation', [RoleSimulationController::class, 'destroy'])
+            ->middleware('throttle:workflow')
             ->name('admin.role-simulation.destroy');
 
         Route::get('/users', [UserController::class, 'index'])
@@ -163,7 +179,7 @@ Route::middleware('auth')->group(function () {
             ->middleware(['permission:user.manage', 'can:update,user'])
             ->name('admin.users.edit');
         Route::patch('/users/{user}', [UserController::class, 'update'])
-            ->middleware('permission:user.manage')
+            ->middleware(['permission:user.manage', 'throttle:workflow'])
             ->name('admin.users.update');
 
         Route::get('/roles', [RoleController::class, 'index'])
@@ -173,16 +189,16 @@ Route::middleware('auth')->group(function () {
             ->middleware('permission:role.manage')
             ->name('admin.roles.create');
         Route::post('/roles', [RoleController::class, 'store'])
-            ->middleware('permission:role.manage')
+            ->middleware(['permission:role.manage', 'throttle:workflow'])
             ->name('admin.roles.store');
         Route::get('/roles/{role}/edit', [RoleController::class, 'edit'])
             ->middleware(['permission:role.manage', 'can:update,role'])
             ->name('admin.roles.edit');
         Route::patch('/roles/{role}', [RoleController::class, 'update'])
-            ->middleware('permission:role.manage')
+            ->middleware(['permission:role.manage', 'throttle:workflow'])
             ->name('admin.roles.update');
         Route::delete('/roles/{role}', [RoleController::class, 'destroy'])
-            ->middleware('permission:role.manage')
+            ->middleware(['permission:role.manage', 'throttle:workflow'])
             ->name('admin.roles.destroy');
 
         Route::get('/permissions', [PermissionController::class, 'index'])
@@ -192,13 +208,20 @@ Route::middleware('auth')->group(function () {
             ->middleware('permission:settings.manage')
             ->name('admin.settings');
         Route::patch('/settings', [SystemSettingController::class, 'update'])
-            ->middleware('permission:settings.manage')
+            ->middleware(['permission:settings.manage', 'throttle:workflow'])
             ->name('admin.settings.update');
     });
 
     Route::get('/audit-logs', [AuditLogController::class, 'index'])
         ->middleware('permission:audit.view')
         ->name('audit.index');
+
+    Route::post('/notifications/{notification}/read', [NotificationController::class, 'read'])
+        ->middleware('throttle:workflow')
+        ->name('notifications.read');
+    Route::post('/notifications/read-all', [NotificationController::class, 'readAll'])
+        ->middleware('throttle:workflow')
+        ->name('notifications.read-all');
 
     Route::post('/logout', [AuthentikController::class, 'logout'])->name('logout');
 });

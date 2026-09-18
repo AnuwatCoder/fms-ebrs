@@ -4,7 +4,7 @@
 @section('page-title', 'แดชบอร์ด')
 
 @section('content')
-<div data-dashboard-role="{{ $dashboardProfile['key'] }}">
+<div class="dashboard-layout" data-dashboard-role="{{ $dashboardProfile['key'] }}">
     <section class="dashboard-hero dashboard-hero-{{ $dashboardProfile['key'] }}">
         <div class="dashboard-hero-orb dashboard-hero-orb-one"></div>
         <div class="dashboard-hero-orb dashboard-hero-orb-two"></div>

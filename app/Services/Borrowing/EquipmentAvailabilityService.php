@@ -13,20 +13,27 @@ use Illuminate\Database\Eloquent\Collection;
 class EquipmentAvailabilityService
 {
     /** @return Collection<int, Equipment> */
-    public function availableBetween(CarbonInterface $borrowDate, CarbonInterface $returnDate): Collection
-    {
+    public function availableBetween(
+        CarbonInterface $borrowDate,
+        CarbonInterface $returnDate,
+        ?int $excludeBorrowRequestId = null,
+    ): Collection {
         return Equipment::query()
             ->with('category:id,name')
             ->where('active', true)
             ->whereIn('status', $this->schedulableEquipmentStatuses())
-            ->whereDoesntHave('borrowItems', function (Builder $query) use ($borrowDate, $returnDate): void {
-                $query->whereHas('borrowRequest', function (Builder $query) use ($borrowDate, $returnDate): void {
+            ->whereDoesntHave('borrowItems', function (Builder $query) use ($borrowDate, $returnDate, $excludeBorrowRequestId): void {
+                $query->whereHas('borrowRequest', function (Builder $query) use ($borrowDate, $returnDate, $excludeBorrowRequestId): void {
                     $this->applyOverlapConstraint(
                         $query,
                         $borrowDate,
                         $returnDate,
                         $this->requestBlockingStatuses(),
                     );
+
+                    if ($excludeBorrowRequestId !== null) {
+                        $query->whereKeyNot($excludeBorrowRequestId);
+                    }
                 });
             })
             ->orderBy('name')
@@ -88,7 +95,7 @@ class EquipmentAvailabilityService
     }
 
     /** @return list<string> */
-    private function requestBlockingStatuses(): array
+    public function requestBlockingStatuses(): array
     {
         return [
             BorrowRequestStatus::Pending->value,

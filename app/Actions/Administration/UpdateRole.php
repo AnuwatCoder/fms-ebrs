@@ -3,6 +3,7 @@
 namespace App\Actions\Administration;
 
 use App\Models\User;
+use App\Services\Authorization\PrivilegedAccessService;
 use App\Support\Auditing\AuditLogger;
 use App\Support\Authorization\CoreRoles;
 use Illuminate\Support\Facades\DB;
@@ -12,7 +13,10 @@ use Spatie\Permission\Models\Role;
 
 class UpdateRole
 {
-    public function __construct(private AuditLogger $auditLogger) {}
+    public function __construct(
+        private AuditLogger $auditLogger,
+        private PrivilegedAccessService $privilegedAccess,
+    ) {}
 
     /** @param list<int> $permissionIds */
     public function execute(User $actor, Role $role, string $name, array $permissionIds): Role
@@ -37,6 +41,8 @@ class UpdateRole
                 ->whereKey($permissionIds)
                 ->where('guard_name', 'web')
                 ->get();
+
+            $this->privilegedAccess->assertCanUpdateRole($actor, $lockedRole, $permissions);
 
             $lockedRole->update(['name' => $name]);
             $lockedRole->syncPermissions($permissions);

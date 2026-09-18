@@ -10,17 +10,23 @@ use App\Models\BorrowRequestItem;
 use App\Models\Equipment;
 use App\Models\EquipmentCheckout;
 use App\Models\User;
+use App\Services\Notifications\BestEffortNotificationDispatcher;
+use App\Services\Notifications\BorrowRequestNotificationService;
 use App\Support\Auditing\AuditLogger;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Validation\ValidationException;
 
 class ProcessEquipmentCheckout
 {
-    public function __construct(private AuditLogger $auditLogger) {}
+    public function __construct(
+        private AuditLogger $auditLogger,
+        private BorrowRequestNotificationService $notifications,
+        private BestEffortNotificationDispatcher $notificationDispatcher,
+    ) {}
 
     public function markReady(User $staff, BorrowRequest $borrowRequest): BorrowRequest
     {
-        return DB::transaction(function () use ($staff, $borrowRequest): BorrowRequest {
+        $readyRequest = DB::transaction(function () use ($staff, $borrowRequest): BorrowRequest {
             $lockedRequest = $this->lockedRequest($borrowRequest);
 
             if ($lockedRequest->status !== BorrowRequestStatus::Approved) {
@@ -42,6 +48,12 @@ class ProcessEquipmentCheckout
 
             return $lockedRequest->refresh();
         });
+
+        $this->notificationDispatcher->dispatch(
+            fn (): mixed => $this->notifications->notifyReadyForPickup($readyRequest),
+        );
+
+        return $readyRequest;
     }
 
     /** @param array<int|string, string> $conditions */

@@ -10,6 +10,7 @@ use App\Models\EquipmentCategory;
 use App\Models\SystemSetting;
 use App\Models\User;
 use App\Notifications\BorrowRequestApprovedNotification;
+use App\Notifications\BorrowRequestInternalNotification;
 use App\Notifications\NewBorrowRequestNotification;
 use Database\Seeders\RolePermissionSeeder;
 use Illuminate\Foundation\Testing\RefreshDatabase;
@@ -540,7 +541,10 @@ it('does not send borrow request emails when email notifications are disabled', 
         ])
         ->assertRedirect(route('approval.index'));
 
-    Notification::assertNothingSent();
+    Notification::assertNotSentTo($admin, NewBorrowRequestNotification::class);
+    Notification::assertNotSentTo($borrower, BorrowRequestApprovedNotification::class);
+    Notification::assertSentTo($approver, BorrowRequestInternalNotification::class);
+    Notification::assertSentTo($borrower, BorrowRequestInternalNotification::class);
 });
 
 it('limits borrowers to their own requests while staff can see every request', function () {

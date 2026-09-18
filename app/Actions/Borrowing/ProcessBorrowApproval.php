@@ -11,8 +11,10 @@ use App\Models\BorrowRequestItem;
 use App\Models\Equipment;
 use App\Models\User;
 use App\Services\Borrowing\EquipmentAvailabilityService;
+use App\Services\Notifications\BestEffortNotificationDispatcher;
 use App\Services\Notifications\BorrowRequestNotificationService;
 use App\Support\Auditing\AuditLogger;
+use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Validation\ValidationException;
 
@@ -22,6 +24,7 @@ class ProcessBorrowApproval
         private AuditLogger $auditLogger,
         private EquipmentAvailabilityService $availability,
         private BorrowRequestNotificationService $notifications,
+        private BestEffortNotificationDispatcher $notificationDispatcher,
     ) {}
 
     public function execute(
@@ -35,6 +38,10 @@ class ProcessBorrowApproval
                 ->whereKey($borrowRequest->getKey())
                 ->lockForUpdate()
                 ->firstOrFail();
+
+            if ($lockedRequest->user_id === $approver->id) {
+                throw new AuthorizationException('ไม่สามารถอนุมัติหรือปฏิเสธคำขอของตนเองได้');
+            }
 
             if ($lockedRequest->status !== BorrowRequestStatus::Pending) {
                 throw ValidationException::withMessages([
@@ -121,9 +128,15 @@ class ProcessBorrowApproval
             return $lockedRequest->refresh();
         });
 
-        if ($action === ApprovalAction::Approved) {
-            $this->notifications->notifyApprovedBorrower($processedRequest);
-        }
+        $this->notificationDispatcher->dispatch(function () use ($action, $processedRequest, $comment): void {
+            if ($action === ApprovalAction::Approved) {
+                $this->notifications->notifyApprovedBorrower($processedRequest);
+
+                return;
+            }
+
+            $this->notifications->notifyRejectedBorrower($processedRequest, $comment);
+        });
 
         return $processedRequest;
     }

@@ -12,20 +12,26 @@ use App\Models\Equipment;
 use App\Models\EquipmentIncident;
 use App\Models\EquipmentReturn;
 use App\Models\User;
+use App\Services\Notifications\BestEffortNotificationDispatcher;
+use App\Services\Notifications\BorrowRequestNotificationService;
 use App\Support\Auditing\AuditLogger;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Validation\ValidationException;
 
 class ProcessEquipmentReturn
 {
-    public function __construct(private AuditLogger $auditLogger) {}
+    public function __construct(
+        private AuditLogger $auditLogger,
+        private BorrowRequestNotificationService $notifications,
+        private BestEffortNotificationDispatcher $notificationDispatcher,
+    ) {}
 
     /**
      * @param  array<int|string, array{return_status: string, condition_after: string, note?: string|null}>  $returnData
      */
     public function execute(User $staff, BorrowRequest $borrowRequest, array $returnData): BorrowRequest
     {
-        return DB::transaction(function () use ($staff, $borrowRequest, $returnData): BorrowRequest {
+        $returnedRequest = DB::transaction(function () use ($staff, $borrowRequest, $returnData): BorrowRequest {
             $lockedRequest = BorrowRequest::query()
                 ->whereKey($borrowRequest->getKey())
                 ->lockForUpdate()
@@ -124,5 +130,11 @@ class ProcessEquipmentReturn
 
             return $lockedRequest->refresh();
         });
+
+        $this->notificationDispatcher->dispatch(
+            fn (): mixed => $this->notifications->notifyReturned($returnedRequest),
+        );
+
+        return $returnedRequest;
     }
 }

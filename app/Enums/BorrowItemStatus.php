@@ -26,4 +26,16 @@ enum BorrowItemStatus: string
             self::Cancelled => 'ยกเลิก',
         };
     }
+
+    public function badgeClass(): string
+    {
+        return match ($this) {
+            self::Draft, self::Cancelled => 'badge-soft-secondary',
+            self::Pending => 'badge-soft-warning',
+            self::Reserved, self::Returned => 'badge-soft-success',
+            self::ReadyForPickup => 'badge-soft-info',
+            self::Borrowed => 'badge-soft-primary',
+            self::Rejected => 'badge-soft-danger',
+        };
+    }
 }

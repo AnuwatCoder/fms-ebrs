@@ -3,6 +3,8 @@
 namespace App\Actions\Administration;
 
 use App\Models\User;
+use App\Services\Authentication\UserSessionRevoker;
+use App\Services\Authorization\PrivilegedAccessService;
 use App\Support\Auditing\AuditLogger;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Validation\ValidationException;
@@ -10,12 +12,16 @@ use Spatie\Permission\Models\Role;
 
 class UpdateManagedUser
 {
-    public function __construct(private AuditLogger $auditLogger) {}
+    public function __construct(
+        private AuditLogger $auditLogger,
+        private PrivilegedAccessService $privilegedAccess,
+        private UserSessionRevoker $sessionRevoker,
+    ) {}
 
     /** @param list<int> $roleIds */
     public function execute(User $actor, User $managedUser, bool $active, array $roleIds): User
     {
-        return DB::transaction(function () use ($actor, $managedUser, $active, $roleIds): User {
+        $updatedUser = DB::transaction(function () use ($actor, $managedUser, $active, $roleIds): User {
             $lockedUser = User::query()
                 ->whereKey($managedUser->getKey())
                 ->lockForUpdate()
@@ -23,6 +29,7 @@ class UpdateManagedUser
             $roles = Role::query()
                 ->whereKey($roleIds)
                 ->where('guard_name', 'web')
+                ->with('permissions:id,name')
                 ->get();
 
             if ($actor->is($lockedUser) && ! $active) {
@@ -53,6 +60,8 @@ class UpdateManagedUser
                 }
             }
 
+            $this->privilegedAccess->assertCanAssignRoles($actor, $lockedUser, $roles);
+
             $oldValues = [
                 'active' => $lockedUser->active,
                 'roles' => $lockedUser->getRoleNames()->all(),
@@ -68,5 +77,11 @@ class UpdateManagedUser
 
             return $lockedUser->refresh();
         });
+
+        if (! $updatedUser->active) {
+            $this->sessionRevoker->revoke($updatedUser);
+        }
+
+        return $updatedUser;
     }
 }

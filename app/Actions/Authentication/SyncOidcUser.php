@@ -57,7 +57,6 @@ class SyncOidcUser
             if ($identity !== null) {
                 $user = $identity->user()->lockForUpdate()->firstOrFail();
                 $this->refreshProfile($user, $claims, $subject);
-                $this->grantConfiguredSuperAdminRole($user);
 
                 return $user;
             }

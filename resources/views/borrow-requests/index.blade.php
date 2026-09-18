@@ -76,7 +76,7 @@
                     @foreach ($borrowRequests as $borrowRequest)
                         <tr>
                             <td>
-                                <div class="fw-semibold text-primary">{{ $borrowRequest->request_no }}</div>
+                                <a href="{{ route('borrow.show', $borrowRequest) }}" class="fw-semibold text-primary text-decoration-none">{{ $borrowRequest->request_no }}</a>
                                 <div class="text-xs text-slate-500">{{ optional($borrowRequest->submitted_at)->format('d/m/Y H:i') }}</div>
                             </td>
                             @unless ($mine)<td>{{ $borrowRequest->borrower->name }}</td>@endunless
@@ -89,6 +89,12 @@
                             <td><span class="badge {{ $borrowRequest->status->badgeClass() }}">{{ $borrowRequest->status->label() }}</span></td>
                             @if ($mine)
                                 <td class="text-end">
+                                    @can('update', $borrowRequest)
+                                        <a href="{{ route('borrow.edit', $borrowRequest) }}" class="btn btn-sm btn-outline-primary d-inline-flex align-items-center gap-1">
+                                            <i data-lucide="pencil" class="lucide-sm"></i>
+                                            แก้ไข
+                                        </a>
+                                    @endcan
                                     @can('cancel', $borrowRequest)
                                         @if ($borrowRequest->status->canTransitionTo(\App\Enums\BorrowRequestStatus::Cancelled))
                                             <button
