@@ -45,7 +45,31 @@ class EquipmentCatalogService
     public function createForm(): array
     {
         return [
+            'equipment' => new Equipment,
             'categories' => $this->activeCategories(),
+            'statuses' => EquipmentStatus::cases(),
+        ];
+    }
+
+    /** @return array<string, mixed> */
+    public function detail(Equipment $equipment): array
+    {
+        $equipment->load('category:id,name,code')->loadCount(['borrowItems', 'incidents']);
+
+        return ['equipment' => $equipment];
+    }
+
+    /** @return array<string, mixed> */
+    public function editForm(Equipment $equipment): array
+    {
+        return [
+            'equipment' => $equipment->load('category:id,name'),
+            'categories' => EquipmentCategory::query()
+                ->where(function (Builder $query) use ($equipment): void {
+                    $query->where('active', true)->orWhereKey($equipment->category_id);
+                })
+                ->orderBy('name')
+                ->get(['id', 'name', 'active']),
             'statuses' => EquipmentStatus::cases(),
         ];
     }
@@ -56,6 +80,6 @@ class EquipmentCatalogService
         return EquipmentCategory::query()
             ->where('active', true)
             ->orderBy('name')
-            ->get(['id', 'name']);
+            ->get(['id', 'name', 'active']);
     }
 }

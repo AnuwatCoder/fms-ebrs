@@ -10,13 +10,19 @@ use App\Models\BorrowRequest;
 use App\Models\BorrowRequestItem;
 use App\Models\Equipment;
 use App\Models\User;
+use App\Services\Borrowing\EquipmentAvailabilityService;
+use App\Services\Notifications\BorrowRequestNotificationService;
 use App\Support\Auditing\AuditLogger;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Validation\ValidationException;
 
 class ProcessBorrowApproval
 {
-    public function __construct(private AuditLogger $auditLogger) {}
+    public function __construct(
+        private AuditLogger $auditLogger,
+        private EquipmentAvailabilityService $availability,
+        private BorrowRequestNotificationService $notifications,
+    ) {}
 
     public function execute(
         User $approver,
@@ -24,7 +30,7 @@ class ProcessBorrowApproval
         ApprovalAction $action,
         ?string $comment = null,
     ): BorrowRequest {
-        return DB::transaction(function () use ($approver, $borrowRequest, $action, $comment): BorrowRequest {
+        $processedRequest = DB::transaction(function () use ($approver, $borrowRequest, $action, $comment): BorrowRequest {
             $lockedRequest = BorrowRequest::query()
                 ->whereKey($borrowRequest->getKey())
                 ->lockForUpdate()
@@ -56,10 +62,21 @@ class ProcessBorrowApproval
                     ->get();
 
                 $unavailable = $equipment->filter(
-                    fn (Equipment $item): bool => ! $item->active || $item->status !== EquipmentStatus::Available,
+                    fn (Equipment $item): bool => ! $item->active
+                        || ! in_array($item->status->value, $this->availability->schedulableEquipmentStatuses(), true),
                 );
 
-                if ($equipment->count() !== $items->count() || $unavailable->isNotEmpty()) {
+                if (
+                    $equipment->count() !== $items->count()
+                    || $unavailable->isNotEmpty()
+                    || $this->availability->hasConflicts(
+                        $items->pluck('equipment_id')->all(),
+                        $lockedRequest->borrow_date,
+                        $lockedRequest->expected_return_date,
+                        $this->availability->approvedRequestBlockingStatuses(),
+                        $lockedRequest->id,
+                    )
+                ) {
                     throw ValidationException::withMessages([
                         'action' => 'ไม่สามารถอนุมัติได้ เนื่องจากมีอุปกรณ์บางรายการไม่พร้อมให้ยืม',
                     ]);
@@ -103,5 +120,11 @@ class ProcessBorrowApproval
 
             return $lockedRequest->refresh();
         });
+
+        if ($action === ApprovalAction::Approved) {
+            $this->notifications->notifyApprovedBorrower($processedRequest);
+        }
+
+        return $processedRequest;
     }
 }

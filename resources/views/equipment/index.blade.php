@@ -95,14 +95,17 @@
                         <th>หมวดหมู่</th>
                         <th>สถานที่</th>
                         <th>สถานะ</th>
+                        <th class="text-end">จัดการ</th>
                     </tr>
                 </thead>
                 <tbody>
                     @foreach ($equipment as $item)
                         <tr>
-                            <td class="fw-semibold text-primary">{{ $item->equipment_code }}</td>
+                            <td class="fw-semibold">
+                                <a href="{{ route('equipment.show', $item) }}" class="text-primary text-decoration-none">{{ $item->equipment_code }}</a>
+                            </td>
                             <td>
-                                <div class="fw-semibold text-slate-800">{{ $item->name }}</div>
+                                <a href="{{ route('equipment.show', $item) }}" class="fw-semibold text-slate-800 text-decoration-none">{{ $item->name }}</a>
                                 <div class="text-xs text-slate-500">
                                     {{ collect([$item->brand, $item->model])->filter()->join(' · ') ?: 'ไม่ระบุยี่ห้อ/รุ่น' }}
                                 </div>
@@ -110,6 +113,29 @@
                             <td>{{ $item->category->name }}</td>
                             <td>{{ $item->location ?: '—' }}</td>
                             <td><span class="badge {{ $item->status->badgeClass() }}">{{ $item->status->label() }}</span></td>
+                            <td>
+                                <div class="d-flex justify-content-end gap-2">
+                                    @can('view', $item)
+                                        <a href="{{ route('equipment.show', $item) }}" class="btn btn-sm btn-outline-secondary" aria-label="ดู {{ $item->name }}">
+                                            <i data-lucide="eye" class="lucide-sm"></i>
+                                        </a>
+                                    @endcan
+                                    @can('update', $item)
+                                        <a href="{{ route('equipment.edit', $item) }}" class="btn btn-sm btn-outline-primary" aria-label="แก้ไข {{ $item->name }}">
+                                            <i data-lucide="pencil" class="lucide-sm"></i>
+                                        </a>
+                                    @endcan
+                                    @can('delete', $item)
+                                        <form method="POST" action="{{ route('equipment.destroy', $item) }}" onsubmit="return confirm('ยืนยันการลบอุปกรณ์ {{ $item->equipment_code }}?')">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" class="btn btn-sm btn-outline-danger" aria-label="ลบ {{ $item->name }}">
+                                                <i data-lucide="trash-2" class="lucide-sm"></i>
+                                            </button>
+                                        </form>
+                                    @endcan
+                                </div>
+                            </td>
                         </tr>
                     @endforeach
                 </tbody>

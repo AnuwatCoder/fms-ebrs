@@ -66,6 +66,12 @@ class SystemSetting extends Model
                 'default' => '',
                 'help' => 'แสดงเป็นช่องทางติดต่อเมื่อผู้ใช้ต้องการความช่วยเหลือ',
             ],
+            'email_notifications_enabled' => [
+                'label' => 'เปิดการส่งอีเมลแจ้งเตือน',
+                'type' => 'boolean',
+                'default' => true,
+                'help' => 'ส่งอีเมลเมื่อมีคำขอยืมใหม่และเมื่อคำขอได้รับการอนุมัติ',
+            ],
             'allow_weekend_borrow' => [
                 'label' => 'อนุญาตให้เลือกวันยืมในวันหยุดสุดสัปดาห์',
                 'type' => 'boolean',

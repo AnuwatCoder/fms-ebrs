@@ -85,10 +85,11 @@ class ProcessEquipmentCheckout
                 ->get();
 
             if ($equipment->count() !== $items->count() || $equipment->contains(
-                fn (Equipment $item): bool => ! $item->active || $item->status !== EquipmentStatus::Reserved,
+                fn (Equipment $item): bool => ! $item->active
+                    || ! in_array($item->status, [EquipmentStatus::Available, EquipmentStatus::Reserved], true),
             )) {
                 throw ValidationException::withMessages([
-                    'action' => 'มีอุปกรณ์บางรายการไม่อยู่ในสถานะจอง กรุณาตรวจสอบอีกครั้ง',
+                    'action' => 'มีอุปกรณ์บางรายการไม่พร้อมจ่าย กรุณาตรวจสอบอีกครั้ง',
                 ]);
             }
 

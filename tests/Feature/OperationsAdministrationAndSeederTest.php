@@ -87,6 +87,31 @@ function operationsRequest(
     return $borrowRequest;
 }
 
+it('seeds the configured equipment categories idempotently', function () {
+    $expectedCategories = [
+        'NOTEBOOK' => 'โน๊ตบุ๊ค',
+        'OTHER' => 'อื่น ๆ',
+        'POWER_STRIP' => 'รางปลั๊กไฟ (ปลั๊กพ่วง)',
+    ];
+
+    expect(EquipmentCategory::query()->orderBy('code')->pluck('name', 'code')->all())
+        ->toBe($expectedCategories);
+
+    EquipmentCategory::query()->where('code', 'NOTEBOOK')->update([
+        'name' => 'ชื่อเดิม',
+        'active' => false,
+    ]);
+
+    $this->seed(EquipmentCategorySeeder::class);
+
+    $notebook = EquipmentCategory::query()->where('code', 'NOTEBOOK')->firstOrFail();
+
+    expect(EquipmentCategory::query()->orderBy('code')->pluck('name', 'code')->all())
+        ->toBe($expectedCategories)
+        ->and($notebook->active)
+        ->toBeTrue();
+});
+
 it('seeds every workflow enum status idempotently', function () {
     $this->seed(WorkflowStatusSeeder::class);
 
@@ -518,18 +543,26 @@ it('manages user roles, custom roles, permissions and system settings', function
     expect(Role::query()->where('name', 'Auditor Team')->exists())->toBeFalse();
 
     $this->actingAs($superAdmin)
+        ->get(route('admin.settings'))
+        ->assertOk()
+        ->assertSee('name="email_notifications_enabled"', false)
+        ->assertSee('เปิดการส่งอีเมลแจ้งเตือน');
+
+    $this->actingAs($superAdmin)
         ->patch(route('admin.settings.update'), [
             'organization_name' => 'Test Organization',
             'default_loan_days' => 5,
             'max_items_per_request' => 2,
             'overdue_alert_days' => 1,
             'contact_email' => 'help@example.test',
+            'email_notifications_enabled' => '0',
             'allow_weekend_borrow' => '0',
         ])
         ->assertRedirect(route('admin.settings'));
 
     expect(SystemSetting::read('organization_name'))->toBe('Test Organization')
         ->and(SystemSetting::read('max_items_per_request'))->toBe(2)
+        ->and(SystemSetting::read('email_notifications_enabled'))->toBeFalse()
         ->and(SystemSetting::read('allow_weekend_borrow'))->toBeFalse();
 
     $this->assertDatabaseHas('audit_logs', ['event' => 'user.updated']);

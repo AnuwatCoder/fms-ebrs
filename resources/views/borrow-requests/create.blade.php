@@ -43,6 +43,7 @@
                     value="{{ old('borrow_date', today()->format('Y-m-d')) }}"
                     required
                 >
+                @error('borrow_date')<div class="invalid-feedback">{{ $message }}</div>@enderror
             </div>
             <div class="col-12 col-md-6 col-xl-12">
                 <label for="expected_return_date" class="form-label">กำหนดคืน <span class="text-danger">*</span></label>
@@ -55,6 +56,7 @@
                     value="{{ old('expected_return_date', today()->addDays($defaultLoanDays)->format('Y-m-d')) }}"
                     required
                 >
+                @error('expected_return_date')<div class="invalid-feedback">{{ $message }}</div>@enderror
             </div>
         </div>
 
@@ -101,8 +103,7 @@
             type="submit"
             class="btn btn-primary d-flex align-items-center justify-content-center gap-2"
             data-borrow-submit
-            data-has-equipment="{{ $equipment->isNotEmpty() ? '1' : '0' }}"
-            @disabled($equipment->isEmpty() || ! old('accept_terms'))
+            @disabled($equipment->isEmpty() || empty(old('equipment_ids')) || ! old('accept_terms'))
         >
             <i data-lucide="send" class="lucide-sm"></i>
             ส่งคำขออนุมัติ
@@ -113,59 +114,66 @@
         <div class="d-flex align-items-center justify-content-between p-4 border-bottom">
             <div>
                 <h2 class="h5 fw-bold text-slate-800 mb-1">เลือกอุปกรณ์</h2>
-                <p class="text-xs text-slate-500 mb-0">แสดงเฉพาะอุปกรณ์ที่พร้อมให้ยืม · เลือกได้สูงสุด {{ $maxItems }} รายการ</p>
+                <p class="text-xs text-slate-500 mb-0">ตรวจสอบตามช่วงวันที่เลือก · เลือกได้สูงสุด {{ $maxItems }} รายการ</p>
             </div>
             <span class="badge badge-soft-primary" data-selected-count>เลือกแล้ว 0 รายการ</span>
         </div>
 
-        @if ($equipment->isEmpty())
-            <div class="p-5 text-center">
-                <div class="icon-circle icon-circle-xl icon-circle-bg-warning-soft mx-auto mb-3">
-                    <i data-lucide="package-x" class="lucide-lg text-warning"></i>
-                </div>
-                <h3 class="h6 fw-semibold mb-1">ยังไม่มีอุปกรณ์ที่พร้อมให้ยืม</h3>
-                <p class="text-muted small mb-0">กรุณาติดต่อเจ้าหน้าที่หรือลองใหม่ภายหลัง</p>
+        <div
+            class="alert {{ $equipment->isEmpty() ? 'alert-warning' : 'alert-info' }} rounded-0 border-0 border-bottom mb-0"
+            role="status"
+            aria-live="polite"
+            data-availability-feedback
+        >
+            {{ $equipment->isEmpty() ? 'ไม่พบอุปกรณ์ว่างในช่วงวันที่เลือก กรุณาเปลี่ยนช่วงวันที่หรือติดต่อเจ้าหน้าที่' : 'พบอุปกรณ์ว่าง '.$equipment->count().' รายการ' }}
+        </div>
+
+        <div class="p-5 text-center {{ $equipment->isNotEmpty() ? 'd-none' : '' }}" data-availability-empty>
+            <div class="icon-circle icon-circle-xl icon-circle-bg-warning-soft mx-auto mb-3">
+                <i data-lucide="package-x" class="lucide-lg text-warning"></i>
             </div>
-        @else
-            @php($selectedEquipment = array_map('strval', (array) old('equipment_ids', [])))
-            <div class="table-responsive">
-                <table class="table align-middle mb-0">
-                    <thead>
+            <h3 class="h6 fw-semibold mb-1">ไม่มีอุปกรณ์ว่างในช่วงวันที่เลือก</h3>
+            <p class="text-muted small mb-0">กรุณาเปลี่ยนช่วงวันที่หรือติดต่อเจ้าหน้าที่</p>
+        </div>
+
+        @php($selectedEquipment = array_map('strval', (array) old('equipment_ids', [])))
+        <div class="table-responsive {{ $equipment->isEmpty() ? 'd-none' : '' }}" data-availability-table>
+            <table class="table align-middle mb-0">
+                <thead>
+                    <tr>
+                        <th style="width: 52px"><span class="visually-hidden">เลือก</span></th>
+                        <th>รหัส</th>
+                        <th>อุปกรณ์</th>
+                        <th>หมวดหมู่</th>
+                        <th>สถานที่</th>
+                    </tr>
+                </thead>
+                <tbody data-equipment-list>
+                    @foreach ($equipment as $item)
                         <tr>
-                            <th style="width: 52px"><span class="visually-hidden">เลือก</span></th>
-                            <th>รหัส</th>
-                            <th>อุปกรณ์</th>
-                            <th>หมวดหมู่</th>
-                            <th>สถานที่</th>
+                            <td>
+                                <input
+                                    class="form-check-input"
+                                    type="checkbox"
+                                    name="equipment_ids[]"
+                                    value="{{ $item->id }}"
+                                    aria-label="เลือก {{ $item->name }}"
+                                    @checked(in_array((string) $item->id, $selectedEquipment, true))
+                                    data-equipment-choice
+                                >
+                            </td>
+                            <td class="fw-semibold text-primary">{{ $item->equipment_code }}</td>
+                            <td>
+                                <div class="fw-semibold text-slate-800">{{ $item->name }}</div>
+                                <div class="text-xs text-slate-500">{{ collect([$item->brand, $item->model])->filter()->join(' · ') }}</div>
+                            </td>
+                            <td>{{ $item->category->name }}</td>
+                            <td>{{ $item->location ?: '—' }}</td>
                         </tr>
-                    </thead>
-                    <tbody>
-                        @foreach ($equipment as $item)
-                            <tr>
-                                <td>
-                                    <input
-                                        class="form-check-input"
-                                        type="checkbox"
-                                        name="equipment_ids[]"
-                                        value="{{ $item->id }}"
-                                        aria-label="เลือก {{ $item->name }}"
-                                        @checked(in_array((string) $item->id, $selectedEquipment, true))
-                                        data-equipment-choice
-                                    >
-                                </td>
-                                <td class="fw-semibold text-primary">{{ $item->equipment_code }}</td>
-                                <td>
-                                    <div class="fw-semibold text-slate-800">{{ $item->name }}</div>
-                                    <div class="text-xs text-slate-500">{{ collect([$item->brand, $item->model])->filter()->join(' · ') }}</div>
-                                </td>
-                                <td>{{ $item->category->name }}</td>
-                                <td>{{ $item->location ?: '—' }}</td>
-                            </tr>
-                        @endforeach
-                    </tbody>
-                </table>
-            </div>
-        @endif
+                    @endforeach
+                </tbody>
+            </table>
+        </div>
     </section>
 </form>
 @endsection
@@ -173,26 +181,135 @@
 @push('scripts')
 <script>
 document.addEventListener('DOMContentLoaded', function () {
-    const checkboxes = document.querySelectorAll('[data-equipment-choice]');
+    const availabilityUrl = @js(route('borrow.availability'));
+    const maxItems = @js($maxItems);
+    const borrowDate = document.getElementById('borrow_date');
+    const returnDate = document.getElementById('expected_return_date');
+    const equipmentList = document.querySelector('[data-equipment-list]');
+    const equipmentTable = document.querySelector('[data-availability-table]');
+    const emptyState = document.querySelector('[data-availability-empty]');
+    const feedback = document.querySelector('[data-availability-feedback]');
     const counter = document.querySelector('[data-selected-count]');
     const termsCheckbox = document.querySelector('[data-borrow-terms]');
     const submitButton = document.querySelector('[data-borrow-submit]');
-    const hasEquipment = submitButton?.dataset.hasEquipment === '1';
+    let checkboxes = [];
+    let activeRequest = null;
+
+    const selectedCount = () => checkboxes.filter((checkbox) => checkbox.checked).length;
     const updateSubmitState = () => {
-        if (submitButton) submitButton.disabled = !hasEquipment || !termsCheckbox?.checked;
+        if (submitButton) {
+            submitButton.disabled = checkboxes.length === 0 || selectedCount() === 0 || !termsCheckbox?.checked;
+        }
     };
     const updateCount = () => {
-        const count = Array.from(checkboxes).filter((checkbox) => checkbox.checked).length;
+        const count = selectedCount();
         if (counter) counter.textContent = `เลือกแล้ว ${count} รายการ`;
         checkboxes.forEach((checkbox) => {
-            checkbox.disabled = !checkbox.checked && count >= {{ $maxItems }};
+            checkbox.disabled = !checkbox.checked && count >= maxItems;
         });
+        updateSubmitState();
+    };
+    const bindChoices = () => {
+        checkboxes = Array.from(document.querySelectorAll('[data-equipment-choice]'));
+        checkboxes.forEach((checkbox) => checkbox.addEventListener('change', updateCount));
+        updateCount();
+    };
+    const appendTextCell = (row, text, className = '') => {
+        const cell = document.createElement('td');
+        cell.textContent = text;
+        cell.className = className;
+        row.appendChild(cell);
+    };
+    const renderEquipment = (items) => {
+        const previouslySelected = new Set(checkboxes.filter((checkbox) => checkbox.checked).map((checkbox) => checkbox.value));
+        equipmentList.replaceChildren();
+
+        items.forEach((item) => {
+            const row = document.createElement('tr');
+            const choiceCell = document.createElement('td');
+            const choice = document.createElement('input');
+            choice.type = 'checkbox';
+            choice.name = 'equipment_ids[]';
+            choice.value = String(item.id);
+            choice.className = 'form-check-input';
+            choice.dataset.equipmentChoice = '';
+            choice.setAttribute('aria-label', `เลือก ${item.name}`);
+            choice.checked = previouslySelected.has(choice.value);
+            choiceCell.appendChild(choice);
+            row.appendChild(choiceCell);
+
+            appendTextCell(row, item.equipment_code, 'fw-semibold text-primary');
+
+            const nameCell = document.createElement('td');
+            const name = document.createElement('div');
+            name.className = 'fw-semibold text-slate-800';
+            name.textContent = item.name;
+            const detail = document.createElement('div');
+            detail.className = 'text-xs text-slate-500';
+            detail.textContent = [item.brand, item.model].filter(Boolean).join(' · ');
+            nameCell.append(name, detail);
+            row.appendChild(nameCell);
+
+            appendTextCell(row, item.category.name);
+            appendTextCell(row, item.location || '—');
+            equipmentList.appendChild(row);
+        });
+
+        equipmentTable.classList.toggle('d-none', items.length === 0);
+        emptyState.classList.toggle('d-none', items.length > 0);
+        bindChoices();
+    };
+    const setFeedback = (message, type) => {
+        feedback.textContent = message;
+        feedback.className = `alert alert-${type} rounded-0 border-0 border-bottom mb-0`;
+    };
+    const loadAvailability = async () => {
+        if (!borrowDate.value || !returnDate.value || returnDate.value < borrowDate.value) {
+            renderEquipment([]);
+            setFeedback('กรุณาเลือกช่วงวันที่ให้ถูกต้องก่อนตรวจสอบอุปกรณ์', 'warning');
+            return;
+        }
+
+        activeRequest?.abort();
+        activeRequest = new AbortController();
+        setFeedback('กำลังตรวจสอบอุปกรณ์ว่าง...', 'info');
+
+        try {
+            const params = new URLSearchParams({
+                borrow_date: borrowDate.value,
+                expected_return_date: returnDate.value,
+            });
+            const response = await fetch(`${availabilityUrl}?${params}`, {
+                headers: { Accept: 'application/json' },
+                signal: activeRequest.signal,
+            });
+            const payload = await response.json();
+
+            if (!response.ok) {
+                const errors = Object.values(payload.errors || {}).flat();
+                throw new Error(errors[0] || 'ไม่สามารถตรวจสอบอุปกรณ์ได้');
+            }
+
+            renderEquipment(payload.data || []);
+            setFeedback(payload.meta.message, payload.meta.count > 0 ? 'info' : 'warning');
+        } catch (error) {
+            if (error.name === 'AbortError') return;
+
+            renderEquipment([]);
+            setFeedback(error.message || 'ไม่สามารถตรวจสอบอุปกรณ์ได้ กรุณาลองใหม่', 'danger');
+        }
+    };
+    const handleBorrowDateChange = () => {
+        returnDate.min = borrowDate.value;
+        if (returnDate.value < borrowDate.value) returnDate.value = borrowDate.value;
+        loadAvailability();
     };
 
-    checkboxes.forEach((checkbox) => checkbox.addEventListener('change', updateCount));
+    borrowDate?.addEventListener('change', handleBorrowDateChange);
+    returnDate?.addEventListener('change', loadAvailability);
     termsCheckbox?.addEventListener('change', updateSubmitState);
-    updateCount();
-    updateSubmitState();
+    bindChoices();
+    loadAvailability();
 });
 </script>
 @endpush

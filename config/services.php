@@ -40,6 +40,10 @@ return [
         'client_id' => env('AUTHENTIK_CLIENT_ID'),
         'client_secret' => env('AUTHENTIK_CLIENT_SECRET'),
         'redirect' => env('AUTHENTIK_REDIRECT_URI'),
+        'scopes' => array_values(array_filter(array_map(
+            'trim',
+            explode(',', (string) env('AUTHENTIK_SCOPES', '')),
+        ))),
     ],
 
 ];

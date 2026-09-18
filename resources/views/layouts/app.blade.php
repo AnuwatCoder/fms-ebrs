@@ -21,6 +21,7 @@
     @include('layouts.partials.settings')
 
     <main class="app-main">
+        @include('layouts.partials.role-simulation')
         @include('layouts.partials.alerts')
         @yield('content')
         @include('layouts.partials.footer')

@@ -3,25 +3,23 @@
 namespace App\Services\Borrowing;
 
 use App\Enums\BorrowRequestStatus;
-use App\Enums\EquipmentStatus;
 use App\Models\BorrowRequest;
-use App\Models\Equipment;
 use App\Models\SystemSetting;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Builder;
 
 class BorrowRequestQueryService
 {
+    public function __construct(private EquipmentAvailabilityService $availability) {}
+
     /** @return array<string, mixed> */
     public function createForm(): array
     {
         return [
-            'equipment' => Equipment::query()
-                ->with('category:id,name')
-                ->where('active', true)
-                ->where('status', EquipmentStatus::Available->value)
-                ->orderBy('name')
-                ->get(),
+            'equipment' => $this->availability->availableBetween(
+                today(),
+                today()->addDays((int) SystemSetting::read('default_loan_days')),
+            ),
             'defaultLoanDays' => (int) SystemSetting::read('default_loan_days'),
             'maxItems' => (int) SystemSetting::read('max_items_per_request'),
             'borrowingTerms' => config('borrowing.terms'),

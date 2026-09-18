@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Actions\Borrowing\CancelBorrowRequest;
 use App\Actions\Borrowing\CreateBorrowRequest;
 use App\Http\Requests\BorrowRequestIndexRequest;
+use App\Http\Requests\CancelBorrowRequestRequest;
 use App\Http\Requests\StoreBorrowRequestRequest;
+use App\Models\BorrowRequest;
 use App\Services\Borrowing\BorrowRequestQueryService;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\View\View;
@@ -32,6 +35,17 @@ class BorrowRequestController extends Controller
             $request->user(),
             $request->validated(),
         ));
+    }
+
+    public function cancel(
+        CancelBorrowRequestRequest $request,
+        BorrowRequest $borrowRequest,
+        CancelBorrowRequest $cancelBorrowRequest,
+    ): RedirectResponse {
+        $cancelBorrowRequest->execute($request->user(), $borrowRequest);
+
+        return to_route('borrow.mine')
+            ->with('success', "ยกเลิกคำขอ {$borrowRequest->request_no} เรียบร้อยแล้ว");
     }
 
     public function index(BorrowRequestIndexRequest $request, BorrowRequestQueryService $borrowRequests): View

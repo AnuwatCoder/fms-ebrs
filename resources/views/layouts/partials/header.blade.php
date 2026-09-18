@@ -1,3 +1,7 @@
+@php
+    $roleSimulation = request()->attributes->get(\App\Services\Authorization\RoleSimulationService::REQUEST_ATTRIBUTE, []);
+@endphp
+
 <header class="app-header">
     <a href="{{ route('dashboard') }}" class="header-mobile-logo d-lg-none" aria-label="EBRS">
         <img src="{{ asset('template/img/logo.svg') }}" alt="EBRS" width="28" height="28">
@@ -53,7 +57,13 @@
             <div class="avatar avatar-sm">{{ mb_strtoupper(mb_substr(auth()->user()->name, 0, 1)) }}</div>
             <div class="d-none d-sm-block text-start">
                 <div class="user-name">{{ auth()->user()->name }}</div>
-                <div class="user-role">{{ auth()->user()->getRoleNames()->implode(', ') ?: 'User' }}</div>
+                <div class="user-role">
+                    @if ($roleSimulation['active'] ?? null)
+                        จำลอง: {{ $roleSimulation['active_label'] }}
+                    @else
+                        {{ auth()->user()->getRoleNames()->implode(', ') ?: 'User' }}
+                    @endif
+                </div>
             </div>
             <i data-lucide="chevron-down" class="lucide-sm d-none d-sm-inline"></i>
         </button>
@@ -65,6 +75,27 @@
             <a class="dropdown-item user-menu-item" href="#" aria-disabled="true">
                 <i data-lucide="user" class="lucide-sm"></i> โปรไฟล์
             </a>
+            @if ($roleSimulation['allowed'] ?? false)
+                <div class="dropdown-divider"></div>
+                <div class="px-3 py-2">
+                    <div class="small fw-semibold mb-2">จำลองมุมมองบทบาท</div>
+                    <div class="d-grid gap-1">
+                        @foreach ($roleSimulation['roles'] as $role)
+                            <form method="POST" action="{{ route('admin.role-simulation.store') }}">
+                                @csrf
+                                <input type="hidden" name="role" value="{{ $role['name'] }}">
+                                <button
+                                    type="submit"
+                                    class="btn btn-sm w-100 text-start {{ ($roleSimulation['active'] ?? null) === $role['name'] ? 'btn-primary' : 'btn-outline-secondary' }}"
+                                    @disabled(($roleSimulation['active'] ?? null) === $role['name'])
+                                >
+                                    {{ $role['label'] }}
+                                </button>
+                            </form>
+                        @endforeach
+                    </div>
+                </div>
+            @endif
             <div class="dropdown-divider"></div>
             <form method="POST" action="{{ route('logout') }}">
                 @csrf

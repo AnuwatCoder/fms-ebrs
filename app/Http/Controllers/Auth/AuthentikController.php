@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Actions\Authentication\SyncOidcUser;
 use App\Http\Controllers\Controller;
+use App\Services\Authentication\AuthentikAccessService;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -16,11 +17,16 @@ class AuthentikController extends Controller
     {
         $this->ensureConfigured();
 
-        return Socialite::driver('authentik')->redirect();
+        return Socialite::driver('authentik')
+            ->scopes($this->configuredScopes())
+            ->redirect();
     }
 
-    public function callback(Request $request, SyncOidcUser $syncOidcUser): RedirectResponse
-    {
+    public function callback(
+        Request $request,
+        SyncOidcUser $syncOidcUser,
+        AuthentikAccessService $authentikAccess,
+    ): RedirectResponse {
         $this->ensureConfigured();
 
         try {
@@ -28,6 +34,13 @@ class AuthentikController extends Controller
             $claims = $authentikUser->getRaw();
             $claims['email'] ??= $authentikUser->getEmail();
             $claims['name'] ??= $authentikUser->getName();
+
+            if (! $authentikAccess->allows($claims)) {
+                return to_route('login')->with(
+                    'error',
+                    'บัญชีนี้ไม่มีสิทธิ์เข้าใช้งานระบบ กรุณาใช้บัญชีบุคลากรหรืออาจารย์ของคณะที่กำหนด',
+                );
+            }
 
             $user = $syncOidcUser->execute(
                 provider: 'authentik',
@@ -72,5 +85,20 @@ class AuthentikController extends Controller
             503,
             'Authentik is not configured.'
         );
+    }
+
+    /** @return list<string> */
+    private function configuredScopes(): array
+    {
+        $scopes = config('services.authentik.scopes', []);
+
+        if (! is_array($scopes)) {
+            return [];
+        }
+
+        return array_values(array_filter(
+            $scopes,
+            fn (mixed $scope): bool => is_string($scope) && filled($scope),
+        ));
     }
 }

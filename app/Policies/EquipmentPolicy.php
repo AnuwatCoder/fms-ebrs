@@ -17,6 +17,11 @@ class EquipmentPolicy
         return $user->can('equipment.create');
     }
 
+    public function view(User $user, Equipment $equipment): bool
+    {
+        return $user->can('equipment.view');
+    }
+
     public function update(User $user, Equipment $equipment): bool
     {
         return $user->can('equipment.update');

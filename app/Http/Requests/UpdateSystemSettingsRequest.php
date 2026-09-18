@@ -21,6 +21,7 @@ class UpdateSystemSettingsRequest extends FormRequest
             'max_items_per_request' => ['required', 'integer', 'min:1', 'max:100'],
             'overdue_alert_days' => ['required', 'integer', 'min:0', 'max:30'],
             'contact_email' => ['nullable', 'email', 'max:255'],
+            'email_notifications_enabled' => ['required', 'boolean'],
             'allow_weekend_borrow' => ['required', 'boolean'],
         ];
     }

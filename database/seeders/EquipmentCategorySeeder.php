@@ -9,16 +9,9 @@ class EquipmentCategorySeeder extends Seeder
 {
     /** @var array<string, string> */
     private const CATEGORIES = [
-        'COMPUTER' => 'Computer',
-        'NOTEBOOK' => 'Notebook',
-        'PROJECTOR' => 'Projector',
-        'CAMERA' => 'Camera',
-        'VIDEO_CAMERA' => 'Video Camera',
-        'MICROPHONE' => 'Microphone',
-        'AUDIO' => 'Audio Equipment',
-        'PRESENTATION' => 'Presentation Equipment',
-        'ACCESSORIES' => 'Accessories',
-        'OTHER' => 'Other',
+        'POWER_STRIP' => 'รางปลั๊กไฟ (ปลั๊กพ่วง)',
+        'NOTEBOOK' => 'โน๊ตบุ๊ค',
+        'OTHER' => 'อื่น ๆ',
     ];
 
     public function run(): void

@@ -69,6 +69,7 @@
                         <th>ช่วงวันที่</th>
                         <th>อุปกรณ์</th>
                         <th>สถานะ</th>
+                        @if ($mine)<th class="text-end">จัดการ</th>@endif
                     </tr>
                 </thead>
                 <tbody>
@@ -86,11 +87,63 @@
                             </td>
                             <td>{{ number_format($borrowRequest->items_count) }} รายการ</td>
                             <td><span class="badge {{ $borrowRequest->status->badgeClass() }}">{{ $borrowRequest->status->label() }}</span></td>
+                            @if ($mine)
+                                <td class="text-end">
+                                    @can('cancel', $borrowRequest)
+                                        @if ($borrowRequest->status->canTransitionTo(\App\Enums\BorrowRequestStatus::Cancelled))
+                                            <button
+                                                type="button"
+                                                class="btn btn-sm btn-outline-danger d-inline-flex align-items-center gap-1"
+                                                data-bs-toggle="modal"
+                                                data-bs-target="#cancel-borrow-request-{{ $borrowRequest->id }}"
+                                            >
+                                                <i data-lucide="x-circle" class="lucide-sm"></i>
+                                                ยกเลิก
+                                            </button>
+                                        @else
+                                            <span class="text-slate-400" aria-label="ไม่มีรายการที่จัดการได้">—</span>
+                                        @endif
+                                    @else
+                                        <span class="text-slate-400" aria-label="ไม่มีรายการที่จัดการได้">—</span>
+                                    @endcan
+                                </td>
+                            @endif
                         </tr>
                     @endforeach
                 </tbody>
             </table>
         </div>
+
+        @if ($mine)
+            @foreach ($borrowRequests as $borrowRequest)
+                @can('cancel', $borrowRequest)
+                    @if ($borrowRequest->status->canTransitionTo(\App\Enums\BorrowRequestStatus::Cancelled))
+                        <div class="modal fade" id="cancel-borrow-request-{{ $borrowRequest->id }}" tabindex="-1" aria-labelledby="cancel-borrow-request-title-{{ $borrowRequest->id }}" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h2 class="modal-title fs-5" id="cancel-borrow-request-title-{{ $borrowRequest->id }}">ยืนยันการยกเลิกคำขอ</h2>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="ปิด"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p class="mb-2">ต้องการยกเลิกคำขอ <strong>{{ $borrowRequest->request_no }}</strong> ใช่หรือไม่</p>
+                                        <p class="small text-danger mb-0">เมื่อยกเลิกแล้วจะไม่สามารถนำคำขอนี้กลับมาใช้งานได้</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">กลับ</button>
+                                        <form method="POST" action="{{ route('borrow.cancel', $borrowRequest) }}">
+                                            @csrf
+                                            @method('PATCH')
+                                            <button type="submit" class="btn btn-danger">ยืนยันยกเลิกคำขอ</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    @endif
+                @endcan
+            @endforeach
+        @endif
 
         @if ($borrowRequests->hasPages())
             <div class="p-4 border-top">{{ $borrowRequests->links() }}</div>

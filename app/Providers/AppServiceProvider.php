@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use App\Models\User;
 use App\Policies\RolePolicy;
+use App\Services\Authentication\AuthentikAccessService;
 use Illuminate\Cache\RateLimiting\Limit;
 use Illuminate\Http\Request;
 use Illuminate\Pagination\Paginator;
@@ -22,7 +23,13 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        //
+        $this->app->singleton(
+            AuthentikAccessService::class,
+            fn (): AuthentikAccessService => new AuthentikAccessService(
+                allowedFacultyIds: config('authentik.access.allowed_faculty_ids', []),
+                allowedAccountTypes: config('authentik.access.allowed_account_types', []),
+            ),
+        );
     }
 
     /**

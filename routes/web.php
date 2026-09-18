@@ -2,11 +2,13 @@
 
 use App\Http\Controllers\Admin\PermissionController;
 use App\Http\Controllers\Admin\RoleController;
+use App\Http\Controllers\Admin\RoleSimulationController;
 use App\Http\Controllers\Admin\SystemSettingController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\AuditLogController;
 use App\Http\Controllers\Auth\AuthentikController;
 use App\Http\Controllers\BorrowApprovalController;
+use App\Http\Controllers\BorrowRequestAvailabilityController;
 use App\Http\Controllers\BorrowRequestController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\EquipmentCategoryController;
@@ -45,6 +47,18 @@ Route::middleware('auth')->group(function () {
     Route::post('/equipment', [EquipmentController::class, 'store'])
         ->middleware('permission:equipment.create')
         ->name('equipment.store');
+    Route::get('/equipment/{equipment}', [EquipmentController::class, 'show'])
+        ->middleware(['permission:equipment.view', 'can:view,equipment'])
+        ->name('equipment.show');
+    Route::get('/equipment/{equipment}/edit', [EquipmentController::class, 'edit'])
+        ->middleware(['permission:equipment.update', 'can:update,equipment'])
+        ->name('equipment.edit');
+    Route::patch('/equipment/{equipment}', [EquipmentController::class, 'update'])
+        ->middleware('permission:equipment.update')
+        ->name('equipment.update');
+    Route::delete('/equipment/{equipment}', [EquipmentController::class, 'destroy'])
+        ->middleware('permission:equipment.delete')
+        ->name('equipment.destroy');
 
     Route::get('/categories', [EquipmentCategoryController::class, 'index'])
         ->middleware('permission:category.view')
@@ -84,12 +98,18 @@ Route::middleware('auth')->group(function () {
     Route::get('/borrow-requests/create', [BorrowRequestController::class, 'create'])
         ->middleware('permission:borrow.create')
         ->name('borrow.create');
+    Route::get('/borrow-requests/availability', BorrowRequestAvailabilityController::class)
+        ->middleware('permission:borrow.create')
+        ->name('borrow.availability');
     Route::post('/borrow-requests', [BorrowRequestController::class, 'store'])
         ->middleware('permission:borrow.create')
         ->name('borrow.store');
     Route::get('/borrow-requests/mine', [BorrowRequestController::class, 'mine'])
         ->middleware('permission:borrow.view-own')
         ->name('borrow.mine');
+    Route::patch('/borrow-requests/{borrowRequest}/cancel', [BorrowRequestController::class, 'cancel'])
+        ->middleware(['permission:borrow.cancel', 'can:cancel,borrowRequest'])
+        ->name('borrow.cancel');
     Route::get('/borrow-requests', [BorrowRequestController::class, 'index'])
         ->middleware('permission:borrow.view')
         ->name('borrow.index');
@@ -131,6 +151,11 @@ Route::middleware('auth')->group(function () {
     });
 
     Route::prefix('admin')->group(function () {
+        Route::post('/role-simulation', [RoleSimulationController::class, 'store'])
+            ->name('admin.role-simulation.store');
+        Route::delete('/role-simulation', [RoleSimulationController::class, 'destroy'])
+            ->name('admin.role-simulation.destroy');
+
         Route::get('/users', [UserController::class, 'index'])
             ->middleware('permission:user.manage')
             ->name('admin.users');

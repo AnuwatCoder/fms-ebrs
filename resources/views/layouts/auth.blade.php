@@ -8,6 +8,7 @@
     <title>@yield('title', 'เข้าสู่ระบบ') | {{ config('app.name', 'EBRS') }}</title>
     <link rel="stylesheet" href="{{ asset('template/vendor/bootstrap/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('template/assets/css/theme.css') }}">
+    <link rel="stylesheet" href="{{ asset('template/assets/css/auth.css') }}">
     <link rel="stylesheet" href="{{ asset('fonts/fonts.css') }}">
     @livewireStyles
     @stack('styles')

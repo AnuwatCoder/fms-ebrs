@@ -4,17 +4,23 @@ namespace App\Actions\Borrowing;
 
 use App\Enums\BorrowItemStatus;
 use App\Enums\BorrowRequestStatus;
-use App\Enums\EquipmentStatus;
 use App\Models\BorrowRequest;
 use App\Models\Equipment;
 use App\Models\User;
+use App\Services\Borrowing\EquipmentAvailabilityService;
+use App\Services\Notifications\BorrowRequestNotificationService;
 use App\Support\Auditing\AuditLogger;
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Validation\ValidationException;
 
 class CreateBorrowRequest
 {
-    public function __construct(private AuditLogger $auditLogger) {}
+    public function __construct(
+        private AuditLogger $auditLogger,
+        private EquipmentAvailabilityService $availability,
+        private BorrowRequestNotificationService $notifications,
+    ) {}
 
     /**
      * @param array{
@@ -29,7 +35,7 @@ class CreateBorrowRequest
      */
     public function execute(User $borrower, array $attributes): BorrowRequest
     {
-        return DB::transaction(function () use ($borrower, $attributes): BorrowRequest {
+        $borrowRequest = DB::transaction(function () use ($borrower, $attributes): BorrowRequest {
             if (! filter_var($attributes['accept_terms'] ?? false, FILTER_VALIDATE_BOOLEAN)) {
                 throw ValidationException::withMessages([
                     'accept_terms' => 'กรุณายอมรับข้อตกลงและเงื่อนไขการยืมก่อนส่งคำขอ',
@@ -37,16 +43,25 @@ class CreateBorrowRequest
             }
 
             $equipmentIds = array_values(array_unique($attributes['equipment_ids']));
-            $availableEquipment = Equipment::query()
+            $lockedEquipment = Equipment::query()
                 ->whereKey($equipmentIds)
-                ->where('active', true)
-                ->where('status', EquipmentStatus::Available->value)
                 ->lockForUpdate()
-                ->get(['id']);
+                ->get(['id', 'active', 'status']);
 
-            if ($availableEquipment->count() !== count($equipmentIds)) {
+            if (
+                $lockedEquipment->count() !== count($equipmentIds)
+                || $lockedEquipment->contains(
+                    fn (Equipment $equipment): bool => ! $equipment->active
+                        || ! in_array($equipment->status->value, $this->availability->schedulableEquipmentStatuses(), true),
+                )
+                || $this->availability->hasConflicts(
+                    $equipmentIds,
+                    Carbon::parse($attributes['borrow_date']),
+                    Carbon::parse($attributes['expected_return_date']),
+                )
+            ) {
                 throw ValidationException::withMessages([
-                    'equipment_ids' => 'มีอุปกรณ์บางรายการไม่พร้อมให้ยืม กรุณาเลือกรายการใหม่',
+                    'equipment_ids' => 'มีอุปกรณ์บางรายการไม่ว่างในช่วงวันที่เลือก กรุณาตรวจสอบวันและเลือกรายการใหม่',
                 ]);
             }
 
@@ -81,6 +96,10 @@ class CreateBorrowRequest
 
             return $borrowRequest;
         });
+
+        $this->notifications->notifyReviewers($borrowRequest);
+
+        return $borrowRequest;
     }
 
     private function nextRequestNumber(): string

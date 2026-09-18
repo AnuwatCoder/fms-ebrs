@@ -16,7 +16,12 @@ it('shows the OIDC login page to guests using only local template assets', funct
         ->assertSee('OpenID Connect')
         ->assertSee(asset('fonts/fonts.css'), false)
         ->assertSee(asset('template/vendor/bootstrap/css/bootstrap.min.css'), false)
+        ->assertSee(asset('template/assets/css/auth.css'), false)
         ->assertSee(asset('template/vendor/lucide/lucide.min.js'), false)
+        ->assertSee('aria-label="FMS EBRS หน้าเข้าสู่ระบบ"', false)
+        ->assertSee('class="login-wordmark"', false)
+        ->assertDontSee('class="login-brand-mark"', false)
+        ->assertSee('class="login-workflow-card"', false)
         ->assertDontSee('cdn.jsdelivr.net', false)
         ->assertDontSee('type="password"', false);
 });
@@ -67,6 +72,8 @@ it('renders a permission-aware dashboard and limits borrowers to their own reque
         ->assertDontSee('BR-OTHER-001')
         ->assertSee(asset('template/assets/css/theme.css'), false)
         ->assertSee(asset('template/vendor/apexcharts/apexcharts.min.js'), false)
+        ->assertSee('data-dashboard-role="borrower"', false)
+        ->assertSee('ติดตามการยืมของคุณได้ในที่เดียว')
         ->assertSee('data-dashboard-chart="request-trend"', false)
         ->assertSee('data-dashboard-chart="distribution"', false)
         ->assertSee('data-dashboard-table="recent-requests"', false)
@@ -74,11 +81,63 @@ it('renders a permission-aware dashboard and limits borrowers to their own reque
 
     $response
         ->assertViewHas('requestStats', fn (array $stats): bool => $stats['total'] === 1 && $stats['pending'] === 1)
+        ->assertViewHas('canViewEquipment', false)
         ->assertViewHas('requestTrend', fn (array $trend): bool => array_sum($trend['submitted']) === 1)
         ->assertViewHas(
             'distributionChart',
-            fn (array $chart): bool => $chart['title'] === 'สถานะอุปกรณ์' && array_sum($chart['series']) === 0,
+            fn (array $chart): bool => $chart['title'] === 'สถานะคำขอของฉัน' && array_sum($chart['series']) === 1,
         );
+});
+
+it('renders a distinct dashboard for every core role', function () {
+    $this->seed(RolePermissionSeeder::class);
+
+    $expectations = [
+        'Borrower' => [
+            'key' => 'borrower',
+            'title' => 'ติดตามการยืมของคุณได้ในที่เดียว',
+            'action' => 'borrow.create',
+            'hidden_action' => 'approval.index',
+        ],
+        'Approver' => [
+            'key' => 'approver',
+            'title' => 'พิจารณาคำขอได้อย่างรวดเร็วและชัดเจน',
+            'action' => 'approval.index',
+            'hidden_action' => 'checkout.index',
+        ],
+        'Staff' => [
+            'key' => 'staff',
+            'title' => 'บริหารคิวจ่ายและรับคืนอุปกรณ์',
+            'action' => 'checkout.index',
+            'hidden_action' => 'admin.users',
+        ],
+        'Admin' => [
+            'key' => 'admin',
+            'title' => 'ภาพรวมการดำเนินงานและทรัพยากร',
+            'action' => 'return.index',
+            'hidden_action' => 'admin.users',
+        ],
+        'SuperAdmin' => [
+            'key' => 'superadmin',
+            'title' => 'ศูนย์ควบคุมระบบ FMS EBRS',
+            'action' => 'admin.users',
+            'hidden_action' => 'borrow.create',
+        ],
+    ];
+
+    foreach ($expectations as $role => $expectation) {
+        $user = User::factory()->create();
+        $user->assignRole($role);
+
+        $this->actingAs($user)
+            ->get(route('dashboard'))
+            ->assertOk()
+            ->assertSee('data-dashboard-role="'.$expectation['key'].'"', false)
+            ->assertSee('class="dashboard-hero dashboard-hero-'.$expectation['key'].'"', false)
+            ->assertSee($expectation['title'])
+            ->assertSee('data-dashboard-action="'.$expectation['action'].'"', false)
+            ->assertDontSee('data-dashboard-action="'.$expectation['hidden_action'].'"', false);
+    }
 });
 
 it('renders navigation for every application role without exposing unauthorized menus', function () {
@@ -183,6 +242,7 @@ it('ships every frontend dependency referenced by the layouts', function () {
         'template/vendor/bootstrap/js/bootstrap.bundle.min.js',
         'template/vendor/lucide/lucide.min.js',
         'template/vendor/apexcharts/apexcharts.min.js',
+        'template/assets/css/auth.css',
         'template/assets/css/theme.css',
         'template/assets/css/ebrs.css',
         'template/assets/js/app.js',
